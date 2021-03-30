@@ -11,7 +11,7 @@ This repository is regarding the config assistant which will do bulk commit
 ```
 pip install --upgrade wheel-name
 ```
-The wheel can be found in the link [Wheel](Sample_Script)
+The wheel can be found in the link [Wheel](wheel)
 
 ## Import the package
 Import a package based on your product:
@@ -22,7 +22,7 @@ from ixnetwork_restpy import SessionAssistant
 
 
 ## Start scripting
-The sample script can be found in the link [Sample_Script](wheel)
+The sample script can be found in the link [Sample_Script](Sample_Script)
 ```python
 """This script demonstrates how to get started with ixnetwork_restpy scripting.
 
