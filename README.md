@@ -1,15 +1,17 @@
-## The IxNetwork Python Client 
-[![pypi](https://img.shields.io/pypi/v/ixnetwork-restpy.svg)](https://pypi.org/project/ixnetwork-restpy)
-[![python](https://img.shields.io/pypi/pyversions/ixnetwork-restpy.svg)](https://pypi.python.org/pypi/ixnetwork-restpy)
-[![license](https://img.shields.io/badge/license-MIT-green.svg)](https://en.wikipedia.org/wiki/MIT_License)
-[![downloads](https://pepy.tech/badge/ixnetwork-restpy)](https://pepy.tech/project/ixnetwork-restpy)
+# Config Assistant POC
+This repository is regarding the config assistant which will do bulk commit  
 
+
+## Key Features
+* Config Assistant for bulk commit
+* New way for configuring traffic (protocol template auto generated)
+* Ability to save config as Json (part of bulk commit)
 
 ## Install the client
 ```
-pip install --upgrade ixnetwork-restpy
+pip install --upgrade wheel-name
 ```
-
+The wheel can be found in the link [Wheel](Sample_Script)
 
 ## Import the package
 Import a package based on your product:
@@ -17,74 +19,103 @@ Import a package based on your product:
 # The ixnetwork_restpy package is the superset of all IxNetwork products
 from ixnetwork_restpy import SessionAssistant
 ```
-```python
-# The uhd_restpy package is a subset of the ixnetwork_restpy package for the UHD appliance
-from uhd_restpy import SessionAssistant
-```
 
 
 ## Start scripting
+The sample script can be found in the link [Sample_Script](wheel)
 ```python
 """This script demonstrates how to get started with ixnetwork_restpy scripting.
 
 The script demonstrates the following:
     - connect to an IxNetwork test platform, authenticate, add a new session and clear the config
-    - create 1 tx port and 1 rx port
-    - create traffic from the tx port to the rx port
-    - start traffic
-    - print statistics
-    - stop traffic
+    - create vport and toplogy
+    - create traffic
+    - assign ports
+    - do some more changes
+    - start protocol stack and traffic  
 """
 from ixnetwork_restpy import SessionAssistant
 
-
-# create a test tool session
-session_assistant = SessionAssistant(IpAddress='127.0.0.1', 
-    LogLevel=SessionAssistant.LOGLEVEL_INFO, 
-    ClearConfig=True)
+session_assistant = SessionAssistant(IpAddress='127.0.0.1', UserName='admin', Password='admin',
+                                     LogLevel=SessionAssistant.LOGLEVEL_INFO, ClearConfig=True)
 ixnetwork = session_assistant.Ixnetwork
 
-# create tx and rx port resources
-port_map = session_assistant.PortMapAssistant()
-port_map.Map('10.36.74.26', 2, 13, Name='Tx')
-port_map.Map('10.36.74.26', 2, 14, Name='Rx')
+conf_assist = session_assistant.ConfigAssistant()
+config = conf_assist.config
+vport = config.Vport.add().add()
+vport[0].Name = 'myVport_1'
+vport[0].RxMode = 'captureAndMeasure'
+vport[1].Name = 'myVport_2'
+topo = config.Topology.add(Name='Topology 1', Vports=vport[0]).add(Name='Topology 2', Vports=vport[1])
+for i in range(0, 2):
+    eth1 = topo[0].DeviceGroup.add(Name='Device Group 1', Multiplier='4').Ethernet.add()
+    eth1.Mac.Increment(start_value='00:11:22:33:44:55', step_value='00:11:01:00:00:01')
+    eth1.Mtu.Single('1670')
+    ipv41 = eth1.Ipv4.add(Name='Ipv4 East')
+    ipv41.Address.Increment(start_value='1.1.1.1', step_value='0.1.0.0')
+    ipv41.GatewayIp.Increment(start_value='1.1.1.0', step_value='0.1.0.0')
+    ipv41.Prefix.Single('26')
+    eth2 = topo[1].DeviceGroup.add(Name='Device Group 2', Multiplier='4').Ethernet.add()
+    eth2.Mac.Increment(start_value='00:55:44:33:22:11', step_value='00:10:01:00:00:21')
+    eth2.Mtu.Single('1770')
+    ipv42 = eth2.Ipv4.add(Name='Ipv4 West')
+    ipv42.Address.Increment(start_value='1.1.1.0', step_value='0.1.0.0')
+    ipv42.GatewayIp.Increment(start_value='1.1.1.1', step_value='0.1.0.0')
+    ipv42.Prefix.Single('26')
+traffic = config.Traffic.TrafficItem
+for i in range(0, 2):
+    tr1 = traffic.add(Name='RAW TCP', BiDirectional=False, TrafficType='raw', TrafficItemType='l2L3')
+    tr1.EndpointSet.add(Sources=vport[0].Protocols, Destinations=vport[1].Protocols)
+    stack = tr1.ConfigElement.Stack
+    eth_st = stack.Ethernet_II.add()
+    eth_st.Source_MAC_Address.Single('00:11:00:00:22:00')
+    eth_st.Destination_MAC_Address.Single('00:33:00:11:22:00')
+    ipv4_st = stack.IPv4.add()
+    ipv4_st[0].Source_Address.Increment(start_value='1.1.1.1', step_value='0.1.0.1')
+    ipv4_st[0].Destination_Address.Increment(start_value='2.2.2.2', step_value='0.1.0.1')
+    ipv4_st[0].TTL_Time_to_live.Single('56')
+    ipv4_st[0].Identification.Single('1')
+    tcp_st = stack.TCP.add()
+    tcp_st.TCP_Source_Port.Single('80')
+    tcp_st.TCP_Dest_Port.Single('70')
+    tcp_st.Sequence_Number.Single('0x45')
+    tcp_st.Acknowledgement_Number.Single('0xcc')
+    udp_st = stack.UDP.add()
+    udp_st.UDP_Dest_Port.Single('77')
+    udp_st.UDP_Source_Port.Single('66')
+    udp_st.UDP_Length.Single('12')
+print(json.dumps(conf_assist.config_json, indent=4, sort_keys=True))
+errs = conf_assist.commit()
+if errs is not None:
+    raise Exception('json import has errors %s' % str(errs))
 
-# create a TrafficItem resource
-# TrafficItem acts a a high level container for ConfigElement resources
-# ConfigElement is a high level container for individual HighLevelStream resources
-traffic_item = ixnetwork.Traffic.TrafficItem.add(Name='Traffic Test', TrafficType='raw')
-traffic_item.EndpointSet.add(
-    Sources=ixnetwork.Vport.find(Name='^Tx').Protocols.find(), 
-    Destinations=ixnetwork.Vport.find(Name='^Rx').Protocols.find())
+chassis_ip = '10.36.74.205'
+test_ports = [
+    dict(Arg1=chassis_ip, Arg2=1, Arg3=13),
+    dict(Arg1=chassis_ip, Arg2=1, Arg3=14)
+]
 
-# using the traffic ConfigElement resource
-# update the frame rate
-# update the transmission control
-traffic_config = traffic_item.ConfigElement.find()
-traffic_config.FrameRate.update(Type='percentLineRate', Rate='100')
-traffic_config.TransmissionControl.update(Type='continuous')
+connected_ports = config.AssignPorts(test_ports, [], vport, True)
+eth1.Start()
 
-# adjust Ethernet stack fields
-destination_mac = traffic_config.Stack.find(StackTypeId='ethernet').Field.find(FieldTypeId='ethernet.header.destinationAddress')
-destination_mac.update(ValueType='valueList', ValueList=['00:00:fa:ce:fa:ce', '00:00:de:ad:be:ef'], TrackingEnabled=True)
+print('changing something after commit')
+vport[0].Name = 'changed_vport_1'
+vport.add(Name='new_vport')
+eth = config.Topology.add(Name='Topology_3', Vports=vport[-1])[-1].DeviceGroup.add(Multiplier=5, Name='dg1').\
+    Ethernet.add()
+eth.Mac.Increment(start_value='00:11:22:33:44:55', step_value='00:11:01:00:00:01')
+eth.Mtu.Single('1670')
+print(json.dumps(conf_assist.config_json, indent=4, sort_keys=True))
+conf_assist.commit()
+chassis_ip = '10.36.74.205'
+test_ports = [
+    dict(Arg1=chassis_ip, Arg2=1, Arg3=20),
+]
 
-# push ConfigElement settings down to HighLevelStream resources
-traffic_item.Generate()
-
-# connect ports to hardware test ports
-# apply traffic to hardware
-# start traffic
-port_map.Connect(ForceOwnership=True)
-ixnetwork.Traffic.Apply()
-ixnetwork.Traffic.StartStatelessTrafficBlocking()
-
-# print statistics
-print(session_assistant.StatViewAssistant('Port Statistics'))
-print(session_assistant.StatViewAssistant('Traffic Item Statistics'))
-print(session_assistant.StatViewAssistant('Flow Statistics'))
-
-# stop traffic
-ixnetwork.Traffic.StopStatelessTrafficBlocking()
+config.AssignPorts(test_ports, [], vport[-1], True)
+eth.Start()
+config.Traffic.Apply()
+config.Traffic.Start()
 ```
 
 ## Supported Server Versions
@@ -93,31 +124,6 @@ This client package supports versions 8.52 and up of the following servers:
 * Windows IxNetwork GUI
 * Windows IxNetwork Connection Manager
 
-## Documentation
-Documentation is available using the following methods:
-* [Online web based documentation](https://openixia.github.io/ixnetwork_restpy/#/overview)
-  * [Samples](https://openixia.github.io/ixnetwork_restpy/#/samples)
-  * [API Reference](https://openixia.github.io/ixnetwork_restpy/#/reference)
-
-* Documentation available in the online doc browser is also inlined in each class, property and method and can be viewed using the python help command
-  ```python
-  from ixnetwork_restpy import SessionAssistant
-  
-  help(SessionAssistant)
-  ```
-
-## Additional Samples
-Visit the [OpenIxia ixnetwork-restpy sample site maintained by solution architects](https://github.com/OpenIxia/IxNetwork/tree/master/RestPy) for in-depth end-to-end samples that demonstrate the following:
-* building a configuration
-  * from scratch
-  * from an existing IxNetwork configuration
-* running the configuration
-  * connecting ports to hardware
-  * starting protocols
-  * starting traffic
-* getting statistics
-  * port stats
-  * traffic stats
 
 ## Contributing
 The purpose of this repository is to allow users to clone the auto generated code. We do not accept pull requests in this repository.
