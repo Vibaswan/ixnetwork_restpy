@@ -59,7 +59,10 @@ class SbfdInitiator(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mplslabellist_37213b54082ea2315b262cbc86661827 import MplsLabelList
-        return MplsLabelList(self)
+        if self._properties.get('MplsLabelList', None) is None:
+            return MplsLabelList(self)
+        else:
+            return self._properties.get('MplsLabelList')
 
     @property
     def Active(self):

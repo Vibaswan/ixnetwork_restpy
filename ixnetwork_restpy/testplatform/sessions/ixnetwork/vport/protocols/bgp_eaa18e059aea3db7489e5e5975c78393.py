@@ -75,7 +75,10 @@ class Bgp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.neighborrange_26f40d15635b26e83238aa3bcab182ab import NeighborRange
-        return NeighborRange(self)
+        if self._properties.get('NeighborRange', None) is None:
+            return NeighborRange(self)
+        else:
+            return self._properties.get('NeighborRange')
 
     @property
     def AutoFillUpDutIp(self):

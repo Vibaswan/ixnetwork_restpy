@@ -56,7 +56,10 @@ class Vxlan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6autoconfiguration.startrate.startrate_1bba90e9b5242a924a45ce8454358006 import StartRate
-        return StartRate(self)._select()
+        if self._properties.get('StartRate', None) is None:
+            return StartRate(self)._select()
+        else:
+            return self._properties.get('StartRate')
 
     @property
     def StopRate(self):
@@ -70,7 +73,10 @@ class Vxlan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6autoconfiguration.stoprate.stoprate_e57c921a314c7c4a39ab432f5e2970a0 import StopRate
-        return StopRate(self)._select()
+        if self._properties.get('StopRate', None) is None:
+            return StopRate(self)._select()
+        else:
+            return self._properties.get('StopRate')
 
     @property
     def Count(self):

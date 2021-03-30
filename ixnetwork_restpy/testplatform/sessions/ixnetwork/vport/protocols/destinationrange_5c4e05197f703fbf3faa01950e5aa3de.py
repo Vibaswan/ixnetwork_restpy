@@ -62,7 +62,10 @@ class DestinationRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.egress_4e89b8b21cee661a60b28490fafa26ba import Egress
-        return Egress(self)._select()
+        if self._properties.get('Egress', None) is None:
+            return Egress(self)._select()
+        else:
+            return self._properties.get('Egress')
 
     @property
     def Ingress(self):
@@ -76,7 +79,10 @@ class DestinationRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ingress_33dc8ded2b02fef8a62aebcb3634bcab import Ingress
-        return Ingress(self)._select()
+        if self._properties.get('Ingress', None) is None:
+            return Ingress(self)._select()
+        else:
+            return self._properties.get('Ingress')
 
     @property
     def TunnelLeafRange(self):
@@ -90,7 +96,10 @@ class DestinationRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tunnelleafrange_8e42f0b89488e529f785c36a4e554bc3 import TunnelLeafRange
-        return TunnelLeafRange(self)
+        if self._properties.get('TunnelLeafRange', None) is None:
+            return TunnelLeafRange(self)
+        else:
+            return self._properties.get('TunnelLeafRange')
 
     @property
     def TunnelTailTrafficEndPoint(self):
@@ -104,7 +113,10 @@ class DestinationRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tunneltailtrafficendpoint_639a8d5989e9fb6bcae6b8a682f9147d import TunnelTailTrafficEndPoint
-        return TunnelTailTrafficEndPoint(self)
+        if self._properties.get('TunnelTailTrafficEndPoint', None) is None:
+            return TunnelTailTrafficEndPoint(self)
+        else:
+            return self._properties.get('TunnelTailTrafficEndPoint')
 
     @property
     def Behavior(self):

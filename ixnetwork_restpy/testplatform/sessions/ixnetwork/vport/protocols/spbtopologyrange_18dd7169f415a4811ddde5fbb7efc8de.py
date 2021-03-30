@@ -63,7 +63,10 @@ class SpbTopologyRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbbasevidrange_ed32bd1cb45aa63bef30330d07ca3b63 import SpbBaseVidRange
-        return SpbBaseVidRange(self)
+        if self._properties.get('SpbBaseVidRange', None) is None:
+            return SpbBaseVidRange(self)
+        else:
+            return self._properties.get('SpbBaseVidRange')
 
     @property
     def AuxMcidConfigName(self):

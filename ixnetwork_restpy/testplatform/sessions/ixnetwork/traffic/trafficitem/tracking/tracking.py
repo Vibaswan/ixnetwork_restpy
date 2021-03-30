@@ -58,7 +58,10 @@ class Tracking(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.tracking.egress.egress import Egress
-        return Egress(self)._select()
+        if self._properties.get('Egress', None) is None:
+            return Egress(self)._select()
+        else:
+            return self._properties.get('Egress')
 
     @property
     def LatencyBin(self):
@@ -72,7 +75,10 @@ class Tracking(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.tracking.latencybin.latencybin import LatencyBin
-        return LatencyBin(self)._select()
+        if self._properties.get('LatencyBin', None) is None:
+            return LatencyBin(self)._select()
+        else:
+            return self._properties.get('LatencyBin')
 
     @property
     def AvailableProtocolOffsets(self):

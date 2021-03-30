@@ -196,7 +196,20 @@ class Multivalue(Base):
         ----
         - value (str): The single value according to the format property
         """
-        self._set_pattern('singleValue', {'value': value})
+        if self._parent._xpathObj is not None and self._parent._xpathObj._mode == 'config':
+            multivalue_dict = dict()
+            if 'stack' in self._parent._properties['xpath']:
+                multivalue_dict['xpath'] = self._get_field_multivalue_xpath(self._href)
+                multivalue_dict['singleValue'] = value
+                multivalue_dict['valueType'] = 'singleValue'
+                multivalue_dict['auto'] = False
+            else:
+                multivalue_dict['xpath'] = self._get_multivalue_xpath(self._href, 'singleValue')
+                multivalue_dict['value'] = value
+
+            self._xpathObj._config.append(multivalue_dict)
+        else:
+            self._set_pattern('singleValue', {'value': value})
 
     def Alternate(self, alternating_value):
         """Sets the multivalue pattern to an alternating pattern
@@ -215,14 +228,34 @@ class Multivalue(Base):
         - start_value (str): The value at which to begin incrementing
         - step_value (str): The value to increment by
         """
-        payload = {
-            'direction': 'increment'
-        }
-        if start_value is not None:
-            payload['start'] = start_value
-        if step_value is not None:
-            payload['step'] = step_value
-        self._set_pattern('counter', payload)
+        if self._parent._xpathObj is not None and self._parent._xpathObj._mode == 'config':
+            multivalue_dict = dict()
+            if 'stack' in self._parent._properties['xpath']:
+                multivalue_dict['xpath'] = self._get_field_multivalue_xpath(self._href)
+                multivalue_dict['valueType'] = 'increment'
+                multivalue_dict['auto'] = False
+                if start_value is not None:
+                    multivalue_dict['startValue'] = start_value
+                if step_value is not None:
+                    multivalue_dict['stepValue'] = step_value
+            else:
+                multivalue_dict['xpath'] = self._get_multivalue_xpath(self._href, 'counter')
+                multivalue_dict['direction'] = 'increment'
+                if start_value is not None:
+                    multivalue_dict['start'] = start_value
+                if step_value is not None:
+                    multivalue_dict['step'] = step_value
+
+            self._xpathObj._config.append(multivalue_dict)
+        else:
+            payload = {
+                'direction': 'increment'
+            }
+            if start_value is not None:
+                payload['start'] = start_value
+            if step_value is not None:
+                payload['step'] = step_value
+            self._set_pattern('counter', payload)
 
     def Decrement(self, start_value=None, step_value=None):
         """Sets the multivalue to a decrementing pattern
@@ -482,3 +515,14 @@ class Multivalue(Base):
         """
         self._connection._update(self._href, {'clearOverlays': True})
         self._connection._update(self._href, {'clearOverlays': False})
+
+    def _get_multivalue_xpath(self, name, pattern):
+
+        source = "[@source = " + "'" + str(self.parent._properties['xpath']) + " " + name + "']"
+        xpath = '/multivalue' + source + '/' + pattern
+        return xpath
+
+    def _get_field_multivalue_xpath(self, name):
+        field_name = name
+        xpath = self.parent._properties['xpath'] + "/field[@alias = '" + field_name + "']"
+        return xpath

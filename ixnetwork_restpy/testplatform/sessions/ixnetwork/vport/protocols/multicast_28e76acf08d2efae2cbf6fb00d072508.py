@@ -51,7 +51,10 @@ class Multicast(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cluster_d68b61bb2cd5e48de06e56c1bb4b9cfb import Cluster
-        return Cluster(self)._select()
+        if self._properties.get('Cluster', None) is None:
+            return Cluster(self)._select()
+        else:
+            return self._properties.get('Cluster')
 
     @property
     def RouteDistinguisher(self):
@@ -65,7 +68,10 @@ class Multicast(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routedistinguisher_8fa128d6e1edad75c861bc7bece9a94e import RouteDistinguisher
-        return RouteDistinguisher(self)._select()
+        if self._properties.get('RouteDistinguisher', None) is None:
+            return RouteDistinguisher(self)._select()
+        else:
+            return self._properties.get('RouteDistinguisher')
 
     @property
     def EnableMulticast(self):

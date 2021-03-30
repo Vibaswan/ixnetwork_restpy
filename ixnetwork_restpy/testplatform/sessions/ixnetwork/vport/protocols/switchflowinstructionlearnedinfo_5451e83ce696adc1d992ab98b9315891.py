@@ -57,7 +57,10 @@ class SwitchFlowInstructionLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchactionv131learnedinfo_86b2a5d222052c3859c6e020913907f6 import SwitchActionV131LearnedInfo
-        return SwitchActionV131LearnedInfo(self)
+        if self._properties.get('SwitchActionV131LearnedInfo', None) is None:
+            return SwitchActionV131LearnedInfo(self)
+        else:
+            return self._properties.get('SwitchActionV131LearnedInfo')
 
     @property
     def Experimenter(self):

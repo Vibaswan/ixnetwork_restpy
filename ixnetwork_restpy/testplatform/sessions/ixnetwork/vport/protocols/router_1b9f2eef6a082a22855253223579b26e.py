@@ -57,7 +57,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_f9d377665e83c73675e7c739d6794822 import Interface
-        return Interface(self)
+        if self._properties.get('Interface', None) is None:
+            return Interface(self)
+        else:
+            return self._properties.get('Interface')
 
     @property
     def RouteRange(self):
@@ -71,7 +74,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routerange_6a711ea3d742cb807a3c457876b38c5b import RouteRange
-        return RouteRange(self)
+        if self._properties.get('RouteRange', None) is None:
+            return RouteRange(self)
+        else:
+            return self._properties.get('RouteRange')
 
     @property
     def EnableInterfaceMetric(self):

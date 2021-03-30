@@ -65,7 +65,10 @@ class OfChannelSessionPeersLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchauxiliaryconnectionlearnedinfo_31f88adaeba9902b816788412eca2f5c import SwitchAuxiliaryConnectionLearnedInfo
-        return SwitchAuxiliaryConnectionLearnedInfo(self)
+        if self._properties.get('SwitchAuxiliaryConnectionLearnedInfo', None) is None:
+            return SwitchAuxiliaryConnectionLearnedInfo(self)
+        else:
+            return self._properties.get('SwitchAuxiliaryConnectionLearnedInfo')
 
     @property
     def AveragePacketInReplyDelay(self):

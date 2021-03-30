@@ -50,7 +50,10 @@ class Predefined(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.actiontemplate_fa40ad00e03788c7e139f3ecbe0f7842 import ActionTemplate
-        return ActionTemplate(self)
+        if self._properties.get('ActionTemplate', None) is None:
+            return ActionTemplate(self)
+        else:
+            return self._properties.get('ActionTemplate')
 
     def add(self):
         """Adds a new predefined resource on the server and adds it to the container.

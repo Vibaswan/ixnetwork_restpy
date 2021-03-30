@@ -51,7 +51,10 @@ class Object(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.container_1a12044c5aa69dabfe18a51e622cd1b5 import Container
-        return Container(self)
+        if self._properties.get('Container', None) is None:
+            return Container(self)
+        else:
+            return self._properties.get('Container')
 
     @property
     def Field(self):
@@ -65,7 +68,10 @@ class Object(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.field_01f1f7f093248c40b24c4bf69cffe573 import Field
-        return Field(self)
+        if self._properties.get('Field', None) is None:
+            return Field(self)
+        else:
+            return self._properties.get('Field')
 
     @property
     def SubTlv(self):
@@ -79,7 +85,10 @@ class Object(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.subtlv_60e12b7ebaca7628a30e30506e5025bc import SubTlv
-        return SubTlv(self)
+        if self._properties.get('SubTlv', None) is None:
+            return SubTlv(self)
+        else:
+            return self._properties.get('SubTlv')
 
     @property
     def Name(self):

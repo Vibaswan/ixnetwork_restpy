@@ -62,7 +62,10 @@ class Ipv4Loopback(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bfdv4interface_91b557a3f744baf442dbe21ac75e8f2e import Bfdv4Interface
-        return Bfdv4Interface(self)
+        if self._properties.get('Bfdv4Interface', None) is None:
+            return Bfdv4Interface(self)
+        else:
+            return self._properties.get('Bfdv4Interface')
 
     @property
     def BgpIpv4Peer(self):
@@ -76,7 +79,10 @@ class Ipv4Loopback(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4peer_9dd9eddcf2bd784d82d8a016e392f035 import BgpIpv4Peer
-        return BgpIpv4Peer(self)
+        if self._properties.get('BgpIpv4Peer', None) is None:
+            return BgpIpv4Peer(self)
+        else:
+            return self._properties.get('BgpIpv4Peer')
 
     @property
     def Connector(self):
@@ -90,7 +96,10 @@ class Ipv4Loopback(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        return Connector(self)
+        if self._properties.get('Connector', None) is None:
+            return Connector(self)
+        else:
+            return self._properties.get('Connector')
 
     @property
     def ECpriRe(self):
@@ -104,7 +113,10 @@ class Ipv4Loopback(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprire_51f1030cbafd2e567d3b517032a1b011 import ECpriRe
-        return ECpriRe(self)
+        if self._properties.get('ECpriRe', None) is None:
+            return ECpriRe(self)
+        else:
+            return self._properties.get('ECpriRe')
 
     @property
     def ECpriRec(self):
@@ -118,7 +130,10 @@ class Ipv4Loopback(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec_129f1d43f285a4f806ade4e0df814255 import ECpriRec
-        return ECpriRec(self)
+        if self._properties.get('ECpriRec', None) is None:
+            return ECpriRec(self)
+        else:
+            return self._properties.get('ECpriRec')
 
     @property
     def Geneve(self):
@@ -132,7 +147,10 @@ class Ipv4Loopback(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.geneve_14ab6f140956b4fc77d1d0f03c5e7514 import Geneve
-        return Geneve(self)
+        if self._properties.get('Geneve', None) is None:
+            return Geneve(self)
+        else:
+            return self._properties.get('Geneve')
 
     @property
     def Greoipv4(self):
@@ -146,7 +164,10 @@ class Ipv4Loopback(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.greoipv4_47471ed6d75da2624c0a7f0801119b01 import Greoipv4
-        return Greoipv4(self)
+        if self._properties.get('Greoipv4', None) is None:
+            return Greoipv4(self)
+        else:
+            return self._properties.get('Greoipv4')
 
     @property
     def IgmpHost(self):
@@ -160,7 +181,10 @@ class Ipv4Loopback(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.igmphost_8940887674c0387469423e8df3a33854 import IgmpHost
-        return IgmpHost(self)
+        if self._properties.get('IgmpHost', None) is None:
+            return IgmpHost(self)
+        else:
+            return self._properties.get('IgmpHost')
 
     @property
     def IgmpQuerier(self):
@@ -174,7 +198,10 @@ class Ipv4Loopback(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.igmpquerier_38c883b0cec7ffb5405af90bf1b8cda5 import IgmpQuerier
-        return IgmpQuerier(self)
+        if self._properties.get('IgmpQuerier', None) is None:
+            return IgmpQuerier(self)
+        else:
+            return self._properties.get('IgmpQuerier')
 
     @property
     def LdpTargetedRouter(self):
@@ -188,7 +215,10 @@ class Ipv4Loopback(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedrouter_85c7a9993d80996c22a9dbd739df9692 import LdpTargetedRouter
-        return LdpTargetedRouter(self)
+        if self._properties.get('LdpTargetedRouter', None) is None:
+            return LdpTargetedRouter(self)
+        else:
+            return self._properties.get('LdpTargetedRouter')
 
     @property
     def MplsOam(self):
@@ -202,7 +232,10 @@ class Ipv4Loopback(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mplsoam_e01bb6affe899a4731aa60619f4aeadc import MplsOam
-        return MplsOam(self)
+        if self._properties.get('MplsOam', None) is None:
+            return MplsOam(self)
+        else:
+            return self._properties.get('MplsOam')
 
     @property
     def NetconfClient(self):
@@ -216,7 +249,10 @@ class Ipv4Loopback(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfclient_1eaa2ab0efacd988796bdc1f5fe4291c import NetconfClient
-        return NetconfClient(self)
+        if self._properties.get('NetconfClient', None) is None:
+            return NetconfClient(self)
+        else:
+            return self._properties.get('NetconfClient')
 
     @property
     def NetconfServer(self):
@@ -230,7 +266,10 @@ class Ipv4Loopback(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfserver_ad256f8ca38068f1eaff839ed40b1e30 import NetconfServer
-        return NetconfServer(self)
+        if self._properties.get('NetconfServer', None) is None:
+            return NetconfServer(self)
+        else:
+            return self._properties.get('NetconfServer')
 
     @property
     def Ntpclock(self):
@@ -244,7 +283,10 @@ class Ipv4Loopback(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ntpclock_0d879e81ae3d4c658c1fddb7e0bca059 import Ntpclock
-        return Ntpclock(self)
+        if self._properties.get('Ntpclock', None) is None:
+            return Ntpclock(self)
+        else:
+            return self._properties.get('Ntpclock')
 
     @property
     def Ospfv2(self):
@@ -258,7 +300,10 @@ class Ipv4Loopback(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv2_27b7a27a991a50e01e629b9de482a2f0 import Ospfv2
-        return Ospfv2(self)
+        if self._properties.get('Ospfv2', None) is None:
+            return Ospfv2(self)
+        else:
+            return self._properties.get('Ospfv2')
 
     @property
     def Pcc(self):
@@ -272,7 +317,10 @@ class Ipv4Loopback(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_9346785b55d17399fecd6fe36c418219 import Pcc
-        return Pcc(self)
+        if self._properties.get('Pcc', None) is None:
+            return Pcc(self)
+        else:
+            return self._properties.get('Pcc')
 
     @property
     def Pce(self):
@@ -286,7 +334,10 @@ class Ipv4Loopback(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pce_bd5f6a11078a4f0deb5d56bef8e9674f import Pce
-        return Pce(self)
+        if self._properties.get('Pce', None) is None:
+            return Pce(self)
+        else:
+            return self._properties.get('Pce')
 
     @property
     def PimV4Interface(self):
@@ -300,7 +351,10 @@ class Ipv4Loopback(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv4interface_92603cbceaf153039f7575ed9bc4aa67 import PimV4Interface
-        return PimV4Interface(self)
+        if self._properties.get('PimV4Interface', None) is None:
+            return PimV4Interface(self)
+        else:
+            return self._properties.get('PimV4Interface')
 
     @property
     def RsvpteLsps(self):
@@ -314,7 +368,10 @@ class Ipv4Loopback(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvptelsps_c853570a71a8549c854868139dd47959 import RsvpteLsps
-        return RsvpteLsps(self)
+        if self._properties.get('RsvpteLsps', None) is None:
+            return RsvpteLsps(self)
+        else:
+            return self._properties.get('RsvpteLsps')
 
     @property
     def Tag(self):
@@ -328,7 +385,10 @@ class Ipv4Loopback(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is None:
+            return Tag(self)
+        else:
+            return self._properties.get('Tag')
 
     @property
     def Vxlan(self):
@@ -342,7 +402,10 @@ class Ipv4Loopback(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlan_ed3df6fe7146492fc5fe0f77f53f9473 import Vxlan
-        return Vxlan(self)
+        if self._properties.get('Vxlan', None) is None:
+            return Vxlan(self)
+        else:
+            return self._properties.get('Vxlan')
 
     @property
     def Address(self):

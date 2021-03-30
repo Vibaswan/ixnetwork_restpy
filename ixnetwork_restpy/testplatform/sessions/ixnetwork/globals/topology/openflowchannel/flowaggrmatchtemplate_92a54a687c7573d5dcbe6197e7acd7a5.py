@@ -48,7 +48,10 @@ class FlowAggrMatchTemplate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.matchtemplate_ee15bafabf192236a3dca22667501f96 import MatchTemplate
-        return MatchTemplate(self)
+        if self._properties.get('MatchTemplate', None) is None:
+            return MatchTemplate(self)
+        else:
+            return self._properties.get('MatchTemplate')
 
     @property
     def Predefined(self):
@@ -62,4 +65,7 @@ class FlowAggrMatchTemplate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.predefined_948d5a993970b6a0e72926850bcf371e import Predefined
-        return Predefined(self)
+        if self._properties.get('Predefined', None) is None:
+            return Predefined(self)
+        else:
+            return self._properties.get('Predefined')

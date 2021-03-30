@@ -53,7 +53,10 @@ class IsisPseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisdcepseudoifaceattpoint1config_dce0066317952a09c055b9f568621953 import IsisDcePseudoIfaceAttPoint1Config
-        return IsisDcePseudoIfaceAttPoint1Config(self)
+        if self._properties.get('IsisDcePseudoIfaceAttPoint1Config', None) is None:
+            return IsisDcePseudoIfaceAttPoint1Config(self)
+        else:
+            return self._properties.get('IsisDcePseudoIfaceAttPoint1Config')
 
     @property
     def IsisDcePseudoIfaceAttPoint2Config(self):
@@ -67,7 +70,10 @@ class IsisPseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisdcepseudoifaceattpoint2config_08c96458d8806c0878ba2591f7235870 import IsisDcePseudoIfaceAttPoint2Config
-        return IsisDcePseudoIfaceAttPoint2Config(self)
+        if self._properties.get('IsisDcePseudoIfaceAttPoint2Config', None) is None:
+            return IsisDcePseudoIfaceAttPoint2Config(self)
+        else:
+            return self._properties.get('IsisDcePseudoIfaceAttPoint2Config')
 
     @property
     def IsisL3PseudoIfaceAttPoint1Config(self):
@@ -81,7 +87,10 @@ class IsisPseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudoifaceattpoint1config_e6b2374da4892fed3474f1ab974dbf1c import IsisL3PseudoIfaceAttPoint1Config
-        return IsisL3PseudoIfaceAttPoint1Config(self)
+        if self._properties.get('IsisL3PseudoIfaceAttPoint1Config', None) is None:
+            return IsisL3PseudoIfaceAttPoint1Config(self)
+        else:
+            return self._properties.get('IsisL3PseudoIfaceAttPoint1Config')
 
     @property
     def IsisL3PseudoIfaceAttPoint2Config(self):
@@ -95,7 +104,10 @@ class IsisPseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudoifaceattpoint2config_37681cb7f2d7b1eb6c812c1b9f243542 import IsisL3PseudoIfaceAttPoint2Config
-        return IsisL3PseudoIfaceAttPoint2Config(self)
+        if self._properties.get('IsisL3PseudoIfaceAttPoint2Config', None) is None:
+            return IsisL3PseudoIfaceAttPoint2Config(self)
+        else:
+            return self._properties.get('IsisL3PseudoIfaceAttPoint2Config')
 
     @property
     def IsisSpbPseudoIfaceAttPoint1Config(self):
@@ -109,7 +121,10 @@ class IsisPseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbpseudoifaceattpoint1config_04ab03c0f19e657e435c655358111db5 import IsisSpbPseudoIfaceAttPoint1Config
-        return IsisSpbPseudoIfaceAttPoint1Config(self)
+        if self._properties.get('IsisSpbPseudoIfaceAttPoint1Config', None) is None:
+            return IsisSpbPseudoIfaceAttPoint1Config(self)
+        else:
+            return self._properties.get('IsisSpbPseudoIfaceAttPoint1Config')
 
     @property
     def IsisSpbPseudoIfaceAttPoint2Config(self):
@@ -123,7 +138,10 @@ class IsisPseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbpseudoifaceattpoint2config_0781ccf029e86f2c708647212802930e import IsisSpbPseudoIfaceAttPoint2Config
-        return IsisSpbPseudoIfaceAttPoint2Config(self)
+        if self._properties.get('IsisSpbPseudoIfaceAttPoint2Config', None) is None:
+            return IsisSpbPseudoIfaceAttPoint2Config(self)
+        else:
+            return self._properties.get('IsisSpbPseudoIfaceAttPoint2Config')
 
     @property
     def IsisTrillPseudoIfaceAttPoint1Config(self):
@@ -137,7 +155,10 @@ class IsisPseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrillpseudoifaceattpoint1config_4c83cc199df8becee43d785e9ef03dc7 import IsisTrillPseudoIfaceAttPoint1Config
-        return IsisTrillPseudoIfaceAttPoint1Config(self)
+        if self._properties.get('IsisTrillPseudoIfaceAttPoint1Config', None) is None:
+            return IsisTrillPseudoIfaceAttPoint1Config(self)
+        else:
+            return self._properties.get('IsisTrillPseudoIfaceAttPoint1Config')
 
     @property
     def IsisTrillPseudoIfaceAttPoint2Config(self):
@@ -151,7 +172,10 @@ class IsisPseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrillpseudoifaceattpoint2config_1910327d5bcdde39c812851ec539a846 import IsisTrillPseudoIfaceAttPoint2Config
-        return IsisTrillPseudoIfaceAttPoint2Config(self)
+        if self._properties.get('IsisTrillPseudoIfaceAttPoint2Config', None) is None:
+            return IsisTrillPseudoIfaceAttPoint2Config(self)
+        else:
+            return self._properties.get('IsisTrillPseudoIfaceAttPoint2Config')
 
     @property
     def Count(self):

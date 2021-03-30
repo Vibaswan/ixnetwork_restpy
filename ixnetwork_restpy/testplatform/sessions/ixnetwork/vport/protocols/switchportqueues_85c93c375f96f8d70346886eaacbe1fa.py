@@ -53,7 +53,10 @@ class SwitchPortQueues(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.queueproperty_5295fc00106cfc72ca8973e0955937b8 import QueueProperty
-        return QueueProperty(self)._select()
+        if self._properties.get('QueueProperty', None) is None:
+            return QueueProperty(self)._select()
+        else:
+            return self._properties.get('QueueProperty')
 
     @property
     def MinRate(self):

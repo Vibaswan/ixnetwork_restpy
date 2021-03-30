@@ -54,7 +54,10 @@ class OpenFlowFailoverPerformance(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.results_23583c0cce1dabf7b75fe7d2ae18cfc4 import Results
-        return Results(self)._select()
+        if self._properties.get('Results', None) is None:
+            return Results(self)._select()
+        else:
+            return self._properties.get('Results')
 
     @property
     def TestConfig(self):
@@ -68,7 +71,10 @@ class OpenFlowFailoverPerformance(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_c11000006563cc3dc0fd4ebd8b9867ce import TestConfig
-        return TestConfig(self)._select()
+        if self._properties.get('TestConfig', None) is None:
+            return TestConfig(self)._select()
+        else:
+            return self._properties.get('TestConfig')
 
     @property
     def TrafficSelection(self):
@@ -82,7 +88,10 @@ class OpenFlowFailoverPerformance(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.trafficselection_e70293c1d497ca3a4de220ed6cf2ab95 import TrafficSelection
-        return TrafficSelection(self)
+        if self._properties.get('TrafficSelection', None) is None:
+            return TrafficSelection(self)
+        else:
+            return self._properties.get('TrafficSelection')
 
     @property
     def ForceApplyQTConfig(self):

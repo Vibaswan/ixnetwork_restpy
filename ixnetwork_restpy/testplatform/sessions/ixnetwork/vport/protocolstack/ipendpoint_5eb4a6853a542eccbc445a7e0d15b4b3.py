@@ -53,7 +53,10 @@ class IpEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.amt_151e2266e2df5cd4090ea2ebba0de372 import Amt
-        return Amt(self)
+        if self._properties.get('Amt', None) is None:
+            return Amt(self)
+        else:
+            return self._properties.get('Amt')
 
     @property
     def Ancp(self):
@@ -67,7 +70,10 @@ class IpEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancp_ed884bb04def6d1378e02d00c217a0e0 import Ancp
-        return Ancp(self)
+        if self._properties.get('Ancp', None) is None:
+            return Ancp(self)
+        else:
+            return self._properties.get('Ancp')
 
     @property
     def EapoUdp(self):
@@ -81,7 +87,10 @@ class IpEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.eapoudp_df39414f71a07e89cc26928748d51e39 import EapoUdp
-        return EapoUdp(self)
+        if self._properties.get('EapoUdp', None) is None:
+            return EapoUdp(self)
+        else:
+            return self._properties.get('EapoUdp')
 
     @property
     def IgmpMld(self):
@@ -95,7 +104,10 @@ class IpEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.igmpmld_d5aaf716dee3c10749b49f601a57feaf import IgmpMld
-        return IgmpMld(self)
+        if self._properties.get('IgmpMld', None) is None:
+            return IgmpMld(self)
+        else:
+            return self._properties.get('IgmpMld')
 
     @property
     def IgmpQuerier(self):
@@ -109,7 +121,10 @@ class IpEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.igmpquerier_6f615903f4a4b16a63be4c1444aba8ed import IgmpQuerier
-        return IgmpQuerier(self)
+        if self._properties.get('IgmpQuerier', None) is None:
+            return IgmpQuerier(self)
+        else:
+            return self._properties.get('IgmpQuerier')
 
     @property
     def Iptv(self):
@@ -123,7 +138,10 @@ class IpEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.iptv_0b6ffeca151f84f844c62183b8c7addc import Iptv
-        return Iptv(self)
+        if self._properties.get('Iptv', None) is None:
+            return Iptv(self)
+        else:
+            return self._properties.get('Iptv')
 
     @property
     def Ptp(self):
@@ -137,7 +155,10 @@ class IpEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ptp_4946969b1dc760427b0cfbcfe8d5d621 import Ptp
-        return Ptp(self)
+        if self._properties.get('Ptp', None) is None:
+            return Ptp(self)
+        else:
+            return self._properties.get('Ptp')
 
     @property
     def Range(self):
@@ -151,7 +172,10 @@ class IpEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_df989eb48817c7440dc6576fa44a3b35 import Range
-        return Range(self)
+        if self._properties.get('Range', None) is None:
+            return Range(self)
+        else:
+            return self._properties.get('Range')
 
     @property
     def TwampClient(self):
@@ -165,7 +189,10 @@ class IpEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.twampclient_87758414b1b4857732f3f7a1084b07e8 import TwampClient
-        return TwampClient(self)
+        if self._properties.get('TwampClient', None) is None:
+            return TwampClient(self)
+        else:
+            return self._properties.get('TwampClient')
 
     @property
     def TwampServer(self):
@@ -179,7 +206,10 @@ class IpEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.twampserver_286eeab244671765db983b1e4018d077 import TwampServer
-        return TwampServer(self)
+        if self._properties.get('TwampServer', None) is None:
+            return TwampServer(self)
+        else:
+            return self._properties.get('TwampServer')
 
     @property
     def WebAuth(self):
@@ -193,7 +223,10 @@ class IpEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.webauth_544980df6d4db26e902e52ff78d9a8fb import WebAuth
-        return WebAuth(self)
+        if self._properties.get('WebAuth', None) is None:
+            return WebAuth(self)
+        else:
+            return self._properties.get('WebAuth')
 
     @property
     def Name(self):

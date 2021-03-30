@@ -65,7 +65,10 @@ class GroupStatLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.groupstatbucketlearnedinformation_ea950e7a0b1b747c2fcba6a0c4ea81a3 import GroupStatBucketLearnedInformation
-        return GroupStatBucketLearnedInformation(self)
+        if self._properties.get('GroupStatBucketLearnedInformation', None) is None:
+            return GroupStatBucketLearnedInformation(self)
+        else:
+            return self._properties.get('GroupStatBucketLearnedInformation')
 
     @property
     def ByteCount(self):

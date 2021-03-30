@@ -57,7 +57,10 @@ class IsisSpbSimulatedTopologyConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.spbnodetopologylist_97764ea2c3708885007bc4d842895ee4 import SpbNodeTopologyList
-        return SpbNodeTopologyList(self)._select()
+        if self._properties.get('SpbNodeTopologyList', None) is None:
+            return SpbNodeTopologyList(self)._select()
+        else:
+            return self._properties.get('SpbNodeTopologyList')
 
     @property
     def Active(self):

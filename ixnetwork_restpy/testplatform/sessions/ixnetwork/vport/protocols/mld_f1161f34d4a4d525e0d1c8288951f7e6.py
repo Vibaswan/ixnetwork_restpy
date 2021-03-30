@@ -57,7 +57,10 @@ class Mld(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.host_ccc6ee5b5f10dfdd7800ee0a19c9fc08 import Host
-        return Host(self)
+        if self._properties.get('Host', None) is None:
+            return Host(self)
+        else:
+            return self._properties.get('Host')
 
     @property
     def Querier(self):
@@ -71,7 +74,10 @@ class Mld(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.querier_3b93d261a71a61678c9da328f3a64617 import Querier
-        return Querier(self)
+        if self._properties.get('Querier', None) is None:
+            return Querier(self)
+        else:
+            return self._properties.get('Querier')
 
     @property
     def EnableDoneOnStop(self):

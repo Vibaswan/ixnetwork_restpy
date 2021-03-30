@@ -57,7 +57,10 @@ class DceNodeTopologyList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.interestedvlanlist_c4246703970074b5d8b3f8c491eb8622 import InterestedVlanList
-        return InterestedVlanList(self)._select()
+        if self._properties.get('InterestedVlanList', None) is None:
+            return InterestedVlanList(self)._select()
+        else:
+            return self._properties.get('InterestedVlanList')
 
     @property
     def Active(self):

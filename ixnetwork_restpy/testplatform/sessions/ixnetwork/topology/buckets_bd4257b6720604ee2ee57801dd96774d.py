@@ -59,7 +59,10 @@ class Buckets(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.actionsprofile_c65384e18e20517e184ef23474b0b960 import ActionsProfile
-        return ActionsProfile(self)._select()
+        if self._properties.get('ActionsProfile', None) is None:
+            return ActionsProfile(self)._select()
+        else:
+            return self._properties.get('ActionsProfile')
 
     @property
     def BucketDescription(self):

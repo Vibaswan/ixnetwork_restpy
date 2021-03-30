@@ -52,7 +52,10 @@ class OpenFlowController(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.actionstemplate_3506879509654c1d0d77f933edb1922c import ActionsTemplate
-        return ActionsTemplate(self)._select()
+        if self._properties.get('ActionsTemplate', None) is None:
+            return ActionsTemplate(self)._select()
+        else:
+            return self._properties.get('ActionsTemplate')
 
     @property
     def FlowSetTemplate(self):
@@ -66,7 +69,10 @@ class OpenFlowController(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.flowsettemplate_1b79b45150c48e9f752113654ba90a51 import FlowSetTemplate
-        return FlowSetTemplate(self)._select()
+        if self._properties.get('FlowSetTemplate', None) is None:
+            return FlowSetTemplate(self)._select()
+        else:
+            return self._properties.get('FlowSetTemplate')
 
     @property
     def Count(self):

@@ -50,7 +50,10 @@ class NextHopInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rdinfo_6df195a280929c420e4fb4b07a6220cd import RdInfo
-        return RdInfo(self)
+        if self._properties.get('RdInfo', None) is None:
+            return RdInfo(self)
+        else:
+            return self._properties.get('RdInfo')
 
     @property
     def NextHop(self):

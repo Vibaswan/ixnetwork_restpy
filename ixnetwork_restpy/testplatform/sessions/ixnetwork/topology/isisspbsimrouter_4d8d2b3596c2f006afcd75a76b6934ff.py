@@ -65,7 +65,10 @@ class IsisSpbSimRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        return Connector(self)
+        if self._properties.get('Connector', None) is None:
+            return Connector(self)
+        else:
+            return self._properties.get('Connector')
 
     @property
     def SpbSimEdgeTopologyList(self):
@@ -79,7 +82,10 @@ class IsisSpbSimRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.spbsimedgetopologylist_5e9b551439bb252c1fa3e2c6948a1432 import SpbSimEdgeTopologyList
-        return SpbSimEdgeTopologyList(self)._select()
+        if self._properties.get('SpbSimEdgeTopologyList', None) is None:
+            return SpbSimEdgeTopologyList(self)._select()
+        else:
+            return self._properties.get('SpbSimEdgeTopologyList')
 
     @property
     def Active(self):

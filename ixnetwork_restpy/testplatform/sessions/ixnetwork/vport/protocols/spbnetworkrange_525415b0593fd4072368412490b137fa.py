@@ -60,7 +60,10 @@ class SpbNetworkRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spboutsidelinks_dfb7b1e816409cddb14e138ebc2096dc import SpbOutsideLinks
-        return SpbOutsideLinks(self)
+        if self._properties.get('SpbOutsideLinks', None) is None:
+            return SpbOutsideLinks(self)
+        else:
+            return self._properties.get('SpbOutsideLinks')
 
     @property
     def SpbmNodeTopologyRange(self):
@@ -74,7 +77,10 @@ class SpbNetworkRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbmnodetopologyrange_199093afa11cd9f4488faaa1ad3ec3a7 import SpbmNodeTopologyRange
-        return SpbmNodeTopologyRange(self)
+        if self._properties.get('SpbmNodeTopologyRange', None) is None:
+            return SpbmNodeTopologyRange(self)
+        else:
+            return self._properties.get('SpbmNodeTopologyRange')
 
     @property
     def EnableAdvertiseNetworkRange(self):

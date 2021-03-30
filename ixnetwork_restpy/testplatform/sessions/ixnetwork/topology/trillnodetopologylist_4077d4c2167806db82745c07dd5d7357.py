@@ -55,7 +55,10 @@ class TrillNodeTopologyList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.interestedvlanlist_c042412b751d673b9fbaaf71ca229e77 import InterestedVlanList
-        return InterestedVlanList(self)._select()
+        if self._properties.get('InterestedVlanList', None) is None:
+            return InterestedVlanList(self)._select()
+        else:
+            return self._properties.get('InterestedVlanList')
 
     @property
     def Active(self):

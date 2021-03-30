@@ -51,7 +51,10 @@ class AvailableHardware(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.chassis.chassis import Chassis
-        return Chassis(self)
+        if self._properties.get('Chassis', None) is None:
+            return Chassis(self)
+        else:
+            return self._properties.get('Chassis')
 
     @property
     def VirtualChassis(self):
@@ -65,7 +68,10 @@ class AvailableHardware(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.virtualchassis import VirtualChassis
-        return VirtualChassis(self)._select()
+        if self._properties.get('VirtualChassis', None) is None:
+            return VirtualChassis(self)._select()
+        else:
+            return self._properties.get('VirtualChassis')
 
     @property
     def IsLocked(self):

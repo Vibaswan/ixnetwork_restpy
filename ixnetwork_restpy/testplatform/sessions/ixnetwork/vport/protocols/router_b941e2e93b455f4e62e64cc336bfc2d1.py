@@ -59,7 +59,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_97fe2baaa3bd9a0d65fcae0b6ca30b80 import Interface
-        return Interface(self)
+        if self._properties.get('Interface', None) is None:
+            return Interface(self)
+        else:
+            return self._properties.get('Interface')
 
     @property
     def DataMdtInterval(self):

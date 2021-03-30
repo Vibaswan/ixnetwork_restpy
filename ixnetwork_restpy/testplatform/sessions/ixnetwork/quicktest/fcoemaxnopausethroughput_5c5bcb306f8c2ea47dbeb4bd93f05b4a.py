@@ -54,7 +54,10 @@ class FcoeMaxNoPauseThroughput(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.passcriteria_2f84ada625563113d3ef4f44b25dd7e2 import PassCriteria
-        return PassCriteria(self)._select()
+        if self._properties.get('PassCriteria', None) is None:
+            return PassCriteria(self)._select()
+        else:
+            return self._properties.get('PassCriteria')
 
     @property
     def Results(self):
@@ -68,7 +71,10 @@ class FcoeMaxNoPauseThroughput(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.results_23583c0cce1dabf7b75fe7d2ae18cfc4 import Results
-        return Results(self)._select()
+        if self._properties.get('Results', None) is None:
+            return Results(self)._select()
+        else:
+            return self._properties.get('Results')
 
     @property
     def TestConfig(self):
@@ -82,7 +88,10 @@ class FcoeMaxNoPauseThroughput(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_8a5f78af7080d334e5291c5901cb096c import TestConfig
-        return TestConfig(self)._select()
+        if self._properties.get('TestConfig', None) is None:
+            return TestConfig(self)._select()
+        else:
+            return self._properties.get('TestConfig')
 
     @property
     def TrafficSelection(self):
@@ -96,7 +105,10 @@ class FcoeMaxNoPauseThroughput(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.trafficselection_206d3c7fd8956cf41e032f8402bda1d7 import TrafficSelection
-        return TrafficSelection(self)
+        if self._properties.get('TrafficSelection', None) is None:
+            return TrafficSelection(self)
+        else:
+            return self._properties.get('TrafficSelection')
 
     @property
     def ForceApplyQTConfig(self):

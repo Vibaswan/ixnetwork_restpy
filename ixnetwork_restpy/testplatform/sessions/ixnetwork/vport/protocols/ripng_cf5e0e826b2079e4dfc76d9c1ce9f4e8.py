@@ -52,7 +52,10 @@ class Ripng(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_1b9f2eef6a082a22855253223579b26e import Router
-        return Router(self)
+        if self._properties.get('Router', None) is None:
+            return Router(self)
+        else:
+            return self._properties.get('Router')
 
     @property
     def Enabled(self):

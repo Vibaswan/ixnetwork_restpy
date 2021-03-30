@@ -50,7 +50,10 @@ class TableUdf(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.tableudf.column.column import Column
-        return Column(self)
+        if self._properties.get('Column', None) is None:
+            return Column(self)
+        else:
+            return self._properties.get('Column')
 
     @property
     def Enabled(self):

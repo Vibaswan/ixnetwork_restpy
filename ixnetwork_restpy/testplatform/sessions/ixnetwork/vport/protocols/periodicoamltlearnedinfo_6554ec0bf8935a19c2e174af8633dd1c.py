@@ -62,7 +62,10 @@ class PeriodicOamLtLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ltlearnedhop_57462a3f529f62632b3fd3cbe879b821 import LtLearnedHop
-        return LtLearnedHop(self)
+        if self._properties.get('LtLearnedHop', None) is None:
+            return LtLearnedHop(self)
+        else:
+            return self._properties.get('LtLearnedHop')
 
     @property
     def AverageHopCount(self):

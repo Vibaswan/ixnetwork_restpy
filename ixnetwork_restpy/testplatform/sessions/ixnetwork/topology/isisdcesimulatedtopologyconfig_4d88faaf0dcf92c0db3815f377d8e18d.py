@@ -56,7 +56,10 @@ class IsisDceSimulatedTopologyConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dcenodetopologylist_88a5fd3dfb37184b7299bc183cfa4683 import DceNodeTopologyList
-        return DceNodeTopologyList(self)._select()
+        if self._properties.get('DceNodeTopologyList', None) is None:
+            return DceNodeTopologyList(self)._select()
+        else:
+            return self._properties.get('DceNodeTopologyList')
 
     @property
     def Active(self):

@@ -61,7 +61,10 @@ class DataMdt(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedmdtstate_5cd942bb0e7b0813e07ddcdeef6dc509 import LearnedMdtState
-        return LearnedMdtState(self)
+        if self._properties.get('LearnedMdtState', None) is None:
+            return LearnedMdtState(self)
+        else:
+            return self._properties.get('LearnedMdtState')
 
     @property
     def ActivationInterval(self):

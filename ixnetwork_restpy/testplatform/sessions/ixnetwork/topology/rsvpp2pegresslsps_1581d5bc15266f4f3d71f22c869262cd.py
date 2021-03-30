@@ -69,7 +69,10 @@ class RsvpP2PEgressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvprrosubobjectslist_77057ceebebb20e47d2ca898582fad61 import RsvpRROSubObjectsList
-        return RsvpRROSubObjectsList(self)
+        if self._properties.get('RsvpRROSubObjectsList', None) is None:
+            return RsvpRROSubObjectsList(self)
+        else:
+            return self._properties.get('RsvpRROSubObjectsList')
 
     @property
     def Tag(self):
@@ -83,7 +86,10 @@ class RsvpP2PEgressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is None:
+            return Tag(self)
+        else:
+            return self._properties.get('Tag')
 
     @property
     def Active(self):

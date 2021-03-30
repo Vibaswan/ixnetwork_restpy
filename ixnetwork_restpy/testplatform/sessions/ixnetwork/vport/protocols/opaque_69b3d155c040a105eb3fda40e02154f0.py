@@ -50,7 +50,10 @@ class Opaque(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linktlv_fb695855361b3a0445dcc6b871454c32 import LinkTlv
-        return LinkTlv(self)
+        if self._properties.get('LinkTlv', None) is None:
+            return LinkTlv(self)
+        else:
+            return self._properties.get('LinkTlv')
 
     @property
     def RouterTlv(self):
@@ -64,7 +67,10 @@ class Opaque(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routertlv_c79f980b90b1fb4a01c23bb66ed1380b import RouterTlv
-        return RouterTlv(self)
+        if self._properties.get('RouterTlv', None) is None:
+            return RouterTlv(self)
+        else:
+            return self._properties.get('RouterTlv')
 
     @property
     def EnableRouterTlv(self):

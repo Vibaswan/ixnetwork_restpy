@@ -51,7 +51,10 @@ class VendorRef(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.vendorref.nactypes.nactypes import NacTypes
-        return NacTypes(self)
+        if self._properties.get('NacTypes', None) is None:
+            return NacTypes(self)
+        else:
+            return self._properties.get('NacTypes')
 
     @property
     def Name(self):

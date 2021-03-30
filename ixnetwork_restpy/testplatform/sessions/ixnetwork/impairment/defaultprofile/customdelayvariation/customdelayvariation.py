@@ -50,7 +50,10 @@ class CustomDelayVariation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.customdelayvariation.customvalue.customvalue import CustomValue
-        return CustomValue(self)
+        if self._properties.get('CustomValue', None) is None:
+            return CustomValue(self)
+        else:
+            return self._properties.get('CustomValue')
 
     @property
     def Enabled(self):

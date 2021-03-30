@@ -49,7 +49,10 @@ class TapSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.chassis.card.port.tapsettings.parameter.parameter import Parameter
-        return Parameter(self)
+        if self._properties.get('Parameter', None) is None:
+            return Parameter(self)
+        else:
+            return self._properties.get('Parameter')
 
     def find(self):
         """Finds and retrieves tapSettings resources from the server.

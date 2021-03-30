@@ -130,7 +130,10 @@ class SwitchFlowLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchactionlearnedinfo_bdf22d3ada1e6a5c89980c5bf98ceac9 import SwitchActionLearnedInfo
-        return SwitchActionLearnedInfo(self)
+        if self._properties.get('SwitchActionLearnedInfo', None) is None:
+            return SwitchActionLearnedInfo(self)
+        else:
+            return self._properties.get('SwitchActionLearnedInfo')
 
     @property
     def SwitchFlowInstructionLearnedInfo(self):
@@ -144,7 +147,10 @@ class SwitchFlowLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchflowinstructionlearnedinfo_5451e83ce696adc1d992ab98b9315891 import SwitchFlowInstructionLearnedInfo
-        return SwitchFlowInstructionLearnedInfo(self)
+        if self._properties.get('SwitchFlowInstructionLearnedInfo', None) is None:
+            return SwitchFlowInstructionLearnedInfo(self)
+        else:
+            return self._properties.get('SwitchFlowInstructionLearnedInfo')
 
     @property
     def ActiveNanoSeconds(self):

@@ -72,7 +72,10 @@ class BgpEpePeerList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpepepeerlinklist_64989e297b3e27479937928bcec9cd7f import BgpEpePeerLinkList
-        return BgpEpePeerLinkList(self)._select()
+        if self._properties.get('BgpEpePeerLinkList', None) is None:
+            return BgpEpePeerLinkList(self)._select()
+        else:
+            return self._properties.get('BgpEpePeerLinkList')
 
     @property
     def BgpEpePeerSetList(self):
@@ -86,7 +89,10 @@ class BgpEpePeerList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpepepeersetlist_ece8f83471c092e69963d1f732d4f4fb import BgpEpePeerSetList
-        return BgpEpePeerSetList(self)
+        if self._properties.get('BgpEpePeerSetList', None) is None:
+            return BgpEpePeerSetList(self)
+        else:
+            return self._properties.get('BgpEpePeerSetList')
 
     @property
     def Active(self):

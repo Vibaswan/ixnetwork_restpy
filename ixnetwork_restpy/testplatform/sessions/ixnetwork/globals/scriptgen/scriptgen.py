@@ -58,7 +58,10 @@ class Scriptgen(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.scriptgen.base64codeoptions.base64codeoptions import Base64CodeOptions
-        return Base64CodeOptions(self)._select()
+        if self._properties.get('Base64CodeOptions', None) is None:
+            return Base64CodeOptions(self)._select()
+        else:
+            return self._properties.get('Base64CodeOptions')
 
     @property
     def IxNetCodeOptions(self):
@@ -72,7 +75,10 @@ class Scriptgen(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.scriptgen.ixnetcodeoptions.ixnetcodeoptions import IxNetCodeOptions
-        return IxNetCodeOptions(self)._select()
+        if self._properties.get('IxNetCodeOptions', None) is None:
+            return IxNetCodeOptions(self)._select()
+        else:
+            return self._properties.get('IxNetCodeOptions')
 
     @property
     def ConnectHostname(self):

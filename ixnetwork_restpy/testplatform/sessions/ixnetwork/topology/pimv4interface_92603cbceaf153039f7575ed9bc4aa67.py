@@ -88,7 +88,10 @@ class PimV4Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        return LearnedInfo(self)
+        if self._properties.get('LearnedInfo', None) is None:
+            return LearnedInfo(self)
+        else:
+            return self._properties.get('LearnedInfo')
 
     @property
     def PimV4CandidateRPsList(self):
@@ -102,7 +105,10 @@ class PimV4Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv4candidaterpslist_8f7559105ce2b97021af17fcfae64d10 import PimV4CandidateRPsList
-        return PimV4CandidateRPsList(self)._select()
+        if self._properties.get('PimV4CandidateRPsList', None) is None:
+            return PimV4CandidateRPsList(self)._select()
+        else:
+            return self._properties.get('PimV4CandidateRPsList')
 
     @property
     def PimV4JoinPruneList(self):
@@ -116,7 +122,10 @@ class PimV4Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv4joinprunelist_6cf76e8d5773a1dc5c5562875733510d import PimV4JoinPruneList
-        return PimV4JoinPruneList(self)._select()
+        if self._properties.get('PimV4JoinPruneList', None) is None:
+            return PimV4JoinPruneList(self)._select()
+        else:
+            return self._properties.get('PimV4JoinPruneList')
 
     @property
     def PimV4SourcesList(self):
@@ -130,7 +139,10 @@ class PimV4Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv4sourceslist_75a6674b863a284f98faeffbb0b40d9f import PimV4SourcesList
-        return PimV4SourcesList(self)._select()
+        if self._properties.get('PimV4SourcesList', None) is None:
+            return PimV4SourcesList(self)._select()
+        else:
+            return self._properties.get('PimV4SourcesList')
 
     @property
     def Tag(self):
@@ -144,7 +156,10 @@ class PimV4Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is None:
+            return Tag(self)
+        else:
+            return self._properties.get('Tag')
 
     @property
     def Active(self):

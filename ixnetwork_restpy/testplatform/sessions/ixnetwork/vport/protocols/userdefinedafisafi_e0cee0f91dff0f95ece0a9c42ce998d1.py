@@ -52,7 +52,10 @@ class UserDefinedAfiSafi(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.userdefinedafisafiroutes_4a2f57d9f1e4ecf548886495ab327957 import UserDefinedAfiSafiRoutes
-        return UserDefinedAfiSafiRoutes(self)
+        if self._properties.get('UserDefinedAfiSafiRoutes', None) is None:
+            return UserDefinedAfiSafiRoutes(self)
+        else:
+            return self._properties.get('UserDefinedAfiSafiRoutes')
 
     @property
     def Afi(self):

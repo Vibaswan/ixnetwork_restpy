@@ -71,7 +71,10 @@ class Ovsdbserver(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.manager_c6443684a3a8badebe021783a46d1b90 import Manager
-        return Manager(self)._select()
+        if self._properties.get('Manager', None) is None:
+            return Manager(self)._select()
+        else:
+            return self._properties.get('Manager')
 
     @property
     def ConnectedVia(self):

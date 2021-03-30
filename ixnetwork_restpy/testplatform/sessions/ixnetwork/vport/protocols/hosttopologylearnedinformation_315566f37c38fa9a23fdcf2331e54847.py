@@ -48,7 +48,10 @@ class HostTopologyLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchhostrangelearnedinfo_4b8cdab80884ed8a3ce6bf35f9235d28 import SwitchHostRangeLearnedInfo
-        return SwitchHostRangeLearnedInfo(self)
+        if self._properties.get('SwitchHostRangeLearnedInfo', None) is None:
+            return SwitchHostRangeLearnedInfo(self)
+        else:
+            return self._properties.get('SwitchHostRangeLearnedInfo')
 
     @property
     def SwitchHostRangeLearnedInfoTriggerAttributes(self):
@@ -62,7 +65,10 @@ class HostTopologyLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchhostrangelearnedinfotriggerattributes_972a89638b94fd8481cd311e99101fb6 import SwitchHostRangeLearnedInfoTriggerAttributes
-        return SwitchHostRangeLearnedInfoTriggerAttributes(self)._select()
+        if self._properties.get('SwitchHostRangeLearnedInfoTriggerAttributes', None) is None:
+            return SwitchHostRangeLearnedInfoTriggerAttributes(self)._select()
+        else:
+            return self._properties.get('SwitchHostRangeLearnedInfoTriggerAttributes')
 
     def RefreshHostRangeLearnedInformation(self):
         """Executes the refreshHostRangeLearnedInformation operation on the server.

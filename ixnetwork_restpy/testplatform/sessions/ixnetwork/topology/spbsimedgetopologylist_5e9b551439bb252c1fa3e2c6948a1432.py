@@ -59,7 +59,10 @@ class SpbSimEdgeTopologyList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.spbsimedgebasevidlist_166a7ab8274498ee804810aa449de276 import SpbSimEdgeBaseVidList
-        return SpbSimEdgeBaseVidList(self)._select()
+        if self._properties.get('SpbSimEdgeBaseVidList', None) is None:
+            return SpbSimEdgeBaseVidList(self)._select()
+        else:
+            return self._properties.get('SpbSimEdgeBaseVidList')
 
     @property
     def Active(self):

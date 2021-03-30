@@ -80,7 +80,10 @@ class OfChannel(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.capabilities_7d6e406d1efdbda3acae83a1ab3dc115 import Capabilities
-        return Capabilities(self)._select()
+        if self._properties.get('Capabilities', None) is None:
+            return Capabilities(self)._select()
+        else:
+            return self._properties.get('Capabilities')
 
     @property
     def ControllerTables(self):
@@ -94,7 +97,10 @@ class OfChannel(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.controllertables_b08b52da94e823b80aebfaa5cfd6b830 import ControllerTables
-        return ControllerTables(self)
+        if self._properties.get('ControllerTables', None) is None:
+            return ControllerTables(self)
+        else:
+            return self._properties.get('ControllerTables')
 
     @property
     def FlowRange(self):
@@ -108,7 +114,10 @@ class OfChannel(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flowrange_dadf715d9911c80041900649dfb17b6f import FlowRange
-        return FlowRange(self)
+        if self._properties.get('FlowRange', None) is None:
+            return FlowRange(self)
+        else:
+            return self._properties.get('FlowRange')
 
     @property
     def Group(self):
@@ -122,7 +131,10 @@ class OfChannel(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.group_dc1ea6f769ef40a76b890b6adc5b066e import Group
-        return Group(self)
+        if self._properties.get('Group', None) is None:
+            return Group(self)
+        else:
+            return self._properties.get('Group')
 
     @property
     def Meter(self):
@@ -136,7 +148,10 @@ class OfChannel(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.meter_2c69b422ca995f9644cfcb1baed8878b import Meter
-        return Meter(self)
+        if self._properties.get('Meter', None) is None:
+            return Meter(self)
+        else:
+            return self._properties.get('Meter')
 
     @property
     def SupportedActions(self):
@@ -150,7 +165,10 @@ class OfChannel(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.supportedactions_254a680c00e984c339218013d4bba199 import SupportedActions
-        return SupportedActions(self)._select()
+        if self._properties.get('SupportedActions', None) is None:
+            return SupportedActions(self)._select()
+        else:
+            return self._properties.get('SupportedActions')
 
     @property
     def SwitchPacketIn(self):
@@ -164,7 +182,10 @@ class OfChannel(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchpacketin_7ad25f2582016d49b37dd88ca27cb250 import SwitchPacketIn
-        return SwitchPacketIn(self)
+        if self._properties.get('SwitchPacketIn', None) is None:
+            return SwitchPacketIn(self)
+        else:
+            return self._properties.get('SwitchPacketIn')
 
     @property
     def SwitchPorts(self):
@@ -178,7 +199,10 @@ class OfChannel(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchports_196704c0d1df9b9f03a2d98b3cd0a010 import SwitchPorts
-        return SwitchPorts(self)
+        if self._properties.get('SwitchPorts', None) is None:
+            return SwitchPorts(self)
+        else:
+            return self._properties.get('SwitchPorts')
 
     @property
     def SwitchTables(self):
@@ -192,7 +216,10 @@ class OfChannel(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchtables_b8aa190ae05d623e6a2ea40316e7689e import SwitchTables
-        return SwitchTables(self)
+        if self._properties.get('SwitchTables', None) is None:
+            return SwitchTables(self)
+        else:
+            return self._properties.get('SwitchTables')
 
     @property
     def CalculateFlows(self):

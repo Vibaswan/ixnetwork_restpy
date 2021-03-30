@@ -52,7 +52,10 @@ class Esmc(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.esmc.startrateandflowcontrol.startrateandflowcontrol_585d8f39c08d7894b1219834ab4ac841 import StartRateAndFlowControl
-        return StartRateAndFlowControl(self)._select()
+        if self._properties.get('StartRateAndFlowControl', None) is None:
+            return StartRateAndFlowControl(self)._select()
+        else:
+            return self._properties.get('StartRateAndFlowControl')
 
     @property
     def StopRateAndFlowControl(self):
@@ -66,7 +69,10 @@ class Esmc(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.esmc.stoprateandflowcontrol.stoprateandflowcontrol_1859cdc6da8001544275aa8ebcd9d250 import StopRateAndFlowControl
-        return StopRateAndFlowControl(self)._select()
+        if self._properties.get('StopRateAndFlowControl', None) is None:
+            return StopRateAndFlowControl(self)._select()
+        else:
+            return self._properties.get('StopRateAndFlowControl')
 
     @property
     def Count(self):

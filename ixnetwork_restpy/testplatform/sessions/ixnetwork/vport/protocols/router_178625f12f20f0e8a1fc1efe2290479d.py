@@ -60,7 +60,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routerange_8e3502cfa312d16639d619c61c5aeb3a import RouteRange
-        return RouteRange(self)
+        if self._properties.get('RouteRange', None) is None:
+            return RouteRange(self)
+        else:
+            return self._properties.get('RouteRange')
 
     @property
     def AuthorizationPassword(self):

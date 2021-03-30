@@ -48,14 +48,17 @@ class SimInterface(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudointerface_9126bc028693cbbf9d918cf385cfa24d.IsisL3PseudoInterface): An instance of the IsisL3PseudoInterface class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudointerface_89754a450e3c5a1e7f9a873f3cd3b99a.IsisL3PseudoInterface): An instance of the IsisL3PseudoInterface class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudointerface_9126bc028693cbbf9d918cf385cfa24d import IsisL3PseudoInterface
-        return IsisL3PseudoInterface(self)
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudointerface_89754a450e3c5a1e7f9a873f3cd3b99a import IsisL3PseudoInterface
+        if self._properties.get('IsisL3PseudoInterface', None) is None:
+            return IsisL3PseudoInterface(self)
+        else:
+            return self._properties.get('IsisL3PseudoInterface')
 
     @property
     def IsisPseudoInterface(self):
@@ -69,7 +72,10 @@ class SimInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudointerface_c1f1f37e55c1225f223c72b348d63875 import IsisPseudoInterface
-        return IsisPseudoInterface(self)
+        if self._properties.get('IsisPseudoInterface', None) is None:
+            return IsisPseudoInterface(self)
+        else:
+            return self._properties.get('IsisPseudoInterface')
 
     @property
     def SimInterfaceEthernetConfig(self):
@@ -83,7 +89,10 @@ class SimInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.siminterfaceethernetconfig_1d251364611e333123819f3a7098b591 import SimInterfaceEthernetConfig
-        return SimInterfaceEthernetConfig(self)
+        if self._properties.get('SimInterfaceEthernetConfig', None) is None:
+            return SimInterfaceEthernetConfig(self)
+        else:
+            return self._properties.get('SimInterfaceEthernetConfig')
 
     @property
     def SimInterfaceIPv4Config(self):
@@ -97,7 +106,10 @@ class SimInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.siminterfaceipv4config_e6c1aa40e073d14efc69d40d8efd0f6b import SimInterfaceIPv4Config
-        return SimInterfaceIPv4Config(self)
+        if self._properties.get('SimInterfaceIPv4Config', None) is None:
+            return SimInterfaceIPv4Config(self)
+        else:
+            return self._properties.get('SimInterfaceIPv4Config')
 
     @property
     def SimInterfaceIPv6Config(self):
@@ -111,7 +123,10 @@ class SimInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.siminterfaceipv6config_189f3bfbc365f2b105e35cd8b9d542d6 import SimInterfaceIPv6Config
-        return SimInterfaceIPv6Config(self)
+        if self._properties.get('SimInterfaceIPv6Config', None) is None:
+            return SimInterfaceIPv6Config(self)
+        else:
+            return self._properties.get('SimInterfaceIPv6Config')
 
     @property
     def Count(self):

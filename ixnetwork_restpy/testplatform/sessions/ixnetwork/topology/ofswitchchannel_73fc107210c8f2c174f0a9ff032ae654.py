@@ -67,7 +67,10 @@ class OFSwitchChannel(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.auxiliaryconnectionlist_00191c1165a6248dea286f67cd56938f import AuxiliaryConnectionList
-        return AuxiliaryConnectionList(self)
+        if self._properties.get('AuxiliaryConnectionList', None) is None:
+            return AuxiliaryConnectionList(self)
+        else:
+            return self._properties.get('AuxiliaryConnectionList')
 
     @property
     def Active(self):

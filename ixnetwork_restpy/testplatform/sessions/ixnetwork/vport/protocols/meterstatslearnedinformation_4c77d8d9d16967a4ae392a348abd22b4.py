@@ -67,7 +67,10 @@ class MeterStatsLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.meterstatsbandlearnedinformation_90980d0cbd3143936f111bd2d0e9299c import MeterStatsBandLearnedInformation
-        return MeterStatsBandLearnedInformation(self)
+        if self._properties.get('MeterStatsBandLearnedInformation', None) is None:
+            return MeterStatsBandLearnedInformation(self)
+        else:
+            return self._properties.get('MeterStatsBandLearnedInformation')
 
     @property
     def ByteInCount(self):

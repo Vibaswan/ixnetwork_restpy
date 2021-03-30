@@ -56,7 +56,10 @@ class BroadcastDomains(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cmacrange_c7c64f8f20308f3d2776149198e090f1 import CMacRange
-        return CMacRange(self)
+        if self._properties.get('CMacRange', None) is None:
+            return CMacRange(self)
+        else:
+            return self._properties.get('CMacRange')
 
     @property
     def AdRouteLabel(self):

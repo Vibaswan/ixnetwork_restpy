@@ -64,7 +64,10 @@ class Page(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.page.egress.egress import Egress
-        return Egress(self)
+        if self._properties.get('Egress', None) is None:
+            return Egress(self)
+        else:
+            return self._properties.get('Egress')
 
     @property
     def EgressRxCondition(self):
@@ -78,7 +81,10 @@ class Page(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.page.egressrxcondition.egressrxcondition import EgressRxCondition
-        return EgressRxCondition(self)._select()
+        if self._properties.get('EgressRxCondition', None) is None:
+            return EgressRxCondition(self)._select()
+        else:
+            return self._properties.get('EgressRxCondition')
 
     @property
     def AllowPaging(self):

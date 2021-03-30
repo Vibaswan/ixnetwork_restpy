@@ -58,7 +58,10 @@ class DceTopologyList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.interestedvlanlist_728a61dfe3033f50a4c4b24dd65f6d27 import InterestedVlanList
-        return InterestedVlanList(self)._select()
+        if self._properties.get('InterestedVlanList', None) is None:
+            return InterestedVlanList(self)._select()
+        else:
+            return self._properties.get('InterestedVlanList')
 
     @property
     def NicknameRecordList(self):
@@ -72,7 +75,10 @@ class DceTopologyList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.nicknamerecordlist_035390df83e22e146cb32cc19244f93b import NicknameRecordList
-        return NicknameRecordList(self)._select()
+        if self._properties.get('NicknameRecordList', None) is None:
+            return NicknameRecordList(self)._select()
+        else:
+            return self._properties.get('NicknameRecordList')
 
     @property
     def Active(self):

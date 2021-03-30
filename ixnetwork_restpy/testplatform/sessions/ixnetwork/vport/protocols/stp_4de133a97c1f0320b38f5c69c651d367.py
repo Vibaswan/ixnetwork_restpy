@@ -50,7 +50,10 @@ class Stp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bridge_ac6f876ba1a3cb256f4d45c75e5e622e import Bridge
-        return Bridge(self)
+        if self._properties.get('Bridge', None) is None:
+            return Bridge(self)
+        else:
+            return self._properties.get('Bridge')
 
     @property
     def Lan(self):
@@ -64,7 +67,10 @@ class Stp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lan_c3db54f492c551364f9e35d8e4f6c80b import Lan
-        return Lan(self)
+        if self._properties.get('Lan', None) is None:
+            return Lan(self)
+        else:
+            return self._properties.get('Lan')
 
     @property
     def Enabled(self):

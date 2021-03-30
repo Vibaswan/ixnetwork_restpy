@@ -54,7 +54,10 @@ class PtpCorrectionFactorError(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.results_23583c0cce1dabf7b75fe7d2ae18cfc4 import Results
-        return Results(self)._select()
+        if self._properties.get('Results', None) is None:
+            return Results(self)._select()
+        else:
+            return self._properties.get('Results')
 
     @property
     def TestConfig(self):
@@ -68,7 +71,10 @@ class PtpCorrectionFactorError(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_e17728288f527926a13a82535a660218 import TestConfig
-        return TestConfig(self)._select()
+        if self._properties.get('TestConfig', None) is None:
+            return TestConfig(self)._select()
+        else:
+            return self._properties.get('TestConfig')
 
     @property
     def ForceApplyQTConfig(self):

@@ -51,7 +51,10 @@ class OspfV3(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_10842b5a99fd0611ecdc5685dafd40ba import Router
-        return Router(self)
+        if self._properties.get('Router', None) is None:
+            return Router(self)
+        else:
+            return self._properties.get('Router')
 
     @property
     def EnableDrOrBdr(self):

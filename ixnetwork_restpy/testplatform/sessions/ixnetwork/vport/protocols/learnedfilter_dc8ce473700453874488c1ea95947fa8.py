@@ -52,7 +52,10 @@ class LearnedFilter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.capabilities_4db6ad32c315806e926b0bd131f64535 import Capabilities
-        return Capabilities(self)._select()
+        if self._properties.get('Capabilities', None) is None:
+            return Capabilities(self)._select()
+        else:
+            return self._properties.get('Capabilities')
 
     @property
     def Prefix(self):
@@ -66,7 +69,10 @@ class LearnedFilter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.prefix_14ff2c47c83ae14aa22718e67f21f827 import Prefix
-        return Prefix(self)._select()
+        if self._properties.get('Prefix', None) is None:
+            return Prefix(self)._select()
+        else:
+            return self._properties.get('Prefix')
 
     @property
     def Afi(self):

@@ -50,7 +50,10 @@ class OriginIpInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rdinfo_b682186268495d0b24004c7e602f1c71 import RdInfo
-        return RdInfo(self)
+        if self._properties.get('RdInfo', None) is None:
+            return RdInfo(self)
+        else:
+            return self._properties.get('RdInfo')
 
     @property
     def OriginIp(self):

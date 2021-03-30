@@ -103,7 +103,10 @@ class RequestedLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pccrequestedmetricsubobjectslist_c24616543d14c4003121b08785bb4446 import PccRequestedMetricSubObjectsList
-        return PccRequestedMetricSubObjectsList(self)
+        if self._properties.get('PccRequestedMetricSubObjectsList', None) is None:
+            return PccRequestedMetricSubObjectsList(self)
+        else:
+            return self._properties.get('PccRequestedMetricSubObjectsList')
 
     @property
     def PcepIroSubObjectsList(self):
@@ -117,7 +120,10 @@ class RequestedLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepirosubobjectslist_9817af6d0e89111784eda2c3b9333ff5 import PcepIroSubObjectsList
-        return PcepIroSubObjectsList(self)
+        if self._properties.get('PcepIroSubObjectsList', None) is None:
+            return PcepIroSubObjectsList(self)
+        else:
+            return self._properties.get('PcepIroSubObjectsList')
 
     @property
     def PcepXroSubObjectsList(self):
@@ -131,7 +137,10 @@ class RequestedLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepxrosubobjectslist_a61cc0ded9b5e7cc900bb16a43234a56 import PcepXroSubObjectsList
-        return PcepXroSubObjectsList(self)
+        if self._properties.get('PcepXroSubObjectsList', None) is None:
+            return PcepXroSubObjectsList(self)
+        else:
+            return self._properties.get('PcepXroSubObjectsList')
 
     @property
     def Tag(self):
@@ -145,7 +154,10 @@ class RequestedLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is None:
+            return Tag(self)
+        else:
+            return self._properties.get('Tag')
 
     @property
     def Active(self):

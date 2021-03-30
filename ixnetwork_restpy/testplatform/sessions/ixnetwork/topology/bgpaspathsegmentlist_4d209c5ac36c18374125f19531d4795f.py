@@ -55,7 +55,10 @@ class BgpAsPathSegmentList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpasnumberlist_1529f0c2f511c5c16621b75c6205cf08 import BgpAsNumberList
-        return BgpAsNumberList(self)
+        if self._properties.get('BgpAsNumberList', None) is None:
+            return BgpAsNumberList(self)
+        else:
+            return self._properties.get('BgpAsNumberList')
 
     @property
     def Count(self):

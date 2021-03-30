@@ -64,7 +64,10 @@ class LdpLeafRangeV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptlvlist_30bf84fe9b838fe1c5800e633f13cff2 import LdpTLVList
-        return LdpTLVList(self)
+        if self._properties.get('LdpTLVList', None) is None:
+            return LdpTLVList(self)
+        else:
+            return self._properties.get('LdpTLVList')
 
     @property
     def Active(self):

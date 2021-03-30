@@ -49,7 +49,10 @@ class DefaultProfile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.biterror.biterror import BitError
-        return BitError(self)._select()
+        if self._properties.get('BitError', None) is None:
+            return BitError(self)._select()
+        else:
+            return self._properties.get('BitError')
 
     @property
     def Checksums(self):
@@ -63,7 +66,10 @@ class DefaultProfile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.checksums.checksums import Checksums
-        return Checksums(self)._select()
+        if self._properties.get('Checksums', None) is None:
+            return Checksums(self)._select()
+        else:
+            return self._properties.get('Checksums')
 
     @property
     def CustomDelayVariation(self):
@@ -77,7 +83,10 @@ class DefaultProfile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.customdelayvariation.customdelayvariation import CustomDelayVariation
-        return CustomDelayVariation(self)._select()
+        if self._properties.get('CustomDelayVariation', None) is None:
+            return CustomDelayVariation(self)._select()
+        else:
+            return self._properties.get('CustomDelayVariation')
 
     @property
     def Delay(self):
@@ -91,7 +100,10 @@ class DefaultProfile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.delay.delay import Delay
-        return Delay(self)._select()
+        if self._properties.get('Delay', None) is None:
+            return Delay(self)._select()
+        else:
+            return self._properties.get('Delay')
 
     @property
     def DelayVariation(self):
@@ -105,7 +117,10 @@ class DefaultProfile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.delayvariation.delayvariation import DelayVariation
-        return DelayVariation(self)._select()
+        if self._properties.get('DelayVariation', None) is None:
+            return DelayVariation(self)._select()
+        else:
+            return self._properties.get('DelayVariation')
 
     @property
     def Drop(self):
@@ -119,7 +134,10 @@ class DefaultProfile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.drop.drop import Drop
-        return Drop(self)._select()
+        if self._properties.get('Drop', None) is None:
+            return Drop(self)._select()
+        else:
+            return self._properties.get('Drop')
 
     @property
     def Duplicate(self):
@@ -133,7 +151,10 @@ class DefaultProfile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.duplicate.duplicate import Duplicate
-        return Duplicate(self)._select()
+        if self._properties.get('Duplicate', None) is None:
+            return Duplicate(self)._select()
+        else:
+            return self._properties.get('Duplicate')
 
     @property
     def Modifier(self):
@@ -147,7 +168,10 @@ class DefaultProfile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.modifier.modifier import Modifier
-        return Modifier(self)
+        if self._properties.get('Modifier', None) is None:
+            return Modifier(self)
+        else:
+            return self._properties.get('Modifier')
 
     @property
     def Reorder(self):
@@ -161,7 +185,10 @@ class DefaultProfile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.reorder.reorder import Reorder
-        return Reorder(self)._select()
+        if self._properties.get('Reorder', None) is None:
+            return Reorder(self)._select()
+        else:
+            return self._properties.get('Reorder')
 
     @property
     def RxRateLimit(self):
@@ -175,7 +202,10 @@ class DefaultProfile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.rxratelimit.rxratelimit import RxRateLimit
-        return RxRateLimit(self)._select()
+        if self._properties.get('RxRateLimit', None) is None:
+            return RxRateLimit(self)._select()
+        else:
+            return self._properties.get('RxRateLimit')
 
     @property
     def Name(self):

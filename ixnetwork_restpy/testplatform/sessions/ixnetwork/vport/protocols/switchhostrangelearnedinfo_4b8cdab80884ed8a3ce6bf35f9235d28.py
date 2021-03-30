@@ -56,7 +56,10 @@ class SwitchHostRangeLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchhostrangehopslearnedinfo_38d42cf5d7dce83560b4b68db6721d7e import SwitchHostRangeHopsLearnedInfo
-        return SwitchHostRangeHopsLearnedInfo(self)
+        if self._properties.get('SwitchHostRangeHopsLearnedInfo', None) is None:
+            return SwitchHostRangeHopsLearnedInfo(self)
+        else:
+            return self._properties.get('SwitchHostRangeHopsLearnedInfo')
 
     @property
     def DestinationHostIpv4Address(self):

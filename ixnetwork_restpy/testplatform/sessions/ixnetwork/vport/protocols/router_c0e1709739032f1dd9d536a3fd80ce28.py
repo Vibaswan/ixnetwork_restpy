@@ -54,7 +54,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_b81fbd28ee83a8f727b2e7b5bab74d60 import Interface
-        return Interface(self)
+        if self._properties.get('Interface', None) is None:
+            return Interface(self)
+        else:
+            return self._properties.get('Interface')
 
     @property
     def LearnedInfo(self):
@@ -68,7 +71,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinfo_a28cef15015dd87646835ccbe8c980f9 import LearnedInfo
-        return LearnedInfo(self)
+        if self._properties.get('LearnedInfo', None) is None:
+            return LearnedInfo(self)
+        else:
+            return self._properties.get('LearnedInfo')
 
     @property
     def Enabled(self):

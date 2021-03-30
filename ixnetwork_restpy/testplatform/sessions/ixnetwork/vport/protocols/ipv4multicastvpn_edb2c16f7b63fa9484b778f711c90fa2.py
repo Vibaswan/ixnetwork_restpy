@@ -76,7 +76,10 @@ family..
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaquevalueelement_98265968d2cf9ade77b8757edf25c867 import OpaqueValueElement
-        return OpaqueValueElement(self)
+        if self._properties.get('OpaqueValueElement', None) is None:
+            return OpaqueValueElement(self)
+        else:
+            return self._properties.get('OpaqueValueElement')
 
     @property
     def AddressFamily(self):

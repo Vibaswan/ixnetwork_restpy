@@ -58,7 +58,10 @@ class Vlans(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.macranges_78c02cbb6d6fb2567178845fcccaec42 import MacRanges
-        return MacRanges(self)
+        if self._properties.get('MacRanges', None) is None:
+            return MacRanges(self)
+        else:
+            return self._properties.get('MacRanges')
 
     @property
     def CVlanId(self):

@@ -52,7 +52,10 @@ class OpenFlowChannel(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.flowaggrmatchtemplate_92a54a687c7573d5dcbe6197e7acd7a5 import FlowAggrMatchTemplate
-        return FlowAggrMatchTemplate(self)._select()
+        if self._properties.get('FlowAggrMatchTemplate', None) is None:
+            return FlowAggrMatchTemplate(self)._select()
+        else:
+            return self._properties.get('FlowAggrMatchTemplate')
 
     @property
     def FlowStatMatchTemplate(self):
@@ -66,7 +69,10 @@ class OpenFlowChannel(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.flowstatmatchtemplate_9d0efda6a234c80e8ec5d25dbc49e75b import FlowStatMatchTemplate
-        return FlowStatMatchTemplate(self)._select()
+        if self._properties.get('FlowStatMatchTemplate', None) is None:
+            return FlowStatMatchTemplate(self)._select()
+        else:
+            return self._properties.get('FlowStatMatchTemplate')
 
     @property
     def PacketOutActionTemplate(self):
@@ -80,7 +86,10 @@ class OpenFlowChannel(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.packetoutactiontemplate_655055ae6e6b8535ff5754b84cd6d7dd import PacketOutActionTemplate
-        return PacketOutActionTemplate(self)._select()
+        if self._properties.get('PacketOutActionTemplate', None) is None:
+            return PacketOutActionTemplate(self)._select()
+        else:
+            return self._properties.get('PacketOutActionTemplate')
 
     @property
     def Count(self):

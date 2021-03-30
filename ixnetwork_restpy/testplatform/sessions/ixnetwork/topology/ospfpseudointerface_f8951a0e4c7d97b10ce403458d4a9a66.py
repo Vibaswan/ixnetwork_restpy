@@ -85,7 +85,10 @@ class OspfPseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srlgvaluelist_355b617a5f46ce90d800290d21158418 import SrlgValueList
-        return SrlgValueList(self)
+        if self._properties.get('SrlgValueList', None) is None:
+            return SrlgValueList(self)
+        else:
+            return self._properties.get('SrlgValueList')
 
     @property
     def AdjSID(self):

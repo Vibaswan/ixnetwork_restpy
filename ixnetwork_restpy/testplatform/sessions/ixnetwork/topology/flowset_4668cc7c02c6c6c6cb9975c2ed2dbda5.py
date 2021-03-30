@@ -63,7 +63,10 @@ class FlowSet(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.flowprofile_a1f78cfc247b918e0d8219ac19d05f87 import FlowProfile
-        return FlowProfile(self)._select()
+        if self._properties.get('FlowProfile', None) is None:
+            return FlowProfile(self)._select()
+        else:
+            return self._properties.get('FlowProfile')
 
     @property
     def Active(self):

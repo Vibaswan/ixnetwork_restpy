@@ -88,7 +88,10 @@ class RouteRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.assegment_77023b63251dc6667bdf6c21a3e43b82 import AsSegment
-        return AsSegment(self)._select()
+        if self._properties.get('AsSegment', None) is None:
+            return AsSegment(self)._select()
+        else:
+            return self._properties.get('AsSegment')
 
     @property
     def Cluster(self):
@@ -102,7 +105,10 @@ class RouteRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cluster_d68b61bb2cd5e48de06e56c1bb4b9cfb import Cluster
-        return Cluster(self)._select()
+        if self._properties.get('Cluster', None) is None:
+            return Cluster(self)._select()
+        else:
+            return self._properties.get('Cluster')
 
     @property
     def Community(self):
@@ -116,7 +122,10 @@ class RouteRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.community_46f6c2c27e8a80b9e728ca3a28276bc2 import Community
-        return Community(self)._select()
+        if self._properties.get('Community', None) is None:
+            return Community(self)._select()
+        else:
+            return self._properties.get('Community')
 
     @property
     def ExtendedCommunity(self):
@@ -130,7 +139,10 @@ class RouteRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.extendedcommunity_9dbd9a94c067c10769a25642ca9a2116 import ExtendedCommunity
-        return ExtendedCommunity(self)._select()
+        if self._properties.get('ExtendedCommunity', None) is None:
+            return ExtendedCommunity(self)._select()
+        else:
+            return self._properties.get('ExtendedCommunity')
 
     @property
     def Flapping(self):
@@ -144,7 +156,10 @@ class RouteRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flapping_bc396b09ac34d6012fc8f07b91b6a0fd import Flapping
-        return Flapping(self)._select()
+        if self._properties.get('Flapping', None) is None:
+            return Flapping(self)._select()
+        else:
+            return self._properties.get('Flapping')
 
     @property
     def AdvertiseNextHopAsV4(self):

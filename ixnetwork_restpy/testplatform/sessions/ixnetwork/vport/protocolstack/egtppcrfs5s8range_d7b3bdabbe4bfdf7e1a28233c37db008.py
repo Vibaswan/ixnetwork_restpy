@@ -80,7 +80,10 @@ class EgtpPcrfS5S8Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dedicatedbearerss5s8pgw_895ed4fe0bf5aa63ce27cad2c79291aa import DedicatedBearersS5S8Pgw
-        return DedicatedBearersS5S8Pgw(self)
+        if self._properties.get('DedicatedBearersS5S8Pgw', None) is None:
+            return DedicatedBearersS5S8Pgw(self)
+        else:
+            return self._properties.get('DedicatedBearersS5S8Pgw')
 
     @property
     def TrafficProfileProxiesS5S8Pgw(self):
@@ -94,7 +97,10 @@ class EgtpPcrfS5S8Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.trafficprofileproxiess5s8pgw_e4ed9c77e8660dfdebbdb4de3e72c6c6 import TrafficProfileProxiesS5S8Pgw
-        return TrafficProfileProxiesS5S8Pgw(self)
+        if self._properties.get('TrafficProfileProxiesS5S8Pgw', None) is None:
+            return TrafficProfileProxiesS5S8Pgw(self)
+        else:
+            return self._properties.get('TrafficProfileProxiesS5S8Pgw')
 
     @property
     def Apn(self):

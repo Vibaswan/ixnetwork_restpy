@@ -80,7 +80,10 @@ class OpenFlowChannel(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.groups_b0203364879843ea921d92b31d3b37a9 import Groups
-        return Groups(self)
+        if self._properties.get('Groups', None) is None:
+            return Groups(self)
+        else:
+            return self._properties.get('Groups')
 
     @property
     def Meters(self):
@@ -94,7 +97,10 @@ class OpenFlowChannel(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.meters_8b28210732dd4e9a4bab19a7e6241a11 import Meters
-        return Meters(self)
+        if self._properties.get('Meters', None) is None:
+            return Meters(self)
+        else:
+            return self._properties.get('Meters')
 
     @property
     def Tables(self):
@@ -108,7 +114,10 @@ class OpenFlowChannel(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tables_3d687bbed07969785585da03f7a19e75 import Tables
-        return Tables(self)
+        if self._properties.get('Tables', None) is None:
+            return Tables(self)
+        else:
+            return self._properties.get('Tables')
 
     @property
     def Active(self):

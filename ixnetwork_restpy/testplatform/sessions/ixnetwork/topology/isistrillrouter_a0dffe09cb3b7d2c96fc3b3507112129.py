@@ -87,7 +87,10 @@ class IsisTrillRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.trillmcastipv4grouplist_067fcb786745f03382b0f3242126f4a0 import TrillMCastIpv4GroupList
-        return TrillMCastIpv4GroupList(self)._select()
+        if self._properties.get('TrillMCastIpv4GroupList', None) is None:
+            return TrillMCastIpv4GroupList(self)._select()
+        else:
+            return self._properties.get('TrillMCastIpv4GroupList')
 
     @property
     def TrillMCastIpv6GroupList(self):
@@ -101,7 +104,10 @@ class IsisTrillRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.trillmcastipv6grouplist_18b118137ec4704f682253ecb0f4797b import TrillMCastIpv6GroupList
-        return TrillMCastIpv6GroupList(self)._select()
+        if self._properties.get('TrillMCastIpv6GroupList', None) is None:
+            return TrillMCastIpv6GroupList(self)._select()
+        else:
+            return self._properties.get('TrillMCastIpv6GroupList')
 
     @property
     def TrillMCastMacGroupList(self):
@@ -115,7 +121,10 @@ class IsisTrillRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.trillmcastmacgrouplist_fef95367003707238873712058525e55 import TrillMCastMacGroupList
-        return TrillMCastMacGroupList(self)._select()
+        if self._properties.get('TrillMCastMacGroupList', None) is None:
+            return TrillMCastMacGroupList(self)._select()
+        else:
+            return self._properties.get('TrillMCastMacGroupList')
 
     @property
     def TrillTopologyList(self):
@@ -129,7 +138,10 @@ class IsisTrillRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.trilltopologylist_d5329b70c837a29596a33cda2c9bc96d import TrillTopologyList
-        return TrillTopologyList(self)._select()
+        if self._properties.get('TrillTopologyList', None) is None:
+            return TrillTopologyList(self)._select()
+        else:
+            return self._properties.get('TrillTopologyList')
 
     @property
     def Active(self):

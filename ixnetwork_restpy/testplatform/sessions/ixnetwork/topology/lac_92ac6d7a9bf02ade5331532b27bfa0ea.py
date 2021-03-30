@@ -89,7 +89,10 @@ class Lac(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        return Connector(self)
+        if self._properties.get('Connector', None) is None:
+            return Connector(self)
+        else:
+            return self._properties.get('Connector')
 
     @property
     def Tag(self):
@@ -103,7 +106,10 @@ class Lac(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is None:
+            return Tag(self)
+        else:
+            return self._properties.get('Tag')
 
     @property
     def BaseLnsIp(self):
@@ -137,7 +143,7 @@ class Lac(Base):
 
     @property
     def Callingnum(self):
-        """DEPRECATED 
+        """
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Calling Number AVP in ICRQ

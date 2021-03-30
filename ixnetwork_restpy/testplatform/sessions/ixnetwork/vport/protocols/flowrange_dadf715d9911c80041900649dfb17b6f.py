@@ -74,7 +74,10 @@ class FlowRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flowrangeaction_79d179d105734bb8378d7e2614b0c17e import FlowRangeAction
-        return FlowRangeAction(self)
+        if self._properties.get('FlowRangeAction', None) is None:
+            return FlowRangeAction(self)
+        else:
+            return self._properties.get('FlowRangeAction')
 
     @property
     def CheckOverlap(self):

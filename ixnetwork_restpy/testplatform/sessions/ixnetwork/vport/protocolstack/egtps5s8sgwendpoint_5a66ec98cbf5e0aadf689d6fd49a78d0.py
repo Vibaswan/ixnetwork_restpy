@@ -52,7 +52,10 @@ class EgtpS5S8SgwEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.enbs5s8secondaryrange_333981e223b31f02de2210ae58377820 import EnbS5S8SecondaryRange
-        return EnbS5S8SecondaryRange(self)
+        if self._properties.get('EnbS5S8SecondaryRange', None) is None:
+            return EnbS5S8SecondaryRange(self)
+        else:
+            return self._properties.get('EnbS5S8SecondaryRange')
 
     @property
     def MmeS5S8SecondaryRange(self):
@@ -66,7 +69,10 @@ class EgtpS5S8SgwEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.mmes5s8secondaryrange_e693f274a6879c3cebe893a4fd8922d7 import MmeS5S8SecondaryRange
-        return MmeS5S8SecondaryRange(self)
+        if self._properties.get('MmeS5S8SecondaryRange', None) is None:
+            return MmeS5S8SecondaryRange(self)
+        else:
+            return self._properties.get('MmeS5S8SecondaryRange')
 
     @property
     def Range(self):
@@ -80,7 +86,10 @@ class EgtpS5S8SgwEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_df989eb48817c7440dc6576fa44a3b35 import Range
-        return Range(self)
+        if self._properties.get('Range', None) is None:
+            return Range(self)
+        else:
+            return self._properties.get('Range')
 
     @property
     def UeS5S8SecondaryRange(self):
@@ -94,7 +103,10 @@ class EgtpS5S8SgwEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ues5s8secondaryrange_a26fbbf2b9beee2e4d235fa244dc63ee import UeS5S8SecondaryRange
-        return UeS5S8SecondaryRange(self)
+        if self._properties.get('UeS5S8SecondaryRange', None) is None:
+            return UeS5S8SecondaryRange(self)
+        else:
+            return self._properties.get('UeS5S8SecondaryRange')
 
     @property
     def Name(self):

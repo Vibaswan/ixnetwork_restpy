@@ -56,7 +56,10 @@ class SwitchPacketIn(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.packetinheaders_da8aa56801b2924bcf5b2a7f534aea6e import PacketInHeaders
-        return PacketInHeaders(self)._select()
+        if self._properties.get('PacketInHeaders', None) is None:
+            return PacketInHeaders(self)._select()
+        else:
+            return self._properties.get('PacketInHeaders')
 
     @property
     def ConsultFlowTable(self):

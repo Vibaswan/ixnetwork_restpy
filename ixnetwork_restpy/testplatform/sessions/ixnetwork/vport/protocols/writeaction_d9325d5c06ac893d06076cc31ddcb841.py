@@ -54,7 +54,10 @@ class WriteAction(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeactionmisstype_e63eee24d23bc546c8138246edb35dfe import WriteActionMissType
-        return WriteActionMissType(self)._select()
+        if self._properties.get('WriteActionMissType', None) is None:
+            return WriteActionMissType(self)._select()
+        else:
+            return self._properties.get('WriteActionMissType')
 
     @property
     def WriteActionType(self):
@@ -68,7 +71,10 @@ class WriteAction(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeactiontype_419a58f4451d612a6f8c7aafe22d0a6c import WriteActionType
-        return WriteActionType(self)._select()
+        if self._properties.get('WriteActionType', None) is None:
+            return WriteActionType(self)._select()
+        else:
+            return self._properties.get('WriteActionType')
 
     @property
     def ExperimenterData(self):

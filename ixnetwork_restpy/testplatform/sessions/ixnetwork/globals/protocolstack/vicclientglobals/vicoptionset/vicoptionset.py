@@ -54,7 +54,10 @@ class VicOptionSet(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.vicclientglobals.vicoptionset.vicoptiontlv.vicoptiontlv import VicOptionTlv
-        return VicOptionTlv(self)
+        if self._properties.get('VicOptionTlv', None) is None:
+            return VicOptionTlv(self)
+        else:
+            return self._properties.get('VicOptionTlv')
 
     @property
     def Defaultp(self):

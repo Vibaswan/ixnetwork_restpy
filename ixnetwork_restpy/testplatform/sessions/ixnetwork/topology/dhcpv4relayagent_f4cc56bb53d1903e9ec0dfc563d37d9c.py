@@ -64,7 +64,10 @@ class Dhcpv4relayAgent(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp4relayagenttlvprofile_1f5a4a0853366dc50313b9b3e8f6e68d import Dhcp4RelayAgentTlvProfile
-        return Dhcp4RelayAgentTlvProfile(self)._select()
+        if self._properties.get('Dhcp4RelayAgentTlvProfile', None) is None:
+            return Dhcp4RelayAgentTlvProfile(self)._select()
+        else:
+            return self._properties.get('Dhcp4RelayAgentTlvProfile')
 
     @property
     def ConnectedVia(self):

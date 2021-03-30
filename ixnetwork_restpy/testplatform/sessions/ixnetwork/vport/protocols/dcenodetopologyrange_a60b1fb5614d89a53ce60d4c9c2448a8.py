@@ -58,7 +58,10 @@ class DceNodeTopologyRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenodeinterestedvlanrange_02e7ef1c95a71c8d764fab0f1f227d4f import DceNodeInterestedVlanRange
-        return DceNodeInterestedVlanRange(self)
+        if self._properties.get('DceNodeInterestedVlanRange', None) is None:
+            return DceNodeInterestedVlanRange(self)
+        else:
+            return self._properties.get('DceNodeInterestedVlanRange')
 
     @property
     def BroadcastPriority(self):

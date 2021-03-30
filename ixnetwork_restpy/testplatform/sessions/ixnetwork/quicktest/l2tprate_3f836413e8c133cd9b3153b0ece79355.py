@@ -53,7 +53,10 @@ class L2tpRate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.results_23583c0cce1dabf7b75fe7d2ae18cfc4 import Results
-        return Results(self)._select()
+        if self._properties.get('Results', None) is None:
+            return Results(self)._select()
+        else:
+            return self._properties.get('Results')
 
     @property
     def TestConfig(self):
@@ -67,7 +70,10 @@ class L2tpRate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_69c95a290760a4febaa65cc7629e1166 import TestConfig
-        return TestConfig(self)
+        if self._properties.get('TestConfig', None) is None:
+            return TestConfig(self)
+        else:
+            return self._properties.get('TestConfig')
 
     @property
     def InputParameters(self):

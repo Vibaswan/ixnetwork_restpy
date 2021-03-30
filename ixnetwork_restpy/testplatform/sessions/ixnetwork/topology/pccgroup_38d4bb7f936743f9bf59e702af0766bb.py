@@ -80,7 +80,10 @@ class PccGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        return LearnedInfo(self)
+        if self._properties.get('LearnedInfo', None) is None:
+            return LearnedInfo(self)
+        else:
+            return self._properties.get('LearnedInfo')
 
     @property
     def LearnedInfoUpdate(self):
@@ -94,7 +97,10 @@ class PccGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfoupdate_b6503122c0a4a58877467964920e27b5 import LearnedInfoUpdate
-        return LearnedInfoUpdate(self)
+        if self._properties.get('LearnedInfoUpdate', None) is None:
+            return LearnedInfoUpdate(self)
+        else:
+            return self._properties.get('LearnedInfoUpdate')
 
     @property
     def PcReplyLspParameters(self):
@@ -108,7 +114,10 @@ class PccGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcreplylspparameters_73031069954bcd625c2f1df5c90abae7 import PcReplyLspParameters
-        return PcReplyLspParameters(self)._select()
+        if self._properties.get('PcReplyLspParameters', None) is None:
+            return PcReplyLspParameters(self)._select()
+        else:
+            return self._properties.get('PcReplyLspParameters')
 
     @property
     def PcRequestMatchCriteria(self):
@@ -122,7 +131,10 @@ class PccGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcrequestmatchcriteria_365554ce0f609244eb458907a0c918f3 import PcRequestMatchCriteria
-        return PcRequestMatchCriteria(self)._select()
+        if self._properties.get('PcRequestMatchCriteria', None) is None:
+            return PcRequestMatchCriteria(self)._select()
+        else:
+            return self._properties.get('PcRequestMatchCriteria')
 
     @property
     def PceInitiateLSPParameters(self):
@@ -136,7 +148,10 @@ class PccGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pceinitiatelspparameters_c8b10382dd410ad40974ae280a39117b import PceInitiateLSPParameters
-        return PceInitiateLSPParameters(self)._select()
+        if self._properties.get('PceInitiateLSPParameters', None) is None:
+            return PceInitiateLSPParameters(self)._select()
+        else:
+            return self._properties.get('PceInitiateLSPParameters')
 
     @property
     def Active(self):

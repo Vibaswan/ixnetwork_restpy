@@ -56,7 +56,10 @@ class Length(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.restriction_e362d0ce9d693ee94a071e4f973da1d3 import Restriction
-        return Restriction(self)
+        if self._properties.get('Restriction', None) is None:
+            return Restriction(self)
+        else:
+            return self._properties.get('Restriction')
 
     @property
     def Description(self):

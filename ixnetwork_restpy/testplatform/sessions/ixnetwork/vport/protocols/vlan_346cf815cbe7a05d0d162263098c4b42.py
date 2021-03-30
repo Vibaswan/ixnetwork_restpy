@@ -57,7 +57,10 @@ class Vlan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinfo_8d113649213fa2756fbe01251399d4a7 import LearnedInfo
-        return LearnedInfo(self)._select()
+        if self._properties.get('LearnedInfo', None) is None:
+            return LearnedInfo(self)._select()
+        else:
+            return self._properties.get('LearnedInfo')
 
     @property
     def LearnedInterface(self):
@@ -71,7 +74,10 @@ class Vlan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinterface_5c9d203cae9c9266ed5a3c6cd8f67e6e import LearnedInterface
-        return LearnedInterface(self)
+        if self._properties.get('LearnedInterface', None) is None:
+            return LearnedInterface(self)
+        else:
+            return self._properties.get('LearnedInterface')
 
     @property
     def Enabled(self):

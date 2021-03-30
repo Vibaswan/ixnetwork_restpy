@@ -128,7 +128,10 @@ class ControllerTableFlowRanges(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instructions_5497c86fc28b0188cf9eea0ca484ecbf import Instructions
-        return Instructions(self)
+        if self._properties.get('Instructions', None) is None:
+            return Instructions(self)
+        else:
+            return self._properties.get('Instructions')
 
     @property
     def ArpDstHwAddr(self):

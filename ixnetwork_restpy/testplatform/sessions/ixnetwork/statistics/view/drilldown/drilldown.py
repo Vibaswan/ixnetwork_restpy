@@ -55,7 +55,10 @@ class DrillDown(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.drilldown.availabletargetrowfilters.availabletargetrowfilters import AvailableTargetRowFilters
-        return AvailableTargetRowFilters(self)
+        if self._properties.get('AvailableTargetRowFilters', None) is None:
+            return AvailableTargetRowFilters(self)
+        else:
+            return self._properties.get('AvailableTargetRowFilters')
 
     @property
     def AvailableDrillDownOptions(self):

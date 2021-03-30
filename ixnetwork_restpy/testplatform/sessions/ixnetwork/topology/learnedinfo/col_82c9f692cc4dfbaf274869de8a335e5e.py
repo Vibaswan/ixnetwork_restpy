@@ -50,7 +50,10 @@ class Col(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.celltable_bef6632b895c626cc7174eb89a76162c import CellTable
-        return CellTable(self)
+        if self._properties.get('CellTable', None) is None:
+            return CellTable(self)
+        else:
+            return self._properties.get('CellTable')
 
     @property
     def Row(self):
@@ -64,7 +67,10 @@ class Col(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.row_dbafc34e8c4bf46a4ac7b647400c39d3 import Row
-        return Row(self)
+        if self._properties.get('Row', None) is None:
+            return Row(self)
+        else:
+            return self._properties.get('Row')
 
     @property
     def Value(self):

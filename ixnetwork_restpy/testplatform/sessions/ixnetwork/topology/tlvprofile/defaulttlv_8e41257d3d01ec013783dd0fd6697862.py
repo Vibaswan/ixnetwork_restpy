@@ -55,7 +55,10 @@ class DefaultTlv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.value_ac1d7b13584a86b9cf1c28dca3390bca import Value
-        return Value(self)._select()
+        if self._properties.get('Value', None) is None:
+            return Value(self)._select()
+        else:
+            return self._properties.get('Value')
 
     @property
     def AvailableIncludeInMessages(self):

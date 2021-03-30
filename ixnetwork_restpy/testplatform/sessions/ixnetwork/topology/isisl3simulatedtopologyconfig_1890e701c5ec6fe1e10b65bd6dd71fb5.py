@@ -57,7 +57,10 @@ class IsisL3SimulatedTopologyConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3ipv4noderoutelist_ae7695e0538209b004b305811ac652f1 import IsisL3ipv4NodeRouteList
-        return IsisL3ipv4NodeRouteList(self)._select()
+        if self._properties.get('IsisL3ipv4NodeRouteList', None) is None:
+            return IsisL3ipv4NodeRouteList(self)._select()
+        else:
+            return self._properties.get('IsisL3ipv4NodeRouteList')
 
     @property
     def IsisL3ipv6NodeRouteList(self):
@@ -71,7 +74,10 @@ class IsisL3SimulatedTopologyConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3ipv6noderoutelist_305cdb4f4026728819c2e41364d4f782 import IsisL3ipv6NodeRouteList
-        return IsisL3ipv6NodeRouteList(self)._select()
+        if self._properties.get('IsisL3ipv6NodeRouteList', None) is None:
+            return IsisL3ipv6NodeRouteList(self)._select()
+        else:
+            return self._properties.get('IsisL3ipv6NodeRouteList')
 
     @property
     def Active(self):

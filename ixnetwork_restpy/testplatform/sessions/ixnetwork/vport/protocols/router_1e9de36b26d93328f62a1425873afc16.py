@@ -68,7 +68,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_ffc63882c65c19ba8c40e061d8180509 import Interface
-        return Interface(self)
+        if self._properties.get('Interface', None) is None:
+            return Interface(self)
+        else:
+            return self._properties.get('Interface')
 
     @property
     def LearnedRoute(self):
@@ -82,7 +85,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedroute_fb092a38c92327b22368d6fb71dd4dd6 import LearnedRoute
-        return LearnedRoute(self)
+        if self._properties.get('LearnedRoute', None) is None:
+            return LearnedRoute(self)
+        else:
+            return self._properties.get('LearnedRoute')
 
     @property
     def RouteRange(self):
@@ -96,7 +102,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routerange_b3152d6492e8ce6060db5411a4f92fc0 import RouteRange
-        return RouteRange(self)
+        if self._properties.get('RouteRange', None) is None:
+            return RouteRange(self)
+        else:
+            return self._properties.get('RouteRange')
 
     @property
     def ActiveTime(self):

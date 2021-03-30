@@ -51,7 +51,10 @@ class AppTypeRef(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.vendorref.nactypes.nacapps.nacapps import NacApps
-        return NacApps(self)
+        if self._properties.get('NacApps', None) is None:
+            return NacApps(self)
+        else:
+            return self._properties.get('NacApps')
 
     @property
     def Name(self):

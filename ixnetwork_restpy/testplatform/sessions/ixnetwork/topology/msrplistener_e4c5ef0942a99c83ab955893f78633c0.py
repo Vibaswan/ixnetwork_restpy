@@ -72,7 +72,10 @@ class MsrpListener(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        return LearnedInfo(self)
+        if self._properties.get('LearnedInfo', None) is None:
+            return LearnedInfo(self)
+        else:
+            return self._properties.get('LearnedInfo')
 
     @property
     def MsrpListenerDomains(self):
@@ -86,7 +89,10 @@ class MsrpListener(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.msrplistenerdomains_f2fe387dee9561ca08fc00cc9bf60ef4 import MsrpListenerDomains
-        return MsrpListenerDomains(self)._select()
+        if self._properties.get('MsrpListenerDomains', None) is None:
+            return MsrpListenerDomains(self)._select()
+        else:
+            return self._properties.get('MsrpListenerDomains')
 
     @property
     def SubscribedStreams(self):
@@ -100,7 +106,10 @@ class MsrpListener(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.subscribedstreams_b01da202c4f5221aa9094d86a288d1bd import SubscribedStreams
-        return SubscribedStreams(self)._select()
+        if self._properties.get('SubscribedStreams', None) is None:
+            return SubscribedStreams(self)._select()
+        else:
+            return self._properties.get('SubscribedStreams')
 
     @property
     def Active(self):

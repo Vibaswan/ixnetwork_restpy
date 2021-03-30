@@ -58,7 +58,10 @@ class DceTopologyRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dceinterestedvlanrange_a919b22a4f996c9450fcdac90437e05d import DceInterestedVlanRange
-        return DceInterestedVlanRange(self)
+        if self._properties.get('DceInterestedVlanRange', None) is None:
+            return DceInterestedVlanRange(self)
+        else:
+            return self._properties.get('DceInterestedVlanRange')
 
     @property
     def EnableFtag(self):

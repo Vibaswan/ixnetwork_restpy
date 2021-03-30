@@ -62,7 +62,10 @@ class LightweightDhcpv6relayAgent(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lightweightdhcp6relaytlvprofile_987f303b51886f2a61c9c1388518f037 import LightweightDhcp6RelayTlvProfile
-        return LightweightDhcp6RelayTlvProfile(self)._select()
+        if self._properties.get('LightweightDhcp6RelayTlvProfile', None) is None:
+            return LightweightDhcp6RelayTlvProfile(self)._select()
+        else:
+            return self._properties.get('LightweightDhcp6RelayTlvProfile')
 
     @property
     def ConnectedVia(self):

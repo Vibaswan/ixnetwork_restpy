@@ -58,7 +58,10 @@ class MldMcastIPv6GroupList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mlducastipv6sourcelist_d83ad2fbae6376e2b6cb9b364249dbb9 import MldUcastIPv6SourceList
-        return MldUcastIPv6SourceList(self)._select()
+        if self._properties.get('MldUcastIPv6SourceList', None) is None:
+            return MldUcastIPv6SourceList(self)._select()
+        else:
+            return self._properties.get('MldUcastIPv6SourceList')
 
     @property
     def Tag(self):
@@ -72,7 +75,10 @@ class MldMcastIPv6GroupList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is None:
+            return Tag(self)
+        else:
+            return self._properties.get('Tag')
 
     @property
     def Active(self):

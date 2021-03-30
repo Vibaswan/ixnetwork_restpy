@@ -53,7 +53,10 @@ class NetTopologyFatTree(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.level_2d6a41b0a919905f176ad907ea4fdab6 import Level
-        return Level(self)
+        if self._properties.get('Level', None) is None:
+            return Level(self)
+        else:
+            return self._properties.get('Level')
 
     @property
     def IncludeEntryPoint(self):

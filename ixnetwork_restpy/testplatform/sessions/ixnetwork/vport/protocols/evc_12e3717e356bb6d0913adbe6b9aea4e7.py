@@ -58,7 +58,10 @@ class Evc(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bwprofile_1f77a90148a0ad6bb7139272863d372c import BwProfile
-        return BwProfile(self)
+        if self._properties.get('BwProfile', None) is None:
+            return BwProfile(self)
+        else:
+            return self._properties.get('BwProfile')
 
     @property
     def CeVlanIdRange(self):
@@ -72,7 +75,10 @@ class Evc(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cevlanidrange_4da1c6bd354a4f3ba5d44ff2c658e8a2 import CeVlanIdRange
-        return CeVlanIdRange(self)
+        if self._properties.get('CeVlanIdRange', None) is None:
+            return CeVlanIdRange(self)
+        else:
+            return self._properties.get('CeVlanIdRange')
 
     @property
     def DefaultEvc(self):

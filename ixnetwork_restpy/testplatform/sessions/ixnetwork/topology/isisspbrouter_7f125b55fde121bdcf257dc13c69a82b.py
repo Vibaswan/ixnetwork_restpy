@@ -87,7 +87,10 @@ class IsisSpbRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.spbtopologylist_079e088e28e1c709b12ccf5543f3c230 import SpbTopologyList
-        return SpbTopologyList(self)._select()
+        if self._properties.get('SpbTopologyList', None) is None:
+            return SpbTopologyList(self)._select()
+        else:
+            return self._properties.get('SpbTopologyList')
 
     @property
     def Active(self):

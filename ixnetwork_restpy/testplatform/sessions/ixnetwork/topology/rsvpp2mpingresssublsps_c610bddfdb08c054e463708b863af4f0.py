@@ -66,7 +66,10 @@ class RsvpP2mpIngressSubLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvperosubobjectslist_c0ebecb067ebf96898ae4f90af81d688 import RsvpEroSubObjectsList
-        return RsvpEroSubObjectsList(self)
+        if self._properties.get('RsvpEroSubObjectsList', None) is None:
+            return RsvpEroSubObjectsList(self)
+        else:
+            return self._properties.get('RsvpEroSubObjectsList')
 
     @property
     def Active(self):

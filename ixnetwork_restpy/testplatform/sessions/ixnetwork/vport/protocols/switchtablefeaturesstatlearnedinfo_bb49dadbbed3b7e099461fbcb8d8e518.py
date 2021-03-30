@@ -72,7 +72,10 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyactionslearnedinfo_69b85283e35d130d78e0d80a7b26060a import ApplyActionsLearnedInfo
-        return ApplyActionsLearnedInfo(self)
+        if self._properties.get('ApplyActionsLearnedInfo', None) is None:
+            return ApplyActionsLearnedInfo(self)
+        else:
+            return self._properties.get('ApplyActionsLearnedInfo')
 
     @property
     def ApplyActionsMissLearnedInfo(self):
@@ -86,7 +89,10 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyactionsmisslearnedinfo_e12161d2bc09f6f6142b7af0eadc2dce import ApplyActionsMissLearnedInfo
-        return ApplyActionsMissLearnedInfo(self)
+        if self._properties.get('ApplyActionsMissLearnedInfo', None) is None:
+            return ApplyActionsMissLearnedInfo(self)
+        else:
+            return self._properties.get('ApplyActionsMissLearnedInfo')
 
     @property
     def ApplySetFieldLearnedInfo(self):
@@ -100,7 +106,10 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applysetfieldlearnedinfo_f0b4feea92dd1452a8a81a6c0d835fe3 import ApplySetFieldLearnedInfo
-        return ApplySetFieldLearnedInfo(self)
+        if self._properties.get('ApplySetFieldLearnedInfo', None) is None:
+            return ApplySetFieldLearnedInfo(self)
+        else:
+            return self._properties.get('ApplySetFieldLearnedInfo')
 
     @property
     def ApplySetFieldMissLearnedInfo(self):
@@ -114,7 +123,10 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applysetfieldmisslearnedinfo_7455db4810fc18d1522d2f7d62e305a1 import ApplySetFieldMissLearnedInfo
-        return ApplySetFieldMissLearnedInfo(self)
+        if self._properties.get('ApplySetFieldMissLearnedInfo', None) is None:
+            return ApplySetFieldMissLearnedInfo(self)
+        else:
+            return self._properties.get('ApplySetFieldMissLearnedInfo')
 
     @property
     def InstructionLearnedInfo(self):
@@ -128,7 +140,10 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instructionlearnedinfo_ee8ad0057db3b02aba6cb1507ec6abbf import InstructionLearnedInfo
-        return InstructionLearnedInfo(self)
+        if self._properties.get('InstructionLearnedInfo', None) is None:
+            return InstructionLearnedInfo(self)
+        else:
+            return self._properties.get('InstructionLearnedInfo')
 
     @property
     def InstructionMissLearnedInfo(self):
@@ -142,7 +157,10 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instructionmisslearnedinfo_4d00cfc2ab45935c178a029ef76fb7b2 import InstructionMissLearnedInfo
-        return InstructionMissLearnedInfo(self)
+        if self._properties.get('InstructionMissLearnedInfo', None) is None:
+            return InstructionMissLearnedInfo(self)
+        else:
+            return self._properties.get('InstructionMissLearnedInfo')
 
     @property
     def MatchLearnedInfo(self):
@@ -156,7 +174,10 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.matchlearnedinfo_a45f872ddff69b9dbb7a4dd353968824 import MatchLearnedInfo
-        return MatchLearnedInfo(self)
+        if self._properties.get('MatchLearnedInfo', None) is None:
+            return MatchLearnedInfo(self)
+        else:
+            return self._properties.get('MatchLearnedInfo')
 
     @property
     def NextTableLearnedInfo(self):
@@ -170,7 +191,10 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nexttablelearnedinfo_23b33dc5fc9b19dce0196ca6f1f07567 import NextTableLearnedInfo
-        return NextTableLearnedInfo(self)
+        if self._properties.get('NextTableLearnedInfo', None) is None:
+            return NextTableLearnedInfo(self)
+        else:
+            return self._properties.get('NextTableLearnedInfo')
 
     @property
     def NextTableMissLearnedInfo(self):
@@ -184,7 +208,10 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nexttablemisslearnedinfo_e2481b23e26132283def64fc40fc27b1 import NextTableMissLearnedInfo
-        return NextTableMissLearnedInfo(self)
+        if self._properties.get('NextTableMissLearnedInfo', None) is None:
+            return NextTableMissLearnedInfo(self)
+        else:
+            return self._properties.get('NextTableMissLearnedInfo')
 
     @property
     def WildcardsLearnedInfo(self):
@@ -198,7 +225,10 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.wildcardslearnedinfo_8735626a40c247307c2674d973afbe72 import WildcardsLearnedInfo
-        return WildcardsLearnedInfo(self)
+        if self._properties.get('WildcardsLearnedInfo', None) is None:
+            return WildcardsLearnedInfo(self)
+        else:
+            return self._properties.get('WildcardsLearnedInfo')
 
     @property
     def WriteActionsLearnedInfo(self):
@@ -212,7 +242,10 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeactionslearnedinfo_eeadf26a26a0e4c8d1da5c94a09cd297 import WriteActionsLearnedInfo
-        return WriteActionsLearnedInfo(self)
+        if self._properties.get('WriteActionsLearnedInfo', None) is None:
+            return WriteActionsLearnedInfo(self)
+        else:
+            return self._properties.get('WriteActionsLearnedInfo')
 
     @property
     def WriteActionsMissLearnedInfo(self):
@@ -226,7 +259,10 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeactionsmisslearnedinfo_3fe5a932dc5e3ee403647920b878fc3a import WriteActionsMissLearnedInfo
-        return WriteActionsMissLearnedInfo(self)
+        if self._properties.get('WriteActionsMissLearnedInfo', None) is None:
+            return WriteActionsMissLearnedInfo(self)
+        else:
+            return self._properties.get('WriteActionsMissLearnedInfo')
 
     @property
     def WriteSetFieldLearnedInfo(self):
@@ -240,7 +276,10 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writesetfieldlearnedinfo_c990680b3d665d2522242a8656be4f74 import WriteSetFieldLearnedInfo
-        return WriteSetFieldLearnedInfo(self)
+        if self._properties.get('WriteSetFieldLearnedInfo', None) is None:
+            return WriteSetFieldLearnedInfo(self)
+        else:
+            return self._properties.get('WriteSetFieldLearnedInfo')
 
     @property
     def WriteSetFieldMissLearnedInfo(self):
@@ -254,7 +293,10 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writesetfieldmisslearnedinfo_185921fc714e5f4411bd7dcdf8a8dc3c import WriteSetFieldMissLearnedInfo
-        return WriteSetFieldMissLearnedInfo(self)
+        if self._properties.get('WriteSetFieldMissLearnedInfo', None) is None:
+            return WriteSetFieldMissLearnedInfo(self)
+        else:
+            return self._properties.get('WriteSetFieldMissLearnedInfo')
 
     @property
     def ApplyActions(self):

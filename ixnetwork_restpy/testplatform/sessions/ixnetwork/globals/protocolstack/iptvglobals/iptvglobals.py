@@ -51,7 +51,10 @@ class IptvGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.iptvglobals.globalchannellist.globalchannellist import GlobalChannelList
-        return GlobalChannelList(self)
+        if self._properties.get('GlobalChannelList', None) is None:
+            return GlobalChannelList(self)
+        else:
+            return self._properties.get('GlobalChannelList')
 
     @property
     def IgmpGroupRange(self):
@@ -65,7 +68,10 @@ class IptvGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.igmpglobals.igmpgrouprange.igmpgrouprange import IgmpGroupRange
-        return IgmpGroupRange(self)
+        if self._properties.get('IgmpGroupRange', None) is None:
+            return IgmpGroupRange(self)
+        else:
+            return self._properties.get('IgmpGroupRange')
 
     @property
     def IptvProfile(self):
@@ -79,7 +85,10 @@ class IptvGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.iptvglobals.iptvprofile.iptvprofile import IptvProfile
-        return IptvProfile(self)
+        if self._properties.get('IptvProfile', None) is None:
+            return IptvProfile(self)
+        else:
+            return self._properties.get('IptvProfile')
 
     @property
     def ObjectId(self):

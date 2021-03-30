@@ -58,7 +58,10 @@ class IgmpMcastIPv4GroupList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.igmpucastipv4sourcelist_f050f3572b51b1edb51a7f959ebf249f import IgmpUcastIPv4SourceList
-        return IgmpUcastIPv4SourceList(self)._select()
+        if self._properties.get('IgmpUcastIPv4SourceList', None) is None:
+            return IgmpUcastIPv4SourceList(self)._select()
+        else:
+            return self._properties.get('IgmpUcastIPv4SourceList')
 
     @property
     def Tag(self):
@@ -72,7 +75,10 @@ class IgmpMcastIPv4GroupList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is None:
+            return Tag(self)
+        else:
+            return self._properties.get('Tag')
 
     @property
     def Active(self):

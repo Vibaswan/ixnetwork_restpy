@@ -52,7 +52,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.advpls_5dde8265ff1ecdeb96de20b298f80538 import AdVpls
-        return AdVpls(self)
+        if self._properties.get('AdVpls', None) is None:
+            return AdVpls(self)
+        else:
+            return self._properties.get('AdVpls')
 
     @property
     def EvpnEthernetAd(self):
@@ -66,7 +69,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.evpnethernetad_12dab0dc2864617054af263fc2b58155 import EvpnEthernetAd
-        return EvpnEthernetAd(self)
+        if self._properties.get('EvpnEthernetAd', None) is None:
+            return EvpnEthernetAd(self)
+        else:
+            return self._properties.get('EvpnEthernetAd')
 
     @property
     def EvpnEthernetSegment(self):
@@ -80,7 +86,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.evpnethernetsegment_40ee843e162d38e5cb7726bfd833049f import EvpnEthernetSegment
-        return EvpnEthernetSegment(self)
+        if self._properties.get('EvpnEthernetSegment', None) is None:
+            return EvpnEthernetSegment(self)
+        else:
+            return self._properties.get('EvpnEthernetSegment')
 
     @property
     def EvpnMac(self):
@@ -94,7 +103,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.evpnmac_86150b3c69e43c37b03253f974aaf4e9 import EvpnMac
-        return EvpnMac(self)
+        if self._properties.get('EvpnMac', None) is None:
+            return EvpnMac(self)
+        else:
+            return self._properties.get('EvpnMac')
 
     @property
     def EvpnMulticast(self):
@@ -108,7 +120,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.evpnmulticast_2332f2753b59728e071685b055054c3a import EvpnMulticast
-        return EvpnMulticast(self)
+        if self._properties.get('EvpnMulticast', None) is None:
+            return EvpnMulticast(self)
+        else:
+            return self._properties.get('EvpnMulticast')
 
     @property
     def IpV4MulticastMplsVpn(self):
@@ -122,7 +137,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ipv4multicastmplsvpn_80de293cc7b2808bdf53a0e093cca30e import IpV4MulticastMplsVpn
-        return IpV4MulticastMplsVpn(self)
+        if self._properties.get('IpV4MulticastMplsVpn', None) is None:
+            return IpV4MulticastMplsVpn(self)
+        else:
+            return self._properties.get('IpV4MulticastMplsVpn')
 
     @property
     def IpV6MulticastMplsVpn(self):
@@ -136,7 +154,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ipv6multicastmplsvpn_d5defc40d2603c5ae259d96b20899427 import IpV6MulticastMplsVpn
-        return IpV6MulticastMplsVpn(self)
+        if self._properties.get('IpV6MulticastMplsVpn', None) is None:
+            return IpV6MulticastMplsVpn(self)
+        else:
+            return self._properties.get('IpV6MulticastMplsVpn')
 
     @property
     def Ipv4Multicast(self):
@@ -150,7 +171,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ipv4multicast_fc7ec4c3d8c03e9cbb20f32806a31040 import Ipv4Multicast
-        return Ipv4Multicast(self)
+        if self._properties.get('Ipv4Multicast', None) is None:
+            return Ipv4Multicast(self)
+        else:
+            return self._properties.get('Ipv4Multicast')
 
     @property
     def Ipv4MulticastVpn(self):
@@ -164,7 +188,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ipv4multicastvpn_edb2c16f7b63fa9484b778f711c90fa2 import Ipv4MulticastVpn
-        return Ipv4MulticastVpn(self)
+        if self._properties.get('Ipv4MulticastVpn', None) is None:
+            return Ipv4MulticastVpn(self)
+        else:
+            return self._properties.get('Ipv4MulticastVpn')
 
     @property
     def Ipv4Unicast(self):
@@ -178,7 +205,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ipv4unicast_46145dc1db04f9b8ca284ae1b1f97d4c import Ipv4Unicast
-        return Ipv4Unicast(self)
+        if self._properties.get('Ipv4Unicast', None) is None:
+            return Ipv4Unicast(self)
+        else:
+            return self._properties.get('Ipv4Unicast')
 
     @property
     def Ipv4mpls(self):
@@ -192,7 +222,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ipv4mpls_ae3d2a891e54132a528702b808875d79 import Ipv4mpls
-        return Ipv4mpls(self)
+        if self._properties.get('Ipv4mpls', None) is None:
+            return Ipv4mpls(self)
+        else:
+            return self._properties.get('Ipv4mpls')
 
     @property
     def Ipv4vpn(self):
@@ -206,7 +239,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ipv4vpn_19861e78349cda1e107027a3485bd143 import Ipv4vpn
-        return Ipv4vpn(self)
+        if self._properties.get('Ipv4vpn', None) is None:
+            return Ipv4vpn(self)
+        else:
+            return self._properties.get('Ipv4vpn')
 
     @property
     def Ipv6Multicast(self):
@@ -220,7 +256,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ipv6multicast_79b74a6b4570ecc06dd366389f4cadb2 import Ipv6Multicast
-        return Ipv6Multicast(self)
+        if self._properties.get('Ipv6Multicast', None) is None:
+            return Ipv6Multicast(self)
+        else:
+            return self._properties.get('Ipv6Multicast')
 
     @property
     def Ipv6MulticastVpn(self):
@@ -234,7 +273,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ipv6multicastvpn_d39213c0e17a3d42693ad10771afee20 import Ipv6MulticastVpn
-        return Ipv6MulticastVpn(self)
+        if self._properties.get('Ipv6MulticastVpn', None) is None:
+            return Ipv6MulticastVpn(self)
+        else:
+            return self._properties.get('Ipv6MulticastVpn')
 
     @property
     def Ipv6Unicast(self):
@@ -248,7 +290,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ipv6unicast_8e6edd93af91708fbdeecf6b152d6dfa import Ipv6Unicast
-        return Ipv6Unicast(self)
+        if self._properties.get('Ipv6Unicast', None) is None:
+            return Ipv6Unicast(self)
+        else:
+            return self._properties.get('Ipv6Unicast')
 
     @property
     def Ipv6mpls(self):
@@ -262,7 +307,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ipv6mpls_1b76569d6340a83ced4933d8b353a1f9 import Ipv6mpls
-        return Ipv6mpls(self)
+        if self._properties.get('Ipv6mpls', None) is None:
+            return Ipv6mpls(self)
+        else:
+            return self._properties.get('Ipv6mpls')
 
     @property
     def Ipv6vpn(self):
@@ -276,7 +324,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ipv6vpn_9888e5f551d28846a488a4ecd661dc33 import Ipv6vpn
-        return Ipv6vpn(self)
+        if self._properties.get('Ipv6vpn', None) is None:
+            return Ipv6vpn(self)
+        else:
+            return self._properties.get('Ipv6vpn')
 
     @property
     def Vpls(self):
@@ -290,7 +341,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.vpls_384184902812cb49d38ba3ad35e491ea import Vpls
-        return Vpls(self)
+        if self._properties.get('Vpls', None) is None:
+            return Vpls(self)
+        else:
+            return self._properties.get('Vpls')
 
     @property
     def EvpnEthernetAdRouteCount(self):

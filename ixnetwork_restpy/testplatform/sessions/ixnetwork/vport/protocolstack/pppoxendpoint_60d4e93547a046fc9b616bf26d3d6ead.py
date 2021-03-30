@@ -53,7 +53,10 @@ class PppoxEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancp_ed884bb04def6d1378e02d00c217a0e0 import Ancp
-        return Ancp(self)
+        if self._properties.get('Ancp', None) is None:
+            return Ancp(self)
+        else:
+            return self._properties.get('Ancp')
 
     @property
     def Dhcp2v6Client(self):
@@ -67,7 +70,10 @@ class PppoxEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcp2v6client_9172539a71126158546eff8fe10abaa3 import Dhcp2v6Client
-        return Dhcp2v6Client(self)
+        if self._properties.get('Dhcp2v6Client', None) is None:
+            return Dhcp2v6Client(self)
+        else:
+            return self._properties.get('Dhcp2v6Client')
 
     @property
     def Dhcpv6Client(self):
@@ -81,7 +87,10 @@ class PppoxEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6client_feba183ecc29974dac548af3e7a50060 import Dhcpv6Client
-        return Dhcpv6Client(self)
+        if self._properties.get('Dhcpv6Client', None) is None:
+            return Dhcpv6Client(self)
+        else:
+            return self._properties.get('Dhcpv6Client')
 
     @property
     def Dhcpv6Server(self):
@@ -95,7 +104,10 @@ class PppoxEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6server_65c057ad26b9cf5a402037fd0f44f8ee import Dhcpv6Server
-        return Dhcpv6Server(self)
+        if self._properties.get('Dhcpv6Server', None) is None:
+            return Dhcpv6Server(self)
+        else:
+            return self._properties.get('Dhcpv6Server')
 
     @property
     def IgmpMld(self):
@@ -109,7 +121,10 @@ class PppoxEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.igmpmld_d5aaf716dee3c10749b49f601a57feaf import IgmpMld
-        return IgmpMld(self)
+        if self._properties.get('IgmpMld', None) is None:
+            return IgmpMld(self)
+        else:
+            return self._properties.get('IgmpMld')
 
     @property
     def IgmpQuerier(self):
@@ -123,7 +138,10 @@ class PppoxEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.igmpquerier_6f615903f4a4b16a63be4c1444aba8ed import IgmpQuerier
-        return IgmpQuerier(self)
+        if self._properties.get('IgmpQuerier', None) is None:
+            return IgmpQuerier(self)
+        else:
+            return self._properties.get('IgmpQuerier')
 
     @property
     def Iptv(self):
@@ -137,7 +155,10 @@ class PppoxEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.iptv_0b6ffeca151f84f844c62183b8c7addc import Iptv
-        return Iptv(self)
+        if self._properties.get('Iptv', None) is None:
+            return Iptv(self)
+        else:
+            return self._properties.get('Iptv')
 
     @property
     def Range(self):
@@ -151,7 +172,10 @@ class PppoxEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_df989eb48817c7440dc6576fa44a3b35 import Range
-        return Range(self)
+        if self._properties.get('Range', None) is None:
+            return Range(self)
+        else:
+            return self._properties.get('Range')
 
     @property
     def Name(self):

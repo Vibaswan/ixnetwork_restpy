@@ -48,7 +48,10 @@ class Cist(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cistlearnedinfo_e5d178115cdbce95d255f8dd00599044 import CistLearnedInfo
-        return CistLearnedInfo(self)._select()
+        if self._properties.get('CistLearnedInfo', None) is None:
+            return CistLearnedInfo(self)._select()
+        else:
+            return self._properties.get('CistLearnedInfo')
 
     @property
     def LearnedInterface(self):
@@ -62,4 +65,7 @@ class Cist(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinterface_5c9d203cae9c9266ed5a3c6cd8f67e6e import LearnedInterface
-        return LearnedInterface(self)
+        if self._properties.get('LearnedInterface', None) is None:
+            return LearnedInterface(self)
+        else:
+            return self._properties.get('LearnedInterface')

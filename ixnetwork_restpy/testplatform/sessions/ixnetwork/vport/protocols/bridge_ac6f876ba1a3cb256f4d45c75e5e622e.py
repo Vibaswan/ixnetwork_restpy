@@ -82,7 +82,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cist_5125ef3dd560263f3c06cf84445f600c import Cist
-        return Cist(self)._select()
+        if self._properties.get('Cist', None) is None:
+            return Cist(self)._select()
+        else:
+            return self._properties.get('Cist')
 
     @property
     def Interface(self):
@@ -96,7 +99,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_d26d04ed3c9249181ab014c22140816e import Interface
-        return Interface(self)
+        if self._properties.get('Interface', None) is None:
+            return Interface(self)
+        else:
+            return self._properties.get('Interface')
 
     @property
     def LearnedInfo(self):
@@ -110,7 +116,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinfo_d1b9dcdde0ad5595e3e505fa55ba6552 import LearnedInfo
-        return LearnedInfo(self)._select()
+        if self._properties.get('LearnedInfo', None) is None:
+            return LearnedInfo(self)._select()
+        else:
+            return self._properties.get('LearnedInfo')
 
     @property
     def Msti(self):
@@ -124,7 +133,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.msti_1a0d87ce8de6a704d21d743b57844116 import Msti
-        return Msti(self)
+        if self._properties.get('Msti', None) is None:
+            return Msti(self)
+        else:
+            return self._properties.get('Msti')
 
     @property
     def Vlan(self):
@@ -138,7 +150,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.vlan_346cf815cbe7a05d0d162263098c4b42 import Vlan
-        return Vlan(self)
+        if self._properties.get('Vlan', None) is None:
+            return Vlan(self)
+        else:
+            return self._properties.get('Vlan')
 
     @property
     def AutoPickBridgeMac(self):

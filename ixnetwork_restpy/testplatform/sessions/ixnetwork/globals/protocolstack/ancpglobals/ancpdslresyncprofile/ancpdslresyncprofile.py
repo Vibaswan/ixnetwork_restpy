@@ -52,7 +52,10 @@ class AncpDslResyncProfile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.ancpglobals.ancpdslresyncprofile.ancpdslresynctlv.ancpdslresynctlv import AncpDslResyncTlv
-        return AncpDslResyncTlv(self)
+        if self._properties.get('AncpDslResyncTlv', None) is None:
+            return AncpDslResyncTlv(self)
+        else:
+            return self._properties.get('AncpDslResyncTlv')
 
     @property
     def Name(self):

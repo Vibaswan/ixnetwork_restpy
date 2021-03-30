@@ -62,7 +62,10 @@ class PortModificationTriggerAttributes(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linkfeature_504856a62026bf17f6de4e6df6d84240 import LinkFeature
-        return LinkFeature(self)._select()
+        if self._properties.get('LinkFeature', None) is None:
+            return LinkFeature(self)._select()
+        else:
+            return self._properties.get('LinkFeature')
 
     @property
     def LinkMode(self):
@@ -76,7 +79,10 @@ class PortModificationTriggerAttributes(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linkmode_736768165ae9d8ae449585fd3a939642 import LinkMode
-        return LinkMode(self)._select()
+        if self._properties.get('LinkMode', None) is None:
+            return LinkMode(self)._select()
+        else:
+            return self._properties.get('LinkMode')
 
     @property
     def LinkType(self):
@@ -90,7 +96,10 @@ class PortModificationTriggerAttributes(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linktype_83a62b52e3887490d94ce3bff98218ad import LinkType
-        return LinkType(self)._select()
+        if self._properties.get('LinkType', None) is None:
+            return LinkType(self)._select()
+        else:
+            return self._properties.get('LinkType')
 
     @property
     def AdvertisedFeatures(self):

@@ -56,7 +56,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.accumulateandburst.accumulateandburst import AccumulateAndBurst
-        return AccumulateAndBurst(self)._select()
+        if self._properties.get('AccumulateAndBurst', None) is None:
+            return AccumulateAndBurst(self)._select()
+        else:
+            return self._properties.get('AccumulateAndBurst')
 
     @property
     def BitError(self):
@@ -70,7 +73,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.biterror.biterror import BitError
-        return BitError(self)._select()
+        if self._properties.get('BitError', None) is None:
+            return BitError(self)._select()
+        else:
+            return self._properties.get('BitError')
 
     @property
     def Checksums(self):
@@ -84,7 +90,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.checksums.checksums import Checksums
-        return Checksums(self)._select()
+        if self._properties.get('Checksums', None) is None:
+            return Checksums(self)._select()
+        else:
+            return self._properties.get('Checksums')
 
     @property
     def CustomDelayVariation(self):
@@ -98,7 +107,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.customdelayvariation.customdelayvariation import CustomDelayVariation
-        return CustomDelayVariation(self)._select()
+        if self._properties.get('CustomDelayVariation', None) is None:
+            return CustomDelayVariation(self)._select()
+        else:
+            return self._properties.get('CustomDelayVariation')
 
     @property
     def Delay(self):
@@ -112,7 +124,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.delay.delay import Delay
-        return Delay(self)._select()
+        if self._properties.get('Delay', None) is None:
+            return Delay(self)._select()
+        else:
+            return self._properties.get('Delay')
 
     @property
     def DelayVariation(self):
@@ -126,7 +141,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.delayvariation.delayvariation import DelayVariation
-        return DelayVariation(self)._select()
+        if self._properties.get('DelayVariation', None) is None:
+            return DelayVariation(self)._select()
+        else:
+            return self._properties.get('DelayVariation')
 
     @property
     def Drop(self):
@@ -140,7 +158,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.drop.drop import Drop
-        return Drop(self)._select()
+        if self._properties.get('Drop', None) is None:
+            return Drop(self)._select()
+        else:
+            return self._properties.get('Drop')
 
     @property
     def Duplicate(self):
@@ -154,7 +175,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.duplicate.duplicate import Duplicate
-        return Duplicate(self)._select()
+        if self._properties.get('Duplicate', None) is None:
+            return Duplicate(self)._select()
+        else:
+            return self._properties.get('Duplicate')
 
     @property
     def FixedClassifier(self):
@@ -168,7 +192,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.fixedclassifier.fixedclassifier import FixedClassifier
-        return FixedClassifier(self)
+        if self._properties.get('FixedClassifier', None) is None:
+            return FixedClassifier(self)
+        else:
+            return self._properties.get('FixedClassifier')
 
     @property
     def Modifier(self):
@@ -182,7 +209,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.modifier.modifier import Modifier
-        return Modifier(self)
+        if self._properties.get('Modifier', None) is None:
+            return Modifier(self)
+        else:
+            return self._properties.get('Modifier')
 
     @property
     def Reorder(self):
@@ -196,7 +226,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.reorder.reorder import Reorder
-        return Reorder(self)._select()
+        if self._properties.get('Reorder', None) is None:
+            return Reorder(self)._select()
+        else:
+            return self._properties.get('Reorder')
 
     @property
     def RxRateLimit(self):
@@ -210,7 +243,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.rxratelimit.rxratelimit import RxRateLimit
-        return RxRateLimit(self)._select()
+        if self._properties.get('RxRateLimit', None) is None:
+            return RxRateLimit(self)._select()
+        else:
+            return self._properties.get('RxRateLimit')
 
     @property
     def Links__(self):

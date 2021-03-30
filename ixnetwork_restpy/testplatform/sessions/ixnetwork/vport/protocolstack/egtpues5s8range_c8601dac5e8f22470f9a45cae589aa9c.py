@@ -72,7 +72,10 @@ class EgtpUeS5S8Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.mobilepathentriess5s8sgw_16d6056dfc577e5a954fb832f3a3de97 import MobilePathEntriesS5S8Sgw
-        return MobilePathEntriesS5S8Sgw(self)
+        if self._properties.get('MobilePathEntriesS5S8Sgw', None) is None:
+            return MobilePathEntriesS5S8Sgw(self)
+        else:
+            return self._properties.get('MobilePathEntriesS5S8Sgw')
 
     @property
     def TrafficProfileProxiesS5S8Sgw(self):
@@ -86,7 +89,10 @@ class EgtpUeS5S8Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.trafficprofileproxiess5s8sgw_226b78057d8646de70af27de844cb6a6 import TrafficProfileProxiesS5S8Sgw
-        return TrafficProfileProxiesS5S8Sgw(self)
+        if self._properties.get('TrafficProfileProxiesS5S8Sgw', None) is None:
+            return TrafficProfileProxiesS5S8Sgw(self)
+        else:
+            return self._properties.get('TrafficProfileProxiesS5S8Sgw')
 
     @property
     def APNRestriction(self):

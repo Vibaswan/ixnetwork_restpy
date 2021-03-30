@@ -73,7 +73,10 @@ class Ipv6sr(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6segmentslist_b22beddfcd690829abbee2bde5eaa96d import IPv6SegmentsList
-        return IPv6SegmentsList(self)
+        if self._properties.get('IPv6SegmentsList', None) is None:
+            return IPv6SegmentsList(self)
+        else:
+            return self._properties.get('IPv6SegmentsList')
 
     @property
     def Connector(self):
@@ -87,7 +90,10 @@ class Ipv6sr(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        return Connector(self)
+        if self._properties.get('Connector', None) is None:
+            return Connector(self)
+        else:
+            return self._properties.get('Connector')
 
     @property
     def Active(self):

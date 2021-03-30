@@ -59,7 +59,10 @@ class Meters(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bands_392f44cb40ca53ad5e0fc665cc14dea3 import Bands
-        return Bands(self)
+        if self._properties.get('Bands', None) is None:
+            return Bands(self)
+        else:
+            return self._properties.get('Bands')
 
     @property
     def Active(self):

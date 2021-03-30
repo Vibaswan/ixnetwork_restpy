@@ -66,7 +66,10 @@ class Ethernet(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.connector_14f09e8cbd52d663d00858c35d771fda import Connector
-        return Connector(self)
+        if self._properties.get('Connector', None) is None:
+            return Connector(self)
+        else:
+            return self._properties.get('Connector')
 
     @property
     def Lagportlacp(self):
@@ -80,7 +83,10 @@ class Ethernet(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.lagportlacp_20ffef1c99dfba818871a069644627d6 import Lagportlacp
-        return Lagportlacp(self)
+        if self._properties.get('Lagportlacp', None) is None:
+            return Lagportlacp(self)
+        else:
+            return self._properties.get('Lagportlacp')
 
     @property
     def Lagportstaticlag(self):
@@ -94,7 +100,10 @@ class Ethernet(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.lagportstaticlag_91864be5b58104e6349e12f415e28075 import Lagportstaticlag
-        return Lagportstaticlag(self)
+        if self._properties.get('Lagportstaticlag', None) is None:
+            return Lagportstaticlag(self)
+        else:
+            return self._properties.get('Lagportstaticlag')
 
     @property
     def PbbEVpnParameter(self):
@@ -108,7 +117,10 @@ class Ethernet(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.pbbevpnparameter_cc8d242d8e4383f500d7418b3cff331b import PbbEVpnParameter
-        return PbbEVpnParameter(self)
+        if self._properties.get('PbbEVpnParameter', None) is None:
+            return PbbEVpnParameter(self)
+        else:
+            return self._properties.get('PbbEVpnParameter')
 
     @property
     def Tag(self):
@@ -122,7 +134,10 @@ class Ethernet(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.tag_5f7006f77d76d5947e1ccb4d9663920e import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is None:
+            return Tag(self)
+        else:
+            return self._properties.get('Tag')
 
     @property
     def Vlan(self):
@@ -136,7 +151,10 @@ class Ethernet(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.vlan_7d18813656829a125467de88e8aad791 import Vlan
-        return Vlan(self)
+        if self._properties.get('Vlan', None) is None:
+            return Vlan(self)
+        else:
+            return self._properties.get('Vlan')
 
     @property
     def VpnParameter(self):
@@ -150,7 +168,10 @@ class Ethernet(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.vpnparameter_669bbd373c0823a640ab751ee3944d2d import VpnParameter
-        return VpnParameter(self)
+        if self._properties.get('VpnParameter', None) is None:
+            return VpnParameter(self)
+        else:
+            return self._properties.get('VpnParameter')
 
     @property
     def ConnectedVia(self):

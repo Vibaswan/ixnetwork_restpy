@@ -49,7 +49,10 @@ class Watch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.watch.attributewatch.attributewatch import AttributeWatch
-        return AttributeWatch(self)
+        if self._properties.get('AttributeWatch', None) is None:
+            return AttributeWatch(self)
+        else:
+            return self._properties.get('AttributeWatch')
 
     @property
     def ExecWatch(self):
@@ -63,7 +66,10 @@ class Watch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.watch.execwatch.execwatch import ExecWatch
-        return ExecWatch(self)
+        if self._properties.get('ExecWatch', None) is None:
+            return ExecWatch(self)
+        else:
+            return self._properties.get('ExecWatch')
 
     @property
     def ListWatch(self):
@@ -77,7 +83,10 @@ class Watch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.watch.listwatch.listwatch import ListWatch
-        return ListWatch(self)
+        if self._properties.get('ListWatch', None) is None:
+            return ListWatch(self)
+        else:
+            return self._properties.get('ListWatch')
 
     @property
     def SelectWatch(self):
@@ -91,7 +100,10 @@ class Watch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.watch.selectwatch.selectwatch import SelectWatch
-        return SelectWatch(self)
+        if self._properties.get('SelectWatch', None) is None:
+            return SelectWatch(self)
+        else:
+            return self._properties.get('SelectWatch')
 
     @property
     def Topics(self):

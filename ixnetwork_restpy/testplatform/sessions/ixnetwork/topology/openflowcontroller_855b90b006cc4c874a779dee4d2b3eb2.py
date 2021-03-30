@@ -98,7 +98,10 @@ class OpenFlowController(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        return LearnedInfo(self)
+        if self._properties.get('LearnedInfo', None) is None:
+            return LearnedInfo(self)
+        else:
+            return self._properties.get('LearnedInfo')
 
     @property
     def LearnedInfoUpdate(self):
@@ -112,7 +115,10 @@ class OpenFlowController(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfoupdate_b6503122c0a4a58877467964920e27b5 import LearnedInfoUpdate
-        return LearnedInfoUpdate(self)
+        if self._properties.get('LearnedInfoUpdate', None) is None:
+            return LearnedInfoUpdate(self)
+        else:
+            return self._properties.get('LearnedInfoUpdate')
 
     @property
     def OpenFlowChannel(self):
@@ -126,7 +132,10 @@ class OpenFlowController(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.openflowchannel_97012d0be69c2c7c1b2ca179dbbe39ac import OpenFlowChannel
-        return OpenFlowChannel(self)
+        if self._properties.get('OpenFlowChannel', None) is None:
+            return OpenFlowChannel(self)
+        else:
+            return self._properties.get('OpenFlowChannel')
 
     @property
     def AcceptUnconfiguredChannel(self):

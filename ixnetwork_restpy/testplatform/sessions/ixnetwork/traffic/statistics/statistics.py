@@ -48,7 +48,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.advancedsequencechecking.advancedsequencechecking import AdvancedSequenceChecking
-        return AdvancedSequenceChecking(self)._select()
+        if self._properties.get('AdvancedSequenceChecking', None) is None:
+            return AdvancedSequenceChecking(self)._select()
+        else:
+            return self._properties.get('AdvancedSequenceChecking')
 
     @property
     def CpdpConvergence(self):
@@ -62,7 +65,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.cpdpconvergence.cpdpconvergence import CpdpConvergence
-        return CpdpConvergence(self)._select()
+        if self._properties.get('CpdpConvergence', None) is None:
+            return CpdpConvergence(self)._select()
+        else:
+            return self._properties.get('CpdpConvergence')
 
     @property
     def DataIntegrity(self):
@@ -76,7 +82,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.dataintegrity.dataintegrity import DataIntegrity
-        return DataIntegrity(self)._select()
+        if self._properties.get('DataIntegrity', None) is None:
+            return DataIntegrity(self)._select()
+        else:
+            return self._properties.get('DataIntegrity')
 
     @property
     def DelayVariation(self):
@@ -90,7 +99,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.delayvariation.delayvariation import DelayVariation
-        return DelayVariation(self)._select()
+        if self._properties.get('DelayVariation', None) is None:
+            return DelayVariation(self)._select()
+        else:
+            return self._properties.get('DelayVariation')
 
     @property
     def ErrorStats(self):
@@ -104,7 +116,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.errorstats.errorstats import ErrorStats
-        return ErrorStats(self)._select()
+        if self._properties.get('ErrorStats', None) is None:
+            return ErrorStats(self)._select()
+        else:
+            return self._properties.get('ErrorStats')
 
     @property
     def InterArrivalTimeRate(self):
@@ -118,7 +133,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.interarrivaltimerate.interarrivaltimerate import InterArrivalTimeRate
-        return InterArrivalTimeRate(self)._select()
+        if self._properties.get('InterArrivalTimeRate', None) is None:
+            return InterArrivalTimeRate(self)._select()
+        else:
+            return self._properties.get('InterArrivalTimeRate')
 
     @property
     def Iptv(self):
@@ -132,7 +150,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.iptv.iptv import Iptv
-        return Iptv(self)._select()
+        if self._properties.get('Iptv', None) is None:
+            return Iptv(self)._select()
+        else:
+            return self._properties.get('Iptv')
 
     @property
     def L1Rates(self):
@@ -146,7 +167,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.l1rates.l1rates import L1Rates
-        return L1Rates(self)._select()
+        if self._properties.get('L1Rates', None) is None:
+            return L1Rates(self)._select()
+        else:
+            return self._properties.get('L1Rates')
 
     @property
     def Latency(self):
@@ -160,7 +184,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.latency.latency import Latency
-        return Latency(self)._select()
+        if self._properties.get('Latency', None) is None:
+            return Latency(self)._select()
+        else:
+            return self._properties.get('Latency')
 
     @property
     def MisdirectedPerFlow(self):
@@ -174,7 +201,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.misdirectedperflow.misdirectedperflow import MisdirectedPerFlow
-        return MisdirectedPerFlow(self)._select()
+        if self._properties.get('MisdirectedPerFlow', None) is None:
+            return MisdirectedPerFlow(self)._select()
+        else:
+            return self._properties.get('MisdirectedPerFlow')
 
     @property
     def MultipleJoinLeaveLatency(self):
@@ -188,7 +218,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.multiplejoinleavelatency.multiplejoinleavelatency import MultipleJoinLeaveLatency
-        return MultipleJoinLeaveLatency(self)._select()
+        if self._properties.get('MultipleJoinLeaveLatency', None) is None:
+            return MultipleJoinLeaveLatency(self)._select()
+        else:
+            return self._properties.get('MultipleJoinLeaveLatency')
 
     @property
     def OneTimeJoinLeaveLatency(self):
@@ -202,7 +235,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.onetimejoinleavelatency.onetimejoinleavelatency import OneTimeJoinLeaveLatency
-        return OneTimeJoinLeaveLatency(self)._select()
+        if self._properties.get('OneTimeJoinLeaveLatency', None) is None:
+            return OneTimeJoinLeaveLatency(self)._select()
+        else:
+            return self._properties.get('OneTimeJoinLeaveLatency')
 
     @property
     def PacketLossDuration(self):
@@ -216,7 +252,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.packetlossduration.packetlossduration import PacketLossDuration
-        return PacketLossDuration(self)._select()
+        if self._properties.get('PacketLossDuration', None) is None:
+            return PacketLossDuration(self)._select()
+        else:
+            return self._properties.get('PacketLossDuration')
 
     @property
     def Prbs(self):
@@ -230,7 +269,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.prbs.prbs import Prbs
-        return Prbs(self)._select()
+        if self._properties.get('Prbs', None) is None:
+            return Prbs(self)._select()
+        else:
+            return self._properties.get('Prbs')
 
     @property
     def SequenceChecking(self):
@@ -244,4 +286,7 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.sequencechecking.sequencechecking import SequenceChecking
-        return SequenceChecking(self)._select()
+        if self._properties.get('SequenceChecking', None) is None:
+            return SequenceChecking(self)._select()
+        else:
+            return self._properties.get('SequenceChecking')

@@ -67,7 +67,10 @@ class IsisDceSimRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        return Connector(self)
+        if self._properties.get('Connector', None) is None:
+            return Connector(self)
+        else:
+            return self._properties.get('Connector')
 
     @property
     def DceSimulatedMCastIpv4GroupList(self):
@@ -81,7 +84,10 @@ class IsisDceSimRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dcesimulatedmcastipv4grouplist_81627c13e7781d475d54b1321526cb62 import DceSimulatedMCastIpv4GroupList
-        return DceSimulatedMCastIpv4GroupList(self)._select()
+        if self._properties.get('DceSimulatedMCastIpv4GroupList', None) is None:
+            return DceSimulatedMCastIpv4GroupList(self)._select()
+        else:
+            return self._properties.get('DceSimulatedMCastIpv4GroupList')
 
     @property
     def DceSimulatedMCastIpv6GroupList(self):
@@ -95,7 +101,10 @@ class IsisDceSimRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dcesimulatedmcastipv6grouplist_7fbea0bd4f7507b7b0d975bb7a4d36b7 import DceSimulatedMCastIpv6GroupList
-        return DceSimulatedMCastIpv6GroupList(self)._select()
+        if self._properties.get('DceSimulatedMCastIpv6GroupList', None) is None:
+            return DceSimulatedMCastIpv6GroupList(self)._select()
+        else:
+            return self._properties.get('DceSimulatedMCastIpv6GroupList')
 
     @property
     def DceSimulatedMCastMacGroupList(self):
@@ -109,7 +118,10 @@ class IsisDceSimRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dcesimulatedmcastmacgrouplist_d6ad8319ad4117715425a07710acdbc7 import DceSimulatedMCastMacGroupList
-        return DceSimulatedMCastMacGroupList(self)._select()
+        if self._properties.get('DceSimulatedMCastMacGroupList', None) is None:
+            return DceSimulatedMCastMacGroupList(self)._select()
+        else:
+            return self._properties.get('DceSimulatedMCastMacGroupList')
 
     @property
     def Active(self):

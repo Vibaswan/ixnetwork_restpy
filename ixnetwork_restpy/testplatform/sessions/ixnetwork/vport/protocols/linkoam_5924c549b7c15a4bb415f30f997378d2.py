@@ -50,7 +50,10 @@ class LinkOam(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.link_cfda096a9e4ef582e1dc4f12789cdb07 import Link
-        return Link(self)
+        if self._properties.get('Link', None) is None:
+            return Link(self)
+        else:
+            return self._properties.get('Link')
 
     @property
     def Enabled(self):

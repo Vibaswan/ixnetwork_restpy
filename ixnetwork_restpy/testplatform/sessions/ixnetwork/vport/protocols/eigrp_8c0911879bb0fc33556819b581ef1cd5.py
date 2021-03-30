@@ -50,7 +50,10 @@ class Eigrp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_1e9de36b26d93328f62a1425873afc16 import Router
-        return Router(self)
+        if self._properties.get('Router', None) is None:
+            return Router(self)
+        else:
+            return self._properties.get('Router')
 
     @property
     def Enabled(self):

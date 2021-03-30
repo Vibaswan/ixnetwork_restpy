@@ -70,7 +70,10 @@ class JoinPrune(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedmgrstate_de36afcd7fd30fa3d34f3a6cc80bdd38 import LearnedMgrState
-        return LearnedMgrState(self)
+        if self._properties.get('LearnedMgrState', None) is None:
+            return LearnedMgrState(self)
+        else:
+            return self._properties.get('LearnedMgrState')
 
     @property
     def DiscardRegisterStates(self):

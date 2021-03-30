@@ -63,7 +63,10 @@ class UserLsa(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.external_85a598ac8444d3e9900180267cdd4cc7 import External
-        return External(self)
+        if self._properties.get('External', None) is None:
+            return External(self)
+        else:
+            return self._properties.get('External')
 
     @property
     def Network(self):
@@ -77,7 +80,10 @@ class UserLsa(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.network_955639231e107e0f0d10cb2bc06c7334 import Network
-        return Network(self)
+        if self._properties.get('Network', None) is None:
+            return Network(self)
+        else:
+            return self._properties.get('Network')
 
     @property
     def Nssa(self):
@@ -91,7 +97,10 @@ class UserLsa(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nssa_f90f4f11319e2f01d562907fe79a27a5 import Nssa
-        return Nssa(self)
+        if self._properties.get('Nssa', None) is None:
+            return Nssa(self)
+        else:
+            return self._properties.get('Nssa')
 
     @property
     def Opaque(self):
@@ -105,7 +114,10 @@ class UserLsa(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaque_69b3d155c040a105eb3fda40e02154f0 import Opaque
-        return Opaque(self)
+        if self._properties.get('Opaque', None) is None:
+            return Opaque(self)
+        else:
+            return self._properties.get('Opaque')
 
     @property
     def Router(self):
@@ -119,7 +131,10 @@ class UserLsa(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_77a71942871e4fa7afe599b051a5f4d8 import Router
-        return Router(self)
+        if self._properties.get('Router', None) is None:
+            return Router(self)
+        else:
+            return self._properties.get('Router')
 
     @property
     def SummaryIp(self):
@@ -133,7 +148,10 @@ class UserLsa(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.summaryip_42dff126c26ad4a553c5a885bf09e691 import SummaryIp
-        return SummaryIp(self)
+        if self._properties.get('SummaryIp', None) is None:
+            return SummaryIp(self)
+        else:
+            return self._properties.get('SummaryIp')
 
     @property
     def AdvertisingRouterId(self):

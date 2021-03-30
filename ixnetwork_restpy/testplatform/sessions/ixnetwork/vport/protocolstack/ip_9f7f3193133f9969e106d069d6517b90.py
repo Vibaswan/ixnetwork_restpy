@@ -53,7 +53,10 @@ class Ip(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.amt_151e2266e2df5cd4090ea2ebba0de372 import Amt
-        return Amt(self)
+        if self._properties.get('Amt', None) is None:
+            return Amt(self)
+        else:
+            return self._properties.get('Amt')
 
     @property
     def Ancp(self):
@@ -67,7 +70,10 @@ class Ip(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancp_ed884bb04def6d1378e02d00c217a0e0 import Ancp
-        return Ancp(self)
+        if self._properties.get('Ancp', None) is None:
+            return Ancp(self)
+        else:
+            return self._properties.get('Ancp')
 
     @property
     def EapoUdp(self):
@@ -81,7 +87,10 @@ class Ip(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.eapoudp_df39414f71a07e89cc26928748d51e39 import EapoUdp
-        return EapoUdp(self)
+        if self._properties.get('EapoUdp', None) is None:
+            return EapoUdp(self)
+        else:
+            return self._properties.get('EapoUdp')
 
     @property
     def EgtpPcrfEndpoint(self):
@@ -95,7 +104,10 @@ class Ip(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtppcrfendpoint_d434bcb0ab70ef60276854a7d1129ace import EgtpPcrfEndpoint
-        return EgtpPcrfEndpoint(self)
+        if self._properties.get('EgtpPcrfEndpoint', None) is None:
+            return EgtpPcrfEndpoint(self)
+        else:
+            return self._properties.get('EgtpPcrfEndpoint')
 
     @property
     def EgtpPcrfS5S8SgwEndpoint(self):
@@ -109,7 +121,10 @@ class Ip(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtppcrfs5s8sgwendpoint_dba239e482927ee879df31ca03cbe3a8 import EgtpPcrfS5S8SgwEndpoint
-        return EgtpPcrfS5S8SgwEndpoint(self)
+        if self._properties.get('EgtpPcrfS5S8SgwEndpoint', None) is None:
+            return EgtpPcrfS5S8SgwEndpoint(self)
+        else:
+            return self._properties.get('EgtpPcrfS5S8SgwEndpoint')
 
     @property
     def EgtpS5S8PgwEndpoint(self):
@@ -123,7 +138,10 @@ class Ip(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtps5s8pgwendpoint_8296dd3c4b3188a6147203fe72ede433 import EgtpS5S8PgwEndpoint
-        return EgtpS5S8PgwEndpoint(self)
+        if self._properties.get('EgtpS5S8PgwEndpoint', None) is None:
+            return EgtpS5S8PgwEndpoint(self)
+        else:
+            return self._properties.get('EgtpS5S8PgwEndpoint')
 
     @property
     def EgtpS5S8SgwEndpoint(self):
@@ -137,7 +155,10 @@ class Ip(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtps5s8sgwendpoint_5a66ec98cbf5e0aadf689d6fd49a78d0 import EgtpS5S8SgwEndpoint
-        return EgtpS5S8SgwEndpoint(self)
+        if self._properties.get('EgtpS5S8SgwEndpoint', None) is None:
+            return EgtpS5S8SgwEndpoint(self)
+        else:
+            return self._properties.get('EgtpS5S8SgwEndpoint')
 
     @property
     def EgtpSgwEndpoint(self):
@@ -151,7 +172,10 @@ class Ip(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpsgwendpoint_e2927c1b6ca13738e58b69194c552f28 import EgtpSgwEndpoint
-        return EgtpSgwEndpoint(self)
+        if self._properties.get('EgtpSgwEndpoint', None) is None:
+            return EgtpSgwEndpoint(self)
+        else:
+            return self._properties.get('EgtpSgwEndpoint')
 
     @property
     def EgtpUeS5S8SgwEndpoint(self):
@@ -165,7 +189,10 @@ class Ip(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpues5s8sgwendpoint_e8740c9db322b1505c148e0592c0dd80 import EgtpUeS5S8SgwEndpoint
-        return EgtpUeS5S8SgwEndpoint(self)
+        if self._properties.get('EgtpUeS5S8SgwEndpoint', None) is None:
+            return EgtpUeS5S8SgwEndpoint(self)
+        else:
+            return self._properties.get('EgtpUeS5S8SgwEndpoint')
 
     @property
     def IgmpMld(self):
@@ -179,7 +206,10 @@ class Ip(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.igmpmld_d5aaf716dee3c10749b49f601a57feaf import IgmpMld
-        return IgmpMld(self)
+        if self._properties.get('IgmpMld', None) is None:
+            return IgmpMld(self)
+        else:
+            return self._properties.get('IgmpMld')
 
     @property
     def IgmpQuerier(self):
@@ -193,7 +223,10 @@ class Ip(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.igmpquerier_6f615903f4a4b16a63be4c1444aba8ed import IgmpQuerier
-        return IgmpQuerier(self)
+        if self._properties.get('IgmpQuerier', None) is None:
+            return IgmpQuerier(self)
+        else:
+            return self._properties.get('IgmpQuerier')
 
     @property
     def Iptv(self):
@@ -207,7 +240,10 @@ class Ip(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.iptv_0b6ffeca151f84f844c62183b8c7addc import Iptv
-        return Iptv(self)
+        if self._properties.get('Iptv', None) is None:
+            return Iptv(self)
+        else:
+            return self._properties.get('Iptv')
 
     @property
     def L2tp(self):
@@ -221,7 +257,10 @@ class Ip(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.l2tp_d6deb8bacf3f68d7b3bb60675b4752b1 import L2tp
-        return L2tp(self)
+        if self._properties.get('L2tp', None) is None:
+            return L2tp(self)
+        else:
+            return self._properties.get('L2tp')
 
     @property
     def L2tpEndpoint(self):
@@ -235,7 +274,10 @@ class Ip(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.l2tpendpoint_d2bf7779827c447518461df58f0d36cc import L2tpEndpoint
-        return L2tpEndpoint(self)
+        if self._properties.get('L2tpEndpoint', None) is None:
+            return L2tpEndpoint(self)
+        else:
+            return self._properties.get('L2tpEndpoint')
 
     @property
     def Ptp(self):
@@ -249,7 +291,10 @@ class Ip(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ptp_4946969b1dc760427b0cfbcfe8d5d621 import Ptp
-        return Ptp(self)
+        if self._properties.get('Ptp', None) is None:
+            return Ptp(self)
+        else:
+            return self._properties.get('Ptp')
 
     @property
     def SmDnsEndpoint(self):
@@ -263,7 +308,10 @@ class Ip(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.smdnsendpoint_25a285000feeb43daa1f61007086d304 import SmDnsEndpoint
-        return SmDnsEndpoint(self)
+        if self._properties.get('SmDnsEndpoint', None) is None:
+            return SmDnsEndpoint(self)
+        else:
+            return self._properties.get('SmDnsEndpoint')
 
     @property
     def TwampClient(self):
@@ -277,7 +325,10 @@ class Ip(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.twampclient_87758414b1b4857732f3f7a1084b07e8 import TwampClient
-        return TwampClient(self)
+        if self._properties.get('TwampClient', None) is None:
+            return TwampClient(self)
+        else:
+            return self._properties.get('TwampClient')
 
     @property
     def TwampServer(self):
@@ -291,7 +342,10 @@ class Ip(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.twampserver_286eeab244671765db983b1e4018d077 import TwampServer
-        return TwampServer(self)
+        if self._properties.get('TwampServer', None) is None:
+            return TwampServer(self)
+        else:
+            return self._properties.get('TwampServer')
 
     @property
     def WebAuth(self):
@@ -305,7 +359,10 @@ class Ip(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.webauth_544980df6d4db26e902e52ff78d9a8fb import WebAuth
-        return WebAuth(self)
+        if self._properties.get('WebAuth', None) is None:
+            return WebAuth(self)
+        else:
+            return self._properties.get('WebAuth')
 
     @property
     def Name(self):

@@ -64,7 +64,10 @@ class LocalEidRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.locator_f1fe3315f725c10b55c405019beb788b import Locator
-        return Locator(self)
+        if self._properties.get('Locator', None) is None:
+            return Locator(self)
+        else:
+            return self._properties.get('Locator')
 
     @property
     def Count(self):

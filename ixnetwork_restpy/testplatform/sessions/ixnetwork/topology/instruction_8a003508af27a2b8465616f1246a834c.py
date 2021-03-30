@@ -57,7 +57,10 @@ class Instruction(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.actions_6cb23f03bfbe3aff4491fd746dbe2956 import Actions
-        return Actions(self)
+        if self._properties.get('Actions', None) is None:
+            return Actions(self)
+        else:
+            return self._properties.get('Actions')
 
     @property
     def Field(self):
@@ -71,7 +74,10 @@ class Instruction(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.field_f65a45047b747ab6446cd586626ccd2d import Field
-        return Field(self)
+        if self._properties.get('Field', None) is None:
+            return Field(self)
+        else:
+            return self._properties.get('Field')
 
     @property
     def Count(self):

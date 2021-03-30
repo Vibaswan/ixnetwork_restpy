@@ -55,7 +55,10 @@ class Cfm(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bridge_1ef5aad5f0fd904d1f4f7c72e4e0bb2a import Bridge
-        return Bridge(self)
+        if self._properties.get('Bridge', None) is None:
+            return Bridge(self)
+        else:
+            return self._properties.get('Bridge')
 
     @property
     def EnableOptionalLmFunctionality(self):

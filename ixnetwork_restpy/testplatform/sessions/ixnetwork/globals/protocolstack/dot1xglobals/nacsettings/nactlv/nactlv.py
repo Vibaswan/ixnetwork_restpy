@@ -58,7 +58,10 @@ class NacTlv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.appcoderef.appcoderef import AppCodeRef
-        return AppCodeRef(self)._select()
+        if self._properties.get('AppCodeRef', None) is None:
+            return AppCodeRef(self)._select()
+        else:
+            return self._properties.get('AppCodeRef')
 
     @property
     def AppTypeRef(self):
@@ -72,7 +75,10 @@ class NacTlv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.apptyperef.apptyperef import AppTypeRef
-        return AppTypeRef(self)._select()
+        if self._properties.get('AppTypeRef', None) is None:
+            return AppTypeRef(self)._select()
+        else:
+            return self._properties.get('AppTypeRef')
 
     @property
     def VendorRef(self):
@@ -86,7 +92,10 @@ class NacTlv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.vendorref.vendorref import VendorRef
-        return VendorRef(self)._select()
+        if self._properties.get('VendorRef', None) is None:
+            return VendorRef(self)._select()
+        else:
+            return self._properties.get('VendorRef')
 
     @property
     def AppCode(self):

@@ -52,7 +52,10 @@ class DhcpServerEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.igmpquerier_6f615903f4a4b16a63be4c1444aba8ed import IgmpQuerier
-        return IgmpQuerier(self)
+        if self._properties.get('IgmpQuerier', None) is None:
+            return IgmpQuerier(self)
+        else:
+            return self._properties.get('IgmpQuerier')
 
     @property
     def Range(self):
@@ -66,7 +69,10 @@ class DhcpServerEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_df989eb48817c7440dc6576fa44a3b35 import Range
-        return Range(self)
+        if self._properties.get('Range', None) is None:
+            return Range(self)
+        else:
+            return self._properties.get('Range')
 
     @property
     def Name(self):

@@ -54,7 +54,10 @@ class DhcpOptionSet(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dhcpglobals.dhcpoptionset.dhcpoptiontlv.dhcpoptiontlv import DhcpOptionTlv
-        return DhcpOptionTlv(self)
+        if self._properties.get('DhcpOptionTlv', None) is None:
+            return DhcpOptionTlv(self)
+        else:
+            return self._properties.get('DhcpOptionTlv')
 
     @property
     def Defaultp(self):

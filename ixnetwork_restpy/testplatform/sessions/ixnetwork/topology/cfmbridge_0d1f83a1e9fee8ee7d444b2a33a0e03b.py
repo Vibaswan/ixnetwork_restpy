@@ -67,21 +67,27 @@ class CfmBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.advancedlearnedinfooptions_b2029cff9a0e1b9db1c05c032a4f003c import AdvancedLearnedInfoOptions
-        return AdvancedLearnedInfoOptions(self)._select()
+        if self._properties.get('AdvancedLearnedInfoOptions', None) is None:
+            return AdvancedLearnedInfoOptions(self)._select()
+        else:
+            return self._properties.get('AdvancedLearnedInfoOptions')
 
     @property
     def CfmMp(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmmp_8584bca4487041ab880565a01c8deaf3.CfmMp): An instance of the CfmMp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmmp_455bcaf1d68b20d894a87383d2cb1965.CfmMp): An instance of the CfmMp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmmp_8584bca4487041ab880565a01c8deaf3 import CfmMp
-        return CfmMp(self)._select()
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmmp_455bcaf1d68b20d894a87383d2cb1965 import CfmMp
+        if self._properties.get('CfmMp', None) is None:
+            return CfmMp(self)._select()
+        else:
+            return self._properties.get('CfmMp')
 
     @property
     def Connector(self):
@@ -95,7 +101,10 @@ class CfmBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        return Connector(self)
+        if self._properties.get('Connector', None) is None:
+            return Connector(self)
+        else:
+            return self._properties.get('Connector')
 
     @property
     def CustomTLV(self):
@@ -109,7 +118,10 @@ class CfmBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.customtlv_9dedbdbc1a4a245cbe35b21b51fa3a57 import CustomTLV
-        return CustomTLV(self)._select()
+        if self._properties.get('CustomTLV', None) is None:
+            return CustomTLV(self)._select()
+        else:
+            return self._properties.get('CustomTLV')
 
     @property
     def LearnedInfo(self):
@@ -123,7 +135,10 @@ class CfmBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        return LearnedInfo(self)
+        if self._properties.get('LearnedInfo', None) is None:
+            return LearnedInfo(self)
+        else:
+            return self._properties.get('LearnedInfo')
 
     @property
     def Link(self):
@@ -137,7 +152,10 @@ class CfmBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.link_3c4eb8730b5826d36118e54600a5188b import Link
-        return Link(self)._select()
+        if self._properties.get('Link', None) is None:
+            return Link(self)._select()
+        else:
+            return self._properties.get('Link')
 
     @property
     def MdLevels(self):
@@ -151,7 +169,10 @@ class CfmBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mdlevels_139c757bfb085e85b81902e33a549b1f import MdLevels
-        return MdLevels(self)._select()
+        if self._properties.get('MdLevels', None) is None:
+            return MdLevels(self)._select()
+        else:
+            return self._properties.get('MdLevels')
 
     @property
     def Active(self):
@@ -727,26 +748,6 @@ class CfmBridge(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('getCfmLoopbackDbLearnedInformation', payload=payload, response_object=None)
 
-    def GetCfmSLMDbLearnedInformation(self, *args, **kwargs):
-        """Executes the getCfmSLMDbLearnedInformation operation on the server.
-
-        Get Learned SLM Information
-
-        getCfmSLMDbLearnedInformation(Arg2=list)list
-        --------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmSLMDbLearnedInformation', payload=payload, response_object=None)
-
     def GetCfmTSTDbLearnedInformation(self, *args, **kwargs):
         """Executes the getCfmTSTDbLearnedInformation operation on the server.
 
@@ -1071,31 +1072,6 @@ class CfmBridge(Base):
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('getPeriodicLTLearnedInformation', payload=payload, response_object=None)
-
-    def GetSLMLearnedInfo(self, *args, **kwargs):
-        """Executes the getSLMLearnedInfo operation on the server.
-
-        Get SLM Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getSLMLearnedInfo(SessionIndices=list)
-        --------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getSLMLearnedInfo(SessionIndices=string)
-        ----------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getSLMLearnedInfo', payload=payload, response_object=None)
 
     def GetTSTLearnedInfo(self, *args, **kwargs):
         """Executes the getTSTLearnedInfo operation on the server.

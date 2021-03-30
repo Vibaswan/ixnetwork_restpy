@@ -49,7 +49,10 @@ class TlvEditor(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.defaults_6da4efbc0f60f2cba8351f92d98fdc75 import Defaults
-        return Defaults(self)
+        if self._properties.get('Defaults', None) is None:
+            return Defaults(self)
+        else:
+            return self._properties.get('Defaults')
 
     @property
     def Template(self):
@@ -63,7 +66,10 @@ class TlvEditor(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.template_251f4228c795442db61593bcbbdf8694 import Template
-        return Template(self)
+        if self._properties.get('Template', None) is None:
+            return Template(self)
+        else:
+            return self._properties.get('Template')
 
     def find(self):
         """Finds and retrieves tlvEditor resources from the server.

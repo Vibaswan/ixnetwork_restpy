@@ -60,7 +60,10 @@ class Isis(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_1ecea4c371bb121a40e7a349f412c55d import Router
-        return Router(self)
+        if self._properties.get('Router', None) is None:
+            return Router(self)
+        else:
+            return self._properties.get('Router')
 
     @property
     def AllL1RbridgesMac(self):

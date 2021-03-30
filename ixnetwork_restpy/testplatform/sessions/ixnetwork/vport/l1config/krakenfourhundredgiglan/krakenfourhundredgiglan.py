@@ -84,7 +84,10 @@ class KrakenFourHundredGigLan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.fcoe.fcoe import Fcoe
-        return Fcoe(self)._select()
+        if self._properties.get('Fcoe', None) is None:
+            return Fcoe(self)._select()
+        else:
+            return self._properties.get('Fcoe')
 
     @property
     def AutoInstrumentation(self):

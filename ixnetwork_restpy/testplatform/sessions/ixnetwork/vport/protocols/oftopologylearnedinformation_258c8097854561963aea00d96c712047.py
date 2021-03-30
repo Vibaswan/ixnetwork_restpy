@@ -53,7 +53,10 @@ class OfTopologyLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.topologylearnedinfo_c88c6312d724f74dc23e3d2634e6484a import TopologyLearnedInfo
-        return TopologyLearnedInfo(self)
+        if self._properties.get('TopologyLearnedInfo', None) is None:
+            return TopologyLearnedInfo(self)
+        else:
+            return self._properties.get('TopologyLearnedInfo')
 
     @property
     def EnableInstallLldpFlow(self):

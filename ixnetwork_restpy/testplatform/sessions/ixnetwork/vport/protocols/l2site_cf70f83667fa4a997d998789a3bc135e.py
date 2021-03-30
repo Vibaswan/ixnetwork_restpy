@@ -77,7 +77,10 @@ class L2Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cluster_d68b61bb2cd5e48de06e56c1bb4b9cfb import Cluster
-        return Cluster(self)._select()
+        if self._properties.get('Cluster', None) is None:
+            return Cluster(self)._select()
+        else:
+            return self._properties.get('Cluster')
 
     @property
     def LabelBlock(self):
@@ -91,7 +94,10 @@ class L2Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.labelblock_6eb7f626a2a3e5d82b8862a7747ea32b import LabelBlock
-        return LabelBlock(self)
+        if self._properties.get('LabelBlock', None) is None:
+            return LabelBlock(self)
+        else:
+            return self._properties.get('LabelBlock')
 
     @property
     def LearnedRoute(self):
@@ -105,7 +111,10 @@ class L2Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedroute_2e9f44106274f7979df822941b6bf36d import LearnedRoute
-        return LearnedRoute(self)
+        if self._properties.get('LearnedRoute', None) is None:
+            return LearnedRoute(self)
+        else:
+            return self._properties.get('LearnedRoute')
 
     @property
     def MacAddressRange(self):
@@ -119,7 +128,10 @@ class L2Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.macaddressrange_c943358390fb51e82104338cc664cd83 import MacAddressRange
-        return MacAddressRange(self)
+        if self._properties.get('MacAddressRange', None) is None:
+            return MacAddressRange(self)
+        else:
+            return self._properties.get('MacAddressRange')
 
     @property
     def DistinguishAssignedIncrement(self):

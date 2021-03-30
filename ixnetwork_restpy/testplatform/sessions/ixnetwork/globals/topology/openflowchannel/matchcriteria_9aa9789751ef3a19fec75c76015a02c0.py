@@ -56,7 +56,10 @@ class MatchCriteria(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.field_a57f6ca37b8410c0547a8012c918e128 import Field
-        return Field(self)
+        if self._properties.get('Field', None) is None:
+            return Field(self)
+        else:
+            return self._properties.get('Field')
 
     @property
     def MatchCriteria(self):
@@ -70,7 +73,10 @@ class MatchCriteria(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.matchcriteria_9aa9789751ef3a19fec75c76015a02c0 import MatchCriteria
-        return MatchCriteria(self)
+        if self._properties.get('MatchCriteria', None) is None:
+            return MatchCriteria(self)
+        else:
+            return self._properties.get('MatchCriteria')
 
     @property
     def Count(self):

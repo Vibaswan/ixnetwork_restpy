@@ -48,14 +48,17 @@ class SimRouterBridge(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmsimulatedmp_d0096b7abd3340f4c8bdf5e2ba2578fb.CfmSimulatedMp): An instance of the CfmSimulatedMp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmsimulatedmp_67cd757b726cce9c0de4f91be721d97e.CfmSimulatedMp): An instance of the CfmSimulatedMp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmsimulatedmp_d0096b7abd3340f4c8bdf5e2ba2578fb import CfmSimulatedMp
-        return CfmSimulatedMp(self)
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmsimulatedmp_67cd757b726cce9c0de4f91be721d97e import CfmSimulatedMp
+        if self._properties.get('CfmSimulatedMp', None) is None:
+            return CfmSimulatedMp(self)
+        else:
+            return self._properties.get('CfmSimulatedMp')
 
     @property
     def Connector(self):
@@ -69,7 +72,10 @@ class SimRouterBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        return Connector(self)
+        if self._properties.get('Connector', None) is None:
+            return Connector(self)
+        else:
+            return self._properties.get('Connector')
 
     @property
     def IsisDcePseudoNode(self):
@@ -83,7 +89,10 @@ class SimRouterBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisdcepseudonode_6416adf40a9c10f6ed462f220e3c16ff import IsisDcePseudoNode
-        return IsisDcePseudoNode(self)
+        if self._properties.get('IsisDcePseudoNode', None) is None:
+            return IsisDcePseudoNode(self)
+        else:
+            return self._properties.get('IsisDcePseudoNode')
 
     @property
     def IsisSpbPseudoNode(self):
@@ -97,7 +106,10 @@ class SimRouterBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbpseudonode_e0862fd97cf99212ff106c16f6c049cb import IsisSpbPseudoNode
-        return IsisSpbPseudoNode(self)
+        if self._properties.get('IsisSpbPseudoNode', None) is None:
+            return IsisSpbPseudoNode(self)
+        else:
+            return self._properties.get('IsisSpbPseudoNode')
 
     @property
     def IsisTrillPseudoNode(self):
@@ -111,7 +123,10 @@ class SimRouterBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrillpseudonode_173e4463dccc2001457569c77f3570e0 import IsisTrillPseudoNode
-        return IsisTrillPseudoNode(self)
+        if self._properties.get('IsisTrillPseudoNode', None) is None:
+            return IsisTrillPseudoNode(self)
+        else:
+            return self._properties.get('IsisTrillPseudoNode')
 
     @property
     def Count(self):

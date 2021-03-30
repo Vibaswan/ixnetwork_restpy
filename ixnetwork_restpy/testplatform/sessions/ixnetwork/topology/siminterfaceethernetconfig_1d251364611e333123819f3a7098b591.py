@@ -55,7 +55,10 @@ class SimInterfaceEthernetConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmsimulatedlinks_ed9491a56ff2748e2dde581267b5d86e import CfmSimulatedLinks
-        return CfmSimulatedLinks(self)
+        if self._properties.get('CfmSimulatedLinks', None) is None:
+            return CfmSimulatedLinks(self)
+        else:
+            return self._properties.get('CfmSimulatedLinks')
 
     @property
     def Vlan(self):
@@ -69,7 +72,10 @@ class SimInterfaceEthernetConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vlan_a3ff17a54eb8b0ce450fbc0fd0191f37 import Vlan
-        return Vlan(self)
+        if self._properties.get('Vlan', None) is None:
+            return Vlan(self)
+        else:
+            return self._properties.get('Vlan')
 
     @property
     def Count(self):

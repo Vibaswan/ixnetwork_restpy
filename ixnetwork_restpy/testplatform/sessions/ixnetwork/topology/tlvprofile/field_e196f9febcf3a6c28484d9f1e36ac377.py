@@ -57,7 +57,10 @@ class Field(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.restriction_cf6d803d11c6dbc385b70d3f8adf1e34 import Restriction
-        return Restriction(self)
+        if self._properties.get('Restriction', None) is None:
+            return Restriction(self)
+        else:
+            return self._properties.get('Restriction')
 
     @property
     def Description(self):

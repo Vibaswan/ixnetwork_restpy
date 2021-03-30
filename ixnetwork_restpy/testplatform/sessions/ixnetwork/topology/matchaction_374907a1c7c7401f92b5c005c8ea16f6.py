@@ -57,7 +57,10 @@ class MatchAction(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.instructions_c6523447e39f8424f52417c8fe0de9ff import Instructions
-        return Instructions(self)._select()
+        if self._properties.get('Instructions', None) is None:
+            return Instructions(self)._select()
+        else:
+            return self._properties.get('Instructions')
 
     @property
     def MatchCriteria(self):
@@ -71,7 +74,10 @@ class MatchAction(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.matchcriteria_0cfbf8546f5ee9d503c47b3a37bded66 import MatchCriteria
-        return MatchCriteria(self)._select()
+        if self._properties.get('MatchCriteria', None) is None:
+            return MatchCriteria(self)._select()
+        else:
+            return self._properties.get('MatchCriteria')
 
     @property
     def Count(self):

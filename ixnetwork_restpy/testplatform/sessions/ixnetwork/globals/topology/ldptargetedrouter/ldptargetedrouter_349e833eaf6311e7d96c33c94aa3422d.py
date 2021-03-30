@@ -55,7 +55,10 @@ class LdpTargetedRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0 import StartRate
-        return StartRate(self)._select()
+        if self._properties.get('StartRate', None) is None:
+            return StartRate(self)._select()
+        else:
+            return self._properties.get('StartRate')
 
     @property
     def StopRate(self):
@@ -69,7 +72,10 @@ class LdpTargetedRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04 import StopRate
-        return StopRate(self)._select()
+        if self._properties.get('StopRate', None) is None:
+            return StopRate(self)._select()
+        else:
+            return self._properties.get('StopRate')
 
     @property
     def Count(self):

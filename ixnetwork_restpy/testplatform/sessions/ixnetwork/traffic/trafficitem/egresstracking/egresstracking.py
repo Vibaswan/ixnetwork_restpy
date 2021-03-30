@@ -56,7 +56,10 @@ class EgressTracking(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.tracking.egress.fieldoffset.fieldoffset import FieldOffset
-        return FieldOffset(self)._select()
+        if self._properties.get('FieldOffset', None) is None:
+            return FieldOffset(self)._select()
+        else:
+            return self._properties.get('FieldOffset')
 
     @property
     def AvailableEncapsulations(self):

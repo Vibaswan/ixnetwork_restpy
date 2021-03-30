@@ -53,7 +53,10 @@ class CellTable(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.col_82c9f692cc4dfbaf274869de8a335e5e import Col
-        return Col(self)
+        if self._properties.get('Col', None) is None:
+            return Col(self)
+        else:
+            return self._properties.get('Col')
 
     @property
     def Actions(self):

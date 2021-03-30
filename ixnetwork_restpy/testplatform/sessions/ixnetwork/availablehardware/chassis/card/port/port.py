@@ -56,7 +56,10 @@ class Port(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.chassis.card.port.tapsettings.tapsettings import TapSettings
-        return TapSettings(self)
+        if self._properties.get('TapSettings', None) is None:
+            return TapSettings(self)
+        else:
+            return self._properties.get('TapSettings')
 
     @property
     def Description(self):

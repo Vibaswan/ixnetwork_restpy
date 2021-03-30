@@ -49,4 +49,7 @@ formula.
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.formulacatalog.formulacolumn.formulacolumn import FormulaColumn
-        return FormulaColumn(self)
+        if self._properties.get('FormulaColumn', None) is None:
+            return FormulaColumn(self)
+        else:
+            return self._properties.get('FormulaColumn')

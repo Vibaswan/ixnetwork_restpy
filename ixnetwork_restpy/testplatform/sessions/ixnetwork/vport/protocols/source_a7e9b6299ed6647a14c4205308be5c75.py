@@ -67,7 +67,10 @@ class Source(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedsgstate_97f510f2a61d501f738002d53b1058e7 import LearnedSgState
-        return LearnedSgState(self)
+        if self._properties.get('LearnedSgState', None) is None:
+            return LearnedSgState(self)
+        else:
+            return self._properties.get('LearnedSgState')
 
     @property
     def DiscardSgJoinStates(self):

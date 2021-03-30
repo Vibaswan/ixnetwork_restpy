@@ -50,7 +50,10 @@ class Object(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.container_ad14fff79850a810bf70af3c662f313a import Container
-        return Container(self)
+        if self._properties.get('Container', None) is None:
+            return Container(self)
+        else:
+            return self._properties.get('Container')
 
     @property
     def Field(self):
@@ -64,7 +67,10 @@ class Object(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.field_e196f9febcf3a6c28484d9f1e36ac377 import Field
-        return Field(self)
+        if self._properties.get('Field', None) is None:
+            return Field(self)
+        else:
+            return self._properties.get('Field')
 
     @property
     def RepeatableContainer(self):
@@ -78,7 +84,10 @@ class Object(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.repeatablecontainer_a17d3ce6bb8123640f8dd7d1e6a6435c import RepeatableContainer
-        return RepeatableContainer(self)
+        if self._properties.get('RepeatableContainer', None) is None:
+            return RepeatableContainer(self)
+        else:
+            return self._properties.get('RepeatableContainer')
 
     @property
     def SubTlv(self):
@@ -92,7 +101,10 @@ class Object(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.subtlv_7c94061598b794f7b720de3bb85f6cdb import SubTlv
-        return SubTlv(self)
+        if self._properties.get('SubTlv', None) is None:
+            return SubTlv(self)
+        else:
+            return self._properties.get('SubTlv')
 
     @property
     def Name(self):

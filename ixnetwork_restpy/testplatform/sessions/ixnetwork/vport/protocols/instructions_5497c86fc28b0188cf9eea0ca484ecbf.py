@@ -59,7 +59,10 @@ class Instructions(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instructionactions_87bfa3f8fbf1803c85e9efa95765f620 import InstructionActions
-        return InstructionActions(self)
+        if self._properties.get('InstructionActions', None) is None:
+            return InstructionActions(self)
+        else:
+            return self._properties.get('InstructionActions')
 
     @property
     def Experimenter(self):

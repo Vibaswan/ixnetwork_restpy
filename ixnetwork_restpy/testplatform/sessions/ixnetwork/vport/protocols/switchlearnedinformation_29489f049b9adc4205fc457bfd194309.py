@@ -71,7 +71,10 @@ class SwitchLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ofchannelswitchlearnedinfo_8014ef79f44d2c63a73d35dd12599267 import OfChannelSwitchLearnedInfo
-        return OfChannelSwitchLearnedInfo(self)
+        if self._properties.get('OfChannelSwitchLearnedInfo', None) is None:
+            return OfChannelSwitchLearnedInfo(self)
+        else:
+            return self._properties.get('OfChannelSwitchLearnedInfo')
 
     @property
     def SwitchFlow131TriggerAttributes(self):
@@ -85,7 +88,10 @@ class SwitchLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchflow131triggerattributes_f684d69a421575142ffb1973005001bd import SwitchFlow131TriggerAttributes
-        return SwitchFlow131TriggerAttributes(self)._select()
+        if self._properties.get('SwitchFlow131TriggerAttributes', None) is None:
+            return SwitchFlow131TriggerAttributes(self)._select()
+        else:
+            return self._properties.get('SwitchFlow131TriggerAttributes')
 
     @property
     def SwitchFlowLearnedInfo(self):
@@ -99,7 +105,10 @@ class SwitchLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchflowlearnedinfo_ca1989680f648fe88b21f62ddc39567b import SwitchFlowLearnedInfo
-        return SwitchFlowLearnedInfo(self)
+        if self._properties.get('SwitchFlowLearnedInfo', None) is None:
+            return SwitchFlowLearnedInfo(self)
+        else:
+            return self._properties.get('SwitchFlowLearnedInfo')
 
     @property
     def SwitchFlowMatchCriteria131TriggerAttributes(self):
@@ -113,7 +122,10 @@ class SwitchLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchflowmatchcriteria131triggerattributes_3aa835176420a29823aa2b0d3e4805b2 import SwitchFlowMatchCriteria131TriggerAttributes
-        return SwitchFlowMatchCriteria131TriggerAttributes(self)._select()
+        if self._properties.get('SwitchFlowMatchCriteria131TriggerAttributes', None) is None:
+            return SwitchFlowMatchCriteria131TriggerAttributes(self)._select()
+        else:
+            return self._properties.get('SwitchFlowMatchCriteria131TriggerAttributes')
 
     @property
     def SwitchGroupLearnedInfo(self):
@@ -127,7 +139,10 @@ class SwitchLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchgrouplearnedinfo_aafd044030635b13c0db790095a88328 import SwitchGroupLearnedInfo
-        return SwitchGroupLearnedInfo(self)
+        if self._properties.get('SwitchGroupLearnedInfo', None) is None:
+            return SwitchGroupLearnedInfo(self)
+        else:
+            return self._properties.get('SwitchGroupLearnedInfo')
 
     @property
     def SwitchMeterLearnedInfo(self):
@@ -141,7 +156,10 @@ class SwitchLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchmeterlearnedinfo_99f3b816edb76e0b23f8211b94b0b8c7 import SwitchMeterLearnedInfo
-        return SwitchMeterLearnedInfo(self)
+        if self._properties.get('SwitchMeterLearnedInfo', None) is None:
+            return SwitchMeterLearnedInfo(self)
+        else:
+            return self._properties.get('SwitchMeterLearnedInfo')
 
     @property
     def SwitchTableFeaturesStatLearnedInfo(self):
@@ -155,7 +173,10 @@ class SwitchLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchtablefeaturesstatlearnedinfo_bb49dadbbed3b7e099461fbcb8d8e518 import SwitchTableFeaturesStatLearnedInfo
-        return SwitchTableFeaturesStatLearnedInfo(self)
+        if self._properties.get('SwitchTableFeaturesStatLearnedInfo', None) is None:
+            return SwitchTableFeaturesStatLearnedInfo(self)
+        else:
+            return self._properties.get('SwitchTableFeaturesStatLearnedInfo')
 
     @property
     def EnableVendorExperimenterMessage(self):

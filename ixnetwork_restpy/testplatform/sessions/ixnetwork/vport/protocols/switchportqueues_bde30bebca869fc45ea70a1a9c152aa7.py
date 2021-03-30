@@ -54,7 +54,10 @@ class SwitchPortQueues(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.queueproperty_4db15924818b323d719824838d4e87b3 import QueueProperty
-        return QueueProperty(self)._select()
+        if self._properties.get('QueueProperty', None) is None:
+            return QueueProperty(self)._select()
+        else:
+            return self._properties.get('QueueProperty')
 
     @property
     def MaxRate(self):

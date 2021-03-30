@@ -54,7 +54,10 @@ class Udf(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.udf.counter.counter import Counter
-        return Counter(self)
+        if self._properties.get('Counter', None) is None:
+            return Counter(self)
+        else:
+            return self._properties.get('Counter')
 
     @property
     def Ipv4(self):
@@ -68,7 +71,10 @@ class Udf(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.udf.ipv4.ipv4 import Ipv4
-        return Ipv4(self)
+        if self._properties.get('Ipv4', None) is None:
+            return Ipv4(self)
+        else:
+            return self._properties.get('Ipv4')
 
     @property
     def NestedCounter(self):
@@ -82,7 +88,10 @@ class Udf(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.udf.nestedcounter.nestedcounter import NestedCounter
-        return NestedCounter(self)
+        if self._properties.get('NestedCounter', None) is None:
+            return NestedCounter(self)
+        else:
+            return self._properties.get('NestedCounter')
 
     @property
     def Random(self):
@@ -96,7 +105,10 @@ class Udf(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.udf.random.random import Random
-        return Random(self)
+        if self._properties.get('Random', None) is None:
+            return Random(self)
+        else:
+            return self._properties.get('Random')
 
     @property
     def RangeList(self):
@@ -110,7 +122,10 @@ class Udf(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.udf.rangelist.rangelist import RangeList
-        return RangeList(self)
+        if self._properties.get('RangeList', None) is None:
+            return RangeList(self)
+        else:
+            return self._properties.get('RangeList')
 
     @property
     def ValueList(self):
@@ -124,7 +139,10 @@ class Udf(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.udf.valuelist.valuelist import ValueList
-        return ValueList(self)
+        if self._properties.get('ValueList', None) is None:
+            return ValueList(self)
+        else:
+            return self._properties.get('ValueList')
 
     @property
     def ByteOffset(self):

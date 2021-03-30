@@ -57,7 +57,10 @@ class SpbBaseVidRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbisidrange_2fa97db4cf56a9e15c02163af91cac28 import SpbIsIdRange
-        return SpbIsIdRange(self)
+        if self._properties.get('SpbIsIdRange', None) is None:
+            return SpbIsIdRange(self)
+        else:
+            return self._properties.get('SpbIsIdRange')
 
     @property
     def BMacAddress(self):

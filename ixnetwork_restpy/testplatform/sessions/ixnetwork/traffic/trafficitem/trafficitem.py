@@ -89,7 +89,10 @@ class TrafficItem(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibprofile import AppLibProfile
-        return AppLibProfile(self)
+        if self._properties.get('AppLibProfile', None) is None:
+            return AppLibProfile(self)
+        else:
+            return self._properties.get('AppLibProfile')
 
     @property
     def ConfigElement(self):
@@ -103,7 +106,10 @@ class TrafficItem(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.configelement import ConfigElement
-        return ConfigElement(self)
+        if self._properties.get('ConfigElement', None) is None:
+            return ConfigElement(self)
+        else:
+            return self._properties.get('ConfigElement')
 
     @property
     def DynamicUpdate(self):
@@ -117,7 +123,10 @@ class TrafficItem(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.dynamicupdate.dynamicupdate import DynamicUpdate
-        return DynamicUpdate(self)
+        if self._properties.get('DynamicUpdate', None) is None:
+            return DynamicUpdate(self)
+        else:
+            return self._properties.get('DynamicUpdate')
 
     @property
     def EgressTracking(self):
@@ -131,7 +140,10 @@ class TrafficItem(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.egresstracking.egresstracking import EgressTracking
-        return EgressTracking(self)
+        if self._properties.get('EgressTracking', None) is None:
+            return EgressTracking(self)
+        else:
+            return self._properties.get('EgressTracking')
 
     @property
     def EndpointSet(self):
@@ -145,7 +157,10 @@ class TrafficItem(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.endpointset.endpointset import EndpointSet
-        return EndpointSet(self)
+        if self._properties.get('EndpointSet', None) is None:
+            return EndpointSet(self)
+        else:
+            return self._properties.get('EndpointSet')
 
     @property
     def HighLevelStream(self):
@@ -159,7 +174,10 @@ class TrafficItem(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.highlevelstream import HighLevelStream
-        return HighLevelStream(self)
+        if self._properties.get('HighLevelStream', None) is None:
+            return HighLevelStream(self)
+        else:
+            return self._properties.get('HighLevelStream')
 
     @property
     def Tracking(self):
@@ -173,7 +191,10 @@ class TrafficItem(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.tracking.tracking import Tracking
-        return Tracking(self)
+        if self._properties.get('Tracking', None) is None:
+            return Tracking(self)
+        else:
+            return self._properties.get('Tracking')
 
     @property
     def TransmissionDistribution(self):
@@ -187,7 +208,10 @@ class TrafficItem(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.transmissiondistribution.transmissiondistribution import TransmissionDistribution
-        return TransmissionDistribution(self)
+        if self._properties.get('TransmissionDistribution', None) is None:
+            return TransmissionDistribution(self)
+        else:
+            return self._properties.get('TransmissionDistribution')
 
     @property
     def AllowSelfDestined(self):

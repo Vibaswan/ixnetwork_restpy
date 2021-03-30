@@ -78,7 +78,10 @@ class Dhcpv6PdClientGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dhcpv6pdclientglobals.dhcpv6pdoptionset.dhcpv6pdoptionset import Dhcpv6PdOptionSet
-        return Dhcpv6PdOptionSet(self)
+        if self._properties.get('Dhcpv6PdOptionSet', None) is None:
+            return Dhcpv6PdOptionSet(self)
+        else:
+            return self._properties.get('Dhcpv6PdOptionSet')
 
     @property
     def AcceptPartialConfig(self):

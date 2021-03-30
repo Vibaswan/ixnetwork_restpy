@@ -56,7 +56,10 @@ class ConfigElement(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.framepayload.framepayload import FramePayload
-        return FramePayload(self)._select()
+        if self._properties.get('FramePayload', None) is None:
+            return FramePayload(self)._select()
+        else:
+            return self._properties.get('FramePayload')
 
     @property
     def FrameRate(self):
@@ -70,7 +73,10 @@ class ConfigElement(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.framerate.framerate import FrameRate
-        return FrameRate(self)._select()
+        if self._properties.get('FrameRate', None) is None:
+            return FrameRate(self)._select()
+        else:
+            return self._properties.get('FrameRate')
 
     @property
     def FrameRateDistribution(self):
@@ -84,7 +90,10 @@ class ConfigElement(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.frameratedistribution.frameratedistribution import FrameRateDistribution
-        return FrameRateDistribution(self)._select()
+        if self._properties.get('FrameRateDistribution', None) is None:
+            return FrameRateDistribution(self)._select()
+        else:
+            return self._properties.get('FrameRateDistribution')
 
     @property
     def FrameSize(self):
@@ -98,7 +107,10 @@ class ConfigElement(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.framesize.framesize import FrameSize
-        return FrameSize(self)._select()
+        if self._properties.get('FrameSize', None) is None:
+            return FrameSize(self)._select()
+        else:
+            return self._properties.get('FrameSize')
 
     @property
     def Stack(self):
@@ -112,7 +124,10 @@ class ConfigElement(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.stack import Stack
-        return Stack(self)
+        if self._properties.get('Stack', None) is None:
+            return Stack(self)
+        else:
+            return self._properties.get('Stack')
 
     @property
     def StackLink(self):
@@ -126,7 +141,10 @@ class ConfigElement(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stacklink.stacklink import StackLink
-        return StackLink(self)
+        if self._properties.get('StackLink', None) is None:
+            return StackLink(self)
+        else:
+            return self._properties.get('StackLink')
 
     @property
     def TransmissionControl(self):
@@ -140,7 +158,10 @@ class ConfigElement(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.transmissioncontrol.transmissioncontrol import TransmissionControl
-        return TransmissionControl(self)._select()
+        if self._properties.get('TransmissionControl', None) is None:
+            return TransmissionControl(self)._select()
+        else:
+            return self._properties.get('TransmissionControl')
 
     @property
     def TransmissionDistribution(self):
@@ -154,7 +175,10 @@ class ConfigElement(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.transmissiondistribution.transmissiondistribution import TransmissionDistribution
-        return TransmissionDistribution(self)
+        if self._properties.get('TransmissionDistribution', None) is None:
+            return TransmissionDistribution(self)
+        else:
+            return self._properties.get('TransmissionDistribution')
 
     @property
     def Crc(self):

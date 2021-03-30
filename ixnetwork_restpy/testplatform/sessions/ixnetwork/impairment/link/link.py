@@ -53,7 +53,10 @@ class Link(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.link.loslof.loslof import LosLof
-        return LosLof(self)._select()
+        if self._properties.get('LosLof', None) is None:
+            return LosLof(self)._select()
+        else:
+            return self._properties.get('LosLof')
 
     @property
     def ForwardingInterruption(self):

@@ -189,7 +189,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.asyncconfstatlearnedinformation_55a6bd209526972244efc9f3d4661ec1 import AsyncConfStatLearnedInformation
-        return AsyncConfStatLearnedInformation(self)
+        if self._properties.get('AsyncConfStatLearnedInformation', None) is None:
+            return AsyncConfStatLearnedInformation(self)
+        else:
+            return self._properties.get('AsyncConfStatLearnedInformation')
 
     @property
     def Controller131TriggerAttributes(self):
@@ -203,7 +206,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.controller131triggerattributes_232ca5028d5ea1215ace5aeba2962aea import Controller131TriggerAttributes
-        return Controller131TriggerAttributes(self)._select()
+        if self._properties.get('Controller131TriggerAttributes', None) is None:
+            return Controller131TriggerAttributes(self)._select()
+        else:
+            return self._properties.get('Controller131TriggerAttributes')
 
     @property
     def DescriptionStatLearnedInformation(self):
@@ -217,7 +223,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.descriptionstatlearnedinformation_1cfc66b0b9bce6c9662a87e26565e532 import DescriptionStatLearnedInformation
-        return DescriptionStatLearnedInformation(self)
+        if self._properties.get('DescriptionStatLearnedInformation', None) is None:
+            return DescriptionStatLearnedInformation(self)
+        else:
+            return self._properties.get('DescriptionStatLearnedInformation')
 
     @property
     def FlowAggregatedStatLearnedInformation(self):
@@ -231,7 +240,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flowaggregatedstatlearnedinformation_4c7ab774f7d7c4e18b23b05a43dc0027 import FlowAggregatedStatLearnedInformation
-        return FlowAggregatedStatLearnedInformation(self)
+        if self._properties.get('FlowAggregatedStatLearnedInformation', None) is None:
+            return FlowAggregatedStatLearnedInformation(self)
+        else:
+            return self._properties.get('FlowAggregatedStatLearnedInformation')
 
     @property
     def FlowAggregatedStatMatchCriteria131TriggerAttributes(self):
@@ -245,7 +257,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flowaggregatedstatmatchcriteria131triggerattributes_8ac885c07bf1d6cf7c59365972b356be import FlowAggregatedStatMatchCriteria131TriggerAttributes
-        return FlowAggregatedStatMatchCriteria131TriggerAttributes(self)._select()
+        if self._properties.get('FlowAggregatedStatMatchCriteria131TriggerAttributes', None) is None:
+            return FlowAggregatedStatMatchCriteria131TriggerAttributes(self)._select()
+        else:
+            return self._properties.get('FlowAggregatedStatMatchCriteria131TriggerAttributes')
 
     @property
     def FlowStatLearnedInformation(self):
@@ -259,7 +274,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flowstatlearnedinformation_002eabd5fa0889c68e7235a9bb9ad5e9 import FlowStatLearnedInformation
-        return FlowStatLearnedInformation(self)
+        if self._properties.get('FlowStatLearnedInformation', None) is None:
+            return FlowStatLearnedInformation(self)
+        else:
+            return self._properties.get('FlowStatLearnedInformation')
 
     @property
     def FlowStatMatchCriteria131TriggerAttributes(self):
@@ -273,7 +291,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flowstatmatchcriteria131triggerattributes_b27e5ddde40e31d2de302bf536951c5d import FlowStatMatchCriteria131TriggerAttributes
-        return FlowStatMatchCriteria131TriggerAttributes(self)._select()
+        if self._properties.get('FlowStatMatchCriteria131TriggerAttributes', None) is None:
+            return FlowStatMatchCriteria131TriggerAttributes(self)._select()
+        else:
+            return self._properties.get('FlowStatMatchCriteria131TriggerAttributes')
 
     @property
     def GroupDescriptionStatLearnedInformation(self):
@@ -287,7 +308,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.groupdescriptionstatlearnedinformation_bb5c295d0dd2098afdc53add531f47ac import GroupDescriptionStatLearnedInformation
-        return GroupDescriptionStatLearnedInformation(self)
+        if self._properties.get('GroupDescriptionStatLearnedInformation', None) is None:
+            return GroupDescriptionStatLearnedInformation(self)
+        else:
+            return self._properties.get('GroupDescriptionStatLearnedInformation')
 
     @property
     def GroupFeatureStatLearnedInformation(self):
@@ -301,7 +325,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.groupfeaturestatlearnedinformation_632280eccf78483b8e26aff2c0535531 import GroupFeatureStatLearnedInformation
-        return GroupFeatureStatLearnedInformation(self)
+        if self._properties.get('GroupFeatureStatLearnedInformation', None) is None:
+            return GroupFeatureStatLearnedInformation(self)
+        else:
+            return self._properties.get('GroupFeatureStatLearnedInformation')
 
     @property
     def GroupStatLearnedInformation(self):
@@ -315,7 +342,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.groupstatlearnedinformation_f7fdb75ad6f8b605208c6756821bc8dd import GroupStatLearnedInformation
-        return GroupStatLearnedInformation(self)
+        if self._properties.get('GroupStatLearnedInformation', None) is None:
+            return GroupStatLearnedInformation(self)
+        else:
+            return self._properties.get('GroupStatLearnedInformation')
 
     @property
     def MeterConfigStatsLearnedInformation(self):
@@ -329,7 +359,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.meterconfigstatslearnedinformation_c404f0f7aa6709be1e0bc4e360c26a77 import MeterConfigStatsLearnedInformation
-        return MeterConfigStatsLearnedInformation(self)
+        if self._properties.get('MeterConfigStatsLearnedInformation', None) is None:
+            return MeterConfigStatsLearnedInformation(self)
+        else:
+            return self._properties.get('MeterConfigStatsLearnedInformation')
 
     @property
     def MeterFeatureStatsLearnedInformation(self):
@@ -343,7 +376,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.meterfeaturestatslearnedinformation_1c74658b5cfaf7cf07e18ab8b210037a import MeterFeatureStatsLearnedInformation
-        return MeterFeatureStatsLearnedInformation(self)
+        if self._properties.get('MeterFeatureStatsLearnedInformation', None) is None:
+            return MeterFeatureStatsLearnedInformation(self)
+        else:
+            return self._properties.get('MeterFeatureStatsLearnedInformation')
 
     @property
     def MeterStatsLearnedInformation(self):
@@ -357,7 +393,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.meterstatslearnedinformation_4c77d8d9d16967a4ae392a348abd22b4 import MeterStatsLearnedInformation
-        return MeterStatsLearnedInformation(self)
+        if self._properties.get('MeterStatsLearnedInformation', None) is None:
+            return MeterStatsLearnedInformation(self)
+        else:
+            return self._properties.get('MeterStatsLearnedInformation')
 
     @property
     def OfChannelLearnedInformation(self):
@@ -371,7 +410,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ofchannellearnedinformation_a03889c4dddf5a4a960b59e5877e27e7 import OfChannelLearnedInformation
-        return OfChannelLearnedInformation(self)
+        if self._properties.get('OfChannelLearnedInformation', None) is None:
+            return OfChannelLearnedInformation(self)
+        else:
+            return self._properties.get('OfChannelLearnedInformation')
 
     @property
     def PacketOutTriggerActions(self):
@@ -385,7 +427,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.packetouttriggeractions_7bb1bdd5560775fd276ee2edb4edc6bd import PacketOutTriggerActions
-        return PacketOutTriggerActions(self)
+        if self._properties.get('PacketOutTriggerActions', None) is None:
+            return PacketOutTriggerActions(self)
+        else:
+            return self._properties.get('PacketOutTriggerActions')
 
     @property
     def PortFeaturesLearnedInformation(self):
@@ -399,7 +444,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.portfeatureslearnedinformation_0889eed53126145fbd585737900ec1c3 import PortFeaturesLearnedInformation
-        return PortFeaturesLearnedInformation(self)
+        if self._properties.get('PortFeaturesLearnedInformation', None) is None:
+            return PortFeaturesLearnedInformation(self)
+        else:
+            return self._properties.get('PortFeaturesLearnedInformation')
 
     @property
     def PortModificationTriggerAttributes(self):
@@ -413,7 +461,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.portmodificationtriggerattributes_015954c805480d254b896509d1f9cf19 import PortModificationTriggerAttributes
-        return PortModificationTriggerAttributes(self)._select()
+        if self._properties.get('PortModificationTriggerAttributes', None) is None:
+            return PortModificationTriggerAttributes(self)._select()
+        else:
+            return self._properties.get('PortModificationTriggerAttributes')
 
     @property
     def PortStatLearnedInformation(self):
@@ -427,7 +478,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.portstatlearnedinformation_df08cb6d6559c441ecb18e842c4373c9 import PortStatLearnedInformation
-        return PortStatLearnedInformation(self)
+        if self._properties.get('PortStatLearnedInformation', None) is None:
+            return PortStatLearnedInformation(self)
+        else:
+            return self._properties.get('PortStatLearnedInformation')
 
     @property
     def QueueConfigLearnedInformation(self):
@@ -441,7 +495,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.queueconfiglearnedinformation_7ee9e47cec80aa1c9cd1b2b3de6ccb5c import QueueConfigLearnedInformation
-        return QueueConfigLearnedInformation(self)
+        if self._properties.get('QueueConfigLearnedInformation', None) is None:
+            return QueueConfigLearnedInformation(self)
+        else:
+            return self._properties.get('QueueConfigLearnedInformation')
 
     @property
     def QueueStatLearnedInformation(self):
@@ -455,7 +512,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.queuestatlearnedinformation_153b6f38157622bbfcd373d2e0ef5a3b import QueueStatLearnedInformation
-        return QueueStatLearnedInformation(self)
+        if self._properties.get('QueueStatLearnedInformation', None) is None:
+            return QueueStatLearnedInformation(self)
+        else:
+            return self._properties.get('QueueStatLearnedInformation')
 
     @property
     def SwitchConfigLearnedInformation(self):
@@ -469,7 +529,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchconfiglearnedinformation_e983ca5da0eadbba93d1ce1d2903a5b7 import SwitchConfigLearnedInformation
-        return SwitchConfigLearnedInformation(self)
+        if self._properties.get('SwitchConfigLearnedInformation', None) is None:
+            return SwitchConfigLearnedInformation(self)
+        else:
+            return self._properties.get('SwitchConfigLearnedInformation')
 
     @property
     def TableFeaturePropertiesTrigger(self):
@@ -483,7 +546,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tablefeaturepropertiestrigger_06c9316866ce5e30145a1ef9dd4c0ab3 import TableFeaturePropertiesTrigger
-        return TableFeaturePropertiesTrigger(self)
+        if self._properties.get('TableFeaturePropertiesTrigger', None) is None:
+            return TableFeaturePropertiesTrigger(self)
+        else:
+            return self._properties.get('TableFeaturePropertiesTrigger')
 
     @property
     def TableFeaturesLearnedInformation(self):
@@ -497,7 +563,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tablefeatureslearnedinformation_d8111e2d2a95a96300ef4ebcbf872951 import TableFeaturesLearnedInformation
-        return TableFeaturesLearnedInformation(self)
+        if self._properties.get('TableFeaturesLearnedInformation', None) is None:
+            return TableFeaturesLearnedInformation(self)
+        else:
+            return self._properties.get('TableFeaturesLearnedInformation')
 
     @property
     def TableStatLearnedInformation(self):
@@ -511,7 +580,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tablestatlearnedinformation_9488b714c99c38ed6e9b5f637e107bcb import TableStatLearnedInformation
-        return TableStatLearnedInformation(self)
+        if self._properties.get('TableStatLearnedInformation', None) is None:
+            return TableStatLearnedInformation(self)
+        else:
+            return self._properties.get('TableStatLearnedInformation')
 
     @property
     def VendorStatLearnedInformation(self):
@@ -525,7 +597,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.vendorstatlearnedinformation_72c9018540f96fd911126c55520168d7 import VendorStatLearnedInformation
-        return VendorStatLearnedInformation(self)
+        if self._properties.get('VendorStatLearnedInformation', None) is None:
+            return VendorStatLearnedInformation(self)
+        else:
+            return self._properties.get('VendorStatLearnedInformation')
 
     @property
     def AsyncConfStatResponseTimeOut(self):

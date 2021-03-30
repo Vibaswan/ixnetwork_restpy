@@ -54,7 +54,10 @@ class EmulatedRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.amt_151e2266e2df5cd4090ea2ebba0de372 import Amt
-        return Amt(self)
+        if self._properties.get('Amt', None) is None:
+            return Amt(self)
+        else:
+            return self._properties.get('Amt')
 
     @property
     def DhcpEndpoint(self):
@@ -68,7 +71,10 @@ class EmulatedRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpendpoint_f49700382da5aa8ff8637baae3573551 import DhcpEndpoint
-        return DhcpEndpoint(self)
+        if self._properties.get('DhcpEndpoint', None) is None:
+            return DhcpEndpoint(self)
+        else:
+            return self._properties.get('DhcpEndpoint')
 
     @property
     def DhcpServerEndpoint(self):
@@ -82,7 +88,10 @@ class EmulatedRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpserverendpoint_11f689c31f3a7421f075f91d2897b3e9 import DhcpServerEndpoint
-        return DhcpServerEndpoint(self)
+        if self._properties.get('DhcpServerEndpoint', None) is None:
+            return DhcpServerEndpoint(self)
+        else:
+            return self._properties.get('DhcpServerEndpoint')
 
     @property
     def Ip(self):
@@ -96,7 +105,10 @@ class EmulatedRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ip_9f7f3193133f9969e106d069d6517b90 import Ip
-        return Ip(self)
+        if self._properties.get('Ip', None) is None:
+            return Ip(self)
+        else:
+            return self._properties.get('Ip')
 
     @property
     def IpEndpoint(self):
@@ -110,7 +122,10 @@ class EmulatedRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ipendpoint_5eb4a6853a542eccbc445a7e0d15b4b3 import IpEndpoint
-        return IpEndpoint(self)
+        if self._properties.get('IpEndpoint', None) is None:
+            return IpEndpoint(self)
+        else:
+            return self._properties.get('IpEndpoint')
 
     @property
     def Name(self):

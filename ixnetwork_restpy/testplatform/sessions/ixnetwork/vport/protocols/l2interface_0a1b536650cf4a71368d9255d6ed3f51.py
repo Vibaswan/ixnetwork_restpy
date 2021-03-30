@@ -55,7 +55,10 @@ class L2Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.l2vcrange_3eeb152fbba5257d0380b3fb80b06db6 import L2VcRange
-        return L2VcRange(self)
+        if self._properties.get('L2VcRange', None) is None:
+            return L2VcRange(self)
+        else:
+            return self._properties.get('L2VcRange')
 
     @property
     def Count(self):

@@ -53,7 +53,10 @@ class DiscoveredAppliance(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.discoveredappliance.discoveredinterface.discoveredinterface import DiscoveredInterface
-        return DiscoveredInterface(self)
+        if self._properties.get('DiscoveredInterface', None) is None:
+            return DiscoveredInterface(self)
+        else:
+            return self._properties.get('DiscoveredInterface')
 
     @property
     def ApplianceName(self):

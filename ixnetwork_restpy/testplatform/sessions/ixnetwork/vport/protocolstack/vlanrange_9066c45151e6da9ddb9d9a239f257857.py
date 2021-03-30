@@ -65,7 +65,10 @@ class VlanRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vlanidinfo_0f77d52e78b38905bc41826645c8fc22 import VlanIdInfo
-        return VlanIdInfo(self)
+        if self._properties.get('VlanIdInfo', None) is None:
+            return VlanIdInfo(self)
+        else:
+            return self._properties.get('VlanIdInfo')
 
     @property
     def Enabled(self):

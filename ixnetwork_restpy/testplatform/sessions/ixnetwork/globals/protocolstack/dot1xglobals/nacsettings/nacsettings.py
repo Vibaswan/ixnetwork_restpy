@@ -49,7 +49,10 @@ class NacSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nacposture.nacposture import NacPosture
-        return NacPosture(self)
+        if self._properties.get('NacPosture', None) is None:
+            return NacPosture(self)
+        else:
+            return self._properties.get('NacPosture')
 
     @property
     def NacSequence(self):
@@ -63,7 +66,10 @@ class NacSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nacsequence.nacsequence import NacSequence
-        return NacSequence(self)
+        if self._properties.get('NacSequence', None) is None:
+            return NacSequence(self)
+        else:
+            return self._properties.get('NacSequence')
 
     @property
     def NacTlv(self):
@@ -77,7 +83,10 @@ class NacSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.nactlv import NacTlv
-        return NacTlv(self)
+        if self._properties.get('NacTlv', None) is None:
+            return NacTlv(self)
+        else:
+            return self._properties.get('NacTlv')
 
     @property
     def NacVendors(self):
@@ -91,7 +100,10 @@ class NacSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nacvendors.nacvendors import NacVendors
-        return NacVendors(self)
+        if self._properties.get('NacVendors', None) is None:
+            return NacVendors(self)
+        else:
+            return self._properties.get('NacVendors')
 
     @property
     def ObjectId(self):

@@ -54,7 +54,10 @@ class LearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.col_82c9f692cc4dfbaf274869de8a335e5e import Col
-        return Col(self)
+        if self._properties.get('Col', None) is None:
+            return Col(self)
+        else:
+            return self._properties.get('Col')
 
     @property
     def Table(self):
@@ -68,7 +71,10 @@ class LearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.table_5866003f22dc964c958a5bc4c3040ef4 import Table
-        return Table(self)
+        if self._properties.get('Table', None) is None:
+            return Table(self)
+        else:
+            return self._properties.get('Table')
 
     @property
     def Id__(self):

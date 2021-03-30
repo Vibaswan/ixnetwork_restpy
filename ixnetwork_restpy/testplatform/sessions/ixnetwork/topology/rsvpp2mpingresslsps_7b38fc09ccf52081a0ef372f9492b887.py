@@ -106,7 +106,10 @@ class RsvpP2mpIngressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpdetoursubobjectslist_9740d38add800b02d578822ebd9149be import RsvpDetourSubObjectsList
-        return RsvpDetourSubObjectsList(self)
+        if self._properties.get('RsvpDetourSubObjectsList', None) is None:
+            return RsvpDetourSubObjectsList(self)
+        else:
+            return self._properties.get('RsvpDetourSubObjectsList')
 
     @property
     def RsvpIngressRroSubObjectsList(self):
@@ -120,7 +123,10 @@ class RsvpP2mpIngressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpingressrrosubobjectslist_a21ca5185e1490831d56bb810b32d086 import RsvpIngressRroSubObjectsList
-        return RsvpIngressRroSubObjectsList(self)
+        if self._properties.get('RsvpIngressRroSubObjectsList', None) is None:
+            return RsvpIngressRroSubObjectsList(self)
+        else:
+            return self._properties.get('RsvpIngressRroSubObjectsList')
 
     @property
     def RsvpP2mpIngressSubLsps(self):
@@ -134,7 +140,10 @@ class RsvpP2mpIngressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2mpingresssublsps_c610bddfdb08c054e463708b863af4f0 import RsvpP2mpIngressSubLsps
-        return RsvpP2mpIngressSubLsps(self)._select()
+        if self._properties.get('RsvpP2mpIngressSubLsps', None) is None:
+            return RsvpP2mpIngressSubLsps(self)._select()
+        else:
+            return self._properties.get('RsvpP2mpIngressSubLsps')
 
     @property
     def Tag(self):
@@ -148,7 +157,10 @@ class RsvpP2mpIngressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is None:
+            return Tag(self)
+        else:
+            return self._properties.get('Tag')
 
     @property
     def Active(self):

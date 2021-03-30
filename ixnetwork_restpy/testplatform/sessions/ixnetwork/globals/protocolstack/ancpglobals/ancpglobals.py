@@ -54,7 +54,10 @@ class AncpGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.ancpglobals.ancpdslprofile.ancpdslprofile import AncpDslProfile
-        return AncpDslProfile(self)
+        if self._properties.get('AncpDslProfile', None) is None:
+            return AncpDslProfile(self)
+        else:
+            return self._properties.get('AncpDslProfile')
 
     @property
     def AncpDslResyncProfile(self):
@@ -68,7 +71,10 @@ class AncpGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.ancpglobals.ancpdslresyncprofile.ancpdslresyncprofile import AncpDslResyncProfile
-        return AncpDslResyncProfile(self)
+        if self._properties.get('AncpDslResyncProfile', None) is None:
+            return AncpDslResyncProfile(self)
+        else:
+            return self._properties.get('AncpDslResyncProfile')
 
     @property
     def ObjectId(self):

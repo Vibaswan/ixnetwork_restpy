@@ -48,7 +48,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ipv4multicast_10a4379979b6506eb349de25887e2e38 import Ipv4Multicast
-        return Ipv4Multicast(self)
+        if self._properties.get('Ipv4Multicast', None) is None:
+            return Ipv4Multicast(self)
+        else:
+            return self._properties.get('Ipv4Multicast')
 
     @property
     def Ipv4Prefixes(self):
@@ -62,7 +65,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ipv4prefixes_9a3bf961681bc0cbf455302154b26917 import Ipv4Prefixes
-        return Ipv4Prefixes(self)
+        if self._properties.get('Ipv4Prefixes', None) is None:
+            return Ipv4Prefixes(self)
+        else:
+            return self._properties.get('Ipv4Prefixes')
 
     @property
     def Ipv6Multicast(self):
@@ -76,7 +82,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ipv6multicast_e5e209725397b0a0f784d398f082eda0 import Ipv6Multicast
-        return Ipv6Multicast(self)
+        if self._properties.get('Ipv6Multicast', None) is None:
+            return Ipv6Multicast(self)
+        else:
+            return self._properties.get('Ipv6Multicast')
 
     @property
     def Ipv6Prefixes(self):
@@ -90,7 +99,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ipv6prefixes_c177f4d9bea9094ba2cc6f15470cd1b2 import Ipv6Prefixes
-        return Ipv6Prefixes(self)
+        if self._properties.get('Ipv6Prefixes', None) is None:
+            return Ipv6Prefixes(self)
+        else:
+            return self._properties.get('Ipv6Prefixes')
 
     @property
     def MacMulticast(self):
@@ -104,7 +116,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.macmulticast_4657479088be8ae0ce145407826c2664 import MacMulticast
-        return MacMulticast(self)
+        if self._properties.get('MacMulticast', None) is None:
+            return MacMulticast(self)
+        else:
+            return self._properties.get('MacMulticast')
 
     @property
     def RBridges(self):
@@ -118,7 +133,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rbridges_5ce66d3e71a71da81c831e5004a9dcd9 import RBridges
-        return RBridges(self)
+        if self._properties.get('RBridges', None) is None:
+            return RBridges(self)
+        else:
+            return self._properties.get('RBridges')
 
     @property
     def SpbRbridges(self):
@@ -132,7 +150,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbrbridges_e17c520e3dfc11aba98087bf23532644 import SpbRbridges
-        return SpbRbridges(self)
+        if self._properties.get('SpbRbridges', None) is None:
+            return SpbRbridges(self)
+        else:
+            return self._properties.get('SpbRbridges')
 
     @property
     def TrillMacUnicast(self):
@@ -146,7 +167,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trillmacunicast_efd8df32a1caa34df792e44c556fcdd5 import TrillMacUnicast
-        return TrillMacUnicast(self)
+        if self._properties.get('TrillMacUnicast', None) is None:
+            return TrillMacUnicast(self)
+        else:
+            return self._properties.get('TrillMacUnicast')
 
     @property
     def TrillOamPing(self):
@@ -160,4 +184,7 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trilloamping_094ce4fc14cf8066982dbcc3c0c11845 import TrillOamPing
-        return TrillOamPing(self)
+        if self._properties.get('TrillOamPing', None) is None:
+            return TrillOamPing(self)
+        else:
+            return self._properties.get('TrillOamPing')

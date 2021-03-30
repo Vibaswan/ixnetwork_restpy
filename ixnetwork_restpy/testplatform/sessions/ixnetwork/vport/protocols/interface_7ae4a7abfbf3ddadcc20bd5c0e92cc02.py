@@ -106,7 +106,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedfilter_eefb8bda61928c41bfe3478f93e66c1f import LearnedFilter
-        return LearnedFilter(self)._select()
+        if self._properties.get('LearnedFilter', None) is None:
+            return LearnedFilter(self)._select()
+        else:
+            return self._properties.get('LearnedFilter')
 
     @property
     def LearnedLsa(self):
@@ -120,7 +123,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedlsa_f8981275ed1dafbf0040b50e74f8ef42 import LearnedLsa
-        return LearnedLsa(self)
+        if self._properties.get('LearnedLsa', None) is None:
+            return LearnedLsa(self)
+        else:
+            return self._properties.get('LearnedLsa')
 
     @property
     def AdvertiseNetworkRange(self):

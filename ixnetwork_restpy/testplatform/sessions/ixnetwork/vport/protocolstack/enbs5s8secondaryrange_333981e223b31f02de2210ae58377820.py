@@ -50,7 +50,10 @@ class EnbS5S8SecondaryRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpnbs5s8range_2f086c9863001c877715e07f7442aa1b import EgtpNbS5S8Range
-        return EgtpNbS5S8Range(self)._select()
+        if self._properties.get('EgtpNbS5S8Range', None) is None:
+            return EgtpNbS5S8Range(self)._select()
+        else:
+            return self._properties.get('EgtpNbS5S8Range')
 
     def add(self):
         """Adds a new enbS5S8SecondaryRange resource on the server and adds it to the container.

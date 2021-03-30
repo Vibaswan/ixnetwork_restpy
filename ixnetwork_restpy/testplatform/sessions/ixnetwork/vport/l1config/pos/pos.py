@@ -63,7 +63,10 @@ class Pos(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.pos.dcc.dcc import Dcc
-        return Dcc(self)._select()
+        if self._properties.get('Dcc', None) is None:
+            return Dcc(self)._select()
+        else:
+            return self._properties.get('Dcc')
 
     @property
     def Ppp(self):
@@ -77,7 +80,10 @@ class Pos(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.pos.ppp.ppp import Ppp
-        return Ppp(self)._select()
+        if self._properties.get('Ppp', None) is None:
+            return Ppp(self)._select()
+        else:
+            return self._properties.get('Ppp')
 
     @property
     def AvailableSpeeds(self):

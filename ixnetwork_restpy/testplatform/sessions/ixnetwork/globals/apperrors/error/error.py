@@ -58,7 +58,10 @@ class Error(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.apperrors.error.instance.instance import Instance
-        return Instance(self)
+        if self._properties.get('Instance', None) is None:
+            return Instance(self)
+        else:
+            return self._properties.get('Instance')
 
     @property
     def Description(self):

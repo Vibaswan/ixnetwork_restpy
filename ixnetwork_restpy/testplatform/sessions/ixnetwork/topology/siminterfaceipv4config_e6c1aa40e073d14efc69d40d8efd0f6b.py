@@ -56,7 +56,10 @@ class SimInterfaceIPv4Config(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudointerface_f8951a0e4c7d97b10ce403458d4a9a66 import OspfPseudoInterface
-        return OspfPseudoInterface(self)
+        if self._properties.get('OspfPseudoInterface', None) is None:
+            return OspfPseudoInterface(self)
+        else:
+            return self._properties.get('OspfPseudoInterface')
 
     @property
     def Count(self):

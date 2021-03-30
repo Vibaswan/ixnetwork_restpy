@@ -60,7 +60,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.eidtorlocmapcacheinfo_89225131287cca08a356849f7381c2b2 import EidToRlocMapCacheInfo
-        return EidToRlocMapCacheInfo(self)
+        if self._properties.get('EidToRlocMapCacheInfo', None) is None:
+            return EidToRlocMapCacheInfo(self)
+        else:
+            return self._properties.get('EidToRlocMapCacheInfo')
 
     @property
     def Interface(self):
@@ -74,7 +77,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_536a76f9535af3f74b20ca28732785b1 import Interface
-        return Interface(self)
+        if self._properties.get('Interface', None) is None:
+            return Interface(self)
+        else:
+            return self._properties.get('Interface')
 
     @property
     def LispInstance(self):
@@ -88,7 +94,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lispinstance_419227de579eb2e1a289e28235ed3dc3 import LispInstance
-        return LispInstance(self)
+        if self._properties.get('LispInstance', None) is None:
+            return LispInstance(self)
+        else:
+            return self._properties.get('LispInstance')
 
     @property
     def MapServerCacheInfo(self):
@@ -102,7 +111,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mapservercacheinfo_18ef26d3d9e5402a1c9ecebce7ab1950 import MapServerCacheInfo
-        return MapServerCacheInfo(self)
+        if self._properties.get('MapServerCacheInfo', None) is None:
+            return MapServerCacheInfo(self)
+        else:
+            return self._properties.get('MapServerCacheInfo')
 
     @property
     def Enabled(self):

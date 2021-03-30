@@ -71,7 +71,10 @@ class Querier(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedgroupinfo_c4e5fdc0403e0f4d6b65c94ff23618de import LearnedGroupInfo
-        return LearnedGroupInfo(self)
+        if self._properties.get('LearnedGroupInfo', None) is None:
+            return LearnedGroupInfo(self)
+        else:
+            return self._properties.get('LearnedGroupInfo')
 
     @property
     def DiscardLearnedInfo(self):

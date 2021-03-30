@@ -55,7 +55,10 @@ class IxVmCard(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.ixvmcard.ixvmport.ixvmport import IxVmPort
-        return IxVmPort(self)
+        if self._properties.get('IxVmPort', None) is None:
+            return IxVmPort(self)
+        else:
+            return self._properties.get('IxVmPort')
 
     @property
     def CardId(self):

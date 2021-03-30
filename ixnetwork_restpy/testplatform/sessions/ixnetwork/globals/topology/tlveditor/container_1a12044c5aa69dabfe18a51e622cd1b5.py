@@ -55,7 +55,10 @@ class Container(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.object_12e587bd6e412f6d3d8361017e8dcba9 import Object
-        return Object(self)
+        if self._properties.get('Object', None) is None:
+            return Object(self)
+        else:
+            return self._properties.get('Object')
 
     @property
     def Description(self):

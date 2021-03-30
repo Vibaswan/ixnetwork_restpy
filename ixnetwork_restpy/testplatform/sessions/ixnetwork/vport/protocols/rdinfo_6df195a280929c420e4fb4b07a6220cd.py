@@ -50,7 +50,10 @@ class RdInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ethernettaginfo_d714970f0d8b53a3aeb11fbf4e70ffe5 import EthernetTagInfo
-        return EthernetTagInfo(self)
+        if self._properties.get('EthernetTagInfo', None) is None:
+            return EthernetTagInfo(self)
+        else:
+            return self._properties.get('EthernetTagInfo')
 
     @property
     def Rd(self):

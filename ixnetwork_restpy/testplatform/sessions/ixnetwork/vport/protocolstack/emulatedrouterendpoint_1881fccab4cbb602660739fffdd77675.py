@@ -54,7 +54,10 @@ class EmulatedRouterEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.amt_151e2266e2df5cd4090ea2ebba0de372 import Amt
-        return Amt(self)
+        if self._properties.get('Amt', None) is None:
+            return Amt(self)
+        else:
+            return self._properties.get('Amt')
 
     @property
     def Range(self):
@@ -68,7 +71,10 @@ class EmulatedRouterEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_df989eb48817c7440dc6576fa44a3b35 import Range
-        return Range(self)
+        if self._properties.get('Range', None) is None:
+            return Range(self)
+        else:
+            return self._properties.get('Range')
 
     @property
     def Name(self):

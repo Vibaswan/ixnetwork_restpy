@@ -56,7 +56,10 @@ class IsisTrillSimulatedTopologyConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.trillnodetopologylist_4077d4c2167806db82745c07dd5d7357 import TrillNodeTopologyList
-        return TrillNodeTopologyList(self)._select()
+        if self._properties.get('TrillNodeTopologyList', None) is None:
+            return TrillNodeTopologyList(self)._select()
+        else:
+            return self._properties.get('TrillNodeTopologyList')
 
     @property
     def Active(self):

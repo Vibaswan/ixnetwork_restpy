@@ -68,7 +68,10 @@ class MapServerCacheInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.remotelocators_96410d05b977962f780a8f3077813cee import RemoteLocators
-        return RemoteLocators(self)
+        if self._properties.get('RemoteLocators', None) is None:
+            return RemoteLocators(self)
+        else:
+            return self._properties.get('RemoteLocators')
 
     @property
     def Action(self):

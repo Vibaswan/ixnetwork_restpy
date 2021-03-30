@@ -74,7 +74,10 @@ class NeighborPair(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.assignedlabel_a2327011e89aab2956f11aeecbc3b150 import AssignedLabel
-        return AssignedLabel(self)
+        if self._properties.get('AssignedLabel', None) is None:
+            return AssignedLabel(self)
+        else:
+            return self._properties.get('AssignedLabel')
 
     @property
     def DestinationRange(self):
@@ -88,7 +91,10 @@ class NeighborPair(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.destinationrange_5c4e05197f703fbf3faa01950e5aa3de import DestinationRange
-        return DestinationRange(self)
+        if self._properties.get('DestinationRange', None) is None:
+            return DestinationRange(self)
+        else:
+            return self._properties.get('DestinationRange')
 
     @property
     def ReceivedLabel(self):
@@ -102,7 +108,10 @@ class NeighborPair(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.receivedlabel_0e6a6ca52ec19120b114d44fa8689e34 import ReceivedLabel
-        return ReceivedLabel(self)
+        if self._properties.get('ReceivedLabel', None) is None:
+            return ReceivedLabel(self)
+        else:
+            return self._properties.get('ReceivedLabel')
 
     @property
     def ActualRestartTime(self):

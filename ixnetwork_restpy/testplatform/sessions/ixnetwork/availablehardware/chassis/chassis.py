@@ -70,7 +70,10 @@ class Chassis(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.chassis.card.card import Card
-        return Card(self)
+        if self._properties.get('Card', None) is None:
+            return Card(self)
+        else:
+            return self._properties.get('Card')
 
     @property
     def CableLength(self):

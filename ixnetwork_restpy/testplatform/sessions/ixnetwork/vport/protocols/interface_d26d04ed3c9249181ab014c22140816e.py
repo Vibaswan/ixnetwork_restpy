@@ -61,7 +61,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinfo_79bbbce3444e06c4cd90272042ccc2f7 import LearnedInfo
-        return LearnedInfo(self)._select()
+        if self._properties.get('LearnedInfo', None) is None:
+            return LearnedInfo(self)._select()
+        else:
+            return self._properties.get('LearnedInfo')
 
     @property
     def AutoPick(self):

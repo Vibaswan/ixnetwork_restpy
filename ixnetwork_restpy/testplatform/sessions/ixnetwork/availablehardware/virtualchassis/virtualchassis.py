@@ -53,7 +53,10 @@ class VirtualChassis(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.discoveredappliance.discoveredappliance import DiscoveredAppliance
-        return DiscoveredAppliance(self)
+        if self._properties.get('DiscoveredAppliance', None) is None:
+            return DiscoveredAppliance(self)
+        else:
+            return self._properties.get('DiscoveredAppliance')
 
     @property
     def Hypervisor(self):
@@ -67,7 +70,10 @@ class VirtualChassis(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.hypervisor.hypervisor import Hypervisor
-        return Hypervisor(self)
+        if self._properties.get('Hypervisor', None) is None:
+            return Hypervisor(self)
+        else:
+            return self._properties.get('Hypervisor')
 
     @property
     def IxVmCard(self):
@@ -81,7 +87,10 @@ class VirtualChassis(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.ixvmcard.ixvmcard import IxVmCard
-        return IxVmCard(self)
+        if self._properties.get('IxVmCard', None) is None:
+            return IxVmCard(self)
+        else:
+            return self._properties.get('IxVmCard')
 
     @property
     def EnableLicenseCheck(self):

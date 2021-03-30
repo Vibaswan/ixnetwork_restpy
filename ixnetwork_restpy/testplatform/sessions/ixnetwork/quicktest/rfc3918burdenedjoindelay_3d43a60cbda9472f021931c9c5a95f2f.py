@@ -54,7 +54,10 @@ class Rfc3918burdenedJoinDelay(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.learnframes_45a2d708e5ecc3f03b74f0ff6e319516 import LearnFrames
-        return LearnFrames(self)._select()
+        if self._properties.get('LearnFrames', None) is None:
+            return LearnFrames(self)._select()
+        else:
+            return self._properties.get('LearnFrames')
 
     @property
     def PassCriteria(self):
@@ -68,7 +71,10 @@ class Rfc3918burdenedJoinDelay(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.passcriteria_44084f33d556acbc2526ef4cc22792c5 import PassCriteria
-        return PassCriteria(self)._select()
+        if self._properties.get('PassCriteria', None) is None:
+            return PassCriteria(self)._select()
+        else:
+            return self._properties.get('PassCriteria')
 
     @property
     def Results(self):
@@ -82,7 +88,10 @@ class Rfc3918burdenedJoinDelay(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.results_23583c0cce1dabf7b75fe7d2ae18cfc4 import Results
-        return Results(self)._select()
+        if self._properties.get('Results', None) is None:
+            return Results(self)._select()
+        else:
+            return self._properties.get('Results')
 
     @property
     def TestConfig(self):
@@ -96,7 +105,10 @@ class Rfc3918burdenedJoinDelay(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_c55621ae26f729a747264a8de03a7c98 import TestConfig
-        return TestConfig(self)._select()
+        if self._properties.get('TestConfig', None) is None:
+            return TestConfig(self)._select()
+        else:
+            return self._properties.get('TestConfig')
 
     @property
     def TrafficSelection(self):
@@ -110,7 +122,10 @@ class Rfc3918burdenedJoinDelay(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.trafficselection_8d5f9713a7501c19cac3bbf3a3763ed6 import TrafficSelection
-        return TrafficSelection(self)
+        if self._properties.get('TrafficSelection', None) is None:
+            return TrafficSelection(self)
+        else:
+            return self._properties.get('TrafficSelection')
 
     @property
     def ForceApplyQTConfig(self):

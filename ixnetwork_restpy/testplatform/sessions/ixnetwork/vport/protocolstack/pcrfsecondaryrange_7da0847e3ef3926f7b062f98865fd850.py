@@ -50,7 +50,10 @@ class PcrfSecondaryRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpsgwrange_a0a3abeb8cdd7c5982028557633ce1a5 import EgtpSgwRange
-        return EgtpSgwRange(self)._select()
+        if self._properties.get('EgtpSgwRange', None) is None:
+            return EgtpSgwRange(self)._select()
+        else:
+            return self._properties.get('EgtpSgwRange')
 
     def add(self):
         """Adds a new pcrfSecondaryRange resource on the server and adds it to the container.

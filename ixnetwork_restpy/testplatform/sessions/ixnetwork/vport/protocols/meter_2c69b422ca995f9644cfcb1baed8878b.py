@@ -55,7 +55,10 @@ class Meter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.band_f427e2ca205882a99f7a065f52007b5e import Band
-        return Band(self)
+        if self._properties.get('Band', None) is None:
+            return Band(self)
+        else:
+            return self._properties.get('Band')
 
     @property
     def Flags(self):
@@ -69,7 +72,10 @@ class Meter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flags_6a0e5b7e68fe5d1d336cdd25f1553d3a import Flags
-        return Flags(self)._select()
+        if self._properties.get('Flags', None) is None:
+            return Flags(self)._select()
+        else:
+            return self._properties.get('Flags')
 
     @property
     def Id__(self):

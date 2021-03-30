@@ -58,7 +58,10 @@ class Igmp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.host_41fd38147802790774354f0521b7fadd import Host
-        return Host(self)
+        if self._properties.get('Host', None) is None:
+            return Host(self)
+        else:
+            return self._properties.get('Host')
 
     @property
     def Querier(self):
@@ -72,7 +75,10 @@ class Igmp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.querier_3b93d261a71a61678c9da328f3a64617 import Querier
-        return Querier(self)
+        if self._properties.get('Querier', None) is None:
+            return Querier(self)
+        else:
+            return self._properties.get('Querier')
 
     @property
     def EnableUnicastMode(self):

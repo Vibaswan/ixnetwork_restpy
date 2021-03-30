@@ -74,7 +74,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ofchannel_9036477cbe231f174fe46ed935c71138 import OfChannel
-        return OfChannel(self)
+        if self._properties.get('OfChannel', None) is None:
+            return OfChannel(self)
+        else:
+            return self._properties.get('OfChannel')
 
     @property
     def Switch(self):
@@ -88,7 +91,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switch_e05bb508bd425f6e97cddf103067b461 import Switch
-        return Switch(self)
+        if self._properties.get('Switch', None) is None:
+            return Switch(self)
+        else:
+            return self._properties.get('Switch')
 
     @property
     def AcceptUnconfiguredChannel(self):

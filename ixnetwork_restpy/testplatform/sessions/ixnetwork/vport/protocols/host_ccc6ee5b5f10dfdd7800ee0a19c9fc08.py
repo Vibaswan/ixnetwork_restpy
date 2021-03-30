@@ -65,7 +65,10 @@ class Host(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.grouprange_24a71c3cd8132c5bc9c3c0de300abf10 import GroupRange
-        return GroupRange(self)
+        if self._properties.get('GroupRange', None) is None:
+            return GroupRange(self)
+        else:
+            return self._properties.get('GroupRange')
 
     @property
     def EnableImmediateResp(self):

@@ -51,7 +51,10 @@ class EvpnMulticast(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nexthopinfo_40741fdc50dd0497f1076fabd3d74d08 import NextHopInfo
-        return NextHopInfo(self)
+        if self._properties.get('NextHopInfo', None) is None:
+            return NextHopInfo(self)
+        else:
+            return self._properties.get('NextHopInfo')
 
     @property
     def Neighbor(self):

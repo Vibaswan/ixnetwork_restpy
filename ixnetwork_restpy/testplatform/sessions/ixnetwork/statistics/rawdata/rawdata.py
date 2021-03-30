@@ -51,7 +51,10 @@ class RawData(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.rawdata.statistic.statistic import Statistic
-        return Statistic(self)
+        if self._properties.get('Statistic', None) is None:
+            return Statistic(self)
+        else:
+            return self._properties.get('Statistic')
 
     @property
     def Enabled(self):

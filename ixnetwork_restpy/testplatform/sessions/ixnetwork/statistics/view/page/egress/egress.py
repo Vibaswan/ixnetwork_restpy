@@ -53,7 +53,10 @@ class Egress(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.page.egress.flowcondition.flowcondition import FlowCondition
-        return FlowCondition(self)
+        if self._properties.get('FlowCondition', None) is None:
+            return FlowCondition(self)
+        else:
+            return self._properties.get('FlowCondition')
 
     @property
     def CommitEgressPage(self):

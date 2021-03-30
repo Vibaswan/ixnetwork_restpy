@@ -65,7 +65,10 @@ class Ipv6Autoconfiguration(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bfdv6interface_b9a91920db1b70c8c6410d2de0b438d3 import Bfdv6Interface
-        return Bfdv6Interface(self)
+        if self._properties.get('Bfdv6Interface', None) is None:
+            return Bfdv6Interface(self)
+        else:
+            return self._properties.get('Bfdv6Interface')
 
     @property
     def BgpIpv6Peer(self):
@@ -79,7 +82,10 @@ class Ipv6Autoconfiguration(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d4ac277d9da759fd5a152b8e6eb0ab20 import BgpIpv6Peer
-        return BgpIpv6Peer(self)
+        if self._properties.get('BgpIpv6Peer', None) is None:
+            return BgpIpv6Peer(self)
+        else:
+            return self._properties.get('BgpIpv6Peer')
 
     @property
     def MldHost(self):
@@ -93,7 +99,10 @@ class Ipv6Autoconfiguration(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mldhost_824a1bed927138d4bb32f7d2631197a5 import MldHost
-        return MldHost(self)
+        if self._properties.get('MldHost', None) is None:
+            return MldHost(self)
+        else:
+            return self._properties.get('MldHost')
 
     @property
     def MldQuerier(self):
@@ -107,7 +116,10 @@ class Ipv6Autoconfiguration(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mldquerier_e20671d730d138d65036e88d7cad63ac import MldQuerier
-        return MldQuerier(self)
+        if self._properties.get('MldQuerier', None) is None:
+            return MldQuerier(self)
+        else:
+            return self._properties.get('MldQuerier')
 
     @property
     def Ospfv3(self):
@@ -121,7 +133,10 @@ class Ipv6Autoconfiguration(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3_c029fd7cd4a9e9897b7b4e4547458751 import Ospfv3
-        return Ospfv3(self)
+        if self._properties.get('Ospfv3', None) is None:
+            return Ospfv3(self)
+        else:
+            return self._properties.get('Ospfv3')
 
     @property
     def PimV6Interface(self):
@@ -135,7 +150,10 @@ class Ipv6Autoconfiguration(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv6interface_74a3aa08a315ca50732e853e3e8cdc43 import PimV6Interface
-        return PimV6Interface(self)
+        if self._properties.get('PimV6Interface', None) is None:
+            return PimV6Interface(self)
+        else:
+            return self._properties.get('PimV6Interface')
 
     @property
     def Tag(self):
@@ -149,7 +167,10 @@ class Ipv6Autoconfiguration(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is None:
+            return Tag(self)
+        else:
+            return self._properties.get('Tag')
 
     @property
     def Vxlanv6(self):
@@ -163,7 +184,10 @@ class Ipv6Autoconfiguration(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlanv6_c18187deccae3db44b9e9de30ad538ec import Vxlanv6
-        return Vxlanv6(self)
+        if self._properties.get('Vxlanv6', None) is None:
+            return Vxlanv6(self)
+        else:
+            return self._properties.get('Vxlanv6')
 
     @property
     def Address(self):

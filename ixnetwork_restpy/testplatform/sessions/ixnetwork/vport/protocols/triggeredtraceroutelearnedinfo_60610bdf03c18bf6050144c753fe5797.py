@@ -56,7 +56,10 @@ class TriggeredTracerouteLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.hops_afd65edf9d4aac0ccdf5a3a2bd672a47 import Hops
-        return Hops(self)
+        if self._properties.get('Hops', None) is None:
+            return Hops(self)
+        else:
+            return self._properties.get('Hops')
 
     @property
     def Fec(self):

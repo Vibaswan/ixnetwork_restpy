@@ -59,7 +59,10 @@ class Group(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.source_bc95547cb5992619c8a548a13bb1793b import Source
-        return Source(self)
+        if self._properties.get('Source', None) is None:
+            return Source(self)
+        else:
+            return self._properties.get('Source')
 
     @property
     def EnablePacking(self):

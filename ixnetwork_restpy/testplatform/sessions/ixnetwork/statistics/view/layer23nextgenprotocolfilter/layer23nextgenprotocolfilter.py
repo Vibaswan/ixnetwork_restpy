@@ -57,7 +57,10 @@ class Layer23NextGenProtocolFilter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23nextgenprotocolfilter.advancedfilter.advancedfilter import AdvancedFilter
-        return AdvancedFilter(self)
+        if self._properties.get('AdvancedFilter', None) is None:
+            return AdvancedFilter(self)
+        else:
+            return self._properties.get('AdvancedFilter')
 
     @property
     def AvailableAdvancedFilterOptions(self):
@@ -71,7 +74,10 @@ class Layer23NextGenProtocolFilter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23nextgenprotocolfilter.availableadvancedfilteroptions.availableadvancedfilteroptions import AvailableAdvancedFilterOptions
-        return AvailableAdvancedFilterOptions(self)
+        if self._properties.get('AvailableAdvancedFilterOptions', None) is None:
+            return AvailableAdvancedFilterOptions(self)
+        else:
+            return self._properties.get('AvailableAdvancedFilterOptions')
 
     @property
     def AdvancedCVFilter(self):

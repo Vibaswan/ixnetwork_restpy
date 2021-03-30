@@ -74,7 +74,10 @@ class FcoeClientGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.fcoeclientglobals.fcoeclientoptionset.fcoeclientoptionset import FcoeClientOptionSet
-        return FcoeClientOptionSet(self)
+        if self._properties.get('FcoeClientOptionSet', None) is None:
+            return FcoeClientOptionSet(self)
+        else:
+            return self._properties.get('FcoeClientOptionSet')
 
     @property
     def AcceptPartialConfig(self):

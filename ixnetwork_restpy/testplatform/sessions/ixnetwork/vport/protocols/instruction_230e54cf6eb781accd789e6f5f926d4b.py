@@ -54,7 +54,10 @@ class Instruction(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instructiontype_f00a5f3142a336cc29bbaac751ef1a91 import InstructionType
-        return InstructionType(self)._select()
+        if self._properties.get('InstructionType', None) is None:
+            return InstructionType(self)._select()
+        else:
+            return self._properties.get('InstructionType')
 
     @property
     def InstructionTypeMiss(self):
@@ -68,7 +71,10 @@ class Instruction(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instructiontypemiss_24c6a57a16be0a23824dea2325bf06bd import InstructionTypeMiss
-        return InstructionTypeMiss(self)._select()
+        if self._properties.get('InstructionTypeMiss', None) is None:
+            return InstructionTypeMiss(self)._select()
+        else:
+            return self._properties.get('InstructionTypeMiss')
 
     @property
     def ExperimenterData(self):

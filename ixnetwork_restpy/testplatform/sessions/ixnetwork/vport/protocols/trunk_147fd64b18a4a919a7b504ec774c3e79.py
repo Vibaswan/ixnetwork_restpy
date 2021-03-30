@@ -144,7 +144,10 @@ class Trunk(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.macranges_562e7d68356ea906bc9d1cb3dc1e9914 import MacRanges
-        return MacRanges(self)
+        if self._properties.get('MacRanges', None) is None:
+            return MacRanges(self)
+        else:
+            return self._properties.get('MacRanges')
 
     @property
     def AddCcmCustomTlvs(self):

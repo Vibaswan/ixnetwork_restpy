@@ -62,7 +62,10 @@ class SwitchPorts(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.advertisedfeatures_56a04904a51fcb5b140ef5c5da7017e7 import AdvertisedFeatures
-        return AdvertisedFeatures(self)._select()
+        if self._properties.get('AdvertisedFeatures', None) is None:
+            return AdvertisedFeatures(self)._select()
+        else:
+            return self._properties.get('AdvertisedFeatures')
 
     @property
     def Config(self):
@@ -76,7 +79,10 @@ class SwitchPorts(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.config_62b7c65bc219bf58bd290f568c5c62cd import Config
-        return Config(self)._select()
+        if self._properties.get('Config', None) is None:
+            return Config(self)._select()
+        else:
+            return self._properties.get('Config')
 
     @property
     def CurrentFeatures(self):
@@ -90,7 +96,10 @@ class SwitchPorts(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.currentfeatures_9c597885128022b128b87f0d21ccab4e import CurrentFeatures
-        return CurrentFeatures(self)._select()
+        if self._properties.get('CurrentFeatures', None) is None:
+            return CurrentFeatures(self)._select()
+        else:
+            return self._properties.get('CurrentFeatures')
 
     @property
     def PeerAdvertisedFeatures(self):
@@ -104,7 +113,10 @@ class SwitchPorts(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.peeradvertisedfeatures_c03cc0e79fa52dad924f6e97622a6060 import PeerAdvertisedFeatures
-        return PeerAdvertisedFeatures(self)._select()
+        if self._properties.get('PeerAdvertisedFeatures', None) is None:
+            return PeerAdvertisedFeatures(self)._select()
+        else:
+            return self._properties.get('PeerAdvertisedFeatures')
 
     @property
     def State(self):
@@ -118,7 +130,10 @@ class SwitchPorts(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.state_4b77e3f7e07a0d6bb28ad071368e0adc import State
-        return State(self)._select()
+        if self._properties.get('State', None) is None:
+            return State(self)._select()
+        else:
+            return self._properties.get('State')
 
     @property
     def SupportedFeatures(self):
@@ -132,7 +147,10 @@ class SwitchPorts(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.supportedfeatures_f52d2e6f6faa02edea055b4cd6274a79 import SupportedFeatures
-        return SupportedFeatures(self)._select()
+        if self._properties.get('SupportedFeatures', None) is None:
+            return SupportedFeatures(self)._select()
+        else:
+            return self._properties.get('SupportedFeatures')
 
     @property
     def SwitchHostRanges(self):
@@ -146,7 +164,10 @@ class SwitchPorts(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchhostranges_5d2115168a5da6fa79eb866056d9b27b import SwitchHostRanges
-        return SwitchHostRanges(self)
+        if self._properties.get('SwitchHostRanges', None) is None:
+            return SwitchHostRanges(self)
+        else:
+            return self._properties.get('SwitchHostRanges')
 
     @property
     def SwitchPortQueues(self):
@@ -160,7 +181,10 @@ class SwitchPorts(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchportqueues_bde30bebca869fc45ea70a1a9c152aa7 import SwitchPortQueues
-        return SwitchPortQueues(self)
+        if self._properties.get('SwitchPortQueues', None) is None:
+            return SwitchPortQueues(self)
+        else:
+            return self._properties.get('SwitchPortQueues')
 
     @property
     def ConnectionType(self):

@@ -48,7 +48,10 @@ class WriteSetField(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.fields_2e6c6da44af3295ae0e9e5e762ec2035 import Fields
-        return Fields(self)._select()
+        if self._properties.get('Fields', None) is None:
+            return Fields(self)._select()
+        else:
+            return self._properties.get('Fields')
 
     @property
     def MissFields(self):
@@ -62,4 +65,7 @@ class WriteSetField(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.missfields_9300981a41b193bd743139546aa47e7b import MissFields
-        return MissFields(self)._select()
+        if self._properties.get('MissFields', None) is None:
+            return MissFields(self)._select()
+        else:
+            return self._properties.get('MissFields')

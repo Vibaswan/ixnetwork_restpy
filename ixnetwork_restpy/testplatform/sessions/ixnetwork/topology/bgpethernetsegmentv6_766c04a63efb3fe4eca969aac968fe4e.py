@@ -106,7 +106,10 @@ class BgpEthernetSegmentV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpaspathsegmentlist_4d209c5ac36c18374125f19531d4795f import BgpAsPathSegmentList
-        return BgpAsPathSegmentList(self)
+        if self._properties.get('BgpAsPathSegmentList', None) is None:
+            return BgpAsPathSegmentList(self)
+        else:
+            return self._properties.get('BgpAsPathSegmentList')
 
     @property
     def BgpClusterIdList(self):
@@ -120,7 +123,10 @@ class BgpEthernetSegmentV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpclusteridlist_82b17094a31a96f755045be572017577 import BgpClusterIdList
-        return BgpClusterIdList(self)
+        if self._properties.get('BgpClusterIdList', None) is None:
+            return BgpClusterIdList(self)
+        else:
+            return self._properties.get('BgpClusterIdList')
 
     @property
     def BgpCommunitiesList(self):
@@ -134,7 +140,10 @@ class BgpEthernetSegmentV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist_2963fcaf235bccb665be655ea86cee0f import BgpCommunitiesList
-        return BgpCommunitiesList(self)
+        if self._properties.get('BgpCommunitiesList', None) is None:
+            return BgpCommunitiesList(self)
+        else:
+            return self._properties.get('BgpCommunitiesList')
 
     @property
     def BgpExtendedCommunitiesList(self):
@@ -148,7 +157,10 @@ class BgpEthernetSegmentV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist_bac41900b4999f09d65f045cf8104248 import BgpExtendedCommunitiesList
-        return BgpExtendedCommunitiesList(self)
+        if self._properties.get('BgpExtendedCommunitiesList', None) is None:
+            return BgpExtendedCommunitiesList(self)
+        else:
+            return self._properties.get('BgpExtendedCommunitiesList')
 
     @property
     def Bgpv6BMacMappedIpList(self):
@@ -162,7 +174,10 @@ class BgpEthernetSegmentV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpv6bmacmappediplist_817eaa9cef28501f557db118314de575 import Bgpv6BMacMappedIpList
-        return Bgpv6BMacMappedIpList(self)._select()
+        if self._properties.get('Bgpv6BMacMappedIpList', None) is None:
+            return Bgpv6BMacMappedIpList(self)._select()
+        else:
+            return self._properties.get('Bgpv6BMacMappedIpList')
 
     @property
     def AdvertiseAliasingBeforeAdPerEsRoute(self):

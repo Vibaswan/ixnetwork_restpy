@@ -72,7 +72,10 @@ class OfChannelSwitchLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ofchannelportsswitchlearnedinfo_770d062c951b9c0656d18c015b1eec07 import OfChannelPortsSwitchLearnedInfo
-        return OfChannelPortsSwitchLearnedInfo(self)
+        if self._properties.get('OfChannelPortsSwitchLearnedInfo', None) is None:
+            return OfChannelPortsSwitchLearnedInfo(self)
+        else:
+            return self._properties.get('OfChannelPortsSwitchLearnedInfo')
 
     @property
     def OfChannelSessionPeersLearnedInformation(self):
@@ -86,7 +89,10 @@ class OfChannelSwitchLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ofchannelsessionpeerslearnedinformation_377947b17842c6df2a85c6dec7bb2f70 import OfChannelSessionPeersLearnedInformation
-        return OfChannelSessionPeersLearnedInformation(self)
+        if self._properties.get('OfChannelSessionPeersLearnedInformation', None) is None:
+            return OfChannelSessionPeersLearnedInformation(self)
+        else:
+            return self._properties.get('OfChannelSessionPeersLearnedInformation')
 
     @property
     def ActionsSupported(self):

@@ -74,7 +74,10 @@ class MulticastSenderSite(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaquevalueelement_0125173541665eff2bf2844a26c5299f import OpaqueValueElement
-        return OpaqueValueElement(self)
+        if self._properties.get('OpaqueValueElement', None) is None:
+            return OpaqueValueElement(self)
+        else:
+            return self._properties.get('OpaqueValueElement')
 
     @property
     def AddressFamilyType(self):

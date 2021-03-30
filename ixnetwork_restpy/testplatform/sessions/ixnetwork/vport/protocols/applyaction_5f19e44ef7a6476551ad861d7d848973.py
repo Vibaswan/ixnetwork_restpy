@@ -54,7 +54,10 @@ class ApplyAction(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyactionmisstype_d06aa903f1d5e13a0de68af81c4c15cc import ApplyActionMissType
-        return ApplyActionMissType(self)._select()
+        if self._properties.get('ApplyActionMissType', None) is None:
+            return ApplyActionMissType(self)._select()
+        else:
+            return self._properties.get('ApplyActionMissType')
 
     @property
     def ApplyActionType(self):
@@ -68,7 +71,10 @@ class ApplyAction(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyactiontype_24c3e7fbd226764dfe8cae1f8ff68f32 import ApplyActionType
-        return ApplyActionType(self)._select()
+        if self._properties.get('ApplyActionType', None) is None:
+            return ApplyActionType(self)._select()
+        else:
+            return self._properties.get('ApplyActionType')
 
     @property
     def ExperimenterData(self):

@@ -56,7 +56,10 @@ class Tlv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.length_0bd681ada144795cbd0b8c30dee1562d import Length
-        return Length(self)._select()
+        if self._properties.get('Length', None) is None:
+            return Length(self)._select()
+        else:
+            return self._properties.get('Length')
 
     @property
     def Type(self):
@@ -70,7 +73,10 @@ class Tlv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.type_b3f7b13bb03ac01972b75a01e4f61712 import Type
-        return Type(self)._select()
+        if self._properties.get('Type', None) is None:
+            return Type(self)._select()
+        else:
+            return self._properties.get('Type')
 
     @property
     def Value(self):
@@ -84,7 +90,10 @@ class Tlv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.value_ac1d7b13584a86b9cf1c28dca3390bca import Value
-        return Value(self)._select()
+        if self._properties.get('Value', None) is None:
+            return Value(self)._select()
+        else:
+            return self._properties.get('Value')
 
     @property
     def AvailableIncludeInMessages(self):

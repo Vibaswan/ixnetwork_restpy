@@ -57,7 +57,10 @@ class IsisSRTunnelList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isissegmentlist_28066a67f7cf6594d73c8fed733b33f6 import IsisSegmentList
-        return IsisSegmentList(self)
+        if self._properties.get('IsisSegmentList', None) is None:
+            return IsisSegmentList(self)
+        else:
+            return self._properties.get('IsisSegmentList')
 
     @property
     def Tag(self):
@@ -71,7 +74,10 @@ class IsisSRTunnelList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is None:
+            return Tag(self)
+        else:
+            return self._properties.get('Tag')
 
     @property
     def Active(self):

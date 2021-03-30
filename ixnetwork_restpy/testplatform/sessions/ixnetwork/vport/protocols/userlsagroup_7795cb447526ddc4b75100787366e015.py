@@ -53,7 +53,10 @@ class UserLsaGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.userlsa_3871bdffaa39dd338e0446cbab6d1794 import UserLsa
-        return UserLsa(self)
+        if self._properties.get('UserLsa', None) is None:
+            return UserLsa(self)
+        else:
+            return self._properties.get('UserLsa')
 
     @property
     def AreaId(self):

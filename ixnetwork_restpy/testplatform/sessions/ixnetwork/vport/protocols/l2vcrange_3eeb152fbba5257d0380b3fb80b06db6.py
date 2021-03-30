@@ -116,7 +116,10 @@ class L2VcRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.l2macvlanrange_36baa7785cd8b38a46986e297ae96a88 import L2MacVlanRange
-        return L2MacVlanRange(self)._select()
+        if self._properties.get('L2MacVlanRange', None) is None:
+            return L2MacVlanRange(self)._select()
+        else:
+            return self._properties.get('L2MacVlanRange')
 
     @property
     def L2VcIpRange(self):
@@ -130,7 +133,10 @@ class L2VcRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.l2vciprange_b16a8fc51e54b59051680c68da42d9ab import L2VcIpRange
-        return L2VcIpRange(self)._select()
+        if self._properties.get('L2VcIpRange', None) is None:
+            return L2VcIpRange(self)._select()
+        else:
+            return self._properties.get('L2VcIpRange')
 
     @property
     def TrafficGroupId(self):
@@ -144,7 +150,10 @@ class L2VcRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trafficgroupid_dbbea754aa76dde537237a1dd3913088 import TrafficGroupId
-        return TrafficGroupId(self)
+        if self._properties.get('TrafficGroupId', None) is None:
+            return TrafficGroupId(self)
+        else:
+            return self._properties.get('TrafficGroupId')
 
     @property
     def CapableOfReassembly(self):

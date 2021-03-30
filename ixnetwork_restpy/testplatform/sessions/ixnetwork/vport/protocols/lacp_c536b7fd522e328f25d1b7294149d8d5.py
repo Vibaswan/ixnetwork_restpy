@@ -52,7 +52,10 @@ class Lacp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinfo_0415bac4883a6513064dc137e097d25e import LearnedInfo
-        return LearnedInfo(self)
+        if self._properties.get('LearnedInfo', None) is None:
+            return LearnedInfo(self)
+        else:
+            return self._properties.get('LearnedInfo')
 
     @property
     def Link(self):
@@ -66,7 +69,10 @@ class Lacp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.link_5d122e850068d22407103423c33741c8 import Link
-        return Link(self)
+        if self._properties.get('Link', None) is None:
+            return Link(self)
+        else:
+            return self._properties.get('Link')
 
     @property
     def EnablePreservePartnerInfo(self):

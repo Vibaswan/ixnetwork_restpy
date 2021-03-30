@@ -67,7 +67,10 @@ class Vxlan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bfdv4interface_91b557a3f744baf442dbe21ac75e8f2e import Bfdv4Interface
-        return Bfdv4Interface(self)
+        if self._properties.get('Bfdv4Interface', None) is None:
+            return Bfdv4Interface(self)
+        else:
+            return self._properties.get('Bfdv4Interface')
 
     @property
     def Connector(self):
@@ -81,7 +84,10 @@ class Vxlan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        return Connector(self)
+        if self._properties.get('Connector', None) is None:
+            return Connector(self)
+        else:
+            return self._properties.get('Connector')
 
     @property
     def Ethernet(self):
@@ -95,7 +101,10 @@ class Vxlan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ethernet_18677f1f170027c217563a3250b1f635 import Ethernet
-        return Ethernet(self)
+        if self._properties.get('Ethernet', None) is None:
+            return Ethernet(self)
+        else:
+            return self._properties.get('Ethernet')
 
     @property
     def Ipv4Loopback(self):
@@ -109,7 +118,10 @@ class Vxlan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv4loopback_f84286c6e2c90f5267670278dde3f258 import Ipv4Loopback
-        return Ipv4Loopback(self)
+        if self._properties.get('Ipv4Loopback', None) is None:
+            return Ipv4Loopback(self)
+        else:
+            return self._properties.get('Ipv4Loopback')
 
     @property
     def Ipv6Loopback(self):
@@ -123,7 +135,10 @@ class Vxlan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6loopback_c5557054afff2b9cc84b7676de50b805 import Ipv6Loopback
-        return Ipv6Loopback(self)
+        if self._properties.get('Ipv6Loopback', None) is None:
+            return Ipv6Loopback(self)
+        else:
+            return self._properties.get('Ipv6Loopback')
 
     @property
     def LdpBasicRouter(self):
@@ -137,7 +152,10 @@ class Vxlan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpbasicrouter_53e2de40003674322c811a1ba519dbb6 import LdpBasicRouter
-        return LdpBasicRouter(self)
+        if self._properties.get('LdpBasicRouter', None) is None:
+            return LdpBasicRouter(self)
+        else:
+            return self._properties.get('LdpBasicRouter')
 
     @property
     def LdpBasicRouterV6(self):
@@ -151,7 +169,10 @@ class Vxlan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpbasicrouterv6_b554f464616f39033d7acad4846e556c import LdpBasicRouterV6
-        return LdpBasicRouterV6(self)
+        if self._properties.get('LdpBasicRouterV6', None) is None:
+            return LdpBasicRouterV6(self)
+        else:
+            return self._properties.get('LdpBasicRouterV6')
 
     @property
     def LdpTargetedRouter(self):
@@ -165,7 +186,10 @@ class Vxlan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedrouter_85c7a9993d80996c22a9dbd739df9692 import LdpTargetedRouter
-        return LdpTargetedRouter(self)
+        if self._properties.get('LdpTargetedRouter', None) is None:
+            return LdpTargetedRouter(self)
+        else:
+            return self._properties.get('LdpTargetedRouter')
 
     @property
     def LdpTargetedRouterV6(self):
@@ -179,7 +203,10 @@ class Vxlan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedrouterv6_e86e77f17dfccefac9e15769756089cf import LdpTargetedRouterV6
-        return LdpTargetedRouterV6(self)
+        if self._properties.get('LdpTargetedRouterV6', None) is None:
+            return LdpTargetedRouterV6(self)
+        else:
+            return self._properties.get('LdpTargetedRouterV6')
 
     @property
     def LearnedInfo(self):
@@ -193,7 +220,10 @@ class Vxlan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        return LearnedInfo(self)
+        if self._properties.get('LearnedInfo', None) is None:
+            return LearnedInfo(self)
+        else:
+            return self._properties.get('LearnedInfo')
 
     @property
     def VxlanStaticInfo(self):
@@ -207,7 +237,10 @@ class Vxlan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlanstaticinfo_6879422db4d58cf50c6662a6238ea2d4 import VxlanStaticInfo
-        return VxlanStaticInfo(self)._select()
+        if self._properties.get('VxlanStaticInfo', None) is None:
+            return VxlanStaticInfo(self)._select()
+        else:
+            return self._properties.get('VxlanStaticInfo')
 
     @property
     def ConnectedVia(self):

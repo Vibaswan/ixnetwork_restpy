@@ -60,7 +60,10 @@ class SwitchMeterLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchmeterbandlearnedinfo_1701730c3cbe46d3d401e93cd7f1605d import SwitchMeterBandLearnedInfo
-        return SwitchMeterBandLearnedInfo(self)
+        if self._properties.get('SwitchMeterBandLearnedInfo', None) is None:
+            return SwitchMeterBandLearnedInfo(self)
+        else:
+            return self._properties.get('SwitchMeterBandLearnedInfo')
 
     @property
     def BytesInInput(self):

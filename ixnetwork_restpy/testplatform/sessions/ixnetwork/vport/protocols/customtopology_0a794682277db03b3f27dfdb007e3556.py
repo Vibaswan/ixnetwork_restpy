@@ -57,7 +57,10 @@ class CustomTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologymulticastipv4grouprange_a15b6ec5846f1ddab31235f1d562c55c import CustomTopologyMulticastIpv4GroupRange
-        return CustomTopologyMulticastIpv4GroupRange(self)
+        if self._properties.get('CustomTopologyMulticastIpv4GroupRange', None) is None:
+            return CustomTopologyMulticastIpv4GroupRange(self)
+        else:
+            return self._properties.get('CustomTopologyMulticastIpv4GroupRange')
 
     @property
     def CustomTopologyMulticastIpv6GroupRange(self):
@@ -71,7 +74,10 @@ class CustomTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologymulticastipv6grouprange_febe5392db46dbf816f07785a75a5a5d import CustomTopologyMulticastIpv6GroupRange
-        return CustomTopologyMulticastIpv6GroupRange(self)
+        if self._properties.get('CustomTopologyMulticastIpv6GroupRange', None) is None:
+            return CustomTopologyMulticastIpv6GroupRange(self)
+        else:
+            return self._properties.get('CustomTopologyMulticastIpv6GroupRange')
 
     @property
     def CustomTopologyMulticastMacRange(self):
@@ -85,7 +91,10 @@ class CustomTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologymulticastmacrange_8c759596f197c960a0a5f985205516a4 import CustomTopologyMulticastMacRange
-        return CustomTopologyMulticastMacRange(self)
+        if self._properties.get('CustomTopologyMulticastMacRange', None) is None:
+            return CustomTopologyMulticastMacRange(self)
+        else:
+            return self._properties.get('CustomTopologyMulticastMacRange')
 
     @property
     def CustomTopologyNode(self):
@@ -99,7 +108,10 @@ class CustomTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologynode_8129a1649705353aa11e5c05b0e43d74 import CustomTopologyNode
-        return CustomTopologyNode(self)
+        if self._properties.get('CustomTopologyNode', None) is None:
+            return CustomTopologyNode(self)
+        else:
+            return self._properties.get('CustomTopologyNode')
 
     @property
     def CustomTopologyNodeTopologyRange(self):
@@ -113,7 +125,10 @@ class CustomTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologynodetopologyrange_181026171b26292c0aa2d8d9e8a7c0f9 import CustomTopologyNodeTopologyRange
-        return CustomTopologyNodeTopologyRange(self)
+        if self._properties.get('CustomTopologyNodeTopologyRange', None) is None:
+            return CustomTopologyNodeTopologyRange(self)
+        else:
+            return self._properties.get('CustomTopologyNodeTopologyRange')
 
     @property
     def CustomTopologyRbLinks(self):
@@ -127,7 +142,10 @@ class CustomTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologyrblinks_1ff82933a2cfb3381c1a218bb1f15478 import CustomTopologyRbLinks
-        return CustomTopologyRbLinks(self)
+        if self._properties.get('CustomTopologyRbLinks', None) is None:
+            return CustomTopologyRbLinks(self)
+        else:
+            return self._properties.get('CustomTopologyRbLinks')
 
     @property
     def CustomTopologySpbNodeTopologyRange(self):
@@ -141,7 +159,10 @@ class CustomTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologyspbnodetopologyrange_07ced20538fd8f8fea38a783c9448fb6 import CustomTopologySpbNodeTopologyRange
-        return CustomTopologySpbNodeTopologyRange(self)
+        if self._properties.get('CustomTopologySpbNodeTopologyRange', None) is None:
+            return CustomTopologySpbNodeTopologyRange(self)
+        else:
+            return self._properties.get('CustomTopologySpbNodeTopologyRange')
 
     @property
     def CustomTopologyUnicastMacRange(self):
@@ -155,7 +176,10 @@ class CustomTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologyunicastmacrange_0273c2983b0c58ba52e6d2c06548f60d import CustomTopologyUnicastMacRange
-        return CustomTopologyUnicastMacRange(self)
+        if self._properties.get('CustomTopologyUnicastMacRange', None) is None:
+            return CustomTopologyUnicastMacRange(self)
+        else:
+            return self._properties.get('CustomTopologyUnicastMacRange')
 
     @property
     def CapRouterId(self):

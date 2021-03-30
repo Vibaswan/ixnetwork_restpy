@@ -55,7 +55,10 @@ class MacMulticast(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.unicastmacitem_19847f2b8fe60ae6fa756bd1278590e9 import UnicastMacItem
-        return UnicastMacItem(self)
+        if self._properties.get('UnicastMacItem', None) is None:
+            return UnicastMacItem(self)
+        else:
+            return self._properties.get('UnicastMacItem')
 
     @property
     def Age(self):

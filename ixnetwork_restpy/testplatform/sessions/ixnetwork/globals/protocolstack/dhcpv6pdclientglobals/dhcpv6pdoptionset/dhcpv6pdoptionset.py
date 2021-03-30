@@ -54,7 +54,10 @@ class Dhcpv6PdOptionSet(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dhcpv6pdclientglobals.dhcpv6pdoptionset.dhcpv6pdoptiontlv.dhcpv6pdoptiontlv import Dhcpv6PdOptionTlv
-        return Dhcpv6PdOptionTlv(self)
+        if self._properties.get('Dhcpv6PdOptionTlv', None) is None:
+            return Dhcpv6PdOptionTlv(self)
+        else:
+            return self._properties.get('Dhcpv6PdOptionTlv')
 
     @property
     def Defaultp(self):

@@ -50,7 +50,10 @@ class MmeS5S8SecondaryRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpmmes5s8range_feab646ee0f4efecacbfab97109183a8 import EgtpMmeS5S8Range
-        return EgtpMmeS5S8Range(self)._select()
+        if self._properties.get('EgtpMmeS5S8Range', None) is None:
+            return EgtpMmeS5S8Range(self)._select()
+        else:
+            return self._properties.get('EgtpMmeS5S8Range')
 
     def add(self):
         """Adds a new mmeS5S8SecondaryRange resource on the server and adds it to the container.

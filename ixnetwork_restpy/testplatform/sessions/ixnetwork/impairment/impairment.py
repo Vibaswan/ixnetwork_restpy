@@ -51,7 +51,10 @@ class Impairment(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.defaultprofile import DefaultProfile
-        return DefaultProfile(self)._select()
+        if self._properties.get('DefaultProfile', None) is None:
+            return DefaultProfile(self)._select()
+        else:
+            return self._properties.get('DefaultProfile')
 
     @property
     def Link(self):
@@ -65,7 +68,10 @@ class Impairment(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.link.link import Link
-        return Link(self)
+        if self._properties.get('Link', None) is None:
+            return Link(self)
+        else:
+            return self._properties.get('Link')
 
     @property
     def Profile(self):
@@ -79,7 +85,10 @@ class Impairment(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.profile import Profile
-        return Profile(self)
+        if self._properties.get('Profile', None) is None:
+            return Profile(self)
+        else:
+            return self._properties.get('Profile')
 
     @property
     def Errors(self):

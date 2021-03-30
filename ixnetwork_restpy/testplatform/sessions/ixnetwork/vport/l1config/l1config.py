@@ -49,7 +49,10 @@ class L1Config(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.oam.oam import OAM
-        return OAM(self)._select()
+        if self._properties.get('OAM', None) is None:
+            return OAM(self)._select()
+        else:
+            return self._properties.get('OAM')
 
     @property
     def AresOneFourHundredGigLan(self):
@@ -63,7 +66,10 @@ class L1Config(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.aresonefourhundredgiglan.aresonefourhundredgiglan import AresOneFourHundredGigLan
-        return AresOneFourHundredGigLan(self)._select()
+        if self._properties.get('AresOneFourHundredGigLan', None) is None:
+            return AresOneFourHundredGigLan(self)._select()
+        else:
+            return self._properties.get('AresOneFourHundredGigLan')
 
     @property
     def AtlasFourHundredGigLan(self):
@@ -77,7 +83,10 @@ class L1Config(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.atlasfourhundredgiglan.atlasfourhundredgiglan import AtlasFourHundredGigLan
-        return AtlasFourHundredGigLan(self)._select()
+        if self._properties.get('AtlasFourHundredGigLan', None) is None:
+            return AtlasFourHundredGigLan(self)._select()
+        else:
+            return self._properties.get('AtlasFourHundredGigLan')
 
     @property
     def Atm(self):
@@ -91,7 +100,10 @@ class L1Config(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.atm.atm import Atm
-        return Atm(self)._select()
+        if self._properties.get('Atm', None) is None:
+            return Atm(self)._select()
+        else:
+            return self._properties.get('Atm')
 
     @property
     def Ethernet(self):
@@ -105,7 +117,10 @@ class L1Config(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.ethernet import Ethernet
-        return Ethernet(self)._select()
+        if self._properties.get('Ethernet', None) is None:
+            return Ethernet(self)._select()
+        else:
+            return self._properties.get('Ethernet')
 
     @property
     def EthernetImpairment(self):
@@ -119,7 +134,10 @@ class L1Config(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernetimpairment.ethernetimpairment import EthernetImpairment
-        return EthernetImpairment(self)._select()
+        if self._properties.get('EthernetImpairment', None) is None:
+            return EthernetImpairment(self)._select()
+        else:
+            return self._properties.get('EthernetImpairment')
 
     @property
     def Ethernetvm(self):
@@ -133,7 +151,10 @@ class L1Config(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernetvm.ethernetvm import Ethernetvm
-        return Ethernetvm(self)._select()
+        if self._properties.get('Ethernetvm', None) is None:
+            return Ethernetvm(self)._select()
+        else:
+            return self._properties.get('Ethernetvm')
 
     @property
     def Fc(self):
@@ -147,7 +168,10 @@ class L1Config(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.fc.fc import Fc
-        return Fc(self)._select()
+        if self._properties.get('Fc', None) is None:
+            return Fc(self)._select()
+        else:
+            return self._properties.get('Fc')
 
     @property
     def FortyGigLan(self):
@@ -161,7 +185,10 @@ class L1Config(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.fortygiglan.fortygiglan import FortyGigLan
-        return FortyGigLan(self)._select()
+        if self._properties.get('FortyGigLan', None) is None:
+            return FortyGigLan(self)._select()
+        else:
+            return self._properties.get('FortyGigLan')
 
     @property
     def FramePreemption(self):
@@ -175,7 +202,10 @@ class L1Config(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.framepreemption.framepreemption import FramePreemption
-        return FramePreemption(self)._select()
+        if self._properties.get('FramePreemption', None) is None:
+            return FramePreemption(self)._select()
+        else:
+            return self._properties.get('FramePreemption')
 
     @property
     def HundredGigLan(self):
@@ -189,7 +219,10 @@ class L1Config(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.hundredgiglan.hundredgiglan import HundredGigLan
-        return HundredGigLan(self)._select()
+        if self._properties.get('HundredGigLan', None) is None:
+            return HundredGigLan(self)._select()
+        else:
+            return self._properties.get('HundredGigLan')
 
     @property
     def KrakenFourHundredGigLan(self):
@@ -203,7 +236,27 @@ class L1Config(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.krakenfourhundredgiglan.krakenfourhundredgiglan import KrakenFourHundredGigLan
-        return KrakenFourHundredGigLan(self)._select()
+        if self._properties.get('KrakenFourHundredGigLan', None) is None:
+            return KrakenFourHundredGigLan(self)._select()
+        else:
+            return self._properties.get('KrakenFourHundredGigLan')
+
+    @property
+    def Novus5GTenTwentyFiveGigLan(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.novus5gtentwentyfivegiglan.novus5gtentwentyfivegiglan.Novus5GTenTwentyFiveGigLan): An instance of the Novus5GTenTwentyFiveGigLan class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.novus5gtentwentyfivegiglan.novus5gtentwentyfivegiglan import Novus5GTenTwentyFiveGigLan
+        if self._properties.get('Novus5GTenTwentyFiveGigLan', None) is None:
+            return Novus5GTenTwentyFiveGigLan(self)._select()
+        else:
+            return self._properties.get('Novus5GTenTwentyFiveGigLan')
 
     @property
     def NovusHundredGigLan(self):
@@ -217,7 +270,10 @@ class L1Config(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.novushundredgiglan.novushundredgiglan import NovusHundredGigLan
-        return NovusHundredGigLan(self)._select()
+        if self._properties.get('NovusHundredGigLan', None) is None:
+            return NovusHundredGigLan(self)._select()
+        else:
+            return self._properties.get('NovusHundredGigLan')
 
     @property
     def NovusTenGigLan(self):
@@ -231,7 +287,10 @@ class L1Config(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.novustengiglan.novustengiglan import NovusTenGigLan
-        return NovusTenGigLan(self)._select()
+        if self._properties.get('NovusTenGigLan', None) is None:
+            return NovusTenGigLan(self)._select()
+        else:
+            return self._properties.get('NovusTenGigLan')
 
     @property
     def Pos(self):
@@ -245,7 +304,27 @@ class L1Config(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.pos.pos import Pos
-        return Pos(self)._select()
+        if self._properties.get('Pos', None) is None:
+            return Pos(self)._select()
+        else:
+            return self._properties.get('Pos')
+
+    @property
+    def Qbv(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.qbv.qbv.Qbv): An instance of the Qbv class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.qbv.qbv import Qbv
+        if self._properties.get('Qbv', None) is None:
+            return Qbv(self)._select()
+        else:
+            return self._properties.get('Qbv')
 
     @property
     def RxFilters(self):
@@ -259,7 +338,27 @@ class L1Config(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.rxfilters.rxfilters import RxFilters
-        return RxFilters(self)._select()
+        if self._properties.get('RxFilters', None) is None:
+            return RxFilters(self)._select()
+        else:
+            return self._properties.get('RxFilters')
+
+    @property
+    def StarFourHundredGigLan(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.starfourhundredgiglan.starfourhundredgiglan.StarFourHundredGigLan): An instance of the StarFourHundredGigLan class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.starfourhundredgiglan.starfourhundredgiglan import StarFourHundredGigLan
+        if self._properties.get('StarFourHundredGigLan', None) is None:
+            return StarFourHundredGigLan(self)._select()
+        else:
+            return self._properties.get('StarFourHundredGigLan')
 
     @property
     def TenFortyHundredGigLan(self):
@@ -273,7 +372,10 @@ class L1Config(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tenfortyhundredgiglan.tenfortyhundredgiglan import TenFortyHundredGigLan
-        return TenFortyHundredGigLan(self)._select()
+        if self._properties.get('TenFortyHundredGigLan', None) is None:
+            return TenFortyHundredGigLan(self)._select()
+        else:
+            return self._properties.get('TenFortyHundredGigLan')
 
     @property
     def TenGigLan(self):
@@ -287,7 +389,10 @@ class L1Config(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tengiglan.tengiglan import TenGigLan
-        return TenGigLan(self)._select()
+        if self._properties.get('TenGigLan', None) is None:
+            return TenGigLan(self)._select()
+        else:
+            return self._properties.get('TenGigLan')
 
     @property
     def TenGigWan(self):
@@ -301,7 +406,10 @@ class L1Config(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tengigwan.tengigwan import TenGigWan
-        return TenGigWan(self)._select()
+        if self._properties.get('TenGigWan', None) is None:
+            return TenGigWan(self)._select()
+        else:
+            return self._properties.get('TenGigWan')
 
     @property
     def UhdOneHundredGigLan(self):
@@ -315,14 +423,17 @@ class L1Config(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.uhdonehundredgiglan.uhdonehundredgiglan import UhdOneHundredGigLan
-        return UhdOneHundredGigLan(self)._select()
+        if self._properties.get('UhdOneHundredGigLan', None) is None:
+            return UhdOneHundredGigLan(self)._select()
+        else:
+            return self._properties.get('UhdOneHundredGigLan')
 
     @property
     def CurrentType(self):
         """
         Returns
         -------
-        - str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan): Indicates the five types of ports for configuration to choose from.
+        - str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe): Indicates the five types of ports for configuration to choose from.
         """
         return self._get_attribute(self._SDM_ATT_MAP['CurrentType'])
     @CurrentType.setter
@@ -334,7 +445,7 @@ class L1Config(Base):
 
         Args
         ----
-        - CurrentType (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan)): Indicates the five types of ports for configuration to choose from.
+        - CurrentType (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe)): Indicates the five types of ports for configuration to choose from.
 
         Raises
         ------

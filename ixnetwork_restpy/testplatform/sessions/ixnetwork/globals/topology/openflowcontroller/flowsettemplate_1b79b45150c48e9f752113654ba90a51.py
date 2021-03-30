@@ -48,7 +48,10 @@ class FlowSetTemplate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.flowtemplate_26b29fc00e660d380d59aa40faa25891 import FlowTemplate
-        return FlowTemplate(self)
+        if self._properties.get('FlowTemplate', None) is None:
+            return FlowTemplate(self)
+        else:
+            return self._properties.get('FlowTemplate')
 
     @property
     def Predefined(self):
@@ -62,4 +65,7 @@ class FlowSetTemplate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.predefined_948d5a993970b6a0e72926850bcf371e import Predefined
-        return Predefined(self)
+        if self._properties.get('Predefined', None) is None:
+            return Predefined(self)
+        else:
+            return self._properties.get('Predefined')

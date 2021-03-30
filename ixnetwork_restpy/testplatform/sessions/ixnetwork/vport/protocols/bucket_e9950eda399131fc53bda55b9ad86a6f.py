@@ -54,7 +54,10 @@ class Bucket(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bucketaction_096bc17289bdf1d8e25741ca5cedec5d import BucketAction
-        return BucketAction(self)
+        if self._properties.get('BucketAction', None) is None:
+            return BucketAction(self)
+        else:
+            return self._properties.get('BucketAction')
 
     @property
     def Description(self):

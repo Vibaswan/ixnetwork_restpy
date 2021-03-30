@@ -67,7 +67,10 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudosrv6endsidlist_541f5f93c3d1828a205bdca154abe5ac import IsisPseudoSRv6EndSIDList
-        return IsisPseudoSRv6EndSIDList(self)._select()
+        if self._properties.get('IsisPseudoSRv6EndSIDList', None) is None:
+            return IsisPseudoSRv6EndSIDList(self)._select()
+        else:
+            return self._properties.get('IsisPseudoSRv6EndSIDList')
 
     @property
     def Active(self):

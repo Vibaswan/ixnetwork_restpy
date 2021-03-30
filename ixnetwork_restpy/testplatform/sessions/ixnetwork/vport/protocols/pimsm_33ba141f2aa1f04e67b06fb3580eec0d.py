@@ -63,7 +63,10 @@ class Pimsm(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_b941e2e93b455f4e62e64cc336bfc2d1 import Router
-        return Router(self)
+        if self._properties.get('Router', None) is None:
+            return Router(self)
+        else:
+            return self._properties.get('Router')
 
     @property
     def BsmFramePerInterval(self):

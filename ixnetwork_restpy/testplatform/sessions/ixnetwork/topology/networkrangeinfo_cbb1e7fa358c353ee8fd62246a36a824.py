@@ -64,7 +64,10 @@ class NetworkRangeInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import CMacProperties
-        return CMacProperties(self)
+        if self._properties.get('CMacProperties', None) is None:
+            return CMacProperties(self)
+        else:
+            return self._properties.get('CMacProperties')
 
     @property
     def EvpnIPv4PrefixRange(self):
@@ -78,7 +81,10 @@ class NetworkRangeInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange_79e14e1ab070701ebf4eb586cecc565f import EvpnIPv4PrefixRange
-        return EvpnIPv4PrefixRange(self)
+        if self._properties.get('EvpnIPv4PrefixRange', None) is None:
+            return EvpnIPv4PrefixRange(self)
+        else:
+            return self._properties.get('EvpnIPv4PrefixRange')
 
     @property
     def EvpnIPv6PrefixRange(self):
@@ -92,7 +98,10 @@ class NetworkRangeInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange_f8dd80c93700c982de65324fe6552b86 import EvpnIPv6PrefixRange
-        return EvpnIPv6PrefixRange(self)
+        if self._properties.get('EvpnIPv6PrefixRange', None) is None:
+            return EvpnIPv6PrefixRange(self)
+        else:
+            return self._properties.get('EvpnIPv6PrefixRange')
 
     @property
     def Count(self):

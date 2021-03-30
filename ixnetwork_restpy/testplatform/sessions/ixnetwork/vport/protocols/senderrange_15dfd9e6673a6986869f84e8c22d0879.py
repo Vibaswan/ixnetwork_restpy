@@ -96,7 +96,10 @@ class SenderRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tunnelheadtoleaf_e69a9a69601e0735ed9794ff412c72e6 import TunnelHeadToLeaf
-        return TunnelHeadToLeaf(self)
+        if self._properties.get('TunnelHeadToLeaf', None) is None:
+            return TunnelHeadToLeaf(self)
+        else:
+            return self._properties.get('TunnelHeadToLeaf')
 
     @property
     def TunnelHeadTrafficEndPoint(self):
@@ -110,7 +113,10 @@ class SenderRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tunnelheadtrafficendpoint_399e6e14fa13954b413c4572ebd3725e import TunnelHeadTrafficEndPoint
-        return TunnelHeadTrafficEndPoint(self)
+        if self._properties.get('TunnelHeadTrafficEndPoint', None) is None:
+            return TunnelHeadTrafficEndPoint(self)
+        else:
+            return self._properties.get('TunnelHeadTrafficEndPoint')
 
     @property
     def AutoGenerateSessionName(self):

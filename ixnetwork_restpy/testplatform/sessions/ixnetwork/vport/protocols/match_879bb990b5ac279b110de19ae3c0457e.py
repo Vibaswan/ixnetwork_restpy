@@ -53,7 +53,10 @@ class Match(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.matchfields_3de54dcaf7fbfd9709c8b0fdcd6d2d16 import MatchFields
-        return MatchFields(self)._select()
+        if self._properties.get('MatchFields', None) is None:
+            return MatchFields(self)._select()
+        else:
+            return self._properties.get('MatchFields')
 
     @property
     def ExperimenterData(self):

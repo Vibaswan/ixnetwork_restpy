@@ -55,7 +55,10 @@ class Layer23TrafficFlowFilter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowfilter.enumerationfilter.enumerationfilter import EnumerationFilter
-        return EnumerationFilter(self)
+        if self._properties.get('EnumerationFilter', None) is None:
+            return EnumerationFilter(self)
+        else:
+            return self._properties.get('EnumerationFilter')
 
     @property
     def TrackingFilter(self):
@@ -69,7 +72,10 @@ class Layer23TrafficFlowFilter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowfilter.trackingfilter.trackingfilter import TrackingFilter
-        return TrackingFilter(self)
+        if self._properties.get('TrackingFilter', None) is None:
+            return TrackingFilter(self)
+        else:
+            return self._properties.get('TrackingFilter')
 
     @property
     def AggregatedAcrossPorts(self):

@@ -92,7 +92,10 @@ class PreEstablishedSrLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pceperosubobjectslist_7ea27079d1a1d53cebc6e1e83b2ca0b4 import PcepEroSubObjectsList
-        return PcepEroSubObjectsList(self)
+        if self._properties.get('PcepEroSubObjectsList', None) is None:
+            return PcepEroSubObjectsList(self)
+        else:
+            return self._properties.get('PcepEroSubObjectsList')
 
     @property
     def PcepMetricSubObjectsList(self):
@@ -106,7 +109,10 @@ class PreEstablishedSrLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepmetricsubobjectslist_b1398d82dd25e8e98d50662ebf5ba3d1 import PcepMetricSubObjectsList
-        return PcepMetricSubObjectsList(self)
+        if self._properties.get('PcepMetricSubObjectsList', None) is None:
+            return PcepMetricSubObjectsList(self)
+        else:
+            return self._properties.get('PcepMetricSubObjectsList')
 
     @property
     def Tag(self):
@@ -120,7 +126,10 @@ class PreEstablishedSrLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is None:
+            return Tag(self)
+        else:
+            return self._properties.get('Tag')
 
     @property
     def Active(self):

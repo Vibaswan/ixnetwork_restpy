@@ -55,7 +55,10 @@ class SpbmNodeBaseVidRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbmnodeisidrange_a3510ccafe15d43e458301835ca1b3b9 import SpbmNodeIsIdRange
-        return SpbmNodeIsIdRange(self)
+        if self._properties.get('SpbmNodeIsIdRange', None) is None:
+            return SpbmNodeIsIdRange(self)
+        else:
+            return self._properties.get('SpbmNodeIsIdRange')
 
     @property
     def BVlanPriority(self):

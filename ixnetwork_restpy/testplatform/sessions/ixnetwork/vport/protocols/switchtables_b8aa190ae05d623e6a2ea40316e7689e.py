@@ -54,7 +54,10 @@ class SwitchTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.wildcardssupported_30584fd46ca1157c8d65eba239520375 import WildcardsSupported
-        return WildcardsSupported(self)._select()
+        if self._properties.get('WildcardsSupported', None) is None:
+            return WildcardsSupported(self)._select()
+        else:
+            return self._properties.get('WildcardsSupported')
 
     @property
     def MaxEntries(self):

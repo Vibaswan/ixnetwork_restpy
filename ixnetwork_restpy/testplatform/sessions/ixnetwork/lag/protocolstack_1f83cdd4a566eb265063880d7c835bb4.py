@@ -57,7 +57,10 @@ class ProtocolStack(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.ethernet_16074ace2e581d9f35640391bde73384 import Ethernet
-        return Ethernet(self)
+        if self._properties.get('Ethernet', None) is None:
+            return Ethernet(self)
+        else:
+            return self._properties.get('Ethernet')
 
     @property
     def Count(self):

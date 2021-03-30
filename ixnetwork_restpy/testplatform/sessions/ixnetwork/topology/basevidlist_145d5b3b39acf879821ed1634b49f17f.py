@@ -61,7 +61,10 @@ class BaseVidList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isidlist_e6ba204fca19b050969280a4a79443f8 import IsidList
-        return IsidList(self)._select()
+        if self._properties.get('IsidList', None) is None:
+            return IsidList(self)._select()
+        else:
+            return self._properties.get('IsidList')
 
     @property
     def Active(self):

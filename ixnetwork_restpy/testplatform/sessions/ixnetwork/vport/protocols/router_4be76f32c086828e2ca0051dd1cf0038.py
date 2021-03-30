@@ -67,7 +67,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_7ae4a7abfbf3ddadcc20bd5c0e92cc02 import Interface
-        return Interface(self)
+        if self._properties.get('Interface', None) is None:
+            return Interface(self)
+        else:
+            return self._properties.get('Interface')
 
     @property
     def RouteRange(self):
@@ -81,7 +84,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routerange_2c9ff03ab2e44705c6af83f3c7265f53 import RouteRange
-        return RouteRange(self)
+        if self._properties.get('RouteRange', None) is None:
+            return RouteRange(self)
+        else:
+            return self._properties.get('RouteRange')
 
     @property
     def UserLsaGroup(self):
@@ -95,7 +101,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.userlsagroup_7795cb447526ddc4b75100787366e015 import UserLsaGroup
-        return UserLsaGroup(self)
+        if self._properties.get('UserLsaGroup', None) is None:
+            return UserLsaGroup(self)
+        else:
+            return self._properties.get('UserLsaGroup')
 
     @property
     def DiscardLearnedLsa(self):

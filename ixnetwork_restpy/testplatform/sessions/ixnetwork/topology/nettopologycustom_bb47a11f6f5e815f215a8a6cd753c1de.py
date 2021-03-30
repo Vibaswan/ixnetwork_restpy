@@ -53,7 +53,10 @@ class NetTopologyCustom(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.linktable_208cab015f6cc01eff274874a65e7fec import LinkTable
-        return LinkTable(self)._select()
+        if self._properties.get('LinkTable', None) is None:
+            return LinkTable(self)._select()
+        else:
+            return self._properties.get('LinkTable')
 
     @property
     def IncludeEntryPoint(self):

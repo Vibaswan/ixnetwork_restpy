@@ -56,7 +56,10 @@ class Rsvp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.neighborpair_6b451188874d8642de25a3b708fcb4f1 import NeighborPair
-        return NeighborPair(self)
+        if self._properties.get('NeighborPair', None) is None:
+            return NeighborPair(self)
+        else:
+            return self._properties.get('NeighborPair')
 
     @property
     def EnableBgpOverLsp(self):

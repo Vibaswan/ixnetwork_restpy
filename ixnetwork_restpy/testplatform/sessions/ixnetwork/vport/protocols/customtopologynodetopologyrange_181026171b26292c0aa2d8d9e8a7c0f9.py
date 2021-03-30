@@ -54,7 +54,10 @@ class CustomTopologyNodeTopologyRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologyinterestedvlanrange_b57874c12eda43d1719e01dcadf708c9 import CustomTopologyInterestedVlanRange
-        return CustomTopologyInterestedVlanRange(self)
+        if self._properties.get('CustomTopologyInterestedVlanRange', None) is None:
+            return CustomTopologyInterestedVlanRange(self)
+        else:
+            return self._properties.get('CustomTopologyInterestedVlanRange')
 
     @property
     def NicknameCount(self):

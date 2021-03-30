@@ -68,7 +68,10 @@ class View(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.advancedcvfilters.advancedcvfilters import AdvancedCVFilters
-        return AdvancedCVFilters(self)
+        if self._properties.get('AdvancedCVFilters', None) is None:
+            return AdvancedCVFilters(self)
+        else:
+            return self._properties.get('AdvancedCVFilters')
 
     @property
     def AvailableAdvancedFilters(self):
@@ -82,7 +85,10 @@ class View(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.availableadvancedfilters.availableadvancedfilters import AvailableAdvancedFilters
-        return AvailableAdvancedFilters(self)
+        if self._properties.get('AvailableAdvancedFilters', None) is None:
+            return AvailableAdvancedFilters(self)
+        else:
+            return self._properties.get('AvailableAdvancedFilters')
 
     @property
     def AvailablePortFilter(self):
@@ -96,7 +102,10 @@ class View(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.availableportfilter.availableportfilter import AvailablePortFilter
-        return AvailablePortFilter(self)
+        if self._properties.get('AvailablePortFilter', None) is None:
+            return AvailablePortFilter(self)
+        else:
+            return self._properties.get('AvailablePortFilter')
 
     @property
     def AvailableProtocolFilter(self):
@@ -110,7 +119,10 @@ class View(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.availableprotocolfilter.availableprotocolfilter import AvailableProtocolFilter
-        return AvailableProtocolFilter(self)
+        if self._properties.get('AvailableProtocolFilter', None) is None:
+            return AvailableProtocolFilter(self)
+        else:
+            return self._properties.get('AvailableProtocolFilter')
 
     @property
     def AvailableProtocolStackFilter(self):
@@ -124,7 +136,10 @@ class View(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.availableprotocolstackfilter.availableprotocolstackfilter import AvailableProtocolStackFilter
-        return AvailableProtocolStackFilter(self)
+        if self._properties.get('AvailableProtocolStackFilter', None) is None:
+            return AvailableProtocolStackFilter(self)
+        else:
+            return self._properties.get('AvailableProtocolStackFilter')
 
     @property
     def AvailableStatisticFilter(self):
@@ -138,7 +153,10 @@ class View(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.availablestatisticfilter.availablestatisticfilter import AvailableStatisticFilter
-        return AvailableStatisticFilter(self)
+        if self._properties.get('AvailableStatisticFilter', None) is None:
+            return AvailableStatisticFilter(self)
+        else:
+            return self._properties.get('AvailableStatisticFilter')
 
     @property
     def AvailableTrackingFilter(self):
@@ -152,7 +170,10 @@ class View(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.availabletrackingfilter.availabletrackingfilter import AvailableTrackingFilter
-        return AvailableTrackingFilter(self)
+        if self._properties.get('AvailableTrackingFilter', None) is None:
+            return AvailableTrackingFilter(self)
+        else:
+            return self._properties.get('AvailableTrackingFilter')
 
     @property
     def AvailableTrafficItemFilter(self):
@@ -166,7 +187,10 @@ class View(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.availabletrafficitemfilter.availabletrafficitemfilter import AvailableTrafficItemFilter
-        return AvailableTrafficItemFilter(self)
+        if self._properties.get('AvailableTrafficItemFilter', None) is None:
+            return AvailableTrafficItemFilter(self)
+        else:
+            return self._properties.get('AvailableTrafficItemFilter')
 
     @property
     def Data(self):
@@ -180,7 +204,10 @@ class View(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.data.data import Data
-        return Data(self)._select()
+        if self._properties.get('Data', None) is None:
+            return Data(self)._select()
+        else:
+            return self._properties.get('Data')
 
     @property
     def DrillDown(self):
@@ -194,7 +221,10 @@ class View(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.drilldown.drilldown import DrillDown
-        return DrillDown(self)
+        if self._properties.get('DrillDown', None) is None:
+            return DrillDown(self)
+        else:
+            return self._properties.get('DrillDown')
 
     @property
     def FormulaCatalog(self):
@@ -208,7 +238,10 @@ class View(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.formulacatalog.formulacatalog import FormulaCatalog
-        return FormulaCatalog(self)._select()
+        if self._properties.get('FormulaCatalog', None) is None:
+            return FormulaCatalog(self)._select()
+        else:
+            return self._properties.get('FormulaCatalog')
 
     @property
     def InnerGlobalStats(self):
@@ -222,7 +255,10 @@ class View(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.innerglobalstats.innerglobalstats import InnerGlobalStats
-        return InnerGlobalStats(self)._select()
+        if self._properties.get('InnerGlobalStats', None) is None:
+            return InnerGlobalStats(self)._select()
+        else:
+            return self._properties.get('InnerGlobalStats')
 
     @property
     def Layer23NextGenProtocolFilter(self):
@@ -236,7 +272,10 @@ class View(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23nextgenprotocolfilter.layer23nextgenprotocolfilter import Layer23NextGenProtocolFilter
-        return Layer23NextGenProtocolFilter(self)
+        if self._properties.get('Layer23NextGenProtocolFilter', None) is None:
+            return Layer23NextGenProtocolFilter(self)
+        else:
+            return self._properties.get('Layer23NextGenProtocolFilter')
 
     @property
     def Layer23ProtocolAuthAccessFilter(self):
@@ -250,7 +289,10 @@ class View(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23protocolauthaccessfilter.layer23protocolauthaccessfilter import Layer23ProtocolAuthAccessFilter
-        return Layer23ProtocolAuthAccessFilter(self)
+        if self._properties.get('Layer23ProtocolAuthAccessFilter', None) is None:
+            return Layer23ProtocolAuthAccessFilter(self)
+        else:
+            return self._properties.get('Layer23ProtocolAuthAccessFilter')
 
     @property
     def Layer23ProtocolPortFilter(self):
@@ -264,7 +306,10 @@ class View(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23protocolportfilter.layer23protocolportfilter import Layer23ProtocolPortFilter
-        return Layer23ProtocolPortFilter(self)
+        if self._properties.get('Layer23ProtocolPortFilter', None) is None:
+            return Layer23ProtocolPortFilter(self)
+        else:
+            return self._properties.get('Layer23ProtocolPortFilter')
 
     @property
     def Layer23ProtocolRoutingFilter(self):
@@ -278,7 +323,10 @@ class View(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23protocolroutingfilter.layer23protocolroutingfilter import Layer23ProtocolRoutingFilter
-        return Layer23ProtocolRoutingFilter(self)
+        if self._properties.get('Layer23ProtocolRoutingFilter', None) is None:
+            return Layer23ProtocolRoutingFilter(self)
+        else:
+            return self._properties.get('Layer23ProtocolRoutingFilter')
 
     @property
     def Layer23ProtocolStackFilter(self):
@@ -292,7 +340,10 @@ class View(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23protocolstackfilter.layer23protocolstackfilter import Layer23ProtocolStackFilter
-        return Layer23ProtocolStackFilter(self)
+        if self._properties.get('Layer23ProtocolStackFilter', None) is None:
+            return Layer23ProtocolStackFilter(self)
+        else:
+            return self._properties.get('Layer23ProtocolStackFilter')
 
     @property
     def Layer23TrafficFlowDetectiveFilter(self):
@@ -306,7 +357,10 @@ class View(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowdetectivefilter.layer23trafficflowdetectivefilter import Layer23TrafficFlowDetectiveFilter
-        return Layer23TrafficFlowDetectiveFilter(self)
+        if self._properties.get('Layer23TrafficFlowDetectiveFilter', None) is None:
+            return Layer23TrafficFlowDetectiveFilter(self)
+        else:
+            return self._properties.get('Layer23TrafficFlowDetectiveFilter')
 
     @property
     def Layer23TrafficFlowFilter(self):
@@ -320,7 +374,10 @@ class View(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowfilter.layer23trafficflowfilter import Layer23TrafficFlowFilter
-        return Layer23TrafficFlowFilter(self)
+        if self._properties.get('Layer23TrafficFlowFilter', None) is None:
+            return Layer23TrafficFlowFilter(self)
+        else:
+            return self._properties.get('Layer23TrafficFlowFilter')
 
     @property
     def Layer23TrafficItemFilter(self):
@@ -334,7 +391,10 @@ class View(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficitemfilter.layer23trafficitemfilter import Layer23TrafficItemFilter
-        return Layer23TrafficItemFilter(self)
+        if self._properties.get('Layer23TrafficItemFilter', None) is None:
+            return Layer23TrafficItemFilter(self)
+        else:
+            return self._properties.get('Layer23TrafficItemFilter')
 
     @property
     def Layer23TrafficPortFilter(self):
@@ -348,7 +408,10 @@ class View(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficportfilter.layer23trafficportfilter import Layer23TrafficPortFilter
-        return Layer23TrafficPortFilter(self)
+        if self._properties.get('Layer23TrafficPortFilter', None) is None:
+            return Layer23TrafficPortFilter(self)
+        else:
+            return self._properties.get('Layer23TrafficPortFilter')
 
     @property
     def Layer47AppLibraryTrafficFilter(self):
@@ -362,7 +425,10 @@ class View(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer47applibrarytrafficfilter.layer47applibrarytrafficfilter import Layer47AppLibraryTrafficFilter
-        return Layer47AppLibraryTrafficFilter(self)
+        if self._properties.get('Layer47AppLibraryTrafficFilter', None) is None:
+            return Layer47AppLibraryTrafficFilter(self)
+        else:
+            return self._properties.get('Layer47AppLibraryTrafficFilter')
 
     @property
     def Page(self):
@@ -376,7 +442,10 @@ class View(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.page.page import Page
-        return Page(self)._select()
+        if self._properties.get('Page', None) is None:
+            return Page(self)._select()
+        else:
+            return self._properties.get('Page')
 
     @property
     def Statistic(self):
@@ -390,7 +459,10 @@ class View(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.statistic.statistic import Statistic
-        return Statistic(self)
+        if self._properties.get('Statistic', None) is None:
+            return Statistic(self)
+        else:
+            return self._properties.get('Statistic')
 
     @property
     def AutoRefresh(self):
@@ -864,3 +936,21 @@ class View(Base):
         """
         payload = { "Arg1": self.href }
         return self._execute('restoreToDefaults', payload=payload, response_object=None)
+
+    def SetEgressViewMode(self, *args, **kwargs):
+        """Executes the setEgressViewMode operation on the server.
+
+        setEgressViewMode(Arg2=enum)number
+        ----------------------------------
+        - Arg2 (str(kAll | kRowsWithNoPackets | kRowsWithPackets)): 
+        - Returns number: 
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('setEgressViewMode', payload=payload, response_object=None)

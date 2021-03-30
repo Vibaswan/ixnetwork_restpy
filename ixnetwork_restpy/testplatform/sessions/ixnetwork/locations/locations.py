@@ -67,7 +67,10 @@ class Locations(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.locations.ports.ports import Ports
-        return Ports(self)
+        if self._properties.get('Ports', None) is None:
+            return Ports(self)
+        else:
+            return self._properties.get('Ports')
 
     @property
     def ResourceGroups(self):
@@ -81,7 +84,10 @@ class Locations(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.locations.resourcegroups.resourcegroups import ResourceGroups
-        return ResourceGroups(self)
+        if self._properties.get('ResourceGroups', None) is None:
+            return ResourceGroups(self)
+        else:
+            return self._properties.get('ResourceGroups')
 
     @property
     def CableLength(self):

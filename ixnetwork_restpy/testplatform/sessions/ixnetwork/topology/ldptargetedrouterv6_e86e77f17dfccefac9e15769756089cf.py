@@ -87,7 +87,10 @@ class LdpTargetedRouterV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        return Connector(self)
+        if self._properties.get('Connector', None) is None:
+            return Connector(self)
+        else:
+            return self._properties.get('Connector')
 
     @property
     def LdpLeafRangeV6(self):
@@ -101,7 +104,10 @@ class LdpTargetedRouterV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpleafrangev6_3dad6635b6afcf8ce78906311e26bfe0 import LdpLeafRangeV6
-        return LdpLeafRangeV6(self)._select()
+        if self._properties.get('LdpLeafRangeV6', None) is None:
+            return LdpLeafRangeV6(self)._select()
+        else:
+            return self._properties.get('LdpLeafRangeV6')
 
     @property
     def LdpRootRangeV6(self):
@@ -115,7 +121,10 @@ class LdpTargetedRouterV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldprootrangev6_45885b6f21e934c88aa56da8381f4ec3 import LdpRootRangeV6
-        return LdpRootRangeV6(self)._select()
+        if self._properties.get('LdpRootRangeV6', None) is None:
+            return LdpRootRangeV6(self)._select()
+        else:
+            return self._properties.get('LdpRootRangeV6')
 
     @property
     def LdpTargetedIpv6Peer(self):
@@ -129,7 +138,10 @@ class LdpTargetedRouterV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedipv6peer_cf8c841244e1f69d674a5c2fa9c4b473 import LdpTargetedIpv6Peer
-        return LdpTargetedIpv6Peer(self)._select()
+        if self._properties.get('LdpTargetedIpv6Peer', None) is None:
+            return LdpTargetedIpv6Peer(self)._select()
+        else:
+            return self._properties.get('LdpTargetedIpv6Peer')
 
     @property
     def LdpTargetedPeer(self):
@@ -143,7 +155,10 @@ class LdpTargetedRouterV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedpeer_3f5aecf84abee4c45cfdedcf70163bfc import LdpTargetedPeer
-        return LdpTargetedPeer(self)._select()
+        if self._properties.get('LdpTargetedPeer', None) is None:
+            return LdpTargetedPeer(self)._select()
+        else:
+            return self._properties.get('LdpTargetedPeer')
 
     @property
     def Ldpotherpws(self):
@@ -157,7 +172,10 @@ class LdpTargetedRouterV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpotherpws_c7a119da3cff2b6dc1e78257b76d70b9 import Ldpotherpws
-        return Ldpotherpws(self)
+        if self._properties.get('Ldpotherpws', None) is None:
+            return Ldpotherpws(self)
+        else:
+            return self._properties.get('Ldpotherpws')
 
     @property
     def Ldppwvpls(self):
@@ -171,7 +189,10 @@ class LdpTargetedRouterV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldppwvpls_e691d6b250f877cef17952ec6e6b30b9 import Ldppwvpls
-        return Ldppwvpls(self)
+        if self._properties.get('Ldppwvpls', None) is None:
+            return Ldppwvpls(self)
+        else:
+            return self._properties.get('Ldppwvpls')
 
     @property
     def Ldpvplsbgpad(self):
@@ -185,7 +206,10 @@ class LdpTargetedRouterV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpvplsbgpad_0f32fa32863dd9e13cd7e772a3fb8771 import Ldpvplsbgpad
-        return Ldpvplsbgpad(self)
+        if self._properties.get('Ldpvplsbgpad', None) is None:
+            return Ldpvplsbgpad(self)
+        else:
+            return self._properties.get('Ldpvplsbgpad')
 
     @property
     def LearnedInfo(self):
@@ -199,7 +223,10 @@ class LdpTargetedRouterV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        return LearnedInfo(self)
+        if self._properties.get('LearnedInfo', None) is None:
+            return LearnedInfo(self)
+        else:
+            return self._properties.get('LearnedInfo')
 
     @property
     def Active(self):

@@ -60,7 +60,10 @@ class Globals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.apperrors.apperrors import AppErrors
-        return AppErrors(self)
+        if self._properties.get('AppErrors', None) is None:
+            return AppErrors(self)
+        else:
+            return self._properties.get('AppErrors')
 
     @property
     def Diagnostics(self):
@@ -74,7 +77,10 @@ class Globals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.diagnostics.diagnostics import Diagnostics
-        return Diagnostics(self)._select()
+        if self._properties.get('Diagnostics', None) is None:
+            return Diagnostics(self)._select()
+        else:
+            return self._properties.get('Diagnostics')
 
     @property
     def Interfaces(self):
@@ -88,7 +94,10 @@ class Globals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.interfaces.interfaces import Interfaces
-        return Interfaces(self)._select()
+        if self._properties.get('Interfaces', None) is None:
+            return Interfaces(self)._select()
+        else:
+            return self._properties.get('Interfaces')
 
     @property
     def Ixnet(self):
@@ -102,7 +111,10 @@ class Globals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.ixnet.ixnet import Ixnet
-        return Ixnet(self)._select()
+        if self._properties.get('Ixnet', None) is None:
+            return Ixnet(self)._select()
+        else:
+            return self._properties.get('Ixnet')
 
     @property
     def Licensing(self):
@@ -116,7 +128,10 @@ class Globals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.licensing.licensing import Licensing
-        return Licensing(self)._select()
+        if self._properties.get('Licensing', None) is None:
+            return Licensing(self)._select()
+        else:
+            return self._properties.get('Licensing')
 
     @property
     def PortTestOptions(self):
@@ -130,7 +145,10 @@ class Globals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.porttestoptions.porttestoptions import PortTestOptions
-        return PortTestOptions(self)._select()
+        if self._properties.get('PortTestOptions', None) is None:
+            return PortTestOptions(self)._select()
+        else:
+            return self._properties.get('PortTestOptions')
 
     @property
     def Preferences(self):
@@ -144,7 +162,10 @@ class Globals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.preferences.preferences import Preferences
-        return Preferences(self)._select()
+        if self._properties.get('Preferences', None) is None:
+            return Preferences(self)._select()
+        else:
+            return self._properties.get('Preferences')
 
     @property
     def ProtocolStack(self):
@@ -158,7 +179,10 @@ class Globals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.protocolstack import ProtocolStack
-        return ProtocolStack(self)._select()
+        if self._properties.get('ProtocolStack', None) is None:
+            return ProtocolStack(self)._select()
+        else:
+            return self._properties.get('ProtocolStack')
 
     @property
     def Scriptgen(self):
@@ -172,7 +196,10 @@ class Globals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.scriptgen.scriptgen import Scriptgen
-        return Scriptgen(self)._select()
+        if self._properties.get('Scriptgen', None) is None:
+            return Scriptgen(self)._select()
+        else:
+            return self._properties.get('Scriptgen')
 
     @property
     def TestInspector(self):
@@ -186,7 +213,10 @@ class Globals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.testinspector.testinspector import TestInspector
-        return TestInspector(self)._select()
+        if self._properties.get('TestInspector', None) is None:
+            return TestInspector(self)._select()
+        else:
+            return self._properties.get('TestInspector')
 
     @property
     def Testworkflow(self):
@@ -200,7 +230,10 @@ class Globals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.testworkflow.testworkflow import Testworkflow
-        return Testworkflow(self)._select()
+        if self._properties.get('Testworkflow', None) is None:
+            return Testworkflow(self)._select()
+        else:
+            return self._properties.get('Testworkflow')
 
     @property
     def Topology(self):
@@ -214,7 +247,10 @@ class Globals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.topology_678a8dc80c9b4b2b5c741072eab4305d import Topology
-        return Topology(self)._select()
+        if self._properties.get('Topology', None) is None:
+            return Topology(self)._select()
+        else:
+            return self._properties.get('Topology')
 
     @property
     def ApplicationName(self):

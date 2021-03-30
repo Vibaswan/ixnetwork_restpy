@@ -124,7 +124,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.aislearnedinfo_9d4d1a1b3ec5fdeb4481cafe9a0bb262 import AisLearnedInfo
-        return AisLearnedInfo(self)
+        if self._properties.get('AisLearnedInfo', None) is None:
+            return AisLearnedInfo(self)
+        else:
+            return self._properties.get('AisLearnedInfo')
 
     @property
     def CcmLearnedInfo(self):
@@ -138,7 +141,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ccmlearnedinfo_c99d00ef89af4fbcf32feeec5fafa4f7 import CcmLearnedInfo
-        return CcmLearnedInfo(self)
+        if self._properties.get('CcmLearnedInfo', None) is None:
+            return CcmLearnedInfo(self)
+        else:
+            return self._properties.get('CcmLearnedInfo')
 
     @property
     def CustomTlvs(self):
@@ -152,7 +158,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtlvs_bd691d177945bac583502e55bd792b7e import CustomTlvs
-        return CustomTlvs(self)
+        if self._properties.get('CustomTlvs', None) is None:
+            return CustomTlvs(self)
+        else:
+            return self._properties.get('CustomTlvs')
 
     @property
     def DelayLearnedInfo(self):
@@ -166,7 +175,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.delaylearnedinfo_e8e77e74a384521713f2adb3148f7022 import DelayLearnedInfo
-        return DelayLearnedInfo(self)
+        if self._properties.get('DelayLearnedInfo', None) is None:
+            return DelayLearnedInfo(self)
+        else:
+            return self._properties.get('DelayLearnedInfo')
 
     @property
     def Interface(self):
@@ -180,7 +192,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_628fdf0890417e234e9b9a33933fd6bf import Interface
-        return Interface(self)
+        if self._properties.get('Interface', None) is None:
+            return Interface(self)
+        else:
+            return self._properties.get('Interface')
 
     @property
     def LbLearnedInfo(self):
@@ -194,7 +209,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lblearnedinfo_4823f0af8cbdf6d47df16955c18ca8ce import LbLearnedInfo
-        return LbLearnedInfo(self)
+        if self._properties.get('LbLearnedInfo', None) is None:
+            return LbLearnedInfo(self)
+        else:
+            return self._properties.get('LbLearnedInfo')
 
     @property
     def LckLearnedInfo(self):
@@ -208,7 +226,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lcklearnedinfo_ee59f77921e9b47ea51da325dd2c139e import LckLearnedInfo
-        return LckLearnedInfo(self)
+        if self._properties.get('LckLearnedInfo', None) is None:
+            return LckLearnedInfo(self)
+        else:
+            return self._properties.get('LckLearnedInfo')
 
     @property
     def Link(self):
@@ -222,7 +243,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.link_d1c3e2cedfb63fb83d884a011b42535c import Link
-        return Link(self)
+        if self._properties.get('Link', None) is None:
+            return Link(self)
+        else:
+            return self._properties.get('Link')
 
     @property
     def LossLearnedInfo(self):
@@ -236,7 +260,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.losslearnedinfo_1cec4b3ece3eda9fa67e657808f7e614 import LossLearnedInfo
-        return LossLearnedInfo(self)
+        if self._properties.get('LossLearnedInfo', None) is None:
+            return LossLearnedInfo(self)
+        else:
+            return self._properties.get('LossLearnedInfo')
 
     @property
     def LtLearnedInfo(self):
@@ -250,7 +277,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ltlearnedinfo_10ac5d7b75e3dd7daf4fe0b262809d4b import LtLearnedInfo
-        return LtLearnedInfo(self)
+        if self._properties.get('LtLearnedInfo', None) is None:
+            return LtLearnedInfo(self)
+        else:
+            return self._properties.get('LtLearnedInfo')
 
     @property
     def MdLevel(self):
@@ -264,7 +294,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mdlevel_e4cee9102f603a069fe765a7d88962f7 import MdLevel
-        return MdLevel(self)
+        if self._properties.get('MdLevel', None) is None:
+            return MdLevel(self)
+        else:
+            return self._properties.get('MdLevel')
 
     @property
     def Mp(self):
@@ -278,7 +311,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mp_fdca92ca7688d207a32daf52e610fd90 import Mp
-        return Mp(self)
+        if self._properties.get('Mp', None) is None:
+            return Mp(self)
+        else:
+            return self._properties.get('Mp')
 
     @property
     def PbbTeCcmLearnedInfo(self):
@@ -292,7 +328,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbteccmlearnedinfo_7c0c86eaac3f2e7074b3a921e77e6bb4 import PbbTeCcmLearnedInfo
-        return PbbTeCcmLearnedInfo(self)
+        if self._properties.get('PbbTeCcmLearnedInfo', None) is None:
+            return PbbTeCcmLearnedInfo(self)
+        else:
+            return self._properties.get('PbbTeCcmLearnedInfo')
 
     @property
     def PbbTeDelayLearnedInfo(self):
@@ -306,7 +345,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbtedelaylearnedinfo_512d2783741599b833ac92de5dea3589 import PbbTeDelayLearnedInfo
-        return PbbTeDelayLearnedInfo(self)
+        if self._properties.get('PbbTeDelayLearnedInfo', None) is None:
+            return PbbTeDelayLearnedInfo(self)
+        else:
+            return self._properties.get('PbbTeDelayLearnedInfo')
 
     @property
     def PbbTeLbLearnedInfo(self):
@@ -320,7 +362,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbtelblearnedinfo_04eda79d986af811f8d758c15dc5e1a1 import PbbTeLbLearnedInfo
-        return PbbTeLbLearnedInfo(self)
+        if self._properties.get('PbbTeLbLearnedInfo', None) is None:
+            return PbbTeLbLearnedInfo(self)
+        else:
+            return self._properties.get('PbbTeLbLearnedInfo')
 
     @property
     def PbbTeLtLearnedInfo(self):
@@ -334,7 +379,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbteltlearnedinfo_610e30e3fd03ef63fef044cdd71d106f import PbbTeLtLearnedInfo
-        return PbbTeLtLearnedInfo(self)
+        if self._properties.get('PbbTeLtLearnedInfo', None) is None:
+            return PbbTeLtLearnedInfo(self)
+        else:
+            return self._properties.get('PbbTeLtLearnedInfo')
 
     @property
     def PbbTePeriodicOamDmLearnedInfo(self):
@@ -348,7 +396,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbteperiodicoamdmlearnedinfo_30859a22b472106375a906c016795ef4 import PbbTePeriodicOamDmLearnedInfo
-        return PbbTePeriodicOamDmLearnedInfo(self)
+        if self._properties.get('PbbTePeriodicOamDmLearnedInfo', None) is None:
+            return PbbTePeriodicOamDmLearnedInfo(self)
+        else:
+            return self._properties.get('PbbTePeriodicOamDmLearnedInfo')
 
     @property
     def PbbTePeriodicOamLbLearnedInfo(self):
@@ -362,7 +413,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbteperiodicoamlblearnedinfo_4d43822d094c1ac0c3a7742b050d3b92 import PbbTePeriodicOamLbLearnedInfo
-        return PbbTePeriodicOamLbLearnedInfo(self)
+        if self._properties.get('PbbTePeriodicOamLbLearnedInfo', None) is None:
+            return PbbTePeriodicOamLbLearnedInfo(self)
+        else:
+            return self._properties.get('PbbTePeriodicOamLbLearnedInfo')
 
     @property
     def PbbTePeriodicOamLtLearnedInfo(self):
@@ -376,7 +430,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbteperiodicoamltlearnedinfo_14fbffb76c1c6dda7d20b24a185c9b8b import PbbTePeriodicOamLtLearnedInfo
-        return PbbTePeriodicOamLtLearnedInfo(self)
+        if self._properties.get('PbbTePeriodicOamLtLearnedInfo', None) is None:
+            return PbbTePeriodicOamLtLearnedInfo(self)
+        else:
+            return self._properties.get('PbbTePeriodicOamLtLearnedInfo')
 
     @property
     def PeriodicOamDmLearnedInfo(self):
@@ -390,7 +447,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.periodicoamdmlearnedinfo_31e7a62116d301ce1802b27ea0445657 import PeriodicOamDmLearnedInfo
-        return PeriodicOamDmLearnedInfo(self)
+        if self._properties.get('PeriodicOamDmLearnedInfo', None) is None:
+            return PeriodicOamDmLearnedInfo(self)
+        else:
+            return self._properties.get('PeriodicOamDmLearnedInfo')
 
     @property
     def PeriodicOamLbLearnedInfo(self):
@@ -404,7 +464,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.periodicoamlblearnedinfo_af7787e7abe588d7e9ad7b393adc6874 import PeriodicOamLbLearnedInfo
-        return PeriodicOamLbLearnedInfo(self)
+        if self._properties.get('PeriodicOamLbLearnedInfo', None) is None:
+            return PeriodicOamLbLearnedInfo(self)
+        else:
+            return self._properties.get('PeriodicOamLbLearnedInfo')
 
     @property
     def PeriodicOamLmLearnedInfo(self):
@@ -418,7 +481,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.periodicoamlmlearnedinfo_ee2b776d335186db7b509aa54dc286c1 import PeriodicOamLmLearnedInfo
-        return PeriodicOamLmLearnedInfo(self)
+        if self._properties.get('PeriodicOamLmLearnedInfo', None) is None:
+            return PeriodicOamLmLearnedInfo(self)
+        else:
+            return self._properties.get('PeriodicOamLmLearnedInfo')
 
     @property
     def PeriodicOamLtLearnedInfo(self):
@@ -432,7 +498,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.periodicoamltlearnedinfo_6554ec0bf8935a19c2e174af8633dd1c import PeriodicOamLtLearnedInfo
-        return PeriodicOamLtLearnedInfo(self)
+        if self._properties.get('PeriodicOamLtLearnedInfo', None) is None:
+            return PeriodicOamLtLearnedInfo(self)
+        else:
+            return self._properties.get('PeriodicOamLtLearnedInfo')
 
     @property
     def Trunk(self):
@@ -446,7 +515,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trunk_147fd64b18a4a919a7b504ec774c3e79 import Trunk
-        return Trunk(self)
+        if self._properties.get('Trunk', None) is None:
+            return Trunk(self)
+        else:
+            return self._properties.get('Trunk')
 
     @property
     def TstLearnedInfo(self):
@@ -460,7 +532,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tstlearnedinfo_08a667662f0e19344b814657abe79fc4 import TstLearnedInfo
-        return TstLearnedInfo(self)
+        if self._properties.get('TstLearnedInfo', None) is None:
+            return TstLearnedInfo(self)
+        else:
+            return self._properties.get('TstLearnedInfo')
 
     @property
     def Vlans(self):
@@ -474,7 +549,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.vlans_7edba6e68b5ca69b65bf3cbb911cf28b import Vlans
-        return Vlans(self)
+        if self._properties.get('Vlans', None) is None:
+            return Vlans(self)
+        else:
+            return self._properties.get('Vlans')
 
     @property
     def AisInterval(self):

@@ -52,7 +52,10 @@ class Dhcpv4relayAgent(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor_d66c1061f4b3bb902b0e5e76ee632657 import TlvEditor
-        return TlvEditor(self)
+        if self._properties.get('TlvEditor', None) is None:
+            return TlvEditor(self)
+        else:
+            return self._properties.get('TlvEditor')
 
     @property
     def Count(self):

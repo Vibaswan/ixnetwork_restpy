@@ -54,7 +54,10 @@ class UniStatus(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bwprofile_1f77a90148a0ad6bb7139272863d372c import BwProfile
-        return BwProfile(self)
+        if self._properties.get('BwProfile', None) is None:
+            return BwProfile(self)
+        else:
+            return self._properties.get('BwProfile')
 
     @property
     def CeVlanIdEvcMapType(self):

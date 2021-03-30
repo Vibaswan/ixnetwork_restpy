@@ -68,7 +68,10 @@ class Uni(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.evc_12e3717e356bb6d0913adbe6b9aea4e7 import Evc
-        return Evc(self)
+        if self._properties.get('Evc', None) is None:
+            return Evc(self)
+        else:
+            return self._properties.get('Evc')
 
     @property
     def EvcStatusLearnedInfo(self):
@@ -82,7 +85,10 @@ class Uni(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.evcstatuslearnedinfo_eb384bea866bea4b73a9ada2107b94b7 import EvcStatusLearnedInfo
-        return EvcStatusLearnedInfo(self)
+        if self._properties.get('EvcStatusLearnedInfo', None) is None:
+            return EvcStatusLearnedInfo(self)
+        else:
+            return self._properties.get('EvcStatusLearnedInfo')
 
     @property
     def LmiStatusLearnedInfo(self):
@@ -96,7 +102,10 @@ class Uni(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lmistatuslearnedinfo_b4d933ecf6c225cb4a90db642a03bc62 import LmiStatusLearnedInfo
-        return LmiStatusLearnedInfo(self)
+        if self._properties.get('LmiStatusLearnedInfo', None) is None:
+            return LmiStatusLearnedInfo(self)
+        else:
+            return self._properties.get('LmiStatusLearnedInfo')
 
     @property
     def UniStatus(self):
@@ -110,7 +119,10 @@ class Uni(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.unistatus_88c46b8136449e97db339c08b836c2b7 import UniStatus
-        return UniStatus(self)
+        if self._properties.get('UniStatus', None) is None:
+            return UniStatus(self)
+        else:
+            return self._properties.get('UniStatus')
 
     @property
     def UniStatusLearnedInfo(self):
@@ -124,7 +136,10 @@ class Uni(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.unistatuslearnedinfo_40034a9c964ba97ae73772fef2dabd7a import UniStatusLearnedInfo
-        return UniStatusLearnedInfo(self)
+        if self._properties.get('UniStatusLearnedInfo', None) is None:
+            return UniStatusLearnedInfo(self)
+        else:
+            return self._properties.get('UniStatusLearnedInfo')
 
     @property
     def DataInstance(self):

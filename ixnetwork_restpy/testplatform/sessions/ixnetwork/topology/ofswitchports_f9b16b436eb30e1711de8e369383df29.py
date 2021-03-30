@@ -75,7 +75,10 @@ class OfSwitchPorts(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ofswitchqueues_9037a6161291f813628ddfbefe3df8ed import OfSwitchQueues
-        return OfSwitchQueues(self)._select()
+        if self._properties.get('OfSwitchQueues', None) is None:
+            return OfSwitchQueues(self)._select()
+        else:
+            return self._properties.get('OfSwitchQueues')
 
     @property
     def Active(self):

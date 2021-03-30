@@ -57,7 +57,10 @@ class Actions(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.action_910bcbfd3b7898385321127395ab1bd5 import Action
-        return Action(self)
+        if self._properties.get('Action', None) is None:
+            return Action(self)
+        else:
+            return self._properties.get('Action')
 
     @property
     def Count(self):

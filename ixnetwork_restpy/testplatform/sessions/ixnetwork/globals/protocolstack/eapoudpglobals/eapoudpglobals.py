@@ -63,7 +63,10 @@ class EapoUdpGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.certinfo.certinfo import CertInfo
-        return CertInfo(self)._select()
+        if self._properties.get('CertInfo', None) is None:
+            return CertInfo(self)._select()
+        else:
+            return self._properties.get('CertInfo')
 
     @property
     def NacSettings(self):
@@ -77,7 +80,10 @@ class EapoUdpGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nacsettings import NacSettings
-        return NacSettings(self)._select()
+        if self._properties.get('NacSettings', None) is None:
+            return NacSettings(self)._select()
+        else:
+            return self._properties.get('NacSettings')
 
     @property
     def ChangeStatusQuery(self):

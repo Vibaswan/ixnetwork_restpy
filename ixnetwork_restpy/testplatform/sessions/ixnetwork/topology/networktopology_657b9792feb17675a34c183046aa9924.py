@@ -55,7 +55,10 @@ class NetworkTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmsimulatedtopology_dc7c77f2f0651bc2e9e2b4796e7969b8 import CfmSimulatedTopology
-        return CfmSimulatedTopology(self)
+        if self._properties.get('CfmSimulatedTopology', None) is None:
+            return CfmSimulatedTopology(self)
+        else:
+            return self._properties.get('CfmSimulatedTopology')
 
     @property
     def ExternalLink(self):
@@ -69,7 +72,10 @@ class NetworkTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.externallink_92dfe6bfe971a09aeb88dd947516d4b8 import ExternalLink
-        return ExternalLink(self)
+        if self._properties.get('ExternalLink', None) is None:
+            return ExternalLink(self)
+        else:
+            return self._properties.get('ExternalLink')
 
     @property
     def IsisDceSimulatedTopologyConfig(self):
@@ -83,7 +89,10 @@ class NetworkTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisdcesimulatedtopologyconfig_4d88faaf0dcf92c0db3815f377d8e18d import IsisDceSimulatedTopologyConfig
-        return IsisDceSimulatedTopologyConfig(self)
+        if self._properties.get('IsisDceSimulatedTopologyConfig', None) is None:
+            return IsisDceSimulatedTopologyConfig(self)
+        else:
+            return self._properties.get('IsisDceSimulatedTopologyConfig')
 
     @property
     def IsisL3SimulatedTopologyConfig(self):
@@ -97,7 +106,10 @@ class NetworkTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3simulatedtopologyconfig_1890e701c5ec6fe1e10b65bd6dd71fb5 import IsisL3SimulatedTopologyConfig
-        return IsisL3SimulatedTopologyConfig(self)
+        if self._properties.get('IsisL3SimulatedTopologyConfig', None) is None:
+            return IsisL3SimulatedTopologyConfig(self)
+        else:
+            return self._properties.get('IsisL3SimulatedTopologyConfig')
 
     @property
     def IsisSpbSimulatedTopologyConfig(self):
@@ -111,7 +123,10 @@ class NetworkTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbsimulatedtopologyconfig_768b370addc0695580bc7b46b573d5a7 import IsisSpbSimulatedTopologyConfig
-        return IsisSpbSimulatedTopologyConfig(self)
+        if self._properties.get('IsisSpbSimulatedTopologyConfig', None) is None:
+            return IsisSpbSimulatedTopologyConfig(self)
+        else:
+            return self._properties.get('IsisSpbSimulatedTopologyConfig')
 
     @property
     def IsisTrillSimulatedTopologyConfig(self):
@@ -125,7 +140,10 @@ class NetworkTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrillsimulatedtopologyconfig_75756af58887c54a1ba308c360c558c6 import IsisTrillSimulatedTopologyConfig
-        return IsisTrillSimulatedTopologyConfig(self)
+        if self._properties.get('IsisTrillSimulatedTopologyConfig', None) is None:
+            return IsisTrillSimulatedTopologyConfig(self)
+        else:
+            return self._properties.get('IsisTrillSimulatedTopologyConfig')
 
     @property
     def LdpSimulatedTopologyConfig(self):
@@ -139,7 +157,10 @@ class NetworkTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpsimulatedtopologyconfig_2643921a67ce50542ef3fd34b8bbaa14 import LdpSimulatedTopologyConfig
-        return LdpSimulatedTopologyConfig(self)
+        if self._properties.get('LdpSimulatedTopologyConfig', None) is None:
+            return LdpSimulatedTopologyConfig(self)
+        else:
+            return self._properties.get('LdpSimulatedTopologyConfig')
 
     @property
     def NetTopologyCustom(self):
@@ -153,7 +174,10 @@ class NetworkTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.nettopologycustom_bb47a11f6f5e815f215a8a6cd753c1de import NetTopologyCustom
-        return NetTopologyCustom(self)
+        if self._properties.get('NetTopologyCustom', None) is None:
+            return NetTopologyCustom(self)
+        else:
+            return self._properties.get('NetTopologyCustom')
 
     @property
     def NetTopologyFatTree(self):
@@ -167,7 +191,10 @@ class NetworkTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.nettopologyfattree_da9d3b86dfd4429aea6fd83e55f04c9b import NetTopologyFatTree
-        return NetTopologyFatTree(self)
+        if self._properties.get('NetTopologyFatTree', None) is None:
+            return NetTopologyFatTree(self)
+        else:
+            return self._properties.get('NetTopologyFatTree')
 
     @property
     def NetTopologyGrid(self):
@@ -181,7 +208,10 @@ class NetworkTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.nettopologygrid_83b3d6466db720e42f8941917ac35776 import NetTopologyGrid
-        return NetTopologyGrid(self)
+        if self._properties.get('NetTopologyGrid', None) is None:
+            return NetTopologyGrid(self)
+        else:
+            return self._properties.get('NetTopologyGrid')
 
     @property
     def NetTopologyHubNSpoke(self):
@@ -195,7 +225,10 @@ class NetworkTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.nettopologyhubnspoke_6bab635dca26252c93ca0fa925b87be2 import NetTopologyHubNSpoke
-        return NetTopologyHubNSpoke(self)
+        if self._properties.get('NetTopologyHubNSpoke', None) is None:
+            return NetTopologyHubNSpoke(self)
+        else:
+            return self._properties.get('NetTopologyHubNSpoke')
 
     @property
     def NetTopologyLinear(self):
@@ -209,7 +242,10 @@ class NetworkTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.nettopologylinear_293f26b1484d1839fe8dc0ad00ed2bd5 import NetTopologyLinear
-        return NetTopologyLinear(self)
+        if self._properties.get('NetTopologyLinear', None) is None:
+            return NetTopologyLinear(self)
+        else:
+            return self._properties.get('NetTopologyLinear')
 
     @property
     def NetTopologyMesh(self):
@@ -223,7 +259,10 @@ class NetworkTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.nettopologymesh_517b38131e86c1d1de945da2a10cb914 import NetTopologyMesh
-        return NetTopologyMesh(self)
+        if self._properties.get('NetTopologyMesh', None) is None:
+            return NetTopologyMesh(self)
+        else:
+            return self._properties.get('NetTopologyMesh')
 
     @property
     def NetTopologyRing(self):
@@ -237,7 +276,10 @@ class NetworkTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.nettopologyring_53b30b7628c14a65021b6e4a332bfa7c import NetTopologyRing
-        return NetTopologyRing(self)
+        if self._properties.get('NetTopologyRing', None) is None:
+            return NetTopologyRing(self)
+        else:
+            return self._properties.get('NetTopologyRing')
 
     @property
     def NetTopologyTree(self):
@@ -251,7 +293,10 @@ class NetworkTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.nettopologytree_89d07e1ee9645fffc22bcedbb938f9f7 import NetTopologyTree
-        return NetTopologyTree(self)
+        if self._properties.get('NetTopologyTree', None) is None:
+            return NetTopologyTree(self)
+        else:
+            return self._properties.get('NetTopologyTree')
 
     @property
     def OspfSimulatedTopologyConfig(self):
@@ -265,7 +310,10 @@ class NetworkTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsimulatedtopologyconfig_97e4d55091dcce69020c77d08e90eee0 import OspfSimulatedTopologyConfig
-        return OspfSimulatedTopologyConfig(self)
+        if self._properties.get('OspfSimulatedTopologyConfig', None) is None:
+            return OspfSimulatedTopologyConfig(self)
+        else:
+            return self._properties.get('OspfSimulatedTopologyConfig')
 
     @property
     def Ospfv3SimulatedTopologyConfig(self):
@@ -279,7 +327,10 @@ class NetworkTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3simulatedtopologyconfig_497060526b39fa396a89711564688ce1 import Ospfv3SimulatedTopologyConfig
-        return Ospfv3SimulatedTopologyConfig(self)
+        if self._properties.get('Ospfv3SimulatedTopologyConfig', None) is None:
+            return Ospfv3SimulatedTopologyConfig(self)
+        else:
+            return self._properties.get('Ospfv3SimulatedTopologyConfig')
 
     @property
     def SimInterface(self):
@@ -293,7 +344,10 @@ class NetworkTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.siminterface_c5ed266ee5e10544297ff85a7ebe3c50 import SimInterface
-        return SimInterface(self)
+        if self._properties.get('SimInterface', None) is None:
+            return SimInterface(self)
+        else:
+            return self._properties.get('SimInterface')
 
     @property
     def SimRouter(self):
@@ -307,7 +361,10 @@ class NetworkTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.simrouter_6b838313b6104e3f157ae2656c6afbb1 import SimRouter
-        return SimRouter(self)
+        if self._properties.get('SimRouter', None) is None:
+            return SimRouter(self)
+        else:
+            return self._properties.get('SimRouter')
 
     @property
     def SimRouterBridge(self):
@@ -321,7 +378,10 @@ class NetworkTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.simrouterbridge_7a0805a6e8bddd5a066f100c0b0a7df2 import SimRouterBridge
-        return SimRouterBridge(self)
+        if self._properties.get('SimRouterBridge', None) is None:
+            return SimRouterBridge(self)
+        else:
+            return self._properties.get('SimRouterBridge')
 
     @property
     def Count(self):

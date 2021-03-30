@@ -84,7 +84,10 @@ class DotOneX(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bondedgre_09eda4ea678bfaf1026122797df45443 import BondedGRE
-        return BondedGRE(self)
+        if self._properties.get('BondedGRE', None) is None:
+            return BondedGRE(self)
+        else:
+            return self._properties.get('BondedGRE')
 
     @property
     def CfmBridge(self):
@@ -98,7 +101,10 @@ class DotOneX(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmbridge_0d1f83a1e9fee8ee7d444b2a33a0e03b import CfmBridge
-        return CfmBridge(self)
+        if self._properties.get('CfmBridge', None) is None:
+            return CfmBridge(self)
+        else:
+            return self._properties.get('CfmBridge')
 
     @property
     def Dhcpv4client(self):
@@ -112,7 +118,10 @@ class DotOneX(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv4client_cfcdda8db5004b679a441f92193405ea import Dhcpv4client
-        return Dhcpv4client(self)
+        if self._properties.get('Dhcpv4client', None) is None:
+            return Dhcpv4client(self)
+        else:
+            return self._properties.get('Dhcpv4client')
 
     @property
     def Dhcpv6client(self):
@@ -126,7 +135,10 @@ class DotOneX(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client_355391ba11ab3c1555c827e2e4ac3c4c import Dhcpv6client
-        return Dhcpv6client(self)
+        if self._properties.get('Dhcpv6client', None) is None:
+            return Dhcpv6client(self)
+        else:
+            return self._properties.get('Dhcpv6client')
 
     @property
     def ECpriRe(self):
@@ -140,7 +152,10 @@ class DotOneX(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprire_51f1030cbafd2e567d3b517032a1b011 import ECpriRe
-        return ECpriRe(self)
+        if self._properties.get('ECpriRe', None) is None:
+            return ECpriRe(self)
+        else:
+            return self._properties.get('ECpriRe')
 
     @property
     def ECpriRec(self):
@@ -154,7 +169,10 @@ class DotOneX(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec_129f1d43f285a4f806ade4e0df814255 import ECpriRec
-        return ECpriRec(self)
+        if self._properties.get('ECpriRec', None) is None:
+            return ECpriRec(self)
+        else:
+            return self._properties.get('ECpriRec')
 
     @property
     def Esmc(self):
@@ -168,7 +186,10 @@ class DotOneX(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.esmc_4d9a2f8edc72794b61857303b0afb00d import Esmc
-        return Esmc(self)
+        if self._properties.get('Esmc', None) is None:
+            return Esmc(self)
+        else:
+            return self._properties.get('Esmc')
 
     @property
     def Ipv4(self):
@@ -182,7 +203,10 @@ class DotOneX(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv4_8cb960b62ae85a03e1b40a57bfaeb7bb import Ipv4
-        return Ipv4(self)
+        if self._properties.get('Ipv4', None) is None:
+            return Ipv4(self)
+        else:
+            return self._properties.get('Ipv4')
 
     @property
     def Ipv6(self):
@@ -196,7 +220,10 @@ class DotOneX(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6_abda0a2a4cac3d529994b093916059a4 import Ipv6
-        return Ipv6(self)
+        if self._properties.get('Ipv6', None) is None:
+            return Ipv6(self)
+        else:
+            return self._properties.get('Ipv6')
 
     @property
     def Ipv6Autoconfiguration(self):
@@ -210,7 +237,10 @@ class DotOneX(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6autoconfiguration_b065cceda7a3517cca0451a09d81d989 import Ipv6Autoconfiguration
-        return Ipv6Autoconfiguration(self)
+        if self._properties.get('Ipv6Autoconfiguration', None) is None:
+            return Ipv6Autoconfiguration(self)
+        else:
+            return self._properties.get('Ipv6Autoconfiguration')
 
     @property
     def IsisDceSimRouter(self):
@@ -224,7 +254,10 @@ class DotOneX(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisdcesimrouter_92c9662fb6421c6639f138f508faf4d4 import IsisDceSimRouter
-        return IsisDceSimRouter(self)
+        if self._properties.get('IsisDceSimRouter', None) is None:
+            return IsisDceSimRouter(self)
+        else:
+            return self._properties.get('IsisDceSimRouter')
 
     @property
     def IsisFabricPath(self):
@@ -238,21 +271,27 @@ class DotOneX(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisfabricpath_49ed8317c28295615f21a4a8362c2b95 import IsisFabricPath
-        return IsisFabricPath(self)
+        if self._properties.get('IsisFabricPath', None) is None:
+            return IsisFabricPath(self)
+        else:
+            return self._properties.get('IsisFabricPath')
 
     @property
     def IsisL3(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3_2471ee7fdf32e67045bfc6c9e14f54d6.IsisL3): An instance of the IsisL3 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3_dd64c602d4f484ff78cfcd9dc64c9599.IsisL3): An instance of the IsisL3 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3_2471ee7fdf32e67045bfc6c9e14f54d6 import IsisL3
-        return IsisL3(self)
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3_dd64c602d4f484ff78cfcd9dc64c9599 import IsisL3
+        if self._properties.get('IsisL3', None) is None:
+            return IsisL3(self)
+        else:
+            return self._properties.get('IsisL3')
 
     @property
     def IsisSpbBcb(self):
@@ -266,7 +305,10 @@ class DotOneX(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbbcb_d576c38717539c1b1768a3a9f8ab5670 import IsisSpbBcb
-        return IsisSpbBcb(self)
+        if self._properties.get('IsisSpbBcb', None) is None:
+            return IsisSpbBcb(self)
+        else:
+            return self._properties.get('IsisSpbBcb')
 
     @property
     def IsisSpbBeb(self):
@@ -280,7 +322,10 @@ class DotOneX(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbbeb_82771ae7e9ec8dfc9848a0c0aa078da2 import IsisSpbBeb
-        return IsisSpbBeb(self)
+        if self._properties.get('IsisSpbBeb', None) is None:
+            return IsisSpbBeb(self)
+        else:
+            return self._properties.get('IsisSpbBeb')
 
     @property
     def IsisSpbSimRouter(self):
@@ -294,7 +339,10 @@ class DotOneX(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbsimrouter_4d8d2b3596c2f006afcd75a76b6934ff import IsisSpbSimRouter
-        return IsisSpbSimRouter(self)
+        if self._properties.get('IsisSpbSimRouter', None) is None:
+            return IsisSpbSimRouter(self)
+        else:
+            return self._properties.get('IsisSpbSimRouter')
 
     @property
     def IsisTrill(self):
@@ -308,7 +356,10 @@ class DotOneX(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrill_e1cc1866688f861871e06513525d235b import IsisTrill
-        return IsisTrill(self)
+        if self._properties.get('IsisTrill', None) is None:
+            return IsisTrill(self)
+        else:
+            return self._properties.get('IsisTrill')
 
     @property
     def IsisTrillSimRouter(self):
@@ -322,7 +373,10 @@ class DotOneX(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrillsimrouter_7f0721f1a50df44db865ccea96c8f735 import IsisTrillSimRouter
-        return IsisTrillSimRouter(self)
+        if self._properties.get('IsisTrillSimRouter', None) is None:
+            return IsisTrillSimRouter(self)
+        else:
+            return self._properties.get('IsisTrillSimRouter')
 
     @property
     def Lacp(self):
@@ -336,7 +390,10 @@ class DotOneX(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lacp_b6b488f98125e4a7318076cb1375941b import Lacp
-        return Lacp(self)
+        if self._properties.get('Lacp', None) is None:
+            return Lacp(self)
+        else:
+            return self._properties.get('Lacp')
 
     @property
     def Lagportlacp(self):
@@ -350,7 +407,10 @@ class DotOneX(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lagportlacp_ed42d76e076cab1a6c2369b757a5d616 import Lagportlacp
-        return Lagportlacp(self)
+        if self._properties.get('Lagportlacp', None) is None:
+            return Lagportlacp(self)
+        else:
+            return self._properties.get('Lagportlacp')
 
     @property
     def Lagportstaticlag(self):
@@ -364,7 +424,10 @@ class DotOneX(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lagportstaticlag_f67759421ceee90b665b41bf19b8202d import Lagportstaticlag
-        return Lagportstaticlag(self)
+        if self._properties.get('Lagportstaticlag', None) is None:
+            return Lagportstaticlag(self)
+        else:
+            return self._properties.get('Lagportstaticlag')
 
     @property
     def LightweightDhcpv6relayAgent(self):
@@ -378,21 +441,44 @@ class DotOneX(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lightweightdhcpv6relayagent_f435ed323783b3dadd80a122fef5c031 import LightweightDhcpv6relayAgent
-        return LightweightDhcpv6relayAgent(self)
+        if self._properties.get('LightweightDhcpv6relayAgent', None) is None:
+            return LightweightDhcpv6relayAgent(self)
+        else:
+            return self._properties.get('LightweightDhcpv6relayAgent')
+
+    @property
+    def Macsec(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.macsec_1aee241cd0d76ff08249d8cf2f62c290.Macsec): An instance of the Macsec class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.macsec_1aee241cd0d76ff08249d8cf2f62c290 import Macsec
+        if self._properties.get('Macsec', None) is None:
+            return Macsec(self)
+        else:
+            return self._properties.get('Macsec')
 
     @property
     def Mka(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mka_d0af5e39c81cb01eb75d4a693187a9ca.Mka): An instance of the Mka class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mka_01fbc78a6ba07ec3cc23255410857b27.Mka): An instance of the Mka class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mka_d0af5e39c81cb01eb75d4a693187a9ca import Mka
-        return Mka(self)
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mka_01fbc78a6ba07ec3cc23255410857b27 import Mka
+        if self._properties.get('Mka', None) is None:
+            return Mka(self)
+        else:
+            return self._properties.get('Mka')
 
     @property
     def Mpls(self):
@@ -406,7 +492,10 @@ class DotOneX(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mpls_ffaab24246ff53741a201b0a48e8e3f1 import Mpls
-        return Mpls(self)
+        if self._properties.get('Mpls', None) is None:
+            return Mpls(self)
+        else:
+            return self._properties.get('Mpls')
 
     @property
     def MsrpListener(self):
@@ -420,7 +509,10 @@ class DotOneX(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.msrplistener_e4c5ef0942a99c83ab955893f78633c0 import MsrpListener
-        return MsrpListener(self)
+        if self._properties.get('MsrpListener', None) is None:
+            return MsrpListener(self)
+        else:
+            return self._properties.get('MsrpListener')
 
     @property
     def MsrpTalker(self):
@@ -434,21 +526,27 @@ class DotOneX(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.msrptalker_ac4e61374b0b4d8500aef7076a2cda89 import MsrpTalker
-        return MsrpTalker(self)
+        if self._properties.get('MsrpTalker', None) is None:
+            return MsrpTalker(self)
+        else:
+            return self._properties.get('MsrpTalker')
 
     @property
     def Pppoxclient(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxclient_d7a99a629d894d9e4fc7eae719c12528.Pppoxclient): An instance of the Pppoxclient class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxclient_57c51b5ca094121e33c3a9ba5033980f.Pppoxclient): An instance of the Pppoxclient class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxclient_d7a99a629d894d9e4fc7eae719c12528 import Pppoxclient
-        return Pppoxclient(self)
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxclient_57c51b5ca094121e33c3a9ba5033980f import Pppoxclient
+        if self._properties.get('Pppoxclient', None) is None:
+            return Pppoxclient(self)
+        else:
+            return self._properties.get('Pppoxclient')
 
     @property
     def Pppoxserver(self):
@@ -462,21 +560,27 @@ class DotOneX(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxserver_01e736fa724c12e1c2636295184e449c import Pppoxserver
-        return Pppoxserver(self)
+        if self._properties.get('Pppoxserver', None) is None:
+            return Pppoxserver(self)
+        else:
+            return self._properties.get('Pppoxserver')
 
     @property
     def Ptp(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_3fd2fb2cedd41c78a01ce05ea4767397.Ptp): An instance of the Ptp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_26111dde679ed88af879687d76db2401.Ptp): An instance of the Ptp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_3fd2fb2cedd41c78a01ce05ea4767397 import Ptp
-        return Ptp(self)
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_26111dde679ed88af879687d76db2401 import Ptp
+        if self._properties.get('Ptp', None) is None:
+            return Ptp(self)
+        else:
+            return self._properties.get('Ptp')
 
     @property
     def StaticLag(self):
@@ -490,21 +594,27 @@ class DotOneX(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticlag_d16a8997708d466db9c9f007ce04724e import StaticLag
-        return StaticLag(self)
+        if self._properties.get('StaticLag', None) is None:
+            return StaticLag(self)
+        else:
+            return self._properties.get('StaticLag')
 
     @property
     def StaticMacsec(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticmacsec_89175be6eeaf724ac873ac56e1db38b0.StaticMacsec): An instance of the StaticMacsec class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticmacsec_d05b6b4a7faab38a43171d07f34720e1.StaticMacsec): An instance of the StaticMacsec class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticmacsec_89175be6eeaf724ac873ac56e1db38b0 import StaticMacsec
-        return StaticMacsec(self)
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticmacsec_d05b6b4a7faab38a43171d07f34720e1 import StaticMacsec
+        if self._properties.get('StaticMacsec', None) is None:
+            return StaticMacsec(self)
+        else:
+            return self._properties.get('StaticMacsec')
 
     @property
     def Streams(self):
@@ -518,7 +628,10 @@ class DotOneX(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.streams_dcd5bdb9e0099c6354f7bed1be55d8f6 import Streams
-        return Streams(self)
+        if self._properties.get('Streams', None) is None:
+            return Streams(self)
+        else:
+            return self._properties.get('Streams')
 
     @property
     def Active(self):

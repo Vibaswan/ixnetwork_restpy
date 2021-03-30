@@ -70,7 +70,10 @@ class HighLevelStream(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.framepayload.framepayload import FramePayload
-        return FramePayload(self)._select()
+        if self._properties.get('FramePayload', None) is None:
+            return FramePayload(self)._select()
+        else:
+            return self._properties.get('FramePayload')
 
     @property
     def FramePreemption(self):
@@ -84,7 +87,10 @@ class HighLevelStream(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.framepreemption.framepreemption import FramePreemption
-        return FramePreemption(self)
+        if self._properties.get('FramePreemption', None) is None:
+            return FramePreemption(self)
+        else:
+            return self._properties.get('FramePreemption')
 
     @property
     def FrameRate(self):
@@ -98,7 +104,10 @@ class HighLevelStream(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.framerate.framerate import FrameRate
-        return FrameRate(self)._select()
+        if self._properties.get('FrameRate', None) is None:
+            return FrameRate(self)._select()
+        else:
+            return self._properties.get('FrameRate')
 
     @property
     def FrameSize(self):
@@ -112,7 +121,10 @@ class HighLevelStream(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.framesize.framesize import FrameSize
-        return FrameSize(self)._select()
+        if self._properties.get('FrameSize', None) is None:
+            return FrameSize(self)._select()
+        else:
+            return self._properties.get('FrameSize')
 
     @property
     def Stack(self):
@@ -126,7 +138,10 @@ class HighLevelStream(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.stack import Stack
-        return Stack(self)
+        if self._properties.get('Stack', None) is None:
+            return Stack(self)
+        else:
+            return self._properties.get('Stack')
 
     @property
     def StackLink(self):
@@ -140,7 +155,10 @@ class HighLevelStream(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stacklink.stacklink import StackLink
-        return StackLink(self)
+        if self._properties.get('StackLink', None) is None:
+            return StackLink(self)
+        else:
+            return self._properties.get('StackLink')
 
     @property
     def TableUdf(self):
@@ -154,7 +172,10 @@ class HighLevelStream(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.tableudf.tableudf import TableUdf
-        return TableUdf(self)
+        if self._properties.get('TableUdf', None) is None:
+            return TableUdf(self)
+        else:
+            return self._properties.get('TableUdf')
 
     @property
     def TransmissionControl(self):
@@ -168,7 +189,10 @@ class HighLevelStream(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.transmissioncontrol.transmissioncontrol import TransmissionControl
-        return TransmissionControl(self)._select()
+        if self._properties.get('TransmissionControl', None) is None:
+            return TransmissionControl(self)._select()
+        else:
+            return self._properties.get('TransmissionControl')
 
     @property
     def Udf(self):
@@ -182,7 +206,10 @@ class HighLevelStream(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.udf.udf import Udf
-        return Udf(self)
+        if self._properties.get('Udf', None) is None:
+            return Udf(self)
+        else:
+            return self._properties.get('Udf')
 
     @property
     def AppliedFrameRate(self):

@@ -98,7 +98,10 @@ class Traffic(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.dynamicframesize.dynamicframesize import DynamicFrameSize
-        return DynamicFrameSize(self)
+        if self._properties.get('DynamicFrameSize', None) is None:
+            return DynamicFrameSize(self)
+        else:
+            return self._properties.get('DynamicFrameSize')
 
     @property
     def DynamicRate(self):
@@ -112,7 +115,10 @@ class Traffic(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.dynamicrate.dynamicrate import DynamicRate
-        return DynamicRate(self)
+        if self._properties.get('DynamicRate', None) is None:
+            return DynamicRate(self)
+        else:
+            return self._properties.get('DynamicRate')
 
     @property
     def EgressOnlyTracking(self):
@@ -126,7 +132,10 @@ class Traffic(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.egressonlytracking.egressonlytracking import EgressOnlyTracking
-        return EgressOnlyTracking(self)
+        if self._properties.get('EgressOnlyTracking', None) is None:
+            return EgressOnlyTracking(self)
+        else:
+            return self._properties.get('EgressOnlyTracking')
 
     @property
     def ProtocolTemplate(self):
@@ -140,7 +149,10 @@ class Traffic(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.protocoltemplate.protocoltemplate import ProtocolTemplate
-        return ProtocolTemplate(self)
+        if self._properties.get('ProtocolTemplate', None) is None:
+            return ProtocolTemplate(self)
+        else:
+            return self._properties.get('ProtocolTemplate')
 
     @property
     def Statistics(self):
@@ -154,7 +166,10 @@ class Traffic(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.statistics import Statistics
-        return Statistics(self)._select()
+        if self._properties.get('Statistics', None) is None:
+            return Statistics(self)._select()
+        else:
+            return self._properties.get('Statistics')
 
     @property
     def TrafficGroup(self):
@@ -168,7 +183,10 @@ class Traffic(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficgroup.trafficgroup import TrafficGroup
-        return TrafficGroup(self)
+        if self._properties.get('TrafficGroup', None) is None:
+            return TrafficGroup(self)
+        else:
+            return self._properties.get('TrafficGroup')
 
     @property
     def TrafficItem(self):
@@ -182,7 +200,10 @@ class Traffic(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.trafficitem import TrafficItem
-        return TrafficItem(self)
+        if self._properties.get('TrafficItem', None) is None:
+            return TrafficItem(self)
+        else:
+            return self._properties.get('TrafficItem')
 
     @property
     def AutoCorrectL4HeaderChecksums(self):

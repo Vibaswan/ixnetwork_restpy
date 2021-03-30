@@ -122,7 +122,10 @@ class OpenFlowSwitch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ofswitchchannel_73fc107210c8f2c174f0a9ff032ae654 import OFSwitchChannel
-        return OFSwitchChannel(self)
+        if self._properties.get('OFSwitchChannel', None) is None:
+            return OFSwitchChannel(self)
+        else:
+            return self._properties.get('OFSwitchChannel')
 
     @property
     def LearnedInfo(self):
@@ -136,7 +139,10 @@ class OpenFlowSwitch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        return LearnedInfo(self)
+        if self._properties.get('LearnedInfo', None) is None:
+            return LearnedInfo(self)
+        else:
+            return self._properties.get('LearnedInfo')
 
     @property
     def OFSwitchLearnedInfoConfig(self):
@@ -150,7 +156,10 @@ class OpenFlowSwitch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ofswitchlearnedinfoconfig_e82ac94514eca4bb9bcfc04c550a7144 import OFSwitchLearnedInfoConfig
-        return OFSwitchLearnedInfoConfig(self)._select()
+        if self._properties.get('OFSwitchLearnedInfoConfig', None) is None:
+            return OFSwitchLearnedInfoConfig(self)._select()
+        else:
+            return self._properties.get('OFSwitchLearnedInfoConfig')
 
     @property
     def OfSwitchPorts(self):
@@ -164,7 +173,10 @@ class OpenFlowSwitch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ofswitchports_f9b16b436eb30e1711de8e369383df29 import OfSwitchPorts
-        return OfSwitchPorts(self)._select()
+        if self._properties.get('OfSwitchPorts', None) is None:
+            return OfSwitchPorts(self)._select()
+        else:
+            return self._properties.get('OfSwitchPorts')
 
     @property
     def PacketInList(self):
@@ -178,7 +190,10 @@ class OpenFlowSwitch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.packetinlist_10d8adb40e4e05f4b37904f2c6428ca9 import PacketInList
-        return PacketInList(self)
+        if self._properties.get('PacketInList', None) is None:
+            return PacketInList(self)
+        else:
+            return self._properties.get('PacketInList')
 
     @property
     def SwitchGroupsList(self):
@@ -192,7 +207,10 @@ class OpenFlowSwitch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.switchgroupslist_8730e37b1ef4012ce871082b246f9630 import SwitchGroupsList
-        return SwitchGroupsList(self)
+        if self._properties.get('SwitchGroupsList', None) is None:
+            return SwitchGroupsList(self)
+        else:
+            return self._properties.get('SwitchGroupsList')
 
     @property
     def SwitchTablesList(self):
@@ -206,7 +224,10 @@ class OpenFlowSwitch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.switchtableslist_73e39ebca0d77977f214e593d8a686a4 import SwitchTablesList
-        return SwitchTablesList(self)
+        if self._properties.get('SwitchTablesList', None) is None:
+            return SwitchTablesList(self)
+        else:
+            return self._properties.get('SwitchTablesList')
 
     @property
     def Active(self):

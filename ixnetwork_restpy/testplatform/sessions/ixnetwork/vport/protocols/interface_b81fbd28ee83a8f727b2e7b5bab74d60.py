@@ -69,7 +69,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.session_3da27766194d3842282f4a3bf4fb66d9 import Session
-        return Session(self)
+        if self._properties.get('Session', None) is None:
+            return Session(self)
+        else:
+            return self._properties.get('Session')
 
     @property
     def EchoConfigureSrcIp(self):

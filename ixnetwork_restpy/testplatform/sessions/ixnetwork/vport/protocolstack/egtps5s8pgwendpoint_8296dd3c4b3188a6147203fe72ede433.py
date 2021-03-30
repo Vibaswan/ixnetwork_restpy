@@ -52,7 +52,10 @@ class EgtpS5S8PgwEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.pgws5s8pcrfsecondaryrange_60fb98b51706eaf22b919e3f0c713bb8 import PgwS5S8PcrfSecondaryRange
-        return PgwS5S8PcrfSecondaryRange(self)
+        if self._properties.get('PgwS5S8PcrfSecondaryRange', None) is None:
+            return PgwS5S8PcrfSecondaryRange(self)
+        else:
+            return self._properties.get('PgwS5S8PcrfSecondaryRange')
 
     @property
     def Range(self):
@@ -66,7 +69,10 @@ class EgtpS5S8PgwEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_df989eb48817c7440dc6576fa44a3b35 import Range
-        return Range(self)
+        if self._properties.get('Range', None) is None:
+            return Range(self)
+        else:
+            return self._properties.get('Range')
 
     @property
     def Name(self):

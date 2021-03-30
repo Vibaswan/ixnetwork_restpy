@@ -76,7 +76,10 @@ class EgtpSgwRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dedicatedbearer_40c7bb8d8cc3d5ea762ebe9fffdbb311 import DedicatedBearer
-        return DedicatedBearer(self)
+        if self._properties.get('DedicatedBearer', None) is None:
+            return DedicatedBearer(self)
+        else:
+            return self._properties.get('DedicatedBearer')
 
     @property
     def TrafficProfileProxiesSgw(self):
@@ -90,7 +93,10 @@ class EgtpSgwRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.trafficprofileproxiessgw_03ca1a6a03f8fedbdae085231325e007 import TrafficProfileProxiesSgw
-        return TrafficProfileProxiesSgw(self)
+        if self._properties.get('TrafficProfileProxiesSgw', None) is None:
+            return TrafficProfileProxiesSgw(self)
+        else:
+            return self._properties.get('TrafficProfileProxiesSgw')
 
     @property
     def Apn(self):

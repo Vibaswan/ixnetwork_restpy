@@ -74,7 +74,10 @@ class BroadcastDomainV4VxlanVpws(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pntlvlist_f29efa99695d122f75b5efd68698cd57 import PnTLVList
-        return PnTLVList(self)
+        if self._properties.get('PnTLVList', None) is None:
+            return PnTLVList(self)
+        else:
+            return self._properties.get('PnTLVList')
 
     @property
     def Active(self):

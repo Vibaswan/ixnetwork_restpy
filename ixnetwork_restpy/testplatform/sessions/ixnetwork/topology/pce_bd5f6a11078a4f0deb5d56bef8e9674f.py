@@ -66,7 +66,10 @@ class Pce(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pccgroup_38d4bb7f936743f9bf59e702af0766bb import PccGroup
-        return PccGroup(self)
+        if self._properties.get('PccGroup', None) is None:
+            return PccGroup(self)
+        else:
+            return self._properties.get('PccGroup')
 
     @property
     def Active(self):

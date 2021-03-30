@@ -53,7 +53,10 @@ class Wildcards(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.wildcardsfields_10c4afc66737008f742581929e812d0f import WildcardsFields
-        return WildcardsFields(self)._select()
+        if self._properties.get('WildcardsFields', None) is None:
+            return WildcardsFields(self)._select()
+        else:
+            return self._properties.get('WildcardsFields')
 
     @property
     def ExperimenterData(self):

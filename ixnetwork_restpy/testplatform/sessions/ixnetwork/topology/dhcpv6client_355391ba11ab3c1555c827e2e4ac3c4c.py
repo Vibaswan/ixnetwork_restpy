@@ -87,7 +87,10 @@ class Dhcpv6client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bfdv6interface_b9a91920db1b70c8c6410d2de0b438d3 import Bfdv6Interface
-        return Bfdv6Interface(self)
+        if self._properties.get('Bfdv6Interface', None) is None:
+            return Bfdv6Interface(self)
+        else:
+            return self._properties.get('Bfdv6Interface')
 
     @property
     def BgpIpv6Peer(self):
@@ -101,7 +104,10 @@ class Dhcpv6client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d4ac277d9da759fd5a152b8e6eb0ab20 import BgpIpv6Peer
-        return BgpIpv6Peer(self)
+        if self._properties.get('BgpIpv6Peer', None) is None:
+            return BgpIpv6Peer(self)
+        else:
+            return self._properties.get('BgpIpv6Peer')
 
     @property
     def Dhcp6Iana(self):
@@ -115,7 +121,10 @@ class Dhcpv6client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iana_1fdc932fd14b686d54038abe7dbb6f0c import Dhcp6Iana
-        return Dhcp6Iana(self)._select()
+        if self._properties.get('Dhcp6Iana', None) is None:
+            return Dhcp6Iana(self)._select()
+        else:
+            return self._properties.get('Dhcp6Iana')
 
     @property
     def Dhcp6Iana1(self):
@@ -129,7 +138,10 @@ class Dhcpv6client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iana1_afae4078d5465a41b7a0b1fa28f04ed6 import Dhcp6Iana1
-        return Dhcp6Iana1(self)._select()
+        if self._properties.get('Dhcp6Iana1', None) is None:
+            return Dhcp6Iana1(self)._select()
+        else:
+            return self._properties.get('Dhcp6Iana1')
 
     @property
     def Dhcp6Iana2(self):
@@ -143,7 +155,10 @@ class Dhcpv6client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iana2_8780d42215180f08e6e8445b53170c10 import Dhcp6Iana2
-        return Dhcp6Iana2(self)._select()
+        if self._properties.get('Dhcp6Iana2', None) is None:
+            return Dhcp6Iana2(self)._select()
+        else:
+            return self._properties.get('Dhcp6Iana2')
 
     @property
     def Dhcp6Iana3(self):
@@ -157,7 +172,10 @@ class Dhcpv6client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iana3_d9182a6f15c9c4511011e7796b6e6482 import Dhcp6Iana3
-        return Dhcp6Iana3(self)._select()
+        if self._properties.get('Dhcp6Iana3', None) is None:
+            return Dhcp6Iana3(self)._select()
+        else:
+            return self._properties.get('Dhcp6Iana3')
 
     @property
     def Dhcp6Iana4(self):
@@ -171,7 +189,10 @@ class Dhcpv6client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iana4_59de65e7b5806938834b0b31ab911645 import Dhcp6Iana4
-        return Dhcp6Iana4(self)._select()
+        if self._properties.get('Dhcp6Iana4', None) is None:
+            return Dhcp6Iana4(self)._select()
+        else:
+            return self._properties.get('Dhcp6Iana4')
 
     @property
     def Dhcp6Iana5(self):
@@ -185,7 +206,10 @@ class Dhcpv6client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iana5_9f29804966bbe93dd53900eafa383c22 import Dhcp6Iana5
-        return Dhcp6Iana5(self)._select()
+        if self._properties.get('Dhcp6Iana5', None) is None:
+            return Dhcp6Iana5(self)._select()
+        else:
+            return self._properties.get('Dhcp6Iana5')
 
     @property
     def Dhcp6Iana6(self):
@@ -199,7 +223,10 @@ class Dhcpv6client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iana6_7939c0233bac17c3e3764bc9bc1a9571 import Dhcp6Iana6
-        return Dhcp6Iana6(self)._select()
+        if self._properties.get('Dhcp6Iana6', None) is None:
+            return Dhcp6Iana6(self)._select()
+        else:
+            return self._properties.get('Dhcp6Iana6')
 
     @property
     def Dhcp6Iana7(self):
@@ -213,7 +240,10 @@ class Dhcpv6client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iana7_e0f696023e5c20916196c8d33f395cae import Dhcp6Iana7
-        return Dhcp6Iana7(self)._select()
+        if self._properties.get('Dhcp6Iana7', None) is None:
+            return Dhcp6Iana7(self)._select()
+        else:
+            return self._properties.get('Dhcp6Iana7')
 
     @property
     def Dhcp6Iapd(self):
@@ -227,7 +257,10 @@ class Dhcpv6client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iapd_b6cbdab151b403cbbdb4bf99e1caf7b1 import Dhcp6Iapd
-        return Dhcp6Iapd(self)._select()
+        if self._properties.get('Dhcp6Iapd', None) is None:
+            return Dhcp6Iapd(self)._select()
+        else:
+            return self._properties.get('Dhcp6Iapd')
 
     @property
     def Dhcp6Iapd1(self):
@@ -241,7 +274,10 @@ class Dhcpv6client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iapd1_7faba276e9bd1fe8044fca79065254a7 import Dhcp6Iapd1
-        return Dhcp6Iapd1(self)._select()
+        if self._properties.get('Dhcp6Iapd1', None) is None:
+            return Dhcp6Iapd1(self)._select()
+        else:
+            return self._properties.get('Dhcp6Iapd1')
 
     @property
     def Dhcp6Iapd2(self):
@@ -255,7 +291,10 @@ class Dhcpv6client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iapd2_a86dfc2bcc765583bc7cf336b264c68b import Dhcp6Iapd2
-        return Dhcp6Iapd2(self)._select()
+        if self._properties.get('Dhcp6Iapd2', None) is None:
+            return Dhcp6Iapd2(self)._select()
+        else:
+            return self._properties.get('Dhcp6Iapd2')
 
     @property
     def Dhcp6Iapd3(self):
@@ -269,7 +308,10 @@ class Dhcpv6client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iapd3_ba20e56748a428c3b9345cf88c1539fd import Dhcp6Iapd3
-        return Dhcp6Iapd3(self)._select()
+        if self._properties.get('Dhcp6Iapd3', None) is None:
+            return Dhcp6Iapd3(self)._select()
+        else:
+            return self._properties.get('Dhcp6Iapd3')
 
     @property
     def Dhcp6Iapd4(self):
@@ -283,7 +325,10 @@ class Dhcpv6client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iapd4_491b33d4a7b6a77105854603fd6a9004 import Dhcp6Iapd4
-        return Dhcp6Iapd4(self)._select()
+        if self._properties.get('Dhcp6Iapd4', None) is None:
+            return Dhcp6Iapd4(self)._select()
+        else:
+            return self._properties.get('Dhcp6Iapd4')
 
     @property
     def Dhcp6Iapd5(self):
@@ -297,7 +342,10 @@ class Dhcpv6client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iapd5_36145a5bec4444c5107e1c59676ab3a1 import Dhcp6Iapd5
-        return Dhcp6Iapd5(self)._select()
+        if self._properties.get('Dhcp6Iapd5', None) is None:
+            return Dhcp6Iapd5(self)._select()
+        else:
+            return self._properties.get('Dhcp6Iapd5')
 
     @property
     def Dhcp6Iapd6(self):
@@ -311,7 +359,10 @@ class Dhcpv6client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iapd6_1010a4aa43f5dd9a03d6aab4c6a66a68 import Dhcp6Iapd6
-        return Dhcp6Iapd6(self)._select()
+        if self._properties.get('Dhcp6Iapd6', None) is None:
+            return Dhcp6Iapd6(self)._select()
+        else:
+            return self._properties.get('Dhcp6Iapd6')
 
     @property
     def Dhcp6Iapd7(self):
@@ -325,7 +376,10 @@ class Dhcpv6client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6iapd7_156f14311910b918f77a699ecec78e79 import Dhcp6Iapd7
-        return Dhcp6Iapd7(self)._select()
+        if self._properties.get('Dhcp6Iapd7', None) is None:
+            return Dhcp6Iapd7(self)._select()
+        else:
+            return self._properties.get('Dhcp6Iapd7')
 
     @property
     def Dhcp6LearnedInfo(self):
@@ -339,7 +393,10 @@ class Dhcpv6client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6learnedinfo_096f62fbfd89979e813da06c573399d9 import Dhcp6LearnedInfo
-        return Dhcp6LearnedInfo(self)._select()
+        if self._properties.get('Dhcp6LearnedInfo', None) is None:
+            return Dhcp6LearnedInfo(self)._select()
+        else:
+            return self._properties.get('Dhcp6LearnedInfo')
 
     @property
     def MldHost(self):
@@ -353,7 +410,10 @@ class Dhcpv6client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mldhost_824a1bed927138d4bb32f7d2631197a5 import MldHost
-        return MldHost(self)
+        if self._properties.get('MldHost', None) is None:
+            return MldHost(self)
+        else:
+            return self._properties.get('MldHost')
 
     @property
     def MldQuerier(self):
@@ -367,7 +427,10 @@ class Dhcpv6client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mldquerier_e20671d730d138d65036e88d7cad63ac import MldQuerier
-        return MldQuerier(self)
+        if self._properties.get('MldQuerier', None) is None:
+            return MldQuerier(self)
+        else:
+            return self._properties.get('MldQuerier')
 
     @property
     def Ospfv3(self):
@@ -381,7 +444,10 @@ class Dhcpv6client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3_c029fd7cd4a9e9897b7b4e4547458751 import Ospfv3
-        return Ospfv3(self)
+        if self._properties.get('Ospfv3', None) is None:
+            return Ospfv3(self)
+        else:
+            return self._properties.get('Ospfv3')
 
     @property
     def PimV6Interface(self):
@@ -395,7 +461,10 @@ class Dhcpv6client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv6interface_74a3aa08a315ca50732e853e3e8cdc43 import PimV6Interface
-        return PimV6Interface(self)
+        if self._properties.get('PimV6Interface', None) is None:
+            return PimV6Interface(self)
+        else:
+            return self._properties.get('PimV6Interface')
 
     @property
     def Tag(self):
@@ -409,7 +478,10 @@ class Dhcpv6client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is None:
+            return Tag(self)
+        else:
+            return self._properties.get('Tag')
 
     @property
     def TlvProfile(self):
@@ -423,7 +495,10 @@ class Dhcpv6client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile_69db000d3ef3b060f5edc387b878736c import TlvProfile
-        return TlvProfile(self)
+        if self._properties.get('TlvProfile', None) is None:
+            return TlvProfile(self)
+        else:
+            return self._properties.get('TlvProfile')
 
     @property
     def Vxlanv6(self):
@@ -437,7 +512,10 @@ class Dhcpv6client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlanv6_c18187deccae3db44b9e9de30ad538ec import Vxlanv6
-        return Vxlanv6(self)
+        if self._properties.get('Vxlanv6', None) is None:
+            return Vxlanv6(self)
+        else:
+            return self._properties.get('Vxlanv6')
 
     @property
     def ComputedIapdAddresses(self):

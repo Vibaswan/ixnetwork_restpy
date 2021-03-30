@@ -57,7 +57,10 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowdetectivefilter.allflowsfilter.allflowsfilter import AllFlowsFilter
-        return AllFlowsFilter(self)
+        if self._properties.get('AllFlowsFilter', None) is None:
+            return AllFlowsFilter(self)
+        else:
+            return self._properties.get('AllFlowsFilter')
 
     @property
     def DeadFlowsFilter(self):
@@ -71,7 +74,10 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowdetectivefilter.deadflowsfilter.deadflowsfilter import DeadFlowsFilter
-        return DeadFlowsFilter(self)
+        if self._properties.get('DeadFlowsFilter', None) is None:
+            return DeadFlowsFilter(self)
+        else:
+            return self._properties.get('DeadFlowsFilter')
 
     @property
     def LiveFlowsFilter(self):
@@ -85,7 +91,10 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowdetectivefilter.liveflowsfilter.liveflowsfilter import LiveFlowsFilter
-        return LiveFlowsFilter(self)
+        if self._properties.get('LiveFlowsFilter', None) is None:
+            return LiveFlowsFilter(self)
+        else:
+            return self._properties.get('LiveFlowsFilter')
 
     @property
     def StatisticFilter(self):
@@ -99,7 +108,10 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowdetectivefilter.statisticfilter.statisticfilter import StatisticFilter
-        return StatisticFilter(self)
+        if self._properties.get('StatisticFilter', None) is None:
+            return StatisticFilter(self)
+        else:
+            return self._properties.get('StatisticFilter')
 
     @property
     def TrackingFilter(self):
@@ -113,7 +125,10 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowfilter.trackingfilter.trackingfilter import TrackingFilter
-        return TrackingFilter(self)
+        if self._properties.get('TrackingFilter', None) is None:
+            return TrackingFilter(self)
+        else:
+            return self._properties.get('TrackingFilter')
 
     @property
     def DeadFlowsCount(self):

@@ -48,7 +48,10 @@ class RxFilters(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.rxfilters.filterpalette.filterpalette import FilterPalette
-        return FilterPalette(self)._select()
+        if self._properties.get('FilterPalette', None) is None:
+            return FilterPalette(self)._select()
+        else:
+            return self._properties.get('FilterPalette')
 
     @property
     def Uds(self):
@@ -62,4 +65,7 @@ class RxFilters(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.rxfilters.uds.uds import Uds
-        return Uds(self)
+        if self._properties.get('Uds', None) is None:
+            return Uds(self)
+        else:
+            return self._properties.get('Uds')

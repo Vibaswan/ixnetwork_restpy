@@ -49,7 +49,10 @@ class TlvProfile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.defaulttlv_8e41257d3d01ec013783dd0fd6697862 import DefaultTlv
-        return DefaultTlv(self)
+        if self._properties.get('DefaultTlv', None) is None:
+            return DefaultTlv(self)
+        else:
+            return self._properties.get('DefaultTlv')
 
     @property
     def Tlv(self):
@@ -63,7 +66,10 @@ class TlvProfile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlv_d2b702d35a057ccb264f716c5f342298 import Tlv
-        return Tlv(self)
+        if self._properties.get('Tlv', None) is None:
+            return Tlv(self)
+        else:
+            return self._properties.get('Tlv')
 
     def find(self):
         """Finds and retrieves tlvProfile resources from the server.

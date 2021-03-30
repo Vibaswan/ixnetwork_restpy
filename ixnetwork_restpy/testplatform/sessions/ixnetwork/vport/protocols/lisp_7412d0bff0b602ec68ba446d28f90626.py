@@ -57,7 +57,10 @@ class Lisp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_460cd981ff6408d3ef21002172a567e2 import Router
-        return Router(self)
+        if self._properties.get('Router', None) is None:
+            return Router(self)
+        else:
+            return self._properties.get('Router')
 
     @property
     def SiteEidRange(self):
@@ -71,7 +74,10 @@ class Lisp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.siteeidrange_05797de8ac7278cb990c0a2b3de1a225 import SiteEidRange
-        return SiteEidRange(self)
+        if self._properties.get('SiteEidRange', None) is None:
+            return SiteEidRange(self)
+        else:
+            return self._properties.get('SiteEidRange')
 
     @property
     def BurstIntervalInMs(self):

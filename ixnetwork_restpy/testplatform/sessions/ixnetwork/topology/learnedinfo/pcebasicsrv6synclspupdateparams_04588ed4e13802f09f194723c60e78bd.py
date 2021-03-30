@@ -82,7 +82,10 @@ class PceBasicSrv6SyncLspUpdateParams(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pceupdatesrv6erosubobjectlist_21725c13034c0e9c7d96784e299452c4 import PceUpdateSrv6EroSubObjectList
-        return PceUpdateSrv6EroSubObjectList(self)
+        if self._properties.get('PceUpdateSrv6EroSubObjectList', None) is None:
+            return PceUpdateSrv6EroSubObjectList(self)
+        else:
+            return self._properties.get('PceUpdateSrv6EroSubObjectList')
 
     @property
     def PceUpdateSrv6MetricSubObjectList(self):
@@ -96,7 +99,10 @@ class PceBasicSrv6SyncLspUpdateParams(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pceupdatesrv6metricsubobjectlist_39e8f2176cc00efc53dbcdedfed0385e import PceUpdateSrv6MetricSubObjectList
-        return PceUpdateSrv6MetricSubObjectList(self)
+        if self._properties.get('PceUpdateSrv6MetricSubObjectList', None) is None:
+            return PceUpdateSrv6MetricSubObjectList(self)
+        else:
+            return self._properties.get('PceUpdateSrv6MetricSubObjectList')
 
     @property
     def PceUpdateXroSubObjectList(self):
@@ -110,7 +116,10 @@ class PceBasicSrv6SyncLspUpdateParams(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pceupdatexrosubobjectlist_3cb16b2513bf72ff7ee4a5e0387625cf import PceUpdateXroSubObjectList
-        return PceUpdateXroSubObjectList(self)
+        if self._properties.get('PceUpdateXroSubObjectList', None) is None:
+            return PceUpdateXroSubObjectList(self)
+        else:
+            return self._properties.get('PceUpdateXroSubObjectList')
 
     @property
     def Bandwidth(self):

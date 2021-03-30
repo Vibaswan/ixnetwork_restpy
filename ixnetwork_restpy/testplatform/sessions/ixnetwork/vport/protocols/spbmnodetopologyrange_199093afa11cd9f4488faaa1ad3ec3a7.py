@@ -61,7 +61,10 @@ class SpbmNodeTopologyRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbmnodebasevidrange_81d2c633816492894c7a12f8e3079130 import SpbmNodeBaseVidRange
-        return SpbmNodeBaseVidRange(self)
+        if self._properties.get('SpbmNodeBaseVidRange', None) is None:
+            return SpbmNodeBaseVidRange(self)
+        else:
+            return self._properties.get('SpbmNodeBaseVidRange')
 
     @property
     def BridgePriority(self):

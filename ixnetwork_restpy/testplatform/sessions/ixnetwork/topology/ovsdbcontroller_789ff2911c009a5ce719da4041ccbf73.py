@@ -98,7 +98,10 @@ class Ovsdbcontroller(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.clusterdata_14465bf77bf9eb0d40ce3ac056e3b337 import ClusterData
-        return ClusterData(self)._select()
+        if self._properties.get('ClusterData', None) is None:
+            return ClusterData(self)._select()
+        else:
+            return self._properties.get('ClusterData')
 
     @property
     def Connector(self):
@@ -112,7 +115,10 @@ class Ovsdbcontroller(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        return Connector(self)
+        if self._properties.get('Connector', None) is None:
+            return Connector(self)
+        else:
+            return self._properties.get('Connector')
 
     @property
     def ClearDumpDbFiles(self):

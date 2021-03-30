@@ -48,7 +48,10 @@ class PacketOutActionTemplate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.actiontemplate_fa40ad00e03788c7e139f3ecbe0f7842 import ActionTemplate
-        return ActionTemplate(self)
+        if self._properties.get('ActionTemplate', None) is None:
+            return ActionTemplate(self)
+        else:
+            return self._properties.get('ActionTemplate')
 
     @property
     def Predefined(self):
@@ -62,4 +65,7 @@ class PacketOutActionTemplate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.predefined_948d5a993970b6a0e72926850bcf371e import Predefined
-        return Predefined(self)
+        if self._properties.get('Predefined', None) is None:
+            return Predefined(self)
+        else:
+            return self._properties.get('Predefined')

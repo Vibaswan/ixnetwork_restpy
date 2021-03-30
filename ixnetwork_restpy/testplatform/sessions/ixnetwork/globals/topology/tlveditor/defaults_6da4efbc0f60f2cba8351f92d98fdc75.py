@@ -49,7 +49,10 @@ class Defaults(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.template_251f4228c795442db61593bcbbdf8694 import Template
-        return Template(self)
+        if self._properties.get('Template', None) is None:
+            return Template(self)
+        else:
+            return self._properties.get('Template')
 
     def find(self):
         """Finds and retrieves defaults resources from the server.

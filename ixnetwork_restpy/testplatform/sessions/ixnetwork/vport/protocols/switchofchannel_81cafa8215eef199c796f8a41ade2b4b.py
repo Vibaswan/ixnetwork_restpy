@@ -53,7 +53,10 @@ class SwitchOfChannel(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.auxiliaryconnection_71f4dd5bf8920fb286894abbd3dc40d2 import AuxiliaryConnection
-        return AuxiliaryConnection(self)
+        if self._properties.get('AuxiliaryConnection', None) is None:
+            return AuxiliaryConnection(self)
+        else:
+            return self._properties.get('AuxiliaryConnection')
 
     @property
     def Description(self):

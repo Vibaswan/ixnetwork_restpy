@@ -143,7 +143,10 @@ class RsvpP2PIngressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.backuplsperosubobjectslist_0daa9e1df4598df831fc9c6266f38cb9 import BackupLspEROSubObjectsList
-        return BackupLspEROSubObjectsList(self)
+        if self._properties.get('BackupLspEROSubObjectsList', None) is None:
+            return BackupLspEROSubObjectsList(self)
+        else:
+            return self._properties.get('BackupLspEROSubObjectsList')
 
     @property
     def RsvpDetourSubObjectsList(self):
@@ -157,7 +160,10 @@ class RsvpP2PIngressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpdetoursubobjectslist_9740d38add800b02d578822ebd9149be import RsvpDetourSubObjectsList
-        return RsvpDetourSubObjectsList(self)
+        if self._properties.get('RsvpDetourSubObjectsList', None) is None:
+            return RsvpDetourSubObjectsList(self)
+        else:
+            return self._properties.get('RsvpDetourSubObjectsList')
 
     @property
     def RsvpEROSubObjectsList(self):
@@ -171,7 +177,10 @@ class RsvpP2PIngressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvperosubobjectslist_a93377fcf5a0e9cd238eac8616f8ff4c import RsvpEROSubObjectsList
-        return RsvpEROSubObjectsList(self)
+        if self._properties.get('RsvpEROSubObjectsList', None) is None:
+            return RsvpEROSubObjectsList(self)
+        else:
+            return self._properties.get('RsvpEROSubObjectsList')
 
     @property
     def RsvpIngressRROSubObjectsList(self):
@@ -185,7 +194,10 @@ class RsvpP2PIngressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpingressrrosubobjectslist_cae3516af342fb3a35d3ff26ac4f830e import RsvpIngressRROSubObjectsList
-        return RsvpIngressRROSubObjectsList(self)
+        if self._properties.get('RsvpIngressRROSubObjectsList', None) is None:
+            return RsvpIngressRROSubObjectsList(self)
+        else:
+            return self._properties.get('RsvpIngressRROSubObjectsList')
 
     @property
     def Tag(self):
@@ -199,7 +211,10 @@ class RsvpP2PIngressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is None:
+            return Tag(self)
+        else:
+            return self._properties.get('Tag')
 
     @property
     def Active(self):

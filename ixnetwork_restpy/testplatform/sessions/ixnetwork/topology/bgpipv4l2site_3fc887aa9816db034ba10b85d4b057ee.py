@@ -84,7 +84,10 @@ class BgpIpv4L2Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.clusterlist_6e3b9385a37769c7040d46a28feaa819 import ClusterList
-        return ClusterList(self)
+        if self._properties.get('ClusterList', None) is None:
+            return ClusterList(self)
+        else:
+            return self._properties.get('ClusterList')
 
     @property
     def Connector(self):
@@ -98,7 +101,10 @@ class BgpIpv4L2Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        return Connector(self)
+        if self._properties.get('Connector', None) is None:
+            return Connector(self)
+        else:
+            return self._properties.get('Connector')
 
     @property
     def LabelBlockList(self):
@@ -112,7 +118,10 @@ class BgpIpv4L2Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.labelblocklist_7243cf48ef4a1cf284a8988d7ce69917 import LabelBlockList
-        return LabelBlockList(self)
+        if self._properties.get('LabelBlockList', None) is None:
+            return LabelBlockList(self)
+        else:
+            return self._properties.get('LabelBlockList')
 
     @property
     def Tag(self):
@@ -126,7 +135,10 @@ class BgpIpv4L2Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is None:
+            return Tag(self)
+        else:
+            return self._properties.get('Tag')
 
     @property
     def Active(self):

@@ -69,7 +69,10 @@ class OfChannelLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.controllerauxiliaryconnectionlearnedinfo_1c2f8f11bff25ef8bd7fd65ee1072e9b import ControllerAuxiliaryConnectionLearnedInfo
-        return ControllerAuxiliaryConnectionLearnedInfo(self)
+        if self._properties.get('ControllerAuxiliaryConnectionLearnedInfo', None) is None:
+            return ControllerAuxiliaryConnectionLearnedInfo(self)
+        else:
+            return self._properties.get('ControllerAuxiliaryConnectionLearnedInfo')
 
     @property
     def OfChannelPortsLearnedInformation(self):
@@ -83,7 +86,10 @@ class OfChannelLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ofchannelportslearnedinformation_5e4e377ec6d51a64c183b7b37f203ba3 import OfChannelPortsLearnedInformation
-        return OfChannelPortsLearnedInformation(self)
+        if self._properties.get('OfChannelPortsLearnedInformation', None) is None:
+            return OfChannelPortsLearnedInformation(self)
+        else:
+            return self._properties.get('OfChannelPortsLearnedInformation')
 
     @property
     def ActionsSupported(self):

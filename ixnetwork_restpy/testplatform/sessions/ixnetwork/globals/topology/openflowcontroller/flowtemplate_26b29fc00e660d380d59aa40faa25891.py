@@ -54,7 +54,10 @@ class FlowTemplate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.matchaction_b079e27f2bc5c60400840dea946d16e9 import MatchAction
-        return MatchAction(self)
+        if self._properties.get('MatchAction', None) is None:
+            return MatchAction(self)
+        else:
+            return self._properties.get('MatchAction')
 
     @property
     def Count(self):

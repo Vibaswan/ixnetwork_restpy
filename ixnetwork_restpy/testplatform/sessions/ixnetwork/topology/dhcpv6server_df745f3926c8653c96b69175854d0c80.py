@@ -61,14 +61,17 @@ class Dhcpv6server(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6serversessions_0c878921a71494f8bce977ffffb48289.Dhcp6ServerSessions): An instance of the Dhcp6ServerSessions class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6serversessions_cca5dcfe9b97a6a418479e240dcecfb7.Dhcp6ServerSessions): An instance of the Dhcp6ServerSessions class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6serversessions_0c878921a71494f8bce977ffffb48289 import Dhcp6ServerSessions
-        return Dhcp6ServerSessions(self)._select()
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp6serversessions_cca5dcfe9b97a6a418479e240dcecfb7 import Dhcp6ServerSessions
+        if self._properties.get('Dhcp6ServerSessions', None) is None:
+            return Dhcp6ServerSessions(self)._select()
+        else:
+            return self._properties.get('Dhcp6ServerSessions')
 
     @property
     def TlvProfile(self):
@@ -82,7 +85,10 @@ class Dhcpv6server(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile_69db000d3ef3b060f5edc387b878736c import TlvProfile
-        return TlvProfile(self)
+        if self._properties.get('TlvProfile', None) is None:
+            return TlvProfile(self)
+        else:
+            return self._properties.get('TlvProfile')
 
     @property
     def ConnectedVia(self):

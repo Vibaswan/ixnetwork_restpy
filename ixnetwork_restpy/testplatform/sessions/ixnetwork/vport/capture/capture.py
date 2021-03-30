@@ -83,7 +83,10 @@ class Capture(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.currentpacket.currentpacket import CurrentPacket
-        return CurrentPacket(self)._select()
+        if self._properties.get('CurrentPacket', None) is None:
+            return CurrentPacket(self)._select()
+        else:
+            return self._properties.get('CurrentPacket')
 
     @property
     def Filter(self):
@@ -97,7 +100,10 @@ class Capture(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.filter.filter import Filter
-        return Filter(self)._select()
+        if self._properties.get('Filter', None) is None:
+            return Filter(self)._select()
+        else:
+            return self._properties.get('Filter')
 
     @property
     def FilterPallette(self):
@@ -111,7 +117,10 @@ class Capture(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.filterpallette.filterpallette import FilterPallette
-        return FilterPallette(self)._select()
+        if self._properties.get('FilterPallette', None) is None:
+            return FilterPallette(self)._select()
+        else:
+            return self._properties.get('FilterPallette')
 
     @property
     def Trigger(self):
@@ -125,7 +134,10 @@ class Capture(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.trigger.trigger import Trigger
-        return Trigger(self)._select()
+        if self._properties.get('Trigger', None) is None:
+            return Trigger(self)._select()
+        else:
+            return self._properties.get('Trigger')
 
     @property
     def AfterTriggerFilter(self):

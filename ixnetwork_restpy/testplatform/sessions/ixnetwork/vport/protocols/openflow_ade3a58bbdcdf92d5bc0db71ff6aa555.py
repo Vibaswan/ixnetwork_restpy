@@ -51,7 +51,10 @@ class OpenFlow(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.device_74c871c7b5db2ab8dd9f7511062c7165 import Device
-        return Device(self)
+        if self._properties.get('Device', None) is None:
+            return Device(self)
+        else:
+            return self._properties.get('Device')
 
     @property
     def EthernetTrafficEndPoint(self):
@@ -65,7 +68,10 @@ class OpenFlow(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ethernettrafficendpoint_b36a9e037b1c239f5e5bff7ddc302d29 import EthernetTrafficEndPoint
-        return EthernetTrafficEndPoint(self)
+        if self._properties.get('EthernetTrafficEndPoint', None) is None:
+            return EthernetTrafficEndPoint(self)
+        else:
+            return self._properties.get('EthernetTrafficEndPoint')
 
     @property
     def HostTopologyLearnedInformation(self):
@@ -79,7 +85,10 @@ class OpenFlow(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.hosttopologylearnedinformation_315566f37c38fa9a23fdcf2331e54847 import HostTopologyLearnedInformation
-        return HostTopologyLearnedInformation(self)._select()
+        if self._properties.get('HostTopologyLearnedInformation', None) is None:
+            return HostTopologyLearnedInformation(self)._select()
+        else:
+            return self._properties.get('HostTopologyLearnedInformation')
 
     @property
     def Ipv4TrafficEndPoint(self):
@@ -93,7 +102,10 @@ class OpenFlow(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ipv4trafficendpoint_5010de30aa90277034ff453bd1d391ef import Ipv4TrafficEndPoint
-        return Ipv4TrafficEndPoint(self)
+        if self._properties.get('Ipv4TrafficEndPoint', None) is None:
+            return Ipv4TrafficEndPoint(self)
+        else:
+            return self._properties.get('Ipv4TrafficEndPoint')
 
     @property
     def Ipv6TrafficEndPoint(self):
@@ -107,7 +119,10 @@ class OpenFlow(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ipv6trafficendpoint_ca75aa14dfb2c06578dfc94f9ed6678d import Ipv6TrafficEndPoint
-        return Ipv6TrafficEndPoint(self)
+        if self._properties.get('Ipv6TrafficEndPoint', None) is None:
+            return Ipv6TrafficEndPoint(self)
+        else:
+            return self._properties.get('Ipv6TrafficEndPoint')
 
     @property
     def LearnedInformation(self):
@@ -121,7 +136,10 @@ class OpenFlow(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinformation_b7766cf6772040f87ed6db0e089eca27 import LearnedInformation
-        return LearnedInformation(self)._select()
+        if self._properties.get('LearnedInformation', None) is None:
+            return LearnedInformation(self)._select()
+        else:
+            return self._properties.get('LearnedInformation')
 
     @property
     def MplsTrafficEndPoint(self):
@@ -135,7 +153,10 @@ class OpenFlow(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mplstrafficendpoint_2ff77b0f3263566e5f590f66b022a983 import MplsTrafficEndPoint
-        return MplsTrafficEndPoint(self)
+        if self._properties.get('MplsTrafficEndPoint', None) is None:
+            return MplsTrafficEndPoint(self)
+        else:
+            return self._properties.get('MplsTrafficEndPoint')
 
     @property
     def OfTopologyLearnedInformation(self):
@@ -149,7 +170,10 @@ class OpenFlow(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.oftopologylearnedinformation_258c8097854561963aea00d96c712047 import OfTopologyLearnedInformation
-        return OfTopologyLearnedInformation(self)._select()
+        if self._properties.get('OfTopologyLearnedInformation', None) is None:
+            return OfTopologyLearnedInformation(self)._select()
+        else:
+            return self._properties.get('OfTopologyLearnedInformation')
 
     @property
     def SwitchLearnedInformation(self):
@@ -163,7 +187,10 @@ class OpenFlow(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchlearnedinformation_29489f049b9adc4205fc457bfd194309 import SwitchLearnedInformation
-        return SwitchLearnedInformation(self)._select()
+        if self._properties.get('SwitchLearnedInformation', None) is None:
+            return SwitchLearnedInformation(self)._select()
+        else:
+            return self._properties.get('SwitchLearnedInformation')
 
     @property
     def TrafficEndPoint(self):
@@ -177,7 +204,10 @@ class OpenFlow(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trafficendpoint_2a9ee9d883512c1a5bdd5b6b068836f5 import TrafficEndPoint
-        return TrafficEndPoint(self)
+        if self._properties.get('TrafficEndPoint', None) is None:
+            return TrafficEndPoint(self)
+        else:
+            return self._properties.get('TrafficEndPoint')
 
     @property
     def Enabled(self):

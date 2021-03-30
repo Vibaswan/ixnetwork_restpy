@@ -61,7 +61,10 @@ class SwitchGroupLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchgroupbucketlearnedinfo_32e7dfb4c14614c3e38a5bff6f45e9a3 import SwitchGroupBucketLearnedInfo
-        return SwitchGroupBucketLearnedInfo(self)
+        if self._properties.get('SwitchGroupBucketLearnedInfo', None) is None:
+            return SwitchGroupBucketLearnedInfo(self)
+        else:
+            return self._properties.get('SwitchGroupBucketLearnedInfo')
 
     @property
     def ByteCount(self):

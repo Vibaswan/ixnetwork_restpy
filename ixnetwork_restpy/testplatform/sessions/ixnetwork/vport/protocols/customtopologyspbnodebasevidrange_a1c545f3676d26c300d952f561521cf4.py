@@ -55,7 +55,10 @@ class CustomTopologySpbNodeBaseVidRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologyspbnodeisidrange_78a032435bf02443f6052691120cbbe1 import CustomTopologySpbNodeIsidRange
-        return CustomTopologySpbNodeIsidRange(self)
+        if self._properties.get('CustomTopologySpbNodeIsidRange', None) is None:
+            return CustomTopologySpbNodeIsidRange(self)
+        else:
+            return self._properties.get('CustomTopologySpbNodeIsidRange')
 
     @property
     def BVlanPriority(self):

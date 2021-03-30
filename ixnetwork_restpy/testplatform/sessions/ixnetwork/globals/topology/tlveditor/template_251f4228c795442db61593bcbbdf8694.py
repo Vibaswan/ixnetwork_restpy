@@ -51,7 +51,10 @@ class Template(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlv_485a5849242c96601ea954c1e6fdcfe5 import Tlv
-        return Tlv(self)
+        if self._properties.get('Tlv', None) is None:
+            return Tlv(self)
+        else:
+            return self._properties.get('Tlv')
 
     @property
     def Name(self):

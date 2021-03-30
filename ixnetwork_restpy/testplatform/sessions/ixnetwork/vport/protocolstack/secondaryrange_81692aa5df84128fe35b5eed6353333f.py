@@ -50,7 +50,10 @@ class SecondaryRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcoefwdvnportrange_6548b86ff56cfd5f2d4db3fa3098b1ff import FcoeFwdVnPortRange
-        return FcoeFwdVnPortRange(self)._select()
+        if self._properties.get('FcoeFwdVnPortRange', None) is None:
+            return FcoeFwdVnPortRange(self)._select()
+        else:
+            return self._properties.get('FcoeFwdVnPortRange')
 
     def add(self):
         """Adds a new secondaryRange resource on the server and adds it to the container.

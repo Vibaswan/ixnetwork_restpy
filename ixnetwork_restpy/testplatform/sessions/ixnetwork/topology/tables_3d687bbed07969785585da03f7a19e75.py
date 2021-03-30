@@ -58,7 +58,10 @@ class Tables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.flowset_4668cc7c02c6c6c6cb9975c2ed2dbda5 import FlowSet
-        return FlowSet(self)
+        if self._properties.get('FlowSet', None) is None:
+            return FlowSet(self)
+        else:
+            return self._properties.get('FlowSet')
 
     @property
     def Active(self):

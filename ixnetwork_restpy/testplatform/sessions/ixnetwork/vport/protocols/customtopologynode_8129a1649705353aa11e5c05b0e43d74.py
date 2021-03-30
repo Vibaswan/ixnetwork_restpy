@@ -56,7 +56,10 @@ class CustomTopologyNode(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customnetworktopologylinks_e143f8e730b0fc3b2ee1e5a030493093 import CustomNetworkTopologyLinks
-        return CustomNetworkTopologyLinks(self)
+        if self._properties.get('CustomNetworkTopologyLinks', None) is None:
+            return CustomNetworkTopologyLinks(self)
+        else:
+            return self._properties.get('CustomNetworkTopologyLinks')
 
     @property
     def BridgePriority(self):

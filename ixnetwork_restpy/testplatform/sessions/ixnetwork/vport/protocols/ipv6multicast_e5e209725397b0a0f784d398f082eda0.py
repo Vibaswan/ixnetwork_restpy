@@ -55,7 +55,10 @@ class Ipv6Multicast(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ipv6unicastitem_784ec97c3f77af61170f7923ae440844 import Ipv6UnicastItem
-        return Ipv6UnicastItem(self)
+        if self._properties.get('Ipv6UnicastItem', None) is None:
+            return Ipv6UnicastItem(self)
+        else:
+            return self._properties.get('Ipv6UnicastItem')
 
     @property
     def Age(self):

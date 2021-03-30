@@ -55,7 +55,10 @@ class SubTlv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.length_828f03942c0c7f1066634a834f100b60 import Length
-        return Length(self)._select()
+        if self._properties.get('Length', None) is None:
+            return Length(self)._select()
+        else:
+            return self._properties.get('Length')
 
     @property
     def Type(self):
@@ -69,7 +72,10 @@ class SubTlv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.type_fb01e405e39d16957d5b5665edb1f0b0 import Type
-        return Type(self)._select()
+        if self._properties.get('Type', None) is None:
+            return Type(self)._select()
+        else:
+            return self._properties.get('Type')
 
     @property
     def Value(self):
@@ -83,7 +89,10 @@ class SubTlv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.value_407e2b8dcab743cb358f96d452da3721 import Value
-        return Value(self)._select()
+        if self._properties.get('Value', None) is None:
+            return Value(self)._select()
+        else:
+            return self._properties.get('Value')
 
     @property
     def Description(self):

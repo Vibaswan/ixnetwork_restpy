@@ -68,7 +68,10 @@ class NetworkRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.entryte_9cd30e209352f3748008e607434e92a4 import EntryTe
-        return EntryTe(self)._select()
+        if self._properties.get('EntryTe', None) is None:
+            return EntryTe(self)._select()
+        else:
+            return self._properties.get('EntryTe')
 
     @property
     def RangeTe(self):
@@ -82,7 +85,10 @@ class NetworkRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rangete_9c7f010a9212f361a3dacba9c17f9cf0 import RangeTe
-        return RangeTe(self)._select()
+        if self._properties.get('RangeTe', None) is None:
+            return RangeTe(self)._select()
+        else:
+            return self._properties.get('RangeTe')
 
     @property
     def EnableHostName(self):

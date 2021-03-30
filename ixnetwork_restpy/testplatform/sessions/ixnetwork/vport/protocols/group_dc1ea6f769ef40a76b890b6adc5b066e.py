@@ -56,7 +56,10 @@ class Group(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bucket_e9950eda399131fc53bda55b9ad86a6f import Bucket
-        return Bucket(self)
+        if self._properties.get('Bucket', None) is None:
+            return Bucket(self)
+        else:
+            return self._properties.get('Bucket')
 
     @property
     def Id__(self):

@@ -48,7 +48,10 @@ class Static(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.atm_cef8cb1a9f804db3819f0d6f16a3b8e4 import Atm
-        return Atm(self)
+        if self._properties.get('Atm', None) is None:
+            return Atm(self)
+        else:
+            return self._properties.get('Atm')
 
     @property
     def Fr(self):
@@ -62,7 +65,10 @@ class Static(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.fr_d96445dd4fe79f3746e0abcf5857ff2c import Fr
-        return Fr(self)
+        if self._properties.get('Fr', None) is None:
+            return Fr(self)
+        else:
+            return self._properties.get('Fr')
 
     @property
     def InterfaceGroup(self):
@@ -76,7 +82,10 @@ class Static(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interfacegroup_5cb05a0fdd048f2efc4e48b4c597ca76 import InterfaceGroup
-        return InterfaceGroup(self)
+        if self._properties.get('InterfaceGroup', None) is None:
+            return InterfaceGroup(self)
+        else:
+            return self._properties.get('InterfaceGroup')
 
     @property
     def Ip(self):
@@ -90,7 +99,10 @@ class Static(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ip_acfcdcc4a4d6676bc9590dc98386b492 import Ip
-        return Ip(self)
+        if self._properties.get('Ip', None) is None:
+            return Ip(self)
+        else:
+            return self._properties.get('Ip')
 
     @property
     def Lan(self):
@@ -104,4 +116,7 @@ class Static(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lan_4d193b8edf8a184f36859f87c27564fa import Lan
-        return Lan(self)
+        if self._properties.get('Lan', None) is None:
+            return Lan(self)
+        else:
+            return self._properties.get('Lan')

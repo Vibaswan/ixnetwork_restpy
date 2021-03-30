@@ -73,7 +73,10 @@ class BgpEpePeerLinkList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile_69db000d3ef3b060f5edc387b878736c import TlvProfile
-        return TlvProfile(self)
+        if self._properties.get('TlvProfile', None) is None:
+            return TlvProfile(self)
+        else:
+            return self._properties.get('TlvProfile')
 
     @property
     def Active(self):

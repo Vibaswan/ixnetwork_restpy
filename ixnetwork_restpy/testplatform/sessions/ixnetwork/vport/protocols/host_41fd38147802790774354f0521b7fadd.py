@@ -65,7 +65,10 @@ class Host(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.group_d1435ebb8fcfd25936510dd56e5762e5 import Group
-        return Group(self)
+        if self._properties.get('Group', None) is None:
+            return Group(self)
+        else:
+            return self._properties.get('Group')
 
     @property
     def Enabled(self):

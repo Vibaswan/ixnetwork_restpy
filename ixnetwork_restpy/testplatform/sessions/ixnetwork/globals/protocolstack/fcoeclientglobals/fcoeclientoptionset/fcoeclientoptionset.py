@@ -53,7 +53,10 @@ class FcoeClientOptionSet(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.fcoeclientglobals.fcoeclientoptionset.fcoeclientoptiontlv.fcoeclientoptiontlv import FcoeClientOptionTlv
-        return FcoeClientOptionTlv(self)
+        if self._properties.get('FcoeClientOptionTlv', None) is None:
+            return FcoeClientOptionTlv(self)
+        else:
+            return self._properties.get('FcoeClientOptionTlv')
 
     @property
     def Defaultp(self):

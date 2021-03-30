@@ -90,7 +90,10 @@ class MplsOam(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        return LearnedInfo(self)
+        if self._properties.get('LearnedInfo', None) is None:
+            return LearnedInfo(self)
+        else:
+            return self._properties.get('LearnedInfo')
 
     @property
     def LearnedInfoUpdate(self):
@@ -104,7 +107,10 @@ class MplsOam(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfoupdate_b6503122c0a4a58877467964920e27b5 import LearnedInfoUpdate
-        return LearnedInfoUpdate(self)
+        if self._properties.get('LearnedInfoUpdate', None) is None:
+            return LearnedInfoUpdate(self)
+        else:
+            return self._properties.get('LearnedInfoUpdate')
 
     @property
     def SbfdInitiator(self):
@@ -118,7 +124,10 @@ class MplsOam(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.sbfdinitiator_ef4ed37c4520e95225e35be31ea6dde4 import SbfdInitiator
-        return SbfdInitiator(self)._select()
+        if self._properties.get('SbfdInitiator', None) is None:
+            return SbfdInitiator(self)._select()
+        else:
+            return self._properties.get('SbfdInitiator')
 
     @property
     def SbfdResponder(self):
@@ -132,7 +141,10 @@ class MplsOam(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.sbfdresponder_e89a7c6cba0a1f66c71ecb217db4ccfd import SbfdResponder
-        return SbfdResponder(self)._select()
+        if self._properties.get('SbfdResponder', None) is None:
+            return SbfdResponder(self)._select()
+        else:
+            return self._properties.get('SbfdResponder')
 
     @property
     def Active(self):

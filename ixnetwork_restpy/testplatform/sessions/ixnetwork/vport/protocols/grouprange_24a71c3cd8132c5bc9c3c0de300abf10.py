@@ -59,7 +59,10 @@ class GroupRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.sourcerange_d0238c26b928f418670a6e52d73bbb97 import SourceRange
-        return SourceRange(self)
+        if self._properties.get('SourceRange', None) is None:
+            return SourceRange(self)
+        else:
+            return self._properties.get('SourceRange')
 
     @property
     def EnablePacking(self):

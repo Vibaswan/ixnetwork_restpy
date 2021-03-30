@@ -55,7 +55,10 @@ class Ipv4Multicast(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ipv4unicastitem_f1998a7e7e04e8d70a80686a3036fc31 import Ipv4UnicastItem
-        return Ipv4UnicastItem(self)
+        if self._properties.get('Ipv4UnicastItem', None) is None:
+            return Ipv4UnicastItem(self)
+        else:
+            return self._properties.get('Ipv4UnicastItem')
 
     @property
     def Age(self):

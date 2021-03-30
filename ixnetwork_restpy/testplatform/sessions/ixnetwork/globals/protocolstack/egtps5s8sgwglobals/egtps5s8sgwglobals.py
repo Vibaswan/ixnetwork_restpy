@@ -64,7 +64,10 @@ class EgtpS5S8SgwGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.egtps5s8sgwglobals.globalegtpapns5s8.globalegtpapns5s8 import GlobalEgtpApnS5S8
-        return GlobalEgtpApnS5S8(self)
+        if self._properties.get('GlobalEgtpApnS5S8', None) is None:
+            return GlobalEgtpApnS5S8(self)
+        else:
+            return self._properties.get('GlobalEgtpApnS5S8')
 
     @property
     def GlobalTrafficProfileS5S8(self):
@@ -78,7 +81,10 @@ class EgtpS5S8SgwGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.egtps5s8sgwglobals.globaltrafficprofiles5s8.globaltrafficprofiles5s8 import GlobalTrafficProfileS5S8
-        return GlobalTrafficProfileS5S8(self)
+        if self._properties.get('GlobalTrafficProfileS5S8', None) is None:
+            return GlobalTrafficProfileS5S8(self)
+        else:
+            return self._properties.get('GlobalTrafficProfileS5S8')
 
     @property
     def EnableDynamicQosCtrl(self):

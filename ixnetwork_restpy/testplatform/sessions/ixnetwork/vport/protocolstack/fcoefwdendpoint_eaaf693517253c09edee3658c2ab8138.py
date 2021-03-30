@@ -52,7 +52,10 @@ class FcoeFwdEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_df989eb48817c7440dc6576fa44a3b35 import Range
-        return Range(self)
+        if self._properties.get('Range', None) is None:
+            return Range(self)
+        else:
+            return self._properties.get('Range')
 
     @property
     def SecondaryRange(self):
@@ -66,7 +69,10 @@ class FcoeFwdEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.secondaryrange_81692aa5df84128fe35b5eed6353333f import SecondaryRange
-        return SecondaryRange(self)
+        if self._properties.get('SecondaryRange', None) is None:
+            return SecondaryRange(self)
+        else:
+            return self._properties.get('SecondaryRange')
 
     @property
     def Name(self):

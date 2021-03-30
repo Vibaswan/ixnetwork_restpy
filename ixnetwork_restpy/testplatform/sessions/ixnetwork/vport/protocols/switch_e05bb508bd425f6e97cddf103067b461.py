@@ -79,7 +79,10 @@ class Switch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bandtypes_ac14d6ae7ec92cc37d27a3f601ff4b3e import BandTypes
-        return BandTypes(self)._select()
+        if self._properties.get('BandTypes', None) is None:
+            return BandTypes(self)._select()
+        else:
+            return self._properties.get('BandTypes')
 
     @property
     def Capabilities(self):
@@ -93,7 +96,10 @@ class Switch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.capabilities_e34fedc02893b4ebddb7e5f9d242efcc import Capabilities
-        return Capabilities(self)._select()
+        if self._properties.get('Capabilities', None) is None:
+            return Capabilities(self)._select()
+        else:
+            return self._properties.get('Capabilities')
 
     @property
     def FlowRemovedMaskMaster(self):
@@ -107,7 +113,10 @@ class Switch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flowremovedmaskmaster_2522f3935afb5408b7c450b266ff2116 import FlowRemovedMaskMaster
-        return FlowRemovedMaskMaster(self)._select()
+        if self._properties.get('FlowRemovedMaskMaster', None) is None:
+            return FlowRemovedMaskMaster(self)._select()
+        else:
+            return self._properties.get('FlowRemovedMaskMaster')
 
     @property
     def FlowRemovedMaskSlave(self):
@@ -121,7 +130,10 @@ class Switch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flowremovedmaskslave_24c41ab64449f7295d6dd3b1e414b200 import FlowRemovedMaskSlave
-        return FlowRemovedMaskSlave(self)._select()
+        if self._properties.get('FlowRemovedMaskSlave', None) is None:
+            return FlowRemovedMaskSlave(self)._select()
+        else:
+            return self._properties.get('FlowRemovedMaskSlave')
 
     @property
     def GroupCapabilities(self):
@@ -135,7 +147,10 @@ class Switch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.groupcapabilities_2d2cf5a25783fc63572f4750898f0ffb import GroupCapabilities
-        return GroupCapabilities(self)._select()
+        if self._properties.get('GroupCapabilities', None) is None:
+            return GroupCapabilities(self)._select()
+        else:
+            return self._properties.get('GroupCapabilities')
 
     @property
     def GroupTypes(self):
@@ -149,7 +164,10 @@ class Switch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.grouptypes_0e0308131f27031abb2397531089069f import GroupTypes
-        return GroupTypes(self)._select()
+        if self._properties.get('GroupTypes', None) is None:
+            return GroupTypes(self)._select()
+        else:
+            return self._properties.get('GroupTypes')
 
     @property
     def MeterCapabilities(self):
@@ -163,7 +181,10 @@ class Switch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.metercapabilities_1f778f8f76de1897a3e28f85e6a8a3f2 import MeterCapabilities
-        return MeterCapabilities(self)._select()
+        if self._properties.get('MeterCapabilities', None) is None:
+            return MeterCapabilities(self)._select()
+        else:
+            return self._properties.get('MeterCapabilities')
 
     @property
     def PacketInMaskMaster(self):
@@ -177,7 +198,10 @@ class Switch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.packetinmaskmaster_856bc052c2c2e0d9c4040a29e033f8db import PacketInMaskMaster
-        return PacketInMaskMaster(self)._select()
+        if self._properties.get('PacketInMaskMaster', None) is None:
+            return PacketInMaskMaster(self)._select()
+        else:
+            return self._properties.get('PacketInMaskMaster')
 
     @property
     def PacketInMaskSlave(self):
@@ -191,7 +215,10 @@ class Switch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.packetinmaskslave_8ba122a606aac86ac72959a685bc4107 import PacketInMaskSlave
-        return PacketInMaskSlave(self)._select()
+        if self._properties.get('PacketInMaskSlave', None) is None:
+            return PacketInMaskSlave(self)._select()
+        else:
+            return self._properties.get('PacketInMaskSlave')
 
     @property
     def PortStatusMaskMaster(self):
@@ -205,7 +232,10 @@ class Switch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.portstatusmaskmaster_74d74bdc240320eb465b447e209efad6 import PortStatusMaskMaster
-        return PortStatusMaskMaster(self)._select()
+        if self._properties.get('PortStatusMaskMaster', None) is None:
+            return PortStatusMaskMaster(self)._select()
+        else:
+            return self._properties.get('PortStatusMaskMaster')
 
     @property
     def PortStatusMaskSlave(self):
@@ -219,7 +249,10 @@ class Switch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.portstatusmaskslave_f86ba2ffbe12ce5efe30759e1ff9275e import PortStatusMaskSlave
-        return PortStatusMaskSlave(self)._select()
+        if self._properties.get('PortStatusMaskSlave', None) is None:
+            return PortStatusMaskSlave(self)._select()
+        else:
+            return self._properties.get('PortStatusMaskSlave')
 
     @property
     def SupportedActions(self):
@@ -233,7 +266,10 @@ class Switch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.supportedactions_254a680c00e984c339218013d4bba199 import SupportedActions
-        return SupportedActions(self)._select()
+        if self._properties.get('SupportedActions', None) is None:
+            return SupportedActions(self)._select()
+        else:
+            return self._properties.get('SupportedActions')
 
     @property
     def SwitchGroupFeature(self):
@@ -247,7 +283,10 @@ class Switch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchgroupfeature_47c69e96862f313a7efa2b2e5eefd71f import SwitchGroupFeature
-        return SwitchGroupFeature(self)
+        if self._properties.get('SwitchGroupFeature', None) is None:
+            return SwitchGroupFeature(self)
+        else:
+            return self._properties.get('SwitchGroupFeature')
 
     @property
     def SwitchOfChannel(self):
@@ -261,7 +300,10 @@ class Switch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchofchannel_81cafa8215eef199c796f8a41ade2b4b import SwitchOfChannel
-        return SwitchOfChannel(self)
+        if self._properties.get('SwitchOfChannel', None) is None:
+            return SwitchOfChannel(self)
+        else:
+            return self._properties.get('SwitchOfChannel')
 
     @property
     def SwitchPacketIn(self):
@@ -275,7 +317,10 @@ class Switch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchpacketin_2bf8b0ff1576e2d6e9f42eca185b98c8 import SwitchPacketIn
-        return SwitchPacketIn(self)
+        if self._properties.get('SwitchPacketIn', None) is None:
+            return SwitchPacketIn(self)
+        else:
+            return self._properties.get('SwitchPacketIn')
 
     @property
     def SwitchPorts(self):
@@ -289,7 +334,10 @@ class Switch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchports_f5ed295522ded3b657e02bfad603b64c import SwitchPorts
-        return SwitchPorts(self)
+        if self._properties.get('SwitchPorts', None) is None:
+            return SwitchPorts(self)
+        else:
+            return self._properties.get('SwitchPorts')
 
     @property
     def SwitchTables(self):
@@ -303,7 +351,10 @@ class Switch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchtables_be69a28d9f70488cc5f1e497740e8fd5 import SwitchTables
-        return SwitchTables(self)
+        if self._properties.get('SwitchTables', None) is None:
+            return SwitchTables(self)
+        else:
+            return self._properties.get('SwitchTables')
 
     @property
     def BarrierReplyDelay(self):

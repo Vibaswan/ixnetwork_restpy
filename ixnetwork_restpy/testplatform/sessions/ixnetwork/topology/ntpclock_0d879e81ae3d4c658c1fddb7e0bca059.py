@@ -67,7 +67,10 @@ class Ntpclock(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ntpservers_ae6323e734ac8bd0f5ab0ebe5be69cfc import NtpServers
-        return NtpServers(self)._select()
+        if self._properties.get('NtpServers', None) is None:
+            return NtpServers(self)._select()
+        else:
+            return self._properties.get('NtpServers')
 
     @property
     def AcceptNTPPacketswithCryptoNAK(self):

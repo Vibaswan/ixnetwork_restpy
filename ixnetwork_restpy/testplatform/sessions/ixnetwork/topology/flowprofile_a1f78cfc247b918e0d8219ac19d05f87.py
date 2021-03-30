@@ -51,7 +51,10 @@ class FlowProfile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.matchaction_374907a1c7c7401f92b5c005c8ea16f6 import MatchAction
-        return MatchAction(self)
+        if self._properties.get('MatchAction', None) is None:
+            return MatchAction(self)
+        else:
+            return self._properties.get('MatchAction')
 
     @property
     def Count(self):

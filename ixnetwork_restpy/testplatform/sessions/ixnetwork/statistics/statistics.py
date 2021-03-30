@@ -62,7 +62,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.autorefresh.autorefresh import AutoRefresh
-        return AutoRefresh(self)._select()
+        if self._properties.get('AutoRefresh', None) is None:
+            return AutoRefresh(self)._select()
+        else:
+            return self._properties.get('AutoRefresh')
 
     @property
     def CsvSnapshot(self):
@@ -76,7 +79,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.csvsnapshot.csvsnapshot import CsvSnapshot
-        return CsvSnapshot(self)._select()
+        if self._properties.get('CsvSnapshot', None) is None:
+            return CsvSnapshot(self)._select()
+        else:
+            return self._properties.get('CsvSnapshot')
 
     @property
     def Ixreporter(self):
@@ -90,7 +96,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.ixreporter.ixreporter import Ixreporter
-        return Ixreporter(self)._select()
+        if self._properties.get('Ixreporter', None) is None:
+            return Ixreporter(self)._select()
+        else:
+            return self._properties.get('Ixreporter')
 
     @property
     def MeasurementMode(self):
@@ -104,7 +113,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.measurementmode.measurementmode import MeasurementMode
-        return MeasurementMode(self)._select()
+        if self._properties.get('MeasurementMode', None) is None:
+            return MeasurementMode(self)._select()
+        else:
+            return self._properties.get('MeasurementMode')
 
     @property
     def RawData(self):
@@ -118,7 +130,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.rawdata.rawdata import RawData
-        return RawData(self)._select()
+        if self._properties.get('RawData', None) is None:
+            return RawData(self)._select()
+        else:
+            return self._properties.get('RawData')
 
     @property
     def View(self):
@@ -132,7 +147,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.view import View
-        return View(self)
+        if self._properties.get('View', None) is None:
+            return View(self)
+        else:
+            return self._properties.get('View')
 
     @property
     def AdditionalFcoeStat1(self):

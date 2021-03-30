@@ -52,7 +52,10 @@ class Parameter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.parameter.bool.bool import Bool
-        return Bool(self)
+        if self._properties.get('Bool', None) is None:
+            return Bool(self)
+        else:
+            return self._properties.get('Bool')
 
     @property
     def Choice(self):
@@ -66,7 +69,10 @@ class Parameter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.parameter.choice.choice import Choice
-        return Choice(self)
+        if self._properties.get('Choice', None) is None:
+            return Choice(self)
+        else:
+            return self._properties.get('Choice')
 
     @property
     def Hex(self):
@@ -80,7 +86,10 @@ class Parameter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.parameter.hex.hex import Hex
-        return Hex(self)
+        if self._properties.get('Hex', None) is None:
+            return Hex(self)
+        else:
+            return self._properties.get('Hex')
 
     @property
     def Number(self):
@@ -94,7 +103,10 @@ class Parameter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.parameter.number.number import Number
-        return Number(self)
+        if self._properties.get('Number', None) is None:
+            return Number(self)
+        else:
+            return self._properties.get('Number')
 
     @property
     def Range(self):
@@ -108,7 +120,10 @@ class Parameter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.parameter.range.range import Range
-        return Range(self)
+        if self._properties.get('Range', None) is None:
+            return Range(self)
+        else:
+            return self._properties.get('Range')
 
     @property
     def String(self):
@@ -122,7 +137,10 @@ class Parameter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.parameter.string.string import String
-        return String(self)
+        if self._properties.get('String', None) is None:
+            return String(self)
+        else:
+            return self._properties.get('String')
 
     @property
     def DisplayValue(self):

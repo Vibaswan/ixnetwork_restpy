@@ -49,7 +49,10 @@ class Elmi(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.uni_a743fc8f43bda6d72a51827ba98dacd6 import Uni
-        return Uni(self)
+        if self._properties.get('Uni', None) is None:
+            return Uni(self)
+        else:
+            return self._properties.get('Uni')
 
     @property
     def Enabled(self):

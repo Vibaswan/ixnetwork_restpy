@@ -48,4 +48,7 @@ class Diagnostics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.diagnostics.cleanup.cleanup import Cleanup
-        return Cleanup(self)._select()
+        if self._properties.get('Cleanup', None) is None:
+            return Cleanup(self)._select()
+        else:
+            return self._properties.get('Cleanup')

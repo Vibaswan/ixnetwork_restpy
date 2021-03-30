@@ -55,7 +55,10 @@ class Layer47AppLibraryTrafficFilter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23nextgenprotocolfilter.advancedfilter.advancedfilter import AdvancedFilter
-        return AdvancedFilter(self)
+        if self._properties.get('AdvancedFilter', None) is None:
+            return AdvancedFilter(self)
+        else:
+            return self._properties.get('AdvancedFilter')
 
     @property
     def AdvancedFilterName(self):

@@ -51,7 +51,10 @@ class EvpnEthernetSegment(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.originipinfo_23d90847d9ffce969bc4e52d8acb6233 import OriginIpInfo
-        return OriginIpInfo(self)
+        if self._properties.get('OriginIpInfo', None) is None:
+            return OriginIpInfo(self)
+        else:
+            return self._properties.get('OriginIpInfo')
 
     @property
     def Esi(self):

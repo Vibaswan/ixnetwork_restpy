@@ -55,7 +55,10 @@ class Lag(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.lagmode_d3c47f2148e3a3acd418ebf95f2b7b4e import LagMode
-        return LagMode(self)._select()
+        if self._properties.get('LagMode', None) is None:
+            return LagMode(self)._select()
+        else:
+            return self._properties.get('LagMode')
 
     @property
     def ProtocolStack(self):
@@ -69,7 +72,10 @@ class Lag(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.protocolstack_1f83cdd4a566eb265063880d7c835bb4 import ProtocolStack
-        return ProtocolStack(self)
+        if self._properties.get('ProtocolStack', None) is None:
+            return ProtocolStack(self)
+        else:
+            return self._properties.get('ProtocolStack')
 
     @property
     def AggregationStatus(self):

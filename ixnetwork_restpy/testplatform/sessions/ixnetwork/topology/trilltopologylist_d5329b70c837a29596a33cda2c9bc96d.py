@@ -57,7 +57,10 @@ class TrillTopologyList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.interestedvlanlist_73520df8ad4853f551ecc4bd98996b9f import InterestedVlanList
-        return InterestedVlanList(self)._select()
+        if self._properties.get('InterestedVlanList', None) is None:
+            return InterestedVlanList(self)._select()
+        else:
+            return self._properties.get('InterestedVlanList')
 
     @property
     def NicknameRecordList(self):
@@ -71,7 +74,10 @@ class TrillTopologyList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.nicknamerecordlist_5633e9074910fb78b98b5edd7b09d613 import NicknameRecordList
-        return NicknameRecordList(self)._select()
+        if self._properties.get('NicknameRecordList', None) is None:
+            return NicknameRecordList(self)._select()
+        else:
+            return self._properties.get('NicknameRecordList')
 
     @property
     def Active(self):

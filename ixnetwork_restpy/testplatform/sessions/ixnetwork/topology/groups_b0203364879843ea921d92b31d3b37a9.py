@@ -61,7 +61,10 @@ class Groups(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.buckets_bd4257b6720604ee2ee57801dd96774d import Buckets
-        return Buckets(self)
+        if self._properties.get('Buckets', None) is None:
+            return Buckets(self)
+        else:
+            return self._properties.get('Buckets')
 
     @property
     def Active(self):

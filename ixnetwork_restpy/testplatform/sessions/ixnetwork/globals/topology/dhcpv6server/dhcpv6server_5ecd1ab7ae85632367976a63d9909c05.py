@@ -57,7 +57,10 @@ class Dhcpv6server(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv4server.reconfigurerate.reconfigurerate_b53721be9adf900572817c723323827f import ReconfigureRate
-        return ReconfigureRate(self)._select()
+        if self._properties.get('ReconfigureRate', None) is None:
+            return ReconfigureRate(self)._select()
+        else:
+            return self._properties.get('ReconfigureRate')
 
     @property
     def TlvEditor(self):
@@ -71,7 +74,10 @@ class Dhcpv6server(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor_d66c1061f4b3bb902b0e5e76ee632657 import TlvEditor
-        return TlvEditor(self)
+        if self._properties.get('TlvEditor', None) is None:
+            return TlvEditor(self)
+        else:
+            return self._properties.get('TlvEditor')
 
     @property
     def AdvertiseTimeout(self):

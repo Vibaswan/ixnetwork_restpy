@@ -85,7 +85,10 @@ class IsisFabricPathRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dcemcastipv4grouplist_a8b0a14d8e77939b2e00841f8ca4aa44 import DceMCastIpv4GroupList
-        return DceMCastIpv4GroupList(self)._select()
+        if self._properties.get('DceMCastIpv4GroupList', None) is None:
+            return DceMCastIpv4GroupList(self)._select()
+        else:
+            return self._properties.get('DceMCastIpv4GroupList')
 
     @property
     def DceMCastIpv6GroupList(self):
@@ -99,7 +102,10 @@ class IsisFabricPathRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dcemcastipv6grouplist_48e0f523130d7b4e7948cb21c19b53d3 import DceMCastIpv6GroupList
-        return DceMCastIpv6GroupList(self)._select()
+        if self._properties.get('DceMCastIpv6GroupList', None) is None:
+            return DceMCastIpv6GroupList(self)._select()
+        else:
+            return self._properties.get('DceMCastIpv6GroupList')
 
     @property
     def DceMCastMacGroupList(self):
@@ -113,7 +119,10 @@ class IsisFabricPathRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dcemcastmacgrouplist_1115ac54d89360ba3a14a6027a9eda75 import DceMCastMacGroupList
-        return DceMCastMacGroupList(self)._select()
+        if self._properties.get('DceMCastMacGroupList', None) is None:
+            return DceMCastMacGroupList(self)._select()
+        else:
+            return self._properties.get('DceMCastMacGroupList')
 
     @property
     def DceTopologyList(self):
@@ -127,7 +136,10 @@ class IsisFabricPathRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dcetopologylist_c10ab6e3d1d7e663c0f17b8227b0dafe import DceTopologyList
-        return DceTopologyList(self)._select()
+        if self._properties.get('DceTopologyList', None) is None:
+            return DceTopologyList(self)._select()
+        else:
+            return self._properties.get('DceTopologyList')
 
     @property
     def Active(self):

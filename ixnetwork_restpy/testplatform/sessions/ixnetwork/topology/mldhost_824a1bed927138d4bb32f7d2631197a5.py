@@ -72,7 +72,10 @@ class MldHost(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.iptv_0fb517c26bbef4136d857dbc8aaa8c72 import Iptv
-        return Iptv(self)._select()
+        if self._properties.get('Iptv', None) is None:
+            return Iptv(self)._select()
+        else:
+            return self._properties.get('Iptv')
 
     @property
     def MldMcastIPv6GroupList(self):
@@ -86,7 +89,10 @@ class MldHost(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mldmcastipv6grouplist_62c8609753f136498d5149746f36e12e import MldMcastIPv6GroupList
-        return MldMcastIPv6GroupList(self)._select()
+        if self._properties.get('MldMcastIPv6GroupList', None) is None:
+            return MldMcastIPv6GroupList(self)._select()
+        else:
+            return self._properties.get('MldMcastIPv6GroupList')
 
     @property
     def Tag(self):
@@ -100,7 +106,10 @@ class MldHost(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is None:
+            return Tag(self)
+        else:
+            return self._properties.get('Tag')
 
     @property
     def Active(self):

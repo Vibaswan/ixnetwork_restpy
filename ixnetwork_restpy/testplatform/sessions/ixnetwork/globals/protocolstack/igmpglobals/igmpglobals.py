@@ -52,7 +52,10 @@ class IgmpGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.igmpglobals.igmpgrouprange.igmpgrouprange import IgmpGroupRange
-        return IgmpGroupRange(self)
+        if self._properties.get('IgmpGroupRange', None) is None:
+            return IgmpGroupRange(self)
+        else:
+            return self._properties.get('IgmpGroupRange')
 
     @property
     def MaxPacketsPerSecond(self):

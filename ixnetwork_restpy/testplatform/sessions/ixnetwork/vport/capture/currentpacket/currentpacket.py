@@ -49,7 +49,10 @@ class CurrentPacket(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.currentpacket.stack.stack import Stack
-        return Stack(self)
+        if self._properties.get('Stack', None) is None:
+            return Stack(self)
+        else:
+            return self._properties.get('Stack')
 
     @property
     def PacketHex(self):

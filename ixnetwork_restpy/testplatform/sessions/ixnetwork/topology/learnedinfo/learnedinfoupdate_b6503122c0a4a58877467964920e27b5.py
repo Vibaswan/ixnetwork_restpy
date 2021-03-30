@@ -49,7 +49,10 @@ class LearnedInfoUpdate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcebasicrsvpsynclspupdateparams_e7500ea8c91e971fd00002ae540798a6 import PceBasicRsvpSyncLspUpdateParams
-        return PceBasicRsvpSyncLspUpdateParams(self)
+        if self._properties.get('PceBasicRsvpSyncLspUpdateParams', None) is None:
+            return PceBasicRsvpSyncLspUpdateParams(self)
+        else:
+            return self._properties.get('PceBasicRsvpSyncLspUpdateParams')
 
     @property
     def PceBasicSrSyncLspUpdateParams(self):
@@ -63,7 +66,10 @@ class LearnedInfoUpdate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcebasicsrsynclspupdateparams_606beb3779cf3f742dce2344800dff3d import PceBasicSrSyncLspUpdateParams
-        return PceBasicSrSyncLspUpdateParams(self)
+        if self._properties.get('PceBasicSrSyncLspUpdateParams', None) is None:
+            return PceBasicSrSyncLspUpdateParams(self)
+        else:
+            return self._properties.get('PceBasicSrSyncLspUpdateParams')
 
     @property
     def PceBasicSrv6SyncLspUpdateParams(self):
@@ -77,7 +83,10 @@ class LearnedInfoUpdate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcebasicsrv6synclspupdateparams_04588ed4e13802f09f194723c60e78bd import PceBasicSrv6SyncLspUpdateParams
-        return PceBasicSrv6SyncLspUpdateParams(self)
+        if self._properties.get('PceBasicSrv6SyncLspUpdateParams', None) is None:
+            return PceBasicSrv6SyncLspUpdateParams(self)
+        else:
+            return self._properties.get('PceBasicSrv6SyncLspUpdateParams')
 
     @property
     def PceDetailedRsvpSyncLspUpdateParams(self):
@@ -91,7 +100,10 @@ class LearnedInfoUpdate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcedetailedrsvpsynclspupdateparams_9325006dc5dbaed40e76f97b83ba5529 import PceDetailedRsvpSyncLspUpdateParams
-        return PceDetailedRsvpSyncLspUpdateParams(self)
+        if self._properties.get('PceDetailedRsvpSyncLspUpdateParams', None) is None:
+            return PceDetailedRsvpSyncLspUpdateParams(self)
+        else:
+            return self._properties.get('PceDetailedRsvpSyncLspUpdateParams')
 
     @property
     def PceDetailedSrSyncLspUpdateParams(self):
@@ -105,7 +117,10 @@ class LearnedInfoUpdate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcedetailedsrsynclspupdateparams_099ec5956b09590499b5079ba90354c9 import PceDetailedSrSyncLspUpdateParams
-        return PceDetailedSrSyncLspUpdateParams(self)
+        if self._properties.get('PceDetailedSrSyncLspUpdateParams', None) is None:
+            return PceDetailedSrSyncLspUpdateParams(self)
+        else:
+            return self._properties.get('PceDetailedSrSyncLspUpdateParams')
 
     @property
     def PceDetailedSrv6SyncLspUpdateParams(self):
@@ -119,7 +134,10 @@ class LearnedInfoUpdate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcedetailedsrv6synclspupdateparams_6c64a4614ee301152c8e22c6a805a4b7 import PceDetailedSrv6SyncLspUpdateParams
-        return PceDetailedSrv6SyncLspUpdateParams(self)
+        if self._properties.get('PceDetailedSrv6SyncLspUpdateParams', None) is None:
+            return PceDetailedSrv6SyncLspUpdateParams(self)
+        else:
+            return self._properties.get('PceDetailedSrv6SyncLspUpdateParams')
 
     def find(self):
         """Finds and retrieves learnedInfoUpdate resources from the server.

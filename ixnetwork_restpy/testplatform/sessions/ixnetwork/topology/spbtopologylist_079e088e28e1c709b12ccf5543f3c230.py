@@ -66,7 +66,10 @@ class SpbTopologyList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.basevidlist_145d5b3b39acf879821ed1634b49f17f import BaseVidList
-        return BaseVidList(self)._select()
+        if self._properties.get('BaseVidList', None) is None:
+            return BaseVidList(self)._select()
+        else:
+            return self._properties.get('BaseVidList')
 
     @property
     def Active(self):

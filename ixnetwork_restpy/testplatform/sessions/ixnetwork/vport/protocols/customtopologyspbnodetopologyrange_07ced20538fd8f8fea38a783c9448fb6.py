@@ -55,7 +55,10 @@ class CustomTopologySpbNodeTopologyRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologyspbnodebasevidrange_a1c545f3676d26c300d952f561521cf4 import CustomTopologySpbNodeBaseVidRange
-        return CustomTopologySpbNodeBaseVidRange(self)
+        if self._properties.get('CustomTopologySpbNodeBaseVidRange', None) is None:
+            return CustomTopologySpbNodeBaseVidRange(self)
+        else:
+            return self._properties.get('CustomTopologySpbNodeBaseVidRange')
 
     @property
     def CistExternalRootCost(self):

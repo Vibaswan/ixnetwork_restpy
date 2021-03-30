@@ -64,7 +64,10 @@ class LispInstance(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.itrremoteeidrange_f713a24feb8e6a2058e9d6f50f614ce6 import ItrRemoteEidRange
-        return ItrRemoteEidRange(self)
+        if self._properties.get('ItrRemoteEidRange', None) is None:
+            return ItrRemoteEidRange(self)
+        else:
+            return self._properties.get('ItrRemoteEidRange')
 
     @property
     def LocalEidRange(self):
@@ -78,7 +81,10 @@ class LispInstance(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.localeidrange_dc2d1edbb78f7c9d0e9e72c824fb0a89 import LocalEidRange
-        return LocalEidRange(self)
+        if self._properties.get('LocalEidRange', None) is None:
+            return LocalEidRange(self)
+        else:
+            return self._properties.get('LocalEidRange')
 
     @property
     def MapServerResolver(self):
@@ -92,7 +98,10 @@ class LispInstance(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mapserverresolver_ad857cfda2776434bb4efa2d2acc6bd3 import MapServerResolver
-        return MapServerResolver(self)
+        if self._properties.get('MapServerResolver', None) is None:
+            return MapServerResolver(self)
+        else:
+            return self._properties.get('MapServerResolver')
 
     @property
     def MsAllowedEidRange(self):
@@ -106,7 +115,10 @@ class LispInstance(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.msallowedeidrange_d7ef31dcb7d27b4eac8f51adc40c137c import MsAllowedEidRange
-        return MsAllowedEidRange(self)
+        if self._properties.get('MsAllowedEidRange', None) is None:
+            return MsAllowedEidRange(self)
+        else:
+            return self._properties.get('MsAllowedEidRange')
 
     @property
     def Act(self):

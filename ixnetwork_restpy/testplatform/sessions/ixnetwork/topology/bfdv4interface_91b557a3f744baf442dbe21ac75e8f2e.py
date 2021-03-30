@@ -78,7 +78,10 @@ class Bfdv4Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bfdv4session_dfe5a64bfc5795e7fe612df749b6836a import Bfdv4Session
-        return Bfdv4Session(self)._select()
+        if self._properties.get('Bfdv4Session', None) is None:
+            return Bfdv4Session(self)._select()
+        else:
+            return self._properties.get('Bfdv4Session')
 
     @property
     def LearnedInfo(self):
@@ -92,7 +95,10 @@ class Bfdv4Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        return LearnedInfo(self)
+        if self._properties.get('LearnedInfo', None) is None:
+            return LearnedInfo(self)
+        else:
+            return self._properties.get('LearnedInfo')
 
     @property
     def Active(self):

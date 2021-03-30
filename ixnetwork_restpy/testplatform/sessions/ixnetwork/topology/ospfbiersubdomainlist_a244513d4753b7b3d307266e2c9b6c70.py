@@ -58,7 +58,10 @@ class OspfBierSubDomainList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfbierbsobjectlist_d963618a7e3bb458722a4ffc379ac86a import OspfBierBSObjectList
-        return OspfBierBSObjectList(self)
+        if self._properties.get('OspfBierBSObjectList', None) is None:
+            return OspfBierBSObjectList(self)
+        else:
+            return self._properties.get('OspfBierBSObjectList')
 
     @property
     def BFRId(self):

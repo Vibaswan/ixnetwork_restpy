@@ -55,7 +55,10 @@ class Instructions(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.instruction_8a003508af27a2b8465616f1246a834c import Instruction
-        return Instruction(self)
+        if self._properties.get('Instruction', None) is None:
+            return Instruction(self)
+        else:
+            return self._properties.get('Instruction')
 
     @property
     def Count(self):

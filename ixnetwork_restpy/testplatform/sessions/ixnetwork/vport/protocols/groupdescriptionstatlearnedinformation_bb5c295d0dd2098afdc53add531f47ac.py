@@ -61,7 +61,10 @@ class GroupDescriptionStatLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.groupbucketdescstatlearnedinformation_0a611371603afa4711776c39f57d8487 import GroupBucketDescStatLearnedInformation
-        return GroupBucketDescStatLearnedInformation(self)
+        if self._properties.get('GroupBucketDescStatLearnedInformation', None) is None:
+            return GroupBucketDescStatLearnedInformation(self)
+        else:
+            return self._properties.get('GroupBucketDescStatLearnedInformation')
 
     @property
     def DataPathId(self):

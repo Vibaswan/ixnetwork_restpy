@@ -57,7 +57,10 @@ class Ingress(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.senderrange_15dfd9e6673a6986869f84e8c22d0879 import SenderRange
-        return SenderRange(self)
+        if self._properties.get('SenderRange', None) is None:
+            return SenderRange(self)
+        else:
+            return self._properties.get('SenderRange')
 
     @property
     def EnableEro(self):

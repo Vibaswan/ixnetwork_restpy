@@ -57,7 +57,10 @@ class IsisBierSubDomainList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisbierbsobjectlist_72488dadc9d26969d482f402d7de2734 import IsisBierBSObjectList
-        return IsisBierBSObjectList(self)
+        if self._properties.get('IsisBierBSObjectList', None) is None:
+            return IsisBierBSObjectList(self)
+        else:
+            return self._properties.get('IsisBierBSObjectList')
 
     @property
     def BAR(self):

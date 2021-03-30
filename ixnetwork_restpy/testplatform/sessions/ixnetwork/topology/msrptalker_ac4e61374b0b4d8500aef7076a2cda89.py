@@ -69,7 +69,10 @@ class MsrpTalker(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        return LearnedInfo(self)
+        if self._properties.get('LearnedInfo', None) is None:
+            return LearnedInfo(self)
+        else:
+            return self._properties.get('LearnedInfo')
 
     @property
     def MsrpTalkerDomains(self):
@@ -83,7 +86,10 @@ class MsrpTalker(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.msrptalkerdomains_0f385bfc871543091b3fa2e404918150 import MsrpTalkerDomains
-        return MsrpTalkerDomains(self)._select()
+        if self._properties.get('MsrpTalkerDomains', None) is None:
+            return MsrpTalkerDomains(self)._select()
+        else:
+            return self._properties.get('MsrpTalkerDomains')
 
     @property
     def Active(self):

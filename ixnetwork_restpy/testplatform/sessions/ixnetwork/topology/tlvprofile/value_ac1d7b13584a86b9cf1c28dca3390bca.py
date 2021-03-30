@@ -49,7 +49,10 @@ class Value(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.object_1ba6063c8cfb61359d0cafa499ed49e4 import Object
-        return Object(self)
+        if self._properties.get('Object', None) is None:
+            return Object(self)
+        else:
+            return self._properties.get('Object')
 
     @property
     def Name(self):
