@@ -128,5 +128,3 @@ This client package supports versions 8.52 and up of the following servers:
 
 ## Contributing
 The purpose of this repository is to allow others see how much of a progress made and spread the findings of the poc to a broader audience for feedback .
-
-Feedback such as bugs/enhancements/questions regarding the ixnetwork-restpy package is welcomed by opening a [GitHub issue](https://github.com/OpenIxia/ixnetwork_restpy/issues).
