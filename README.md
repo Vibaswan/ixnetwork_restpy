@@ -10,7 +10,7 @@ To see the changes that have been done for this config assistant got to [Conf_As
 
 ## Install the client
 ```
-pip install --upgrade wheel-name
+pip install wheel-name
 ```
 The wheel can be found in the link [Wheel](wheel)
 
