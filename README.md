@@ -1,7 +1,8 @@
 # Config Assistant POC
 This repository is regarding the config assistant which will do bulk commit  
 
-
+## Code changes
+To see the changes that have been done for this config assistant got to [Conf_Assist_Commit](https://github.com/Vibaswan/ixnetwork_restpy/commit/e52b04e6cd8a704ec14b53863802cea070c648ca)
 ## Key Features
 * Config Assistant for bulk commit
 * New way for configuring traffic (protocol template auto generated)
@@ -126,6 +127,6 @@ This client package supports versions 8.52 and up of the following servers:
 
 
 ## Contributing
-The purpose of this repository is to allow users to clone the auto generated code. We do not accept pull requests in this repository.
+The purpose of this repository is to allow others see how much of a progress made and spread the findings of the poc to a broader audience for feedback .
 
 Feedback such as bugs/enhancements/questions regarding the ixnetwork-restpy package is welcomed by opening a [GitHub issue](https://github.com/OpenIxia/ixnetwork_restpy/issues).
