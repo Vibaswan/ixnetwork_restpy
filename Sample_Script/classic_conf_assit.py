@@ -1,6 +1,6 @@
 import json
 from time import  time
-from src.ixnetwork_restpy.assistants.sessions.sessionassistant import SessionAssistant
+from ixnetwork_restpy import SessionAssistant
 
 session_assistant = SessionAssistant(IpAddress='127.0.0.1', UserName='admin', Password='admin',
                                      LogLevel=SessionAssistant.LOGLEVEL_INFO, ClearConfig=True)
